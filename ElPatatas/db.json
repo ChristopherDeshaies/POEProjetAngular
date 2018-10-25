@@ -60,5 +60,25 @@
         "dateAchat": "21/10/2018",
         "prixAchat": 0.55
         }
+    ],
+    "users": [
+        {
+            "id":1,
+            "pseudo":"van",
+            "mdp":"0000",
+            "token":"admin"
+        },
+        {
+            "id":2,
+            "pseudo":"florent",
+            "mdp":"0000",
+            "token":"admin"
+        },
+        {
+            "id":3,
+            "pseudo":"christopher",
+            "mdp":"0000",
+            "token":"employe"
+        }
     ]
 }
