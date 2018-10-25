@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Users } from '../../users/models/users';
+import { Stocks } from '../model/stocks';
 
-const urlStock = 'http://127.0.0.1:3000/stocks';
+const urlStocks = 'http://127.0.0.1:3000/stocks';
 
 @Injectable({
   providedIn: 'root'
@@ -12,23 +12,34 @@ export class StocksService {
 
   constructor(private httpclient: HttpClient) { }
 
-  getStock(): Observable<Users[]> {
-    return this.httpclient.get<Users[]>(urlStock);
+  getStock(): Observable<Stocks[]> {
+    return this.httpclient.get<Stocks[]>(urlStocks);
   }
 
-  deleteStock(libelleProduit): Observable<Users[]> {
-    this.httpclient.delete(`${urlStock}/${libelleProduit}`).subscribe(
-      error => { console.log('delete du stock' , error);
-    }
+  deleteStock(libelleProduit): Observable<Stocks[]> {
+    this.httpclient.delete(`${urlStocks}?libelleProduit=${libelleProduit}`).subscribe(
+      error => {
+        console.log('Delete du stock ' + libelleProduit, error);
+      }
     );
-    return this.httpclient.get<Users[]>(urlStock);
+    return this.httpclient.get<Stocks[]>(urlStocks);
   }
 
-  ajouterStock(libelleProduit, quantiteProduit): Observable<Users[]> {
-    this.httpclient.post(`${urlStock}`, {libelleProduit, quantiteProduit}).subscribe(
-      error => { console.log('ajouter au stock' , error);
-    }
+  ajouterStock(libelleProduit, quantiteProduit): Observable<Stocks[]> {
+    this.httpclient.post(`${urlStocks}`, {libelleProduit, quantiteProduit}).subscribe(
+      error => {
+        console.log('Ajouter au stock' + libelleProduit, error);
+      }
     );
-    return this.httpclient.get<Users[]>(urlStock);
+    return this.httpclient.get<Stocks[]>(urlStocks);
+  }
+
+  modificationStock(libelleProduit, newlibelleProduit, quantiteProduit): Observable<Stocks[]> {
+    this.httpclient.put(`${urlStocks}?libelleProduit=${libelleProduit}`, {newlibelleProduit, quantiteProduit} ).subscribe(
+      error => {
+        console.log('Modifier le stock ' + libelleProduit + ' en ' + newlibelleProduit, error);
+      }
+    );
+    return this.httpclient.get<Stocks[]>(urlStocks);
   }
 }

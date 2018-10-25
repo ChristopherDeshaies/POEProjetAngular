@@ -8,6 +8,8 @@ import { AdminComponent } from './core/users/components/admin/admin.component';
 import { EmployesComponent } from './core/users/components/employes/employes.component';
 import { PlanningComponent } from './planning/components/planning.component';
 import { ComptabiliteComponent } from './comptabilite/components/comptabilite.component';
+import { GestionstocksComponent } from './gestionstocks/components/gestionstocks/gestionstocks.component';
+import { CommandesComponent } from './commandes/components/commandes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { ComptabiliteComponent } from './comptabilite/components/comptabilite.co
     EmployesComponent,
     PlanningComponent,
     ComptabiliteComponent,
-    CoreModule
+    GestionstocksComponent,
+    CommandesComponent
   ],
   imports: [
     CoreModule,
