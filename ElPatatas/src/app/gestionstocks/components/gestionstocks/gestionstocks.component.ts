@@ -4,6 +4,9 @@ import { StocksService } from '../../../core/stocks/services/stocks.service';
 import { Stocks } from 'src/app/core/stocks/model/stocks';
 import { ProduitsService } from 'src/app/core/produits/services/produits.service';
 
+/**
+ * @author Christopher Deshaies
+ */
 @Component({
   selector: 'app-gestionstocks',
   templateUrl: './gestionstocks.component.html',
@@ -28,7 +31,6 @@ export class GestionstocksComponent implements OnInit {
   }
 
   /**
-   * @author Christopher Deshaies
    * Function which affects the variable listStocks with Stocks got back with the serviceStocks
    */
   getListStocks(): void {
@@ -36,7 +38,6 @@ export class GestionstocksComponent implements OnInit {
   }
 
   /**
-   * @author Christopher Deshaies
    * Function which calls the function deleteStock in the service StocksService
    * @param libelleStocks : LibelleProduit has to delete of Stocks
    */
