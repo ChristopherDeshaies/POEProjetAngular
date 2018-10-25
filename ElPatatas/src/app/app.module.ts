@@ -15,7 +15,7 @@ import { ComptabiliteComponent } from './comptabilite/components/comptabilite.co
   ],
   imports: [
     CoreModule,
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

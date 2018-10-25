@@ -1,10 +1,10 @@
-import { CoreModuleModule } from './core-module.module';
+import { CoreModule } from './core-module.module';
 
 describe('CoreModuleModule', () => {
-  let coreModuleModule: CoreModuleModule;
+  let coreModuleModule: CoreModule;
 
   beforeEach(() => {
-    coreModuleModule = new CoreModuleModule();
+    coreModuleModule = new CoreModule();
   });
 
   it('should create an instance', () => {

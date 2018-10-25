@@ -12,14 +12,12 @@ const routes :Routes = [
   },
   {
     path: 'login',
-    canActivate: [UsersService],
     component: LoginComponent
   },
   {
     path: 'commandes',
-    loadChildren: '../commandes/commmandes.module#CommandesModule'
-    // canActivate: [UsersService],
-    // component: LoginComponent
+    canActivate: [UsersService],
+    loadChildren: '../commandes/commandes.module#CommandesModule'
   }
 ];
 
@@ -30,7 +28,6 @@ const routes :Routes = [
   ],
   exports:[
     RouterModule
-  ],
-  declarations: []
+  ]
 })
 export class CoreRootingModule { }
