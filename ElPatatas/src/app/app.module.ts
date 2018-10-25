@@ -16,7 +16,8 @@ import { ComptabiliteComponent } from './comptabilite/components/comptabilite.co
     AdminComponent,
     EmployesComponent,
     PlanningComponent,
-    ComptabiliteComponent
+    ComptabiliteComponent,
+    CoreModule
   ],
   imports: [
     CoreModule,
