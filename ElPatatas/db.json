@@ -1,0 +1,64 @@
+{
+    "produits": [
+        {
+        "id": 1,
+        "libelle": "Frite",
+        "codeFournisseur": 1,
+        "quantiteInitiale": 100,
+        "quantiteRestant": 100,
+        "dateLimite": "21/11/2018",
+        "dateAchat": "21/09/2018",
+        "prixAchat": 0.2
+        },
+        {
+        "id": 2,
+        "libelle": "Merguez",
+        "codeFournisseur": 2,
+        "quantiteInitiale": 200,
+        "quantiteRestant": 200,
+        "dateLimite": "29/10/2018",
+        "dateAchat": "21/10/2018",
+        "prixAchat": 0.4
+        },
+        {
+        "id": 3,
+        "libelle": "Saucisse",
+        "codeFournisseur": 2,
+        "quantiteInitiale": 300,
+        "quantiteRestant": 300,
+        "dateLimite": "31/10/2018",
+        "dateAchat": "24/09/2018",
+        "prixAchat": 0.3
+        },
+        {
+        "id": 4,
+        "libelle": "Saucisse",
+        "codeFournisseur": 2,
+        "quantiteInitiale": 300,
+        "quantiteRestant": 300,
+        "dateLimite": "31/10/2018",
+        "dateAchat": "24/09/2018",
+        "prixAchat": 0.3
+        },
+        {
+        "id": 5,
+        "libelle": "Coca",
+        "codeFournisseur": 3,
+        "quantiteInitiale": 50,
+        "quantiteRestant": 50,
+        "dateLimite": "21/09/2019",
+        "dateAchat": "21/10/2018",
+        "prixAchat": 0.5
+        },
+        {
+        "id": 6,
+        "libelle": "Fanta",
+        "codeFournisseur": 3,
+        "quantiteInitiale": 50,
+        "quantiteRestant": 50,
+        "dateLimite": "21/09/2019",
+        "dateAchat": "21/10/2018",
+        "prixAchat": 0.55
+        }
+    ]
+}

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ComponentsComponent } from './components/components.component';
+import { ComptabiliteComponent } from './components/comptabilite.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [ ComponentsComponent]
+  declarations: [ComptabiliteComponent]
 })
 export class ComptabiliteModule { }

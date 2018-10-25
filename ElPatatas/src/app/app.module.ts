@@ -7,6 +7,7 @@ import { LoginComponent } from './core/users/components/login/login.component';
 import { AdminComponent } from './core/users/components/admin/admin.component';
 import { EmployesComponent } from './core/users/components/employes/employes.component';
 import { PlanningComponent } from './planning/components/planning.component';
+import { ComptabiliteComponent } from './comptabilite/components/comptabilite.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PlanningComponent } from './planning/components/planning.component';
     LoginComponent,
     AdminComponent,
     EmployesComponent,
-    PlanningComponent
+    PlanningComponent,
+    ComptabiliteComponent
   ],
   imports: [
     CoreModule,
