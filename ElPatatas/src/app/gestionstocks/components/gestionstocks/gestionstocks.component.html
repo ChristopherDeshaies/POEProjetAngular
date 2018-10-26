@@ -1,7 +1,7 @@
 <h1>
   Component Gestion Stocks
 </h1>
-<div>
+<!-- <div>
   <ul>
     <li *ngFor="let stocks of listStocks | async">
       <div class="row">
@@ -15,4 +15,109 @@
       <br/>
     </li>
   </ul>
+</div> -->
+<div>
+  <form class="text-center">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="produitSelected">Produit a ajouter</label>
+      </div>
+      <select class="custom-select" id="produitSelected" [(ngModel)]="produitSelected" [ngModelOptions]="{standalone: true}">
+        <option [ngValue]=null selected>Produits ...</option>
+        <option *ngFor="let produit of listProduits | async" [ngValue]="produit">
+          {{produit.libelle}} - Code Fournisseur : {{produit.codeFournisseur}}
+        </option>
+        </select>
+    </div>
+    <div *ngIf="produitSelected">
+      <div class="row">
+        <div class="form-group col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Quantité ajouté au stock</span>
+            </div>
+            <input type="number" class="form-control " id="quantiteAjoutProduit" [(ngModel)]="selectedQuantiteAjoutProduit" placeholder="Exemple : 200" required>
+          </div>
+        </div>
+        <div class="form-group col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Date limite de consommation</span>
+            </div>
+            <input type="date" class="form-control" id="dateLimiteProduit" [(ngModel)]="selectedDateLimiteProduit" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Date d'achat</span>
+            </div>
+            <input type="date" class="form-control" id="dateAchatProduit" [(ngModel)]="selectedDateAchatProduit" required>
+          </div>
+        </div>
+        <div class="form-group col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="">Prix d'achat</span>
+            </div>
+            <input type="number" class="form-control" id="prixAchatProduit" [(ngModel)]="selectedPrixAchatProduit" placeholder="Exemple : 100.50" required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="!produitSelected">
+      <p>Ou</p>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" for="ajoutProduit" id="">Ajouter un <span style="color: red">&nbsp;nouveau&nbsp;</span> produit</span>
+        </div>
+        <input type="text" class="form-control" id="ajoutProduit" [(ngModel)]="newAjouterProduit" aria-describedby="ajoutProduitHelp" placeholder="Entrer le nom du produit" required>
+      </div>
+      <div *ngIf="newAjouterProduit">
+          <div class="row">
+            <div class="form-group col-6">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Quantité ajouté au stock</span>
+                </div>
+                <input type="number" class="form-control " id="newQuantiteAjoutProduit" [(ngModel)]="newQuantiteAjoutProduit" placeholder="Exemple : 200" required>
+              </div>
+            </div>
+            <div class="form-group col-6">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Date limite de consommation</span>
+                </div>
+                <input type="date" class="form-control" id="newDateLimiteProduit" [(ngModel)]="newDateLimiteProduit" required>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-6">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Date d'achat</span>
+                </div>
+                <input type="date" class="form-control" id="newDateAchatProduit" [(ngModel)]="newDateAchatProduit" required>
+              </div>
+            </div>
+            <div class="form-group col-6">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Prix d'achat</span>
+              </div>
+              <input type="number" class="form-control" id="newPrixAchatProduit" [(ngModel)]="newPrixAchatProduit" placeholder="Exemple : 100.50" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Valider</button>
+  </form>
 </div>
