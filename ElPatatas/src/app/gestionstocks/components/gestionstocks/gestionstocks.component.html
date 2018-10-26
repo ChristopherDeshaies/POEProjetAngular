@@ -1,3 +1,18 @@
-<p>
-  gestionstocks works!
-</p>
+<h1>
+  Component Gestion Stocks
+</h1>
+<div>
+  <ul>
+    <li *ngFor="let stocks of listStocks | async">
+      <div class="row">
+        <div class="col-2">
+            {{stocks.libelleProduit}} - {{stocks.quantiteRestant}}
+        </div>
+        <div>
+          <button class="btn-danger" (click)="supprimer(stocks.libelleProduit)">X</button>
+        </div>
+      </div>
+      <br/>
+    </li>
+  </ul>
+</div>

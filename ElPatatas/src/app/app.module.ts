@@ -6,12 +6,16 @@ import { CoreModule } from './core/core-module.module';
 
 import { PlanningComponent } from './planning/components/planning.component';
 import { ComptabiliteComponent } from './comptabilite/components/comptabilite.component';
+import { GestionstocksComponent } from './gestionstocks/components/gestionstocks/gestionstocks.component';
+import { CommandesComponent } from './commandes/components/commandes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanningComponent,
-    ComptabiliteComponent
+    ComptabiliteComponent,
+    GestionstocksComponent,
+    CommandesComponent
   ],
   imports: [
     CoreModule,

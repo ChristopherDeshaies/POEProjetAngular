@@ -32,10 +32,10 @@
         },
         {
         "id": 4,
-        "libelle": "Saucisse",
-        "codeFournisseur": 2,
-        "quantiteInitiale": 300,
-        "quantiteRestant": 300,
+        "libelle": "Mexicanos",
+        "codeFournisseur": 4,
+        "quantiteInitiale": 100,
+        "quantiteRestant": 100,
         "dateLimite": "31/10/2018",
         "dateAchat": "24/09/2018",
         "prixAchat": 0.3
@@ -94,6 +94,20 @@
             "adress": "rue du vent",
             "tel": "rue du vent",
             "dateNaissance" : "07/12/1991"
+        }
+    ],
+    "stocks": [
+        {
+            "libelleProduit": "Mexicanos",
+            "quantiteRestant": 100
+        },
+        {
+            "libelleProduit": "Saucisse",
+            "quantiteRestant": 300
+        },
+        {
+            "libelleProduit": "Merguez",
+            "quantiteRestant": 200
         }
     ]
 }

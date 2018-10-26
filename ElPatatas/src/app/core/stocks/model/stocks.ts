@@ -1,4 +1,4 @@
 export class Stocks {
-    libelleMarchandise: string;
+    libelleProduit: string;
     quantiteRestant: number;
 }
