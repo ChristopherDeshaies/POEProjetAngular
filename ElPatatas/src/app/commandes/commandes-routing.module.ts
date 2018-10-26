@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommandesComponent } from './components/commandes.component';
 
 const routes: Routes = [
-    // {
-    //     path: '',
-    //     redirectTo: 'commandes',
-    //     pathMatch: 'full'
-    // },
+    {
+        path: '',
+        redirectTo: 'commandes',
+        pathMatch: 'full'
+    },
     {
         path: 'commandes',
         component: CommandesComponent,

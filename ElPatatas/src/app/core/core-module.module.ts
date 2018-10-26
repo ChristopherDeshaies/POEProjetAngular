@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { UsersService } from './users/users.service';
 import { RouterModule } from '@angular/router';
 import { CoreRootingModule } from './core-rooting.module';
@@ -16,7 +15,6 @@ import { EmployesComponent } from '../core/users/components/employes/employes.co
 @NgModule({
   imports: [
     CommonModule,
-
     CoreRootingModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -28,7 +26,7 @@ import { EmployesComponent } from '../core/users/components/employes/employes.co
     LoginComponent,
     RouterModule,
     AdminComponent,
-    EmployesComponent
+    EmployesComponent,
   ],
   declarations: [
     LoginComponent,

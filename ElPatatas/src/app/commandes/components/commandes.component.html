@@ -1,2 +1,40 @@
-<router-outlet></router-outlet>
+<form [formGroup]="form" (ngSubmit)="submit()"> 
+    <div>
+        <label>Frites : </label>
+        <label class="checkbox-inline" formArrayName="frites" *ngFor="let frite of form.controls.frites.controls; let i = index">
+            <input type="checkbox" [formControlName]="i">
+            {{frites[i].name}}
+        </label>
+        <!-- <input type="text" name="quantiteFrite" id="quantiteFrite" required pattern="[0-9]*" formControlName="quantiteFrite" /> -->
+        <label>Quantité : </label>
+        <input type="text" [formControl]="quantiteFrite" required pattern="[0-9]*" />
+        <!-- <div *ngIf="quantiteFrite.errors?.pattern">Quantité non valide</div> -->
+    </div>
 
+    <div>
+        <label>Boissons : </label>
+        <label class="checkbox-inline" formArrayName="boissons" *ngFor="let boisson of form.controls.boissons.controls; let i = index">
+            <input type="checkbox" [formControlName]="i">
+            {{boissons[i].name}}
+        </label>
+        <!-- <input type="text" name="quantiteBoisson" id="quantiteBoisson" required pattern="[0-9]*" formControlName="quantiteBoisson" /> -->
+        <label>Quantité : </label>
+        <input type="text" [formControl]="quantiteBoisson" required pattern="[0-9]*"/>
+        <!-- <div *ngIf="quantiteBoisson.errors?.pattern">Quantité non valide</div> -->
+    </div>
+
+    <div>
+        <label>Viandes : </label>
+        <label class="checkbox-inline" formArrayName="viandes" *ngFor="let viande of form.controls.viandes.controls; let i = index">
+        <input type="checkbox" [formControlName]="i">
+            {{viandes[i].name}}
+        </label>
+        <!-- <input type="text" name="quantiteViande" id="quantiteViande" required pattern="[0-9]*" formControlName="quantiteViande" /> -->
+        <label>Quantité : </label>
+        <input type="text" [formControl]="quantiteViande" required pattern="[0-9]*" />
+        <!-- <div *ngIf="quantiteViande.errors?.pattern">Quantité non valide</div> -->
+    </div>
+
+    <div *ngIf="!form.valid">Un produit de chaque doit être sélectionné</div>
+    <button>submit</button>
+</form>
