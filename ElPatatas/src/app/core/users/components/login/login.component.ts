@@ -37,10 +37,10 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password
     };
       return this.authenticationService.login(ldapInformation.email,ldapInformation.password).subscribe(  
-      success => {   
+      success => {
         if (JSON.parse(localStorage.getItem('user'))[0] != undefined) {  
           this.router.navigate(['commandes']); 
-        }         
+        }
       },
       error => console.log(error)
     )
