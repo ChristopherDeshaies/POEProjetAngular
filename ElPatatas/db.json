@@ -64,21 +64,36 @@
     "users": [
         {
             "id":1,
-            "pseudo":"van",
-            "mdp":"0000",
-            "token":"admin"
+            "email":"van@hmtl.fr",
+            "password":"van",
+            "role":"admin",
+            "nom" : "YOU",
+            "prenom": "Van",
+            "adress": "rue blabla",
+            "tel": "0102030405",
+            "dateNaissance" : "12/02/1982" 
         },
         {
             "id":2,
-            "pseudo":"florent",
-            "mdp":"0000",
-            "token":"admin"
+            "email":"florent@hmtl.fr",
+            "password":"flo",
+            "role":"employe",
+            "nom" : "FARDEL",
+            "prenom": "Florent",
+            "adress": "rue du gaz",
+            "tel": "1111111111",
+            "dateNaissance" : "07/07/1974"
         },
         {
             "id":3,
-            "pseudo":"christopher",
-            "mdp":"0000",
-            "token":"employe"
+            "email":"chris@hmtl.fr",
+            "password":"Chris",
+            "role":"employe",
+            "nom" : "DESHAIES",
+            "prenom": "Chris",
+            "adress": "rue du vent",
+            "tel": "rue du vent",
+            "dateNaissance" : "07/12/1991"
         }
     ],
     "stocks": [
