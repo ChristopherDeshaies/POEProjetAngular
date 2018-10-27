@@ -2,20 +2,20 @@ body{
     background-color: #cceeff;
 }
 
-.login-form{
-    margin-top: 60px;
-    text-align: center;
+.row{
+    margin:0;
 }
 
-form{
-    color: #5d5d5d;
-	background: #f2f2f2;
-	padding: 26px;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+li{
+    list-style: none;
+    margin : 20px;
 }
 
 label{
+    font-weight: bold;
     width: 15%;
+}
+
+i{
+    font-size: 40px;
 }

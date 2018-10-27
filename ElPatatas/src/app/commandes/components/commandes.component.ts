@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, ValidatorFn , FormArray, Validators  } from '@angular/forms';
+import { ItemMenu } from '../models/itemmenu';
+import { Commandes } from '../models/commandes';
+import { CommandesService } from '../services/commandes.service'
 
 
 @Component({
@@ -9,125 +11,149 @@ import { FormControl, FormGroup, FormBuilder, ValidatorFn , FormArray, Validator
 })
 export class CommandesComponent implements OnInit {
 
-  form: FormGroup;
-  selectedFritesIds : any[]=[];
-  selectedBoissonsIds : any[]=[];
-  selectedViandesIds : any[]=[];
-  quantiteFrite = new FormControl('');
-  quantiteBoisson = new FormControl('');
-  quantiteViande = new FormControl('');
-  //isValid: boolean = true;
+  selectedFritesIds = new Map();
+  selectedBoissonsIds = new Map();
+  selectedViandesIds = new Map();
 
-  frites = [
-    { id: 1, name: 'Grande' },
-    { id: 2, name: 'Moyenne' },
-    { id: 3, name: 'Petite' },
-  ];
+  frites : ItemMenu[] ;
+  boissons : ItemMenu[];
+  viandes : ItemMenu[] ;
 
-  boissons = [
-    { id: 1, name: 'Coca' },
-    { id: 2, name: 'Pepsi' },
-    { id: 3, name: 'Fanta' },
-  ];
+  commande : Commandes;
+  listProduits: Map<string, number>;
+  commandes : Array<Commandes>;
 
-  viandes = [
-    { id: 1, name: 'Steack' },
-    { id: 2, name: 'Fricadelle' },
-    { id: 3, name: 'Brochette' },
-  ]
+  date : string;
 
-  constructor(private fb: FormBuilder) {
-    const controls = this.frites.map(c => new FormControl(false));
-    //controls[0].setValue(true);
+  /* à implémenter plus tard */
+  // prixFrites :number =0;
+  // prixBoissons :number =0;
+  // prixViandes :number =0;
+  prixTotal :number =0;
 
-    const controls2 = this.boissons.map(c => new FormControl(false));
-    //controls2[0].setValue(true);
-
-    const controls3 = this.viandes.map(c => new FormControl(false));
-    //controls2[0].setValue(true);
+  constructor(private commandesService : CommandesService) {
   
-    this.form = this.fb.group({
-      // quantiteFrite : new FormControl(''),
-      // quantiteBoisson: new FormControl(''),
-      // quantiteViande :new FormControl(''),
-      frites: new FormArray(controls, minSelectedFrites(1)),
-      boissons : new FormArray(controls2, minSelectedBoissons(1)),
-      viandes : new FormArray(controls3, minSelectedViandes(1)),
-           
-      // frites: new FormArray(controls, this.formValid(this.selectedFritesIds,this.selectedBoissonsIds,this.selectedViandesIds)),
-      // boissons : new FormArray(controls2, this.formValid(this.selectedFritesIds,this.selectedBoissonsIds,this.selectedViandesIds)),
-      // viandes : new FormArray(controls3, this.formValid(this.selectedFritesIds,this.selectedBoissonsIds,this.selectedViandesIds))
-    });
   }
 
   ngOnInit() {
+
+    this.frites = [];
+    this.boissons = [];
+    this.viandes = [];
+    this.commandes = new Array<Commandes>();
+    
+    this.selectedFritesIds
+    .set("Grande Frite", 0)
+    .set("Moyenne Frite", 0)
+    .set("Petite Frite", 0);
+
+    this.selectedBoissonsIds
+    .set("coca", 0)
+    .set("pepsi", 0)
+    .set("fanta", 0);
+
+    this.selectedViandesIds
+    .set("Steack", 0)
+    .set("Fricadelle", 0)
+    .set("Brochette", 0); 
+
+    this.frites = [
+      new ItemMenu(1,"Grande",0, 4),
+      new ItemMenu(1,"Moyenne",0, 2.5),
+      new ItemMenu(1,"Petite",0, 1.5)
+    ];
+
+    this.boissons = [
+      new ItemMenu(1,"coca",0, 1),
+      new ItemMenu(1,"pepsi",0, 1),
+      new ItemMenu(1,"fanta",0, 1)
+    ];
+
+    this.viandes = [
+      new ItemMenu(1,"steak",0, 4),
+      new ItemMenu(1,"fricadelle",0, 3),
+      new ItemMenu(1,"merguez",0, 3.5)
+    ];
   
+    this.listProduits = new Map();
+    this.commande = new Commandes('',null,null);
+  }
+
+  reinitialiser(){
+
+    this.prixTotal=0;
+  
+    this.frites = [
+      new ItemMenu(1,"Grande",0, 4),
+      new ItemMenu(1,"Moyenne",0, 2.5),
+      new ItemMenu(1,"Petite",0, 1.5)
+    ];
+
+    this.boissons = [
+      new ItemMenu(1,"coca",0, 1),
+      new ItemMenu(1,"pepsi",0, 1),
+      new ItemMenu(1,"fanta",0, 1)
+    ];
+
+    this.viandes = [
+      new ItemMenu(1,"steak",0, 4),
+      new ItemMenu(1,"fricadelle",0, 3),
+      new ItemMenu(1,"merguez",0, 3.5)
+    ];
+
+    this.listProduits = new Map();
+    this.commande = new Commandes('',null,null);
+
   }
 
   submit() {
-    
-    this.selectedFritesIds = this.form.value.frites
-      .map((v, i) => v ? this.frites[i].id : null)
-      .filter(v => v !== null);
-
-    this.selectedBoissonsIds = this.form.value.boissons
-      .map((v, i) => v ? this.boissons[i].id : null)
-      .filter(v => v !== null); 
-    
-    this.selectedViandesIds = this.form.value.viandes
-      .map((v, i) => v ? this.viandes[i].id : null)
-      .filter(v => v !== null); 
-
-      // console.log(this.selectedFritesIds.length)
-      // console.log("frites : "+ this.selectedFritesIds)
-      // console.log(this.selectedBoissonsIds.length)
-      // console.log("boissons : "+this.selectedBoissonsIds)
-      // console.log(this.selectedViandesIds.length)
-      // console.log("viandes : "+this.selectedViandesIds)
+       
   }
 
-  // formValid(selectedFritesIds,selectedBoissonsIds,selectedViandesIds){
-  //     const validator: ValidatorFn;
-  //     return ( (selectedFritesIds.length = 0)  & (selectedBoissonsIds.length = 0) & (selectedViandesIds.length = 0)) ? null : { required: true };
-    
-  //  }
+  select(produit: ItemMenu){
+    produit.setQuantite(produit.getQuantite()+1);   
+  }
 
+  ajout(produit: ItemMenu){
+    produit.setQuantite(produit.getQuantite()+1);
+    this.ajouterPrix(produit);    
+    this.listProduits.set(produit.getNom(), produit.getQuantite());
+  }
+
+  retirer(produit: ItemMenu){
+    if (produit.getQuantite()>0){
+      produit.setQuantite(produit.getQuantite()-1);
+      this.retirerPrix(produit);
+      this.listProduits.set(produit.getNom(), produit.getQuantite());
+    }
+  }
+
+  ajouterPrix(produit : ItemMenu){
+    this.prixTotal += produit.getPrix();
+  }
+
+  retirerPrix(produit : ItemMenu){
+    this.prixTotal -= produit.getPrix();
+  }
+
+  encaisser(){
+    if (this.prixTotal != 0){
+
+      this.date = new Date().toUTCString();
+      this.commande = new Commandes(this.date,JSON.stringify(this.strMapToTab(this.listProduits)),this.prixTotal);
+      this.commandes.push(this.commande);
+      this.commandesService.postCommande(this.commande);
+      this.reinitialiser();
+
+    }
+  }
+
+  strMapToTab(strMap) {
+    let obj = Object.create(null);
+    for (let [k,v] of strMap) {
+        obj[k] = obj[v];
+    }
+    return obj;
 }
 
-  function isValid(){
-    
-
-  }
-
-  function minSelectedFrites(min=1) {
-    const validator: ValidatorFn = (formArray: FormArray) => {
-      const totalSelected = (formArray.controls
-        .map(control => control.value)
-        .reduce((prev, next) => next ? prev + next : prev, 0)) 
-      return totalSelected >= min ? null : { required: true };
-    };
-  
-    return validator;  
-  }
-
-  function minSelectedBoissons(min=1) {
-    const validator: ValidatorFn = (formArray: FormArray) => {
-      const totalSelected = (formArray.controls
-        .map(control => control.value)
-        .reduce((prev, next) => next ? prev + next : prev, 0)) 
-      return totalSelected >= min ? null : { required: true };
-    };
-  
-    return validator;  
-  }
-
-  function minSelectedViandes(min=1) {
-    const validator: ValidatorFn = (formArray: FormArray) => {
-      const totalSelected = (formArray.controls
-        .map(control => control.value)
-        .reduce((prev, next) => next ? prev + next : prev, 0)) 
-      return totalSelected >= min ? null : { required: true };
-    };
-  
-    return validator;  
-  }
+}

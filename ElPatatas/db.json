@@ -1,113 +1,127 @@
 {
-    "produits": [
-        {
-        "id": 1,
-        "libelle": "Frite",
-        "codeFournisseur": 1,
-        "quantiteInitiale": 100,
-        "quantiteRestant": 100,
-        "dateLimite": "21/11/2018",
-        "dateAchat": "21/09/2018",
-        "prixAchat": 0.2
-        },
-        {
-        "id": 2,
-        "libelle": "Merguez",
-        "codeFournisseur": 2,
-        "quantiteInitiale": 200,
-        "quantiteRestant": 200,
-        "dateLimite": "29/10/2018",
-        "dateAchat": "21/10/2018",
-        "prixAchat": 0.4
-        },
-        {
-        "id": 3,
-        "libelle": "Saucisse",
-        "codeFournisseur": 2,
-        "quantiteInitiale": 300,
-        "quantiteRestant": 300,
-        "dateLimite": "31/10/2018",
-        "dateAchat": "24/09/2018",
-        "prixAchat": 0.3
-        },
-        {
-        "id": 4,
-        "libelle": "Mexicanos",
-        "codeFournisseur": 4,
-        "quantiteInitiale": 100,
-        "quantiteRestant": 100,
-        "dateLimite": "31/10/2018",
-        "dateAchat": "24/09/2018",
-        "prixAchat": 0.3
-        },
-        {
-        "id": 5,
-        "libelle": "Coca",
-        "codeFournisseur": 3,
-        "quantiteInitiale": 50,
-        "quantiteRestant": 50,
-        "dateLimite": "21/09/2019",
-        "dateAchat": "21/10/2018",
-        "prixAchat": 0.5
-        },
-        {
-        "id": 6,
-        "libelle": "Fanta",
-        "codeFournisseur": 3,
-        "quantiteInitiale": 50,
-        "quantiteRestant": 50,
-        "dateLimite": "21/09/2019",
-        "dateAchat": "21/10/2018",
-        "prixAchat": 0.55
-        }
-    ],
-    "users": [
-        {
-            "id":1,
-            "email":"van@hmtl.fr",
-            "password":"van",
-            "role":"admin",
-            "nom" : "YOU",
-            "prenom": "Van",
-            "adress": "rue blabla",
-            "tel": "0102030405",
-            "dateNaissance" : "12/02/1982" 
-        },
-        {
-            "id":2,
-            "email":"florent@hmtl.fr",
-            "password":"flo",
-            "role":"employe",
-            "nom" : "FARDEL",
-            "prenom": "Florent",
-            "adress": "rue du gaz",
-            "tel": "1111111111",
-            "dateNaissance" : "07/07/1974"
-        },
-        {
-            "id":3,
-            "email":"chris@hmtl.fr",
-            "password":"Chris",
-            "role":"employe",
-            "nom" : "DESHAIES",
-            "prenom": "Chris",
-            "adress": "rue du vent",
-            "tel": "rue du vent",
-            "dateNaissance" : "07/12/1991"
-        }
-    ],
-    "stocks": [
-        {
-            "libelleProduit": "Mexicanos",
-            "quantiteRestant": 100
-        },
-        {
-            "libelleProduit": "Saucisse",
-            "quantiteRestant": 300
-        },
-        {
-            "libelleProduit": "Merguez",
-            "quantiteRestant": 200
-        }
-    ]
+  "produits": [
+    {
+      "id": 1,
+      "libelle": "Frite",
+      "codeFournisseur": 1,
+      "quantiteInitiale": 100,
+      "quantiteRestant": 100,
+      "dateLimite": "21/11/2018",
+      "dateAchat": "21/09/2018",
+      "prixAchat": 0.2
+    },
+    {
+      "id": 2,
+      "libelle": "Merguez",
+      "codeFournisseur": 2,
+      "quantiteInitiale": 200,
+      "quantiteRestant": 200,
+      "dateLimite": "29/10/2018",
+      "dateAchat": "21/10/2018",
+      "prixAchat": 0.4
+    },
+    {
+      "id": 3,
+      "libelle": "Saucisse",
+      "codeFournisseur": 2,
+      "quantiteInitiale": 300,
+      "quantiteRestant": 300,
+      "dateLimite": "31/10/2018",
+      "dateAchat": "24/09/2018",
+      "prixAchat": 0.3
+    },
+    {
+      "id": 4,
+      "libelle": "Mexicanos",
+      "codeFournisseur": 4,
+      "quantiteInitiale": 100,
+      "quantiteRestant": 100,
+      "dateLimite": "31/10/2018",
+      "dateAchat": "24/09/2018",
+      "prixAchat": 0.3
+    },
+    {
+      "id": 5,
+      "libelle": "Coca",
+      "codeFournisseur": 3,
+      "quantiteInitiale": 50,
+      "quantiteRestant": 50,
+      "dateLimite": "21/09/2019",
+      "dateAchat": "21/10/2018",
+      "prixAchat": 0.5
+    },
+    {
+      "id": 6,
+      "libelle": "Fanta",
+      "codeFournisseur": 3,
+      "quantiteInitiale": 50,
+      "quantiteRestant": 50,
+      "dateLimite": "21/09/2019",
+      "dateAchat": "21/10/2018",
+      "prixAchat": 0.55
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "van@html.fr",
+      "password": "van",
+      "role": "admin",
+      "nom": "YOU",
+      "prenom": "Van",
+      "adress": "rue blabla",
+      "tel": "0102030405",
+      "dateNaissance": "12/02/1982"
+    },
+    {
+      "id": 2,
+      "email": "florent@html.fr",
+      "password": "flo",
+      "role": "employe",
+      "nom": "FARDEL",
+      "prenom": "Florent",
+      "adress": "rue du gaz",
+      "tel": "1111111111",
+      "dateNaissance": "07/07/1974"
+    },
+    {
+      "id": 3,
+      "email": "chris@html.fr",
+      "password": "Chris",
+      "role": "employe",
+      "nom": "DESHAIES",
+      "prenom": "Chris",
+      "adress": "rue du vent",
+      "tel": "rue du vent",
+      "dateNaissance": "07/12/1991"
+    }
+  ],
+  "stocks": [
+    {
+      "libelleProduit": "Mexicanos",
+      "quantiteRestant": 100
+    },
+    {
+      "libelleProduit": "Saucisse",
+      "quantiteRestant": 300
+    },
+    {
+      "libelleProduit": "Merguez",
+      "quantiteRestant": 200
+    }
+  ],
+  "commandes": [
+    {
+      "dateCommande": "Sat, 27 Oct 2018 12:12:25 GMT",
+      "listProduits": "{}",
+      "prixTotal": 9,
+      "id": 2
+    },
+    {
+      "dateCommande": "Sat, 27 Oct 2018 12:14:27 GMT",
+      "listProduits": "{}",
+      "prixTotal": 7.5,
+      "id": 3
+    }
+  ]
 }
