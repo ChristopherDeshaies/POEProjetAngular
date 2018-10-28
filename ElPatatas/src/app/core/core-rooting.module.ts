@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './users/components/login/login.component';
-import { UsersService } from './users/users.service';
+import { AdminComponent } from './users/components/admin/admin.component';
+import { RoleGuardService } from '../core/users/services/role-guard.service';
+import { AuthGuardService } from '../core/users/services/auth-guard.service';
 
 const routes :Routes = [
   {
@@ -16,9 +18,15 @@ const routes :Routes = [
   },
   {
     path: 'commandes',
-    canActivate: [UsersService],
+    canActivate: [AuthGuardService],
     loadChildren: '../commandes/commandes.module#CommandesModule'
-  }
+  },
+  {
+    path: 'admin',
+    canActivate: [RoleGuardService],
+    component: AdminComponent
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

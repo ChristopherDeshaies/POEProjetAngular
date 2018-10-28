@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsersService } from './users/users.service';
+import { AuthenticationService } from './users/services/authentication.service';
 import { RouterModule } from '@angular/router';
 import { CoreRootingModule } from './core-rooting.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -34,6 +34,6 @@ import { EmployesComponent } from '../core/users/components/employes/employes.co
     AdminComponent,
     EmployesComponent
   ],
-  providers: [UsersService],
+  providers: [AuthenticationService],
 })
 export class CoreModule { }

@@ -4,26 +4,37 @@ import { Observable } from 'rxjs';
 import { Commandes } from '../models/commandes';
 import { Router } from '@angular/router';
 
+/**
+ * url d'accès aux commandes sur le server json
+ */
 const urlCommandes = 'http://127.0.0.1:3000/commandes';
 
+/**
+ * services de gestion des commandes (CRUD)
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class CommandesService {
 
+  /**
+   * booléen de présence d'une commande sur le server json
+   */
   private isIdentifier = false;
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
+  /**
+   * observable des commandes
+   */
   getListCommandes(): Observable<Commandes[]> {
     return this.httpClient.get<Commandes[]>(urlCommandes);
   }
 
   /**
-   * Recherche d'une commande par l'id
-   *
+   * recherche d'une commande sur le server json à partir de son id
+   * @param id 
    */
-
   searchCommande(id: string): void {
     const service = this;
     const param = id ?
@@ -41,6 +52,10 @@ export class CommandesService {
     );
   }
 
+  /**
+   * Mise à jour d'une commande sur le server json
+   * @param commande 
+   */
   putCommande(commande: Commandes) {
     const url = `${urlCommandes}/${commande.getId()}`;
     this.httpClient.put(url, commande).subscribe(data => {
@@ -51,6 +66,10 @@ export class CommandesService {
     });
   }
 
+  /**
+   * ajout d'une commande sur le server json
+   * @param commande 
+   */
   postCommande(commande: Commandes) {
     this.httpClient.post(urlCommandes, commande).subscribe(data => {
       alert('enregistrement de la commande terminé.');
@@ -60,6 +79,10 @@ export class CommandesService {
     });
   }
 
+  /**
+   * suppression d'une commande sur le server json
+   * @param id 
+   */
   deletePCommande (id: number): void {
     const url = `${urlCommandes}/${id}`;
     this.httpClient.delete(url).subscribe(data => {
