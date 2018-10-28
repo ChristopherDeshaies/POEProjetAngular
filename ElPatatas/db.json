@@ -69,7 +69,7 @@
       "role": "admin",
       "nom": "YOU",
       "prenom": "Van",
-      "adress": "rue blabla",
+      "adresse": "rue blabla",
       "tel": "0102030405",
       "dateNaissance": "12/02/1982"
     },
@@ -80,7 +80,7 @@
       "role": "employe",
       "nom": "FARDEL",
       "prenom": "Florent",
-      "adress": "rue du gaz",
+      "adresse": "rue du gaz",
       "tel": "1111111111",
       "dateNaissance": "07/07/1974"
     },
@@ -91,7 +91,7 @@
       "role": "employe",
       "nom": "DESHAIES",
       "prenom": "Chris",
-      "adress": "rue du vent",
+      "adresse": "rue du vent",
       "tel": "rue du vent",
       "dateNaissance": "07/12/1991"
     }
