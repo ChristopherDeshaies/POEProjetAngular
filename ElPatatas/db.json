@@ -112,16 +112,30 @@
   ],
   "commandes": [
     {
-      "dateCommande": "Sat, 27 Oct 2018 12:12:25 GMT",
-      "listProduits": "{}",
-      "prixTotal": 9,
-      "id": 2
+      "dateCommande": "Mon, 29 Oct 2018 10:03:49 GMT",
+      "listProduits": {
+        "Moyenne": 1,
+        "pepsi": 1,
+        "steak": 1
+      },
+      "prixTotal": 7.5,
+      "id": 6
     },
     {
-      "dateCommande": "Sat, 27 Oct 2018 12:14:27 GMT",
-      "listProduits": "{}",
-      "prixTotal": 7.5,
-      "id": 3
+      "dateCommande": "Mon, 29 Oct 2018 10:07:47 GMT",
+      "listProduits": {
+        "Moyenne": 3,
+        "pepsi": 4,
+        "steak": 3,
+        "fanta": 2,
+        "Petite": 1,
+        "Grande": 1,
+        "coca": 1,
+        "fricadelle": 2,
+        "merguez": 1
+      },
+      "prixTotal": 41.5,
+      "id": 7
     }
   ]
 }

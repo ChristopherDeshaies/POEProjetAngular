@@ -3,10 +3,11 @@ export class Commandes {
     private id: number;
     private dateCommande: string;
     //private listProduits: Map<string, number>;
-    private listProduits: string;
+    //private listProduits: string;
+    private listProduits: any[];
     private prixTotal: number;
 
-    constructor(dateCommande: string, listProduits: string, prixTotal : number) {
+    constructor(dateCommande: string, listProduits: any[], prixTotal : number) {
         this.dateCommande= dateCommande;
         this.listProduits = listProduits;
         this.prixTotal = prixTotal;
@@ -28,7 +29,7 @@ export class Commandes {
         return this.listProduits;
     }
 
-    setListProduits(listProduits : string){
+    setListProduits(listProduits : any[]){
         this.listProduits= listProduits;
     }
 

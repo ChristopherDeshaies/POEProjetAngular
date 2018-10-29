@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemMenu } from '../models/itemmenu';
 import { Commandes } from '../models/commandes';
-import { CommandesService } from '../services/commandes.service'
+import { CommandesService } from '../services/commandes.service';
+import { ProduitsService } from '../../core/produits/services/produits.service';
+import { Produits } from '../../core/produits/models/produits';
 
 /**
  * gestion des commandes prises par l'employé
@@ -16,6 +18,8 @@ export class CommandesComponent implements OnInit {
   // selectedFritesIds = new Map();
   // selectedBoissonsIds = new Map();
   // selectedViandesIds = new Map();
+  produits : Produits[] = [];
+ 
 
   /**
    * liste des produits frites à afficher sur la page commande
@@ -62,7 +66,10 @@ export class CommandesComponent implements OnInit {
    */
   prixTotal :number =0;
 
-  constructor(private commandesService : CommandesService) {
+  constructor(
+    private commandesService : CommandesService,
+    private produitsService : ProduitsService
+    ) {
   
   }
 
@@ -92,38 +99,39 @@ export class CommandesComponent implements OnInit {
      * initialisation en dur des items frites à afficher sur la page de commande
      */
     this.frites = [
-      new ItemMenu(1,"Grande",0, 4),
-      new ItemMenu(1,"Moyenne",0, 2.5),
-      new ItemMenu(1,"Petite",0, 1.5)
+      new ItemMenu(1,"Frite","Grande",0, 4),
+      new ItemMenu(2,"Frite","Moyenne",0, 2.5),
+      new ItemMenu(3,"Frite","Petite",0, 1.5)
     ];
 
     /*
     * initialisation en dur des items boissons à afficher sur la page de commande
     */
     this.boissons = [
-      new ItemMenu(1,"coca",0, 1),
-      new ItemMenu(1,"pepsi",0, 1),
-      new ItemMenu(1,"fanta",0, 1)
+      new ItemMenu(1,"coca","coca",0, 1),
+      new ItemMenu(2,"coca","pepsi",0, 1),
+      new ItemMenu(3,"coca","fanta",0, 1)
     ];
 
     /*
     * initialisation en dur des items viandes à afficher sur la page de commande
     */
     this.viandes = [
-      new ItemMenu(1,"steak",0, 4),
-      new ItemMenu(1,"fricadelle",0, 3),
-      new ItemMenu(1,"merguez",0, 3.5)
+      new ItemMenu(1,"steak","steak",0, 4),
+      new ItemMenu(1,"fricadelle","fricadelle",0, 3),
+      new ItemMenu(1,"merguez","merguez",0, 3.5)
     ];
   
     /**
      * initialisation de la liste des produits commandés par le client
      */
-    this.listProduits = new Map();
+    this.listProduits = new Map<string,number>();
 
     /**
      * initialisation d'une commande
      */
     this.commande = new Commandes('',null,null);
+
   }
 
   /**
@@ -134,24 +142,24 @@ export class CommandesComponent implements OnInit {
     this.prixTotal=0;
   
     this.frites = [
-      new ItemMenu(1,"Grande",0, 4),
-      new ItemMenu(1,"Moyenne",0, 2.5),
-      new ItemMenu(1,"Petite",0, 1.5)
+      new ItemMenu(1,"Frite","Grande",0, 4),
+      new ItemMenu(2,"Frite","Moyenne",0, 2.5),
+      new ItemMenu(3,"Frite","Petite",0, 1.5)
     ];
 
     this.boissons = [
-      new ItemMenu(1,"coca",0, 1),
-      new ItemMenu(1,"pepsi",0, 1),
-      new ItemMenu(1,"fanta",0, 1)
+      new ItemMenu(1,"coca","coca",0, 1),
+      new ItemMenu(2,"coca","pepsi",0, 1),
+      new ItemMenu(3,"coca","fanta",0, 1)
     ];
 
     this.viandes = [
-      new ItemMenu(1,"steak",0, 4),
-      new ItemMenu(1,"fricadelle",0, 3),
-      new ItemMenu(1,"merguez",0, 3.5)
+      new ItemMenu(1,"steak","steak",0, 4),
+      new ItemMenu(1,"fricadelle","fricadelle",0, 3),
+      new ItemMenu(1,"merguez","merguez",0, 3.5)
     ];
 
-    this.listProduits = new Map();
+    this.listProduits = new Map<string,number>();
     this.commande = new Commandes('',null,null);
 
   }
@@ -200,22 +208,30 @@ export class CommandesComponent implements OnInit {
    */
   encaisser(){
     if (this.prixTotal != 0){
-
       this.date = new Date().toUTCString();
-      this.commande = new Commandes(this.date,JSON.stringify(this.strMapToTab(this.listProduits)),this.prixTotal);
+      //this.commande = new Commandes(this.date,JSON.stringify(this.strMapToTab(this.listProduits)),this.prixTotal);
+      //this.commande = new Commandes(this.date,[{boisson : "coca", frites : "grande"}],this.prixTotal);
+      this.commande = new Commandes(this.date,this.strMapToObj2(this.listProduits),this.prixTotal);
       this.commandes.push(this.commande);
       this.commandesService.postCommande(this.commande);
+
       this.reinitialiser();
 
     }
   }
 
-  strMapToTab(strMap) {
-    let obj = Object.create(null);
-    for (let [k,v] of strMap) {
-        obj[k] = obj[v];
-    }
-    return obj;
-}
+ /**
+  * Transforme la liste des produits commandés par le client en objet 
+  * car on ne peut insérer directement une map sur le server json
+  * @param strMap 
+  */ 
+ strMapToObj2(strMap : Map<string, number>) {
+  let obj = Object.create(null);
+  for (let [k,v] of strMap) {
+      obj[k] = v;
+  }
+
+  return obj;
+  }
 
 }

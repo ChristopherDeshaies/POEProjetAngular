@@ -1,13 +1,15 @@
 export class ItemMenu {
     
     private id: number;
+    private libelle : string;
     private nom: string;
     private quantite: number;
     private prix: number;
 
-    constructor(id: number, nom: string, quantite: number, prix : number) {
+    constructor(id: number, libelle: string, nom: string, quantite: number, prix : number) {
         this.id = id;
         this.nom= nom;
+        this.libelle = libelle;
         this.quantite = quantite;
         this.prix = prix;
     }
@@ -18,6 +20,14 @@ export class ItemMenu {
 
     setNom(nom : string){
         this.nom = nom;
+    }
+
+    getLibelle(){
+        return this.libelle;
+    }
+
+    setLibelle(libelle : string){
+        this.libelle = libelle;
     }
 
     getQuantite(){

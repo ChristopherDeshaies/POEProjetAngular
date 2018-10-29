@@ -3,7 +3,7 @@ export class Produits {
     libelle: string;
     codeFournisseur: number;
     quantiteInitiale: number;
-    quantiteRestant: number;
+    quantiteRestante: number;
     dateLimite: string;
 
     dateAchat: string;

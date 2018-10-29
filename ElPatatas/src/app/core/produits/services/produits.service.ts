@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Produits } from '../models/produits';
 import { Router } from '@angular/router';
 import { AlertPromise } from 'selenium-webdriver';
+import { map } from 'rxjs/operators';
 
 
 const urlProduit = 'http://127.0.0.1:3000/produits';
@@ -47,6 +48,7 @@ export class ProduitsService {
       },
     );
   }
+
   putProduit(produit: Produits) {
     const url = `${urlProduit}/${produit.id}`;
     this.httpClient.put(url, produit).subscribe(data => {
@@ -56,6 +58,7 @@ export class ProduitsService {
       alert('Erreur lors de la mise à jour !!!');
     });
   }
+
   postProduit(produit: Produits) {
     this.httpClient.post(urlProduit, produit).subscribe(data => {
       alert('Creation du produit terminer.');
@@ -70,7 +73,16 @@ export class ProduitsService {
       alert('Echec de la suppression !!!');
     });
   }
-  canActivate(): boolean {
-    return this.isIdentifier;
+
+  miseAJourQuantiteProduit(libelle : string ) : Observable<Produits[]>{
+    //for (let [k,v] of listProduits) {
+      return this.getListProduits()
+      .pipe(map(produits => produits.filter(produit => produit.libelle.includes(libelle))));
+      
+    //}
   }
+
+  // canActivate(): boolean {
+  //   return this.isIdentifier;
+  // }
 }
