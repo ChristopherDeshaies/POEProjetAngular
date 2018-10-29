@@ -6,6 +6,7 @@ import { CoreModule } from './core/core-module.module';
 import { PlanningComponent } from './planning/components/planning.component';
 import { ComptabiliteComponent } from './comptabilite/components/comptabilite.component';
 import { GestionstocksComponent } from './gestionstocks/components/gestionstocks/gestionstocks.component';
+import { HeaderComponent } from './core/header/components/header.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { GestionstocksComponent } from './gestionstocks/components/gestionstocks
     AppComponent,
     PlanningComponent,
     ComptabiliteComponent,
-    GestionstocksComponent
+    GestionstocksComponent,
+    HeaderComponent
   ],
   imports: [
     CoreModule,
