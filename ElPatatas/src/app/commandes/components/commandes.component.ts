@@ -227,7 +227,7 @@ export class CommandesComponent implements OnInit {
   */ 
  strMapToObj2(strMap : Map<string, number>) {
   let obj = Object.create(null);
-  for (let [k,v] of strMap) {
+  for (let [k, v] of strMap) {
       obj[k] = v;
   }
 

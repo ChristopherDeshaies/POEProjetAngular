@@ -74,12 +74,12 @@ export class ProduitsService {
     });
   }
 
-  miseAJourQuantiteProduit(libelle : string ) : Observable<Produits[]>{
-    //for (let [k,v] of listProduits) {
+  miseAJourQuantiteProduit(libelle: string ): Observable<Produits[]> {
+    /* for (let [k,v] of listProduits) { */
       return this.getListProduits()
       .pipe(map(produits => produits.filter(produit => produit.libelle.includes(libelle))));
-      
-    //}
+
+/* } */
   }
 
   // canActivate(): boolean {
