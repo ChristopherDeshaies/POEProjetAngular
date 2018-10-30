@@ -61,6 +61,7 @@ export class GestionstocksComponent implements OnInit {
    */
   ngOnInit() {
     this.refresh();
+    this.initHiddenCategorie();
   }
 
   /**
