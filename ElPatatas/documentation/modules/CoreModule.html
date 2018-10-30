@@ -8,210 +8,546 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">el-patatas documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">el-patatas documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/CommandesModule.html" >CommandesModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ComptabiliteModule.html" >ComptabiliteModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/CoreModule.html"  class="active" >CoreModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/CoreRootingModule.html" >CoreRootingModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/GestionstocksModule.html" >GestionstocksModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/PlanningModule.html" >PlanningModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ProduitsModule.html" >ProduitsModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/UsersModule.html" >UsersModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AdminComponent.html" >AdminComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CommandesComponent.html" >CommandesComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EmployesComponent.html" >EmployesComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/GestionstocksComponent.html" >GestionstocksComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PlanningComponent.html" >PlanningComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProduitsComponent.html" >ProduitsComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/Commandes.html" >Commandes</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/ItemMenu.html" >ItemMenu</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Planning.html" >Planning</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Produits.html" >Produits</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/User.html" >User</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/ApiService.html" >ApiService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthGuardService.html" >AuthGuardService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/CommandesService.html" >CommandesService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ProduitsService.html" >ProduitsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/StocksService.html" >StocksService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UsersService.html" >UsersService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/UniquePipe.html" >UniquePipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">el-patatas documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/CommandesModule.html" >CommandesModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ComptabiliteModule.html" >ComptabiliteModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/CoreModule.html"  class="active" >CoreModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/CoreRootingModule.html" >CoreRootingModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/GestionstocksModule.html" >GestionstocksModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/PlanningModule.html" >PlanningModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ProduitsModule.html" >ProduitsModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/UsersModule.html" >UsersModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AdminComponent.html" >AdminComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CommandesComponent.html" >CommandesComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EmployesComponent.html" >EmployesComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/GestionstocksComponent.html" >GestionstocksComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PlanningComponent.html" >PlanningComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProduitsComponent.html" >ProduitsComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/Commandes.html" >Commandes</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/ItemMenu.html" >ItemMenu</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Planning.html" >Planning</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Produits.html" >Produits</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/User.html" >User</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/ApiService.html" >ApiService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthGuardService.html" >AuthGuardService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/CommandesService.html" >CommandesService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ProduitsService.html" >ProduitsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/StocksService.html" >StocksService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UsersService.html" >UsersService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/UniquePipe.html" >UniquePipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content module">
                    <div class="content-data">
-
-
 
 <ol class="breadcrumb">
   <li>Modules</li>
   <li>CoreModule</li>
 </ol>
 
-      <div class="text-center module-graph-container">
-          <div id="module-graph-svg">
-              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
- -->
-<!-- Title: dependencies Pages: 1 -->
-<svg width="838pt" height="284pt"
- viewBox="0.00 0.00 838.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
-<title>dependencies</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 834,-280 834,4 -4,4"/>
-<text text-anchor="start" x="394.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
-<polygon fill="#ffffb3" stroke="transparent" points="181,-10 181,-30 201,-30 201,-10 181,-10"/>
-<text text-anchor="start" x="204.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
-<polygon fill="#8dd3c7" stroke="transparent" points="294,-10 294,-30 314,-30 314,-10 294,-10"/>
-<text text-anchor="start" x="317.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
-<polygon fill="#80b1d3" stroke="transparent" points="380,-10 380,-30 400,-30 400,-10 380,-10"/>
-<text text-anchor="start" x="403.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
-<polygon fill="#fdb462" stroke="transparent" points="477,-10 477,-30 497,-30 497,-10 477,-10"/>
-<text text-anchor="start" x="500.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
-<polygon fill="#fb8072" stroke="transparent" points="573,-10 573,-30 593,-30 593,-10 573,-10"/>
-<text text-anchor="start" x="596.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
-<g id="clust1" class="cluster">
-<title>cluster_CoreModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-268 822,-268 822,-70 8,-70"/>
-</g>
-<g id="clust2" class="cluster">
-<title>cluster_CoreModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="390,-78 390,-130 814,-130 814,-78 390,-78"/>
-</g>
-<g id="clust6" class="cluster">
-<title>cluster_CoreModule_imports</title>
-<polygon fill="none" stroke="#000000" points="234,-78 234,-130 382,-130 382,-78 234,-78"/>
-</g>
-<g id="clust7" class="cluster">
-<title>cluster_CoreModule_exports</title>
-<polygon fill="none" stroke="#000000" points="240,-208 240,-260 675,-260 675,-208 240,-208"/>
-</g>
-<g id="clust9" class="cluster">
-<title>cluster_CoreModule_providers</title>
-<polygon fill="none" stroke="#000000" points="16,-78 16,-130 226,-130 226,-78 16,-78"/>
-</g>
-<!-- AdminComponent -->
-<g id="node1" class="node">
-<title>AdminComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="806.2204,-122 685.7796,-122 685.7796,-86 806.2204,-86 806.2204,-122"/>
-<text text-anchor="middle" x="746" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AdminComponent</text>
-</g>
-<!-- CoreModule -->
-<g id="node4" class="node">
-<title>CoreModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="498.2619,-187 495.2619,-191 474.2619,-191 471.2619,-187 411.7381,-187 411.7381,-151 498.2619,-151 498.2619,-187"/>
-<text text-anchor="middle" x="455" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">CoreModule</text>
-</g>
-<!-- AdminComponent&#45;&gt;CoreModule -->
-<g id="edge1" class="edge">
-<title>AdminComponent&#45;&gt;CoreModule</title>
-<path fill="none" stroke="#000000" d="M746,-122.1061C746,-141.3391 746,-169 746,-169 746,-169 508.5656,-169 508.5656,-169"/>
-<polygon fill="#000000" stroke="#000000" points="508.5657,-165.5001 498.5656,-169 508.5656,-172.5001 508.5657,-165.5001"/>
-</g>
-<!-- EmployesComponent -->
-<g id="node2" class="node">
-<title>EmployesComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="667.8258,-122 530.1742,-122 530.1742,-86 667.8258,-86 667.8258,-122"/>
-<text text-anchor="middle" x="599" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">EmployesComponent</text>
-</g>
-<!-- EmployesComponent&#45;&gt;CoreModule -->
-<g id="edge2" class="edge">
-<title>EmployesComponent&#45;&gt;CoreModule</title>
-<path fill="none" stroke="#000000" d="M536.7386,-122.027C536.7386,-138.3976 536.7386,-160 536.7386,-160 536.7386,-160 508.2628,-160 508.2628,-160"/>
-<polygon fill="#000000" stroke="#000000" points="508.2628,-156.5001 498.2628,-160 508.2627,-163.5001 508.2628,-156.5001"/>
-</g>
-<!-- LoginComponent -->
-<g id="node3" class="node">
-<title>LoginComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="512.2758,-122 397.7242,-122 397.7242,-86 512.2758,-86 512.2758,-122"/>
-<text text-anchor="middle" x="455" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">LoginComponent</text>
-</g>
-<!-- LoginComponent&#45;&gt;CoreModule -->
-<g id="edge3" class="edge">
-<title>LoginComponent&#45;&gt;CoreModule</title>
-<path fill="none" stroke="#000000" d="M455,-122.1061C455,-122.1061 455,-140.991 455,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="451.5001,-140.9909 455,-150.991 458.5001,-140.991 451.5001,-140.9909"/>
-</g>
-<!-- AdminComponent  -->
-<g id="node6" class="node">
-<title>AdminComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="666.7205,-252 543.2795,-252 543.2795,-216 666.7205,-216 666.7205,-252"/>
-<text text-anchor="middle" x="605" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">AdminComponent </text>
-</g>
-<!-- CoreModule&#45;&gt;AdminComponent  -->
-<g id="edge5" class="edge">
-<title>CoreModule&#45;&gt;AdminComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M498.3862,-178C542.6869,-178 605,-178 605,-178 605,-178 605,-205.973 605,-205.973"/>
-<polygon fill="#000000" stroke="#000000" points="601.5001,-205.973 605,-215.973 608.5001,-205.973 601.5001,-205.973"/>
-</g>
-<!-- EmployesComponent  -->
-<g id="node7" class="node">
-<title>EmployesComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="525.3255,-252 384.6745,-252 384.6745,-216 525.3255,-216 525.3255,-252"/>
-<text text-anchor="middle" x="455" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">EmployesComponent </text>
-</g>
-<!-- CoreModule&#45;&gt;EmployesComponent  -->
-<g id="edge6" class="edge">
-<title>CoreModule&#45;&gt;EmployesComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M455,-187.1061C455,-187.1061 455,-205.991 455,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="451.5001,-205.9909 455,-215.991 458.5001,-205.991 451.5001,-205.9909"/>
-</g>
-<!-- LoginComponent  -->
-<g id="node8" class="node">
-<title>LoginComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="366.2759,-252 247.7241,-252 247.7241,-216 366.2759,-216 366.2759,-252"/>
-<text text-anchor="middle" x="307" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">LoginComponent </text>
-</g>
-<!-- CoreModule&#45;&gt;LoginComponent  -->
-<g id="edge7" class="edge">
-<title>CoreModule&#45;&gt;LoginComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M411.3956,-178C367.7393,-178 307,-178 307,-178 307,-178 307,-205.973 307,-205.973"/>
-<polygon fill="#000000" stroke="#000000" points="303.5001,-205.973 307,-215.973 310.5001,-205.973 303.5001,-205.973"/>
-</g>
-<!-- CoreRootingModule -->
-<g id="node5" class="node">
-<title>CoreRootingModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="373.8795,-122 370.8795,-126 349.8795,-126 346.8795,-122 242.1205,-122 242.1205,-86 373.8795,-86 373.8795,-122"/>
-<text text-anchor="middle" x="308" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CoreRootingModule</text>
-</g>
-<!-- CoreRootingModule&#45;&gt;CoreModule -->
-<g id="edge4" class="edge">
-<title>CoreRootingModule&#45;&gt;CoreModule</title>
-<path fill="none" stroke="#000000" d="M370.0388,-122.027C370.0388,-138.3976 370.0388,-160 370.0388,-160 370.0388,-160 401.5238,-160 401.5238,-160"/>
-<polygon fill="#000000" stroke="#000000" points="401.5239,-163.5001 411.5238,-160 401.5238,-156.5001 401.5239,-163.5001"/>
-</g>
-<!-- AuthenticationService -->
-<g id="node9" class="node">
-<title>AuthenticationService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="121" cy="-104" rx="97.2683" ry="18"/>
-<text text-anchor="middle" x="121" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AuthenticationService</text>
-</g>
-<!-- AuthenticationService&#45;&gt;CoreModule -->
-<g id="edge8" class="edge">
-<title>AuthenticationService&#45;&gt;CoreModule</title>
-<path fill="none" stroke="#000000" d="M121,-122.1061C121,-141.3391 121,-169 121,-169 121,-169 401.6777,-169 401.6777,-169"/>
-<polygon fill="#000000" stroke="#000000" points="401.6778,-172.5001 411.6777,-169 401.6777,-165.5001 401.6778,-172.5001"/>
-</g>
-</g>
-</svg>
-
-          </div>
-          <i id="fullscreen" class="icon ion-ios-resize module-graph-fullscreen-btn" aria-hidden="true"></i>
-          <div class="btn-group">
-              <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
-              <button id="reset" class="btn btn-default btn-sm">Reset</button>
-              <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
-          </div>
-      </div>
-      <script src="../js/libs/svg-pan-zoom.min.js"></script>
-      <script src="../js/svg-pan-zoom.controls.js"></script>
+<div class="text-center">
+    <object id="demo-svg" type="image/svg+xml" data="../modules/CoreModule/dependencies.svg" style="width: 100%; height: 250px;">
+            Your browser does not support SVG
+    </object>
+    <div class="btn-group">
+        <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
+        <button id="reset" class="btn btn-default btn-sm">Reset</button>
+        <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
+    </div>
+</div>
+<script src="../js/libs/svg-pan-zoom.min.js"></script>
+<script src="../js/svg-pan-zoom.controls.js"></script>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+    </li>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+    </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
+    <div class="tab-pane fade active in" id="infos">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -220,34 +556,32 @@
         </p>
 
 
-        
-
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank" title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
+                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
                     <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="../components/LoginComponent.html">LoginComponent</a>
+                            </li>
                             <li class="list-group-item">
                                 <a href="../components/AdminComponent.html">AdminComponent</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="../components/EmployesComponent.html">EmployesComponent</a>
                             </li>
-                            <li class="list-group-item">
-                                <a href="../components/LoginComponent.html">LoginComponent</a>
-                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank" title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Providers<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#providers-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
                             <li class="list-group-item">
-                                     <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
+                                <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
                             </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Imports<a href="https://angular.io/api/core/NgModule#imports" target="_blank" title="Official documentation about module imports"><span class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Imports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#imports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
                             <li class="list-group-item">
                                     <a href="../modules/CoreRootingModule.html" >CoreRootingModule</a>
@@ -255,26 +589,24 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Exports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#exports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                            </li>
                             <li class="list-group-item">
                                     <a href="../components/AdminComponent.html" >AdminComponent</a>
                             </li>
                             <li class="list-group-item">
                                     <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                             </li>
-                            <li class="list-group-item">
-                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
-                            </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { AuthenticationService } from &#x27;./users/services/authentication.service&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
@@ -287,7 +619,6 @@ import { LoginComponent } from &#x27;../core/users/components/login/login.compon
 import { AdminComponent } from &#x27;../core/users/components/admin/admin.component&#x27;;
 import { EmployesComponent } from &#x27;../core/users/components/employes/employes.component&#x27;;
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -296,19 +627,18 @@ import { EmployesComponent } from &#x27;../core/users/components/employes/employ
     HttpClientModule,
     FormsModule,
     HttpModule,
-
   ],
   exports : [
     LoginComponent,
     RouterModule,
     AdminComponent,
     EmployesComponent,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     LoginComponent,
     AdminComponent,
-    EmployesComponent
+    EmployesComponent,
   ],
   providers: [AuthenticationService],
 })
@@ -326,14 +656,9 @@ export class CoreModule { }
 
 
 
-
-
-
-
-
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -341,19 +666,8 @@ export class CoreModule { }
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'CoreModule.html';
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -364,17 +678,20 @@ export class CoreModule { }
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>

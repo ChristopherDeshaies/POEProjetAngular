@@ -8,32 +8,516 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">el-patatas documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">el-patatas documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/CommandesModule.html" >CommandesModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ComptabiliteModule.html" >ComptabiliteModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/CoreModule.html" >CoreModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/CoreRootingModule.html" >CoreRootingModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/GestionstocksModule.html" >GestionstocksModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/PlanningModule.html" >PlanningModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ProduitsModule.html" >ProduitsModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/UsersModule.html" >UsersModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AdminComponent.html" >AdminComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CommandesComponent.html"  class="active" >CommandesComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EmployesComponent.html" >EmployesComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/GestionstocksComponent.html" >GestionstocksComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PlanningComponent.html" >PlanningComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProduitsComponent.html" >ProduitsComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/Commandes.html" >Commandes</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/ItemMenu.html" >ItemMenu</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Planning.html" >Planning</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Produits.html" >Produits</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/User.html" >User</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/ApiService.html" >ApiService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthGuardService.html" >AuthGuardService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/CommandesService.html" >CommandesService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ProduitsService.html" >ProduitsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/StocksService.html" >StocksService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UsersService.html" >UsersService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/UniquePipe.html" >UniquePipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">el-patatas documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/CommandesModule.html" >CommandesModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ComptabiliteModule.html" >ComptabiliteModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/CoreModule.html" >CoreModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/CoreRootingModule.html" >CoreRootingModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/GestionstocksModule.html" >GestionstocksModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/PlanningModule.html" >PlanningModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ProduitsModule.html" >ProduitsModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/UsersModule.html" >UsersModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AdminComponent.html" >AdminComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CommandesComponent.html"  class="active" >CommandesComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EmployesComponent.html" >EmployesComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/GestionstocksComponent.html" >GestionstocksComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PlanningComponent.html" >PlanningComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProduitsComponent.html" >ProduitsComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/Commandes.html" >Commandes</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/ItemMenu.html" >ItemMenu</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Planning.html" >Planning</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Produits.html" >Produits</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/User.html" >User</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/ApiService.html" >ApiService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthGuardService.html" >AuthGuardService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthenticationService.html" >AuthenticationService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/CommandesService.html" >CommandesService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ProduitsService.html" >ProduitsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/StocksService.html" >StocksService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UsersService.html" >UsersService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/UniquePipe.html" >UniquePipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content component">
                    <div class="content-data">
-
-
 
 
 <ol class="breadcrumb">
@@ -41,23 +525,18 @@
   <li>CommandesComponent</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
-</ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -73,18 +552,11 @@
     </p>
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
 <section>
     <h3>Metadata</h3>
     <table class="table table-sm table-hover">
         <tbody>
+
 
 
 
@@ -110,7 +582,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./commandes.component.html</code></td>
+                <td class="col-md-9"><code>commandes.component.html</code></td>
             </tr>
 
 
@@ -118,958 +590,534 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#boissons">boissons</a>
-                            </li>
-                            <li>
-                                <a href="#commande">commande</a>
-                            </li>
-                            <li>
-                                <a href="#commandes">commandes</a>
-                            </li>
-                            <li>
-                                <a href="#date">date</a>
-                            </li>
-                            <li>
-                                <a href="#frites">frites</a>
-                            </li>
-                            <li>
-                                <a href="#listProduits">listProduits</a>
-                            </li>
-                            <li>
-                                <a href="#prixTotal">prixTotal</a>
-                            </li>
-                            <li>
-                                <a href="#viandes">viandes</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ajout">ajout</a>
-                            </li>
-                            <li>
-                                <a href="#ajouterPrix">ajouterPrix</a>
-                            </li>
-                            <li>
-                                <a href="#encaisser">encaisser</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#reinitialiser">reinitialiser</a>
-                            </li>
-                            <li>
-                                <a href="#retirer">retirer</a>
-                            </li>
-                            <li>
-                                <a href="#retirerPrix">retirerPrix</a>
-                            </li>
-                            <li>
-                                <a href="#strMapToTab">strMapToTab</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(commandesService: <a href="../injectables/CommandesService.html">CommandesService</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/commandes/components/commandes.component.ts:63</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>commandesService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../injectables/CommandesService.html" target="_self" >CommandesService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
 
 
     <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(commandesService: <a href="../injectables/CommandesService.html" >CommandesService</a>, produitsService: <a href="../injectables/ProduitsService.html" >ProduitsService</a>)</code>
+                        </td>
+                    </tr>
     
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ajout"></a>
-                        <span class="name">
-                            <b>
-                            ajout
-                            </b>
-                            <a href="#ajout"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>ajout(produit: <a href="../classes/ItemMenu.html">ItemMenu</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/app/commandes/components/commandes.component.ts:163</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>ajoute un produit dans la liste des produits commandés par le client</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>produit</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ajouterPrix"></a>
-                        <span class="name">
-                            <b>
-                            ajouterPrix
-                            </b>
-                            <a href="#ajouterPrix"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>ajouterPrix(produit: <a href="../classes/ItemMenu.html">ItemMenu</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="185" class="link-to-prism">src/app/commandes/components/commandes.component.ts:185</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>ajoute au total le prix du produit commandé</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>produit</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="encaisser"></a>
-                        <span class="name">
-                            <b>
-                            encaisser
-                            </b>
-                            <a href="#encaisser"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>encaisser()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="201" class="link-to-prism">src/app/commandes/components/commandes.component.ts:201</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>valide la commande qui est ensuite enregistrée sur le server json
-transformation de  la map en objet json à finir</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ngOnInit"></a>
-                        <span class="name">
-                            <b>
-                            ngOnInit
-                            </b>
-                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>ngOnInit()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/commandes/components/commandes.component.ts:69</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="reinitialiser"></a>
-                        <span class="name">
-                            <b>
-                            reinitialiser
-                            </b>
-                            <a href="#reinitialiser"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>reinitialiser()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/app/commandes/components/commandes.component.ts:132</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>réinitialise les variables en cas d&#39;annulation de la commande</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="retirer"></a>
-                        <span class="name">
-                            <b>
-                            retirer
-                            </b>
-                            <a href="#retirer"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>retirer(produit: <a href="../classes/ItemMenu.html">ItemMenu</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">src/app/commandes/components/commandes.component.ts:173</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>retire un produit dans la liste des produits commandés par le client</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>produit</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="retirerPrix"></a>
-                        <span class="name">
-                            <b>
-                            retirerPrix
-                            </b>
-                            <a href="#retirerPrix"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>retirerPrix(produit: <a href="../classes/ItemMenu.html">ItemMenu</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">src/app/commandes/components/commandes.component.ts:193</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>retire au total le prix du produit annulé par le client</p>
-</div>
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>produit</td>
-                                                        <td>
-                                                                    <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="strMapToTab"></a>
-                        <span class="name">
-                            <b>
-                            strMapToTab
-                            </b>
-                            <a href="#strMapToTab"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>strMapToTab(strMap: )</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="213" class="link-to-prism">src/app/commandes/components/commandes.component.ts:213</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>strMap</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
+                </tbody>
+            </table>
+    </section>
 
     <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> reinitialiser</b>
+                        </td>
+                    </tr>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="boissons"></a>
-                        <span class="name">
-                            <b>
-                            boissons
-                            </b>
-                            <a href="#boissons"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>boissons:     <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
+    <code>reinitialiser()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>réinitialise les variables en cas d&#39;annulation de la commande</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ajout</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>ajout(produit: <a href="../classes/ItemMenu.html" >ItemMenu</a>)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>ajoute un produit dans la liste des produits commandés par le client</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>produit</b>
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> retirer</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>retirer(produit: <a href="../classes/ItemMenu.html" >ItemMenu</a>)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>retire un produit dans la liste des produits commandés par le client</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>produit</b>
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ajouterPrix</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>ajouterPrix(produit: <a href="../classes/ItemMenu.html" >ItemMenu</a>)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>ajoute au total le prix du produit commandé</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>produit</b>
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> retirerPrix</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>retirerPrix(produit: <a href="../classes/ItemMenu.html" >ItemMenu</a>)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>retire au total le prix du produit annulé par le client</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>produit</b>
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> encaisser</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>encaisser()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>valide la commande qui est ensuite enregistrée sur le server json<br>transformation de  la map en objet json à finir</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> strMapToObj2</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>strMapToObj2(strMap: Map<string, number>)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Transforme la liste des produits commandés par le client en objet<br>car on ne peut insérer directement une map sur le server json</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>strMap</b>
+                                                    </div>
+                                                    <div>
+                                                        
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> rechercheTypeProduit</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>rechercheTypeProduit(libelle: string)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> boissons</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>boissons:     <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>liste des boissons à afficher sur la page commande</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> commande</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>commande:     <code><a href="../classes/Commandes.html" target="_self" >Commandes</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>variable de la commande en cours</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> commandes</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>commandes:     <code><a href="../classes/Commandes.html" target="_self" >Commandes[]</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>liste des commandes prises par l&#39;employées , à intégrer dans un composent liste des commandes</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> date</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>date:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>date de prise de la commande du client au format UTC</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> frites</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>frites:     <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>liste des produits frites à afficher sur la page commande</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> listProduits</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>listProduits:     <code>Map&lt;string, number&gt;</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>liste des produits commandés par le client</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> prixTotal</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>prixTotal:     <code>number</code>
+    </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/commandes/components/commandes.component.ts:28</a></div>
+                                <i>Default value: </i><code>0</code>
                             </td>
                         </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>liste des boissons à afficher sur la page commande</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="commande"></a>
-                        <span class="name">
-                            <b>
-                            commande
-                            </b>
-                            <a href="#commande"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>commande:     <code><a href="../classes/Commandes.html" target="_self" >Commandes</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Commandes.html" target="_self" >Commandes</a></code>
-
+                            <div class="io-description"><p>Prix total de la commande</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> produits</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>produits:     <code><a href="../classes/Produits.html" target="_self" >Observable&lt;Produits[]&gt;</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> totalquantiteRestante</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>totalquantiteRestante:     <code>number</code>
+    </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/commandes/components/commandes.component.ts:38</a></div>
+                                <i>Default value: </i><code>0</code>
                             </td>
                         </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>variable de la commande en cours</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="commandes"></a>
-                        <span class="name">
-                            <b>
-                            commandes
-                            </b>
-                            <a href="#commandes"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>commandes:     <code><a href="../classes/Commandes.html" target="_self" >Array&lt;Commandes&gt;</a></code>
-</code>
-                    </td>
-                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/Commandes.html" target="_self" >Array&lt;Commandes&gt;</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/commandes/components/commandes.component.ts:48</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>liste des commandes prises par l&#39;employées , à intégrer dans un composent liste des commandes</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="date"></a>
-                        <span class="name">
-                            <b>
-                            date
-                            </b>
-                            <a href="#date"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>date:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/commandes/components/commandes.component.ts:53</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>date de prise de la commande du client au format UTC</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="frites"></a>
-                        <span class="name">
-                            <b>
-                            frites
-                            </b>
-                            <a href="#frites"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>frites:     <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/commandes/components/commandes.component.ts:23</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>liste des produits frites à afficher sur la page commande</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="listProduits"></a>
-                        <span class="name">
-                            <b>
-                            listProduits
-                            </b>
-                            <a href="#listProduits"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>listProduits:     <code>Map&lt;string | number&gt;</code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code>Map&lt;string | number&gt;</code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/commandes/components/commandes.component.ts:43</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>liste des produits commandés par le client</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="prixTotal"></a>
-                        <span class="name">
-                            <b>
-                            prixTotal
-                            </b>
-                            <a href="#prixTotal"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>prixTotal:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
+                            <b> viandes</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>0</code>
+                            <code>viandes:     <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
+    </bcode>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/commandes/components/commandes.component.ts:63</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Prix total de la commande</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="viandes"></a>
-                        <span class="name">
-                            <b>
-                            viandes
-                            </b>
-                            <a href="#viandes"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>viandes:     <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
-</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="../classes/ItemMenu.html" target="_self" >ItemMenu[]</a></code>
-
+                            <div class="io-description"><p>liste des viandes à afficher sur la page commande</p>
+    </div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/commandes/components/commandes.component.ts:33</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>liste des viandes à afficher sur la page commande</p>
+                </tbody>
+            </table>
+    </section>
 </div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-</section>
-
-</div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ItemMenu } from &#x27;../models/itemmenu&#x27;;
 import { Commandes } from &#x27;../models/commandes&#x27;;
-import { CommandesService } from &#x27;../services/commandes.service&#x27;
+import { CommandesService } from &#x27;../services/commandes.service&#x27;;
+import { ProduitsService } from &#x27;../../core/produits/services/produits.service&#x27;;
+import { Produits } from &#x27;../../core/produits/models/produits&#x27;;
+import { map, finalize, filter, reduce  } from &#x27;rxjs/operators&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { forEach } from &#x27;@angular/router/src/utils/collection&#x27;;
 
 /**
  * gestion des commandes prises par l&#x27;employé
@@ -1084,26 +1132,29 @@ export class CommandesComponent implements OnInit {
   // selectedFritesIds &#x3D; new Map();
   // selectedBoissonsIds &#x3D; new Map();
   // selectedViandesIds &#x3D; new Map();
+  //produits : Produits[] &#x3D; [];
+  produits : Observable&lt;Produits[]&gt;;
+  totalquantiteRestante : number &#x3D; 0;
 
   /**
    * liste des produits frites à afficher sur la page commande
    */
-  frites : ItemMenu[] ;
+  frites: ItemMenu[] ;
 
   /**
    * liste des boissons à afficher sur la page commande
    */
-  boissons : ItemMenu[];
+  boissons: ItemMenu[];
 
   /**
    * liste des viandes à afficher sur la page commande
    */
-  viandes : ItemMenu[] ;
+  viandes: ItemMenu[] ;
 
   /**
    * variable de la commande en cours
    */
-  commande : Commandes;
+  commande: Commandes;
 
   /**
    * liste des produits commandés par le client
@@ -1113,12 +1164,12 @@ export class CommandesComponent implements OnInit {
   /**
    * liste des commandes prises par l&#x27;employées , à intégrer dans un composent liste des commandes
    */
-  commandes : Array&lt;Commandes&gt;;
+  commandes: Array&lt;Commandes&gt;;
 
   /**
    * date de prise de la commande du client au format UTC
    */
-  date : string;
+  date: string;
 
   /* à implémenter plus tard */
   // prixFrites :number &#x3D;0;
@@ -1128,10 +1179,13 @@ export class CommandesComponent implements OnInit {
   /**
    * Prix total de la commande
    */
-  prixTotal :number &#x3D;0;
+  prixTotal: number &#x3D; 0;
 
-  constructor(private commandesService : CommandesService) {
-  
+  constructor(
+    private commandesService: CommandesService,
+    private produitsService: ProduitsService
+    ) {
+
   }
 
   ngOnInit() {
@@ -1140,7 +1194,7 @@ export class CommandesComponent implements OnInit {
     this.boissons &#x3D; [];
     this.viandes &#x3D; [];
     this.commandes &#x3D; new Array&lt;Commandes&gt;();
-    
+
     // this.selectedFritesIds
     // .set(&quot;Grande Frite&quot;, 0)
     // .set(&quot;Moyenne Frite&quot;, 0)
@@ -1154,93 +1208,94 @@ export class CommandesComponent implements OnInit {
     // this.selectedViandesIds
     // .set(&quot;Steack&quot;, 0)
     // .set(&quot;Fricadelle&quot;, 0)
-    // .set(&quot;Brochette&quot;, 0); 
+    // .set(&quot;Brochette&quot;, 0);
 
     /**
      * initialisation en dur des items frites à afficher sur la page de commande
      */
     this.frites &#x3D; [
-      new ItemMenu(1,&quot;Grande&quot;,0, 4),
-      new ItemMenu(1,&quot;Moyenne&quot;,0, 2.5),
-      new ItemMenu(1,&quot;Petite&quot;,0, 1.5)
+      new ItemMenu(1, &#x27;Frite&#x27;, &#x27;Grande&#x27;, 0, 4),
+      new ItemMenu(2, &#x27;Frite&#x27;, &#x27;Moyenne&#x27;, 0, 2.5),
+      new ItemMenu(3, &#x27;Frite&#x27;, &#x27;Petite&#x27;, 0, 1.5)
     ];
 
     /*
     * initialisation en dur des items boissons à afficher sur la page de commande
     */
     this.boissons &#x3D; [
-      new ItemMenu(1,&quot;coca&quot;,0, 1),
-      new ItemMenu(1,&quot;pepsi&quot;,0, 1),
-      new ItemMenu(1,&quot;fanta&quot;,0, 1)
+      new ItemMenu(1, &#x27;coca&#x27;, &#x27;coca&#x27;, 0, 1),
+      new ItemMenu(2, &#x27;coca&#x27;, &#x27;pepsi&#x27;, 0, 1),
+      new ItemMenu(3, &#x27;coca&#x27;, &#x27;fanta&#x27;, 0, 1)
     ];
 
     /*
     * initialisation en dur des items viandes à afficher sur la page de commande
     */
     this.viandes &#x3D; [
-      new ItemMenu(1,&quot;steak&quot;,0, 4),
-      new ItemMenu(1,&quot;fricadelle&quot;,0, 3),
-      new ItemMenu(1,&quot;merguez&quot;,0, 3.5)
+      new ItemMenu(1, &#x27;steak&#x27;, &#x27;steak&#x27;, 0, 4),
+      new ItemMenu(1, &#x27;fricadelle&#x27;, &#x27;fricadelle&#x27;, 0, 3),
+      new ItemMenu(1, &#x27;merguez&#x27;, &#x27;merguez&#x27;, 0, 3.5)
     ];
-  
+
     /**
      * initialisation de la liste des produits commandés par le client
      */
-    this.listProduits &#x3D; new Map();
+    this.listProduits &#x3D; new Map&lt;string, number&gt;();
 
     /**
      * initialisation d&#x27;une commande
      */
-    this.commande &#x3D; new Commandes(&#x27;&#x27;,null,null);
+    this.commande &#x3D; new Commandes(&#x27;&#x27;, null, null);
+
   }
 
   /**
    * réinitialise les variables en cas d&#x27;annulation de la commande
    */
-  reinitialiser(){
+  reinitialiser() {
 
-    this.prixTotal&#x3D;0;
-  
+    this.prixTotal &#x3D; 0;
+
     this.frites &#x3D; [
-      new ItemMenu(1,&quot;Grande&quot;,0, 4),
-      new ItemMenu(1,&quot;Moyenne&quot;,0, 2.5),
-      new ItemMenu(1,&quot;Petite&quot;,0, 1.5)
+      new ItemMenu(1, &#x27;Frite&#x27;, &#x27;Grande&#x27;, 0, 4),
+      new ItemMenu(2, &#x27;Frite&#x27;, &#x27;Moyenne&#x27;, 0, 2.5),
+      new ItemMenu(3, &#x27;Frite&#x27;, &#x27;Petite&#x27;, 0, 1.5)
     ];
 
     this.boissons &#x3D; [
-      new ItemMenu(1,&quot;coca&quot;,0, 1),
-      new ItemMenu(1,&quot;pepsi&quot;,0, 1),
-      new ItemMenu(1,&quot;fanta&quot;,0, 1)
+      new ItemMenu(1, &#x27;coca&#x27;, &#x27;coca&#x27;, 0, 1),
+      new ItemMenu(2, &#x27;coca&#x27;, &#x27;pepsi&#x27;, 0, 1),
+      new ItemMenu(3, &#x27;coca&#x27;, &#x27;fanta&#x27;, 0, 1)
     ];
 
     this.viandes &#x3D; [
-      new ItemMenu(1,&quot;steak&quot;,0, 4),
-      new ItemMenu(1,&quot;fricadelle&quot;,0, 3),
-      new ItemMenu(1,&quot;merguez&quot;,0, 3.5)
+      new ItemMenu(1, &#x27;steak&#x27;, &#x27;steak&#x27;, 0, 4),
+      new ItemMenu(1, &#x27;fricadelle&#x27;, &#x27;fricadelle&#x27;, 0, 3),
+      new ItemMenu(1, &#x27;merguez&#x27;, &#x27;merguez&#x27;, 0, 3.5)
     ];
 
-    this.listProduits &#x3D; new Map();
-    this.commande &#x3D; new Commandes(&#x27;&#x27;,null,null);
+    this.listProduits &#x3D; new Map&lt;string, number&gt;();
+    this.commande &#x3D; new Commandes(&#x27;&#x27;, null, null);
 
   }
 
   /**
    * ajoute un produit dans la liste des produits commandés par le client
-   * @param produit 
+   * @param produit
    */
-  ajout(produit: ItemMenu){
-    produit.setQuantite(produit.getQuantite()+1);
-    this.ajouterPrix(produit);    
+  ajout(produit: ItemMenu) {
+    produit.setQuantite(produit.getQuantite() + 1);
+    this.ajouterPrix(produit);
     this.listProduits.set(produit.getNom(), produit.getQuantite());
   }
 
   /**
    * retire un produit dans la liste des produits commandés par le client
-   * @param produit 
+   * @param produit
    */
-  retirer(produit: ItemMenu){
-    if (produit.getQuantite()&gt;0){
-      produit.setQuantite(produit.getQuantite()-1);
+  retirer(produit: ItemMenu) {
+    if (produit.getQuantite() &gt; 0) {
+      produit.setQuantite(produit.getQuantite() - 1);
       this.retirerPrix(produit);
       this.listProduits.set(produit.getNom(), produit.getQuantite());
     }
@@ -1248,17 +1303,17 @@ export class CommandesComponent implements OnInit {
 
   /**
    * ajoute au total le prix du produit commandé
-   * @param produit 
+   * @param produit
    */
-  ajouterPrix(produit : ItemMenu){
+  ajouterPrix(produit: ItemMenu) {
     this.prixTotal +&#x3D; produit.getPrix();
   }
 
   /**
    * retire au total le prix du produit annulé par le client
-   * @param produit 
+   * @param produit
    */
-  retirerPrix(produit : ItemMenu){
+  retirerPrix(produit: ItemMenu) {
     this.prixTotal -&#x3D; produit.getPrix();
   }
 
@@ -1266,148 +1321,62 @@ export class CommandesComponent implements OnInit {
    * valide la commande qui est ensuite enregistrée sur le server json
    * transformation de  la map en objet json à finir
    */
-  encaisser(){
-    if (this.prixTotal !&#x3D; 0){
-
+  encaisser() {
+    if (this.prixTotal !&#x3D;&#x3D; 0) {
       this.date &#x3D; new Date().toUTCString();
-      this.commande &#x3D; new Commandes(this.date,JSON.stringify(this.strMapToTab(this.listProduits)),this.prixTotal);
+      //this.commande &#x3D; new Commandes(this.date,JSON.stringify(this.strMapToTab(this.listProduits)),this.prixTotal);
+      //this.commande &#x3D; new Commandes(this.date,[{boisson : &quot;coca&quot;, frites : &quot;grande&quot;}],this.prixTotal);
+      this.commande &#x3D; new Commandes(this.date, this.strMapToObj2(this.listProduits), this.prixTotal);
       this.commandes.push(this.commande);
       this.commandesService.postCommande(this.commande);
+
       this.reinitialiser();
 
     }
   }
 
-  strMapToTab(strMap) {
-    let obj &#x3D; Object.create(null);
-    for (let [k,v] of strMap) {
-        obj[k] &#x3D; obj[v];
-    }
-    return obj;
+ /**
+  * Transforme la liste des produits commandés par le client en objet
+  * car on ne peut insérer directement une map sur le server json
+  * @param strMap
+  */
+ strMapToObj2(strMap: Map&lt;string, number&gt;) {
+  const obj &#x3D; Object.create(null);
+  for (const [k, v] of strMap) {
+      obj[k] &#x3D; v;
+  }
+
+  return obj;
+  }
+
+  rechercheTypeProduit(libelle : string){
+    this.produits&#x3D;this.produitsService.rechercheProduitsByLibelle(libelle);
+    this.produits.subscribe((data)&#x3D;&gt;this.totalquantiteRestante&#x3D;this.produitsService.rechercheQuantiteRestanteProduit(data));   
+  }
+ 
+  // rechercheTypeProduit(){
+  //    this.produits &#x3D;this.produitsService.getListProduits()
+  //   .pipe(
+  //     map(
+  //       (produits: Produits[]) &#x3D;&gt; produits.filter(
+  //         (produits: Produits) &#x3D;&gt; produits.libelle &#x3D;&#x3D;&#x3D; &#x27;Frite&#x27;)      
+  //     ),
+  //   );
+
+  //   this.produits.forEach( (produits:Produits[]) &#x3D;&gt;{
+  //     produits.forEach((produit:Produits)&#x3D;&gt;{
+  //       this.totalquantiteRestante +&#x3D; produit.quantiteRestante;
+  //       console.log(&quot;this.totalquantiteRestante : &quot;+this.totalquantiteRestante)    
+  
+  //     })
+  //   }
+  //   )
+  // }
+
 }
-
-}</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;commandes&quot;&gt;
-    &lt;div&gt;
-        &lt;div&gt;&lt;label&gt;Frites : &lt;/label&gt;&lt;/div&gt;
-        &lt;!-- &lt;span&gt;Prix : {{prixFrites}}&lt;/span&gt; --&gt;
-        &lt;div class&#x3D;&quot;row&quot;&gt;
-            &lt;li *ngFor&#x3D;&quot;let frite of frites; index as i&quot;&gt;
-                &lt;img src&#x3D;&quot;assets/img/frites/frites.jpeg&quot;&gt;
-                &lt;div class&#x3D;&quot;row justify-content-between&quot;&gt;
-                    &lt;span&gt;{{frite.nom}}&lt;/span&gt;
-                    &lt;span&gt;{{frite.quantite}}&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;row justify-content-between&quot;&gt;
-                    &lt;i class&#x3D;&quot;fas fa-plus&quot; (click)&#x3D;&quot;ajout(frite)&quot;&gt;&lt;/i&gt;
-                    &lt;i class&#x3D;&quot;fas fa-minus&quot; (click)&#x3D;&quot;retirer(frite)&quot;&gt;&lt;/i&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div&gt;
-        &lt;div&gt;&lt;label&gt;Boissons : &lt;/label&gt;&lt;/div&gt;
-        &lt;!-- &lt;span&gt;Prix : {{prixBoissons}}&lt;/span&gt; --&gt;
-        &lt;div class&#x3D;&quot;row&quot;&gt;
-            &lt;li *ngFor&#x3D;&quot;let boisson of boissons; index as i&quot;&gt;
-                &lt;img src&#x3D;&quot;assets/img/boissons/{{boisson.nom}}.png&quot;&gt;
-                &lt;div class&#x3D;&quot;row justify-content-between&quot;&gt;
-                    &lt;span&gt;{{boisson.nom}}&lt;/span&gt;
-                    &lt;span&gt;{{boisson.quantite}}&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;row justify-content-between&quot;&gt;
-                    &lt;i class&#x3D;&quot;fas fa-plus&quot; (click)&#x3D;&quot;ajout(boisson)&quot;&gt;&lt;/i&gt;
-                    &lt;i class&#x3D;&quot;fas fa-minus&quot; (click)&#x3D;&quot;retirer(boisson)&quot;&gt;&lt;/i&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div&gt;
-        &lt;div&gt;&lt;label&gt;Viandes : &lt;/label&gt;&lt;/div&gt;
-        &lt;!-- &lt;span&gt;{{prixViandes}}&lt;/span&gt;&lt;/div&gt; --&gt;
-        &lt;div class&#x3D;&quot;row&quot;&gt;
-            &lt;li *ngFor&#x3D;&quot;let viande of viandes; index as i&quot;&gt;
-                &lt;img src&#x3D;&quot;assets/img/viandes/{{viande.nom}}.png&quot;&gt;
-                &lt;div class&#x3D;&quot;row justify-content-between&quot;&gt;
-                    &lt;span&gt;{{viande.nom}}&lt;/span&gt;
-                    &lt;span&gt;{{viande.quantite}}&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class&#x3D;&quot;row justify-content-between&quot;&gt;
-                    &lt;i class&#x3D;&quot;fas fa-plus&quot; (click)&#x3D;&quot;ajout(viande)&quot;&gt;&lt;/i&gt;
-                    &lt;i class&#x3D;&quot;fas fa-minus&quot; (click)&#x3D;&quot;retirer(viande)&quot;&gt;&lt;/i&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;label&gt;TOTAL : {{prixTotal}} euros TTC&lt;/label&gt;
-
-    &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-success mt-3&quot; (click)&#x3D;&quot;encaisser()&quot;&gt;Encaisser&lt;/button&gt;
-        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-danger mt-3 ml-3&quot; (click)&#x3D;&quot;reinitialiser()&quot;&gt;Annuler&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;table class&#x3D;&quot;table&quot;&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th scope&#x3D;&quot;col&quot;&gt;n°commande&lt;/th&gt;
-            &lt;th scope&#x3D;&quot;col&quot;&gt;Date&lt;/th&gt;
-            &lt;th scope&#x3D;&quot;col&quot;&gt;Prix&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;li *ngFor&#x3D;&quot;let commande of commandes; index as i&quot;&gt;
-            &lt;tr&gt;
-                &lt;th scope&#x3D;&quot;row&quot;&gt;{{commande.getId()}}&lt;/th&gt;
-                &lt;td&gt;{{commande.getDateCommande()}}&lt;/td&gt;
-                &lt;td&gt;{{commande.getPrixTotal()}}&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/li&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
+</code></pre>
         </div>
     </div>
-
-    
-</div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><div class="commandes">    <div>        <div><label>Frites : </label></div>        <!-- <span>Prix : {{prixFrites}}</span> -->        <div class="row">            <li *ngFor="let frite of frites; index as i">                <img src="assets/img/frites/frites.jpeg">                <div class="row justify-content-between">                    <span>{{frite.nom}}</span>                    <span>{{frite.quantite}}</span>                </div>                <div class="row justify-content-between">                    <i class="fas fa-plus" (click)="ajout(frite)"></i>                    <i class="fas fa-minus" (click)="retirer(frite)"></i>                </div>            </li>        </div>    </div>    <div>        <div><label>Boissons : </label></div>        <!-- <span>Prix : {{prixBoissons}}</span> -->        <div class="row">            <li *ngFor="let boisson of boissons; index as i">                <img src="assets/img/boissons/{{boisson.nom}}.png">                <div class="row justify-content-between">                    <span>{{boisson.nom}}</span>                    <span>{{boisson.quantite}}</span>                </div>                <div class="row justify-content-between">                    <i class="fas fa-plus" (click)="ajout(boisson)"></i>                    <i class="fas fa-minus" (click)="retirer(boisson)"></i>                </div>            </li>        </div>    </div>    <div>        <div><label>Viandes : </label></div>        <!-- <span>{{prixViandes}}</span></div> -->        <div class="row">            <li *ngFor="let viande of viandes; index as i">                <img src="assets/img/viandes/{{viande.nom}}.png">                <div class="row justify-content-between">                    <span>{{viande.nom}}</span>                    <span>{{viande.quantite}}</span>                </div>                <div class="row justify-content-between">                    <i class="fas fa-plus" (click)="ajout(viande)"></i>                    <i class="fas fa-minus" (click)="retirer(viande)"></i>                </div>            </li>        </div>    </div>    <label>TOTAL : {{prixTotal}} euros TTC</label>    <div class="row">        <button type="button" class="btn btn-success mt-3" (click)="encaisser()">Encaisser</button>        <button type="button" class="btn btn-danger mt-3 ml-3" (click)="reinitialiser()">Annuler</button>    </div></div><table class="table">    <thead>        <tr>            <th scope="col">n°commande</th>            <th scope="col">Date</th>            <th scope="col">Prix</th>        </tr>    </thead>    <tbody>        <li *ngFor="let commande of commandes; index as i">            <tr>                <th scope="row">{{commande.getId()}}</th>                <td>{{commande.getDateCommande()}}</td>                <td>{{commande.getPrixTotal()}}</td>            </tr>        </li>    </tbody></table></div>'
-    var COMPONENTS = [{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommandesComponent', 'selector': 'app-commandes'},{'name': 'ComptabiliteComponent', 'selector': 'app-comptabilite'},{'name': 'EmployesComponent', 'selector': 'app-employes'},{'name': 'GestionstocksComponent', 'selector': 'app-gestionstocks'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PlanningComponent', 'selector': 'app-planning'},{'name': 'ProduitsComponent', 'selector': 'app-produits'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'CommandesComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
 
 
 
@@ -1420,7 +1389,7 @@ export class CommandesComponent implements OnInit {
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1428,19 +1397,8 @@ export class CommandesComponent implements OnInit {
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'CommandesComponent.html';
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -1451,17 +1409,20 @@ export class CommandesComponent implements OnInit {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>

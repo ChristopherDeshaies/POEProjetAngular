@@ -1,3 +1,4 @@
+<!-- @author : Christopher Deshaies -->
 <h1>
   Gestion Stocks
 </h1>
@@ -10,6 +11,7 @@
       <div class="d-flex justify-content-between">
           <label><strong class="text-uppercase">{{produit1.libelle}}</strong>  -  Quantité totale restante : <strong>{{getQuantiteRestant(produit1.libelle)}}</strong></label>
           <button class="btn btn-outline-danger" (click)="changeHiddenCategorie(i)">
+            
             <span *ngIf="hiddenCategorie[i]">v</span>
             <span *ngIf="!hiddenCategorie[i]">^</span>
           </button>
