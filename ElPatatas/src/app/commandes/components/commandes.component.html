@@ -1,2 +1,103 @@
-<router-outlet></router-outlet>
+<div class="commandes">
+    <div>
+        <div><label>Frites : </label></div>
+        <!-- <span>Prix : {{prixFrites}}</span> -->
+        <div class="row">
+            <li *ngFor="let frite of frites; index as i">
+                <img src="assets/img/frites/frites.jpeg">
+                <div class="row justify-content-between">
+                    <span>{{frite.nom}}</span>
+                    <span>{{frite.quantite}}</span>
+                </div>
+                <div class="row justify-content-between">
+                    <i class="fas fa-plus" (click)="ajout(frite)"></i>
+                    <i class="fas fa-minus" (click)="retirer(frite)"></i>
+                </div>
+            </li>
+        </div>
+    </div>
+
+    <div>
+        <div><label>Boissons : </label></div>
+        <!-- <span>Prix : {{prixBoissons}}</span> -->
+        <div class="row">
+            <li *ngFor="let boisson of boissons; index as i">
+                <img src="assets/img/boissons/{{boisson.nom}}.png">
+                <div class="row justify-content-between">
+                    <span>{{boisson.nom}}</span>
+                    <span>{{boisson.quantite}}</span>
+                </div>
+                <div class="row justify-content-between">
+                    <i class="fas fa-plus" (click)="ajout(boisson)"></i>
+                    <i class="fas fa-minus" (click)="retirer(boisson)"></i>
+                </div>
+            </li>
+        </div>
+    </div>
+
+    <div>
+        <div><label>Viandes : </label></div>
+        <!-- <span>{{prixViandes}}</span></div> -->
+        <div class="row">
+            <li *ngFor="let viande of viandes; index as i">
+                <img src="assets/img/viandes/{{viande.nom}}.png">
+                <div class="row justify-content-between">
+                    <span>{{viande.nom}}</span>
+                    <span>{{viande.quantite}}</span>
+                </div>
+                <div class="row justify-content-between">
+                    <i class="fas fa-plus" (click)="ajout(viande)"></i>
+                    <i class="fas fa-minus" (click)="retirer(viande)"></i>
+                </div>
+            </li>
+        </div>
+    </div>
+
+    <label>TOTAL : {{prixTotal}} euros TTC</label>
+
+    <div class="row">
+        <button type="button" class="btn btn-success mt-3" (click)="encaisser()">Encaisser</button>
+        <button type="button" class="btn btn-danger mt-3 ml-3" (click)="reinitialiser()">Annuler</button>
+    </div>
+</div>
+
+<button type="button" class="btn btn-danger mt-3 ml-3" (click)="rechercheTypeProduit('Merguez')">Lister produits</button>
+<label>Quantite restanbte frite : {{totalquantiteRestante}}</label>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">n°produits</th>
+            <th scope="col">Libelle</th>
+            <th scope="col">Quantité restante</th>
+        </tr>
+    </thead>
+    <tbody>
+        <li *ngFor="let produit of produits | async; index as i"> 
+            <tr>
+                <th scope="row">{{produit.id}}</th>
+                <td>{{produit.libelle}}</td>
+                <td>{{produit.quantiteRestante}}</td>
+            </tr>
+        </li>
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">n°commande</th>
+            <th scope="col">Date</th>
+            <th scope="col">Prix</th>
+        </tr>
+    </thead>
+    <tbody>
+        <li *ngFor="let commande of commandes; index as i">
+            <tr>
+                <th scope="row">{{commande.getId()}}</th>
+                <td>{{commande.getDateCommande()}}</td>
+                <td>{{commande.getPrixTotal()}}</td>
+            </tr>
+        </li>
+    </tbody>
+</table>
 

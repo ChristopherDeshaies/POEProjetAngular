@@ -1,0 +1,14 @@
+<div *ngIf="isLogin" id="header">
+  <div class="container">
+    <div class="row">
+      <div class="offset-sm-5">
+        <span>
+         <p>Bienvenue</p> <p>{{prenomUtilisateur}}</p> <p>{{nomUtilisateur}}</p> 
+        </span>
+      </div>
+      <a routerLink="/login">Login</a>
+      <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+
+</div>

@@ -1,3 +1,46 @@
 <p>
   produits works!
 </p>
+<div class="row col-4">
+  <h4>Bienvenue </h4>
+  <p><a [routerLink]="['']">Logout</a></p>
+</div>
+<div>
+  <span *ngIf="isLoaded">Liste des produits :</span>
+  <span *ngIf="!isLoaded">Chargement des produits</span>
+  <ul class="listeProduits">
+    <li class="row" *ngFor="let produit of listeProduits | async">
+      <p>{{produit.id}} - {{produit.libelle}}</p>
+      <button (click)="select(produit)" class="text-primary">Détails</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <div class="formulaire">
+    <p><label>Nom</label><input [(ngModel)]="nom" value="nom"></p>
+    <p><label>Libelle</label> <input [(ngModel)]="libelle" value="libelle"></p>
+    <p><label>CodeFournisseur</label><input [(ngModel)]="codeFournisseur" value="codeFournisseur"></p>
+    <p><label>QuantiteInitiale</label> <input [(ngModel)]="quantiteInitiale" value="quantiteInitiale"></p>
+    <p><label>QuantiteRestante</label> <input [(ngModel)]="quantiteRestant" value="quantiteRestant"></p>
+    <p><label>dateLimite</label> <input [(ngModel)]="dateLimite" value="dateLimite"></p>
+    <p><label>dateAchat</label> <input [(ngModel)]="dateAchat" value="dateAchat"></p>
+    <p><label>prixAchat</label> <input [(ngModel)]="prixAchat" value="prixAchat"></p>
+    <p><input type="submit" (click)="ajout()" value="Ajout" ></p>
+  </div>
+</div>
+
+<div>
+  <div class="formulaire">
+    <span><label>ID Modif</label> <input [(ngModel)]="idmodif"></span>
+    <span class="ml-2"><input class="bouton" type="submit" (click)="modifier()" value="Modifier"></span>
+  </div>
+</div>
+
+<div>
+  <div class="formulaire">
+    <span><label>ID Supp</label> <input [(ngModel)]="idsupp"></span>
+    <span class="ml-2"><input class="bouton" type="submit" (click)="supprimer()" value="Delete"></span>
+  </div> 
+</div>
+

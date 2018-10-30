@@ -1,0 +1,21 @@
+body{
+    background-color: #cceeff;
+}
+
+.row{
+    margin:0;
+}
+
+li{
+    list-style: none;
+    margin : 20px;
+}
+
+label{
+    font-weight: bold;
+    width: 15%;
+}
+
+i{
+    font-size: 40px;
+}
