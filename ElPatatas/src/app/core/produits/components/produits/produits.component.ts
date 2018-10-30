@@ -12,18 +12,6 @@ import { finalize } from 'rxjs/operators';
 export class ProduitsComponent {
   private listProduits: Observable<Produits[]>;
   private isLoaded: boolean;
-  private nom :string;
-  private prenom :string;
-  private adresse :string;
-  private email :string;
-  private password :string;
-  private tel :string;
-  private dateNaissance :string;
-  private role : string;
-  private idmodif: number;
-  private idsupp: number;
-  private userselected: Produits;
-
 
   constructor(private produitsservice: ProduitsService) { }
 

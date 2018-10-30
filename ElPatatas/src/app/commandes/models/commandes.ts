@@ -7,37 +7,37 @@ export class Commandes {
     private listProduits: any[];
     private prixTotal: number;
 
-    constructor(dateCommande: string, listProduits: any[], prixTotal : number) {
-        this.dateCommande= dateCommande;
+    constructor(dateCommande: string, listProduits: any[], prixTotal: number) {
+        this.dateCommande = dateCommande;
         this.listProduits = listProduits;
         this.prixTotal = prixTotal;
     }
 
-    getId(){
+    getId() {
         return this.id;
     }
 
-    getDateCommande(){
+    getDateCommande() {
         return this.dateCommande;
     }
 
-    setDateCommande(dateCommande : string){
+    setDateCommande(dateCommande: string) {
         this.dateCommande = dateCommande;
     }
 
-    getListProduits(){
+    getListProduits() {
         return this.listProduits;
     }
 
-    setListProduits(listProduits : any[]){
-        this.listProduits= listProduits;
+    setListProduits(listProduits: any[]) {
+        this.listProduits = listProduits;
     }
 
-    getPrixTotal(){
+    getPrixTotal() {
         return this.prixTotal;
     }
 
-    setPrixTotal(prixTotal : number){
-        this.prixTotal= prixTotal;
+    setPrixTotal(prixTotal: number) {
+        this.prixTotal = prixTotal;
     }
 }
