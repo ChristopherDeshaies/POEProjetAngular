@@ -13,7 +13,6 @@ export class ProduitsComponent {
   private listProduits: Observable<Produits[]>;
   private isLoaded: boolean;
 
-
   constructor(private produitsservice: ProduitsService) { }
 
   ngOnInit() {
@@ -21,6 +20,24 @@ export class ProduitsComponent {
   }
 
   getListProduits(): void {
+    this.isLoaded = false;
     this.listProduits = this.produitsservice.getListProduits().pipe(finalize( () => this.isLoaded = true));
   }
+
+  ajout() {
+    
+  }
+
+  modifier() {
+    
+  }
+
+  supprimer() {
+    
+  }
+
+  select(){
+    
+  }
+
 }

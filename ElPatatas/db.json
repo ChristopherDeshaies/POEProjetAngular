@@ -106,10 +106,28 @@
     },
     {
       "id": 3,
+<<<<<<< HEAD
       "nom": "DESHAIES",
       "prenom": "Chris",
       "adresse": "2 rue du vent",
       "tel": "0606060606",
+=======
+      "nom": "DESHAIES",
+      "prenom": "Chris",
+      "adresse": "rue du vent",
+      "tel": "rue du vent",
+      "email": "chris@html.fr",
+      "password": "Chris",
+      "dateNaissance": "07/12/1991",
+      "role": "employe"
+    },
+    {
+      "id": 4,
+      "nom": "DESHAIES",
+      "prenom": "Chris",
+      "adresse": "rue du vent",
+      "tel": "rue du vent",
+>>>>>>> cc6847291618cfc458774008ab2504d62d0d1632
       "email": "chris@html.fr",
       "password": "Chris",
       "dateNaissance": "07/12/1991",
@@ -132,12 +150,17 @@
   ],
   "commandes": [
     {
-      "dateCommande": "Sat, 27 Oct 2018 12:12:25 GMT",
-      "listProduits": "{}",
-      "prixTotal": 9,
-      "id": 2
+      "dateCommande": "Mon, 29 Oct 2018 10:03:49 GMT",
+      "listProduits": {
+        "Moyenne": 1,
+        "pepsi": 1,
+        "steak": 1
+      },
+      "prixTotal": 7.5,
+      "id": 6
     },
     {
+<<<<<<< HEAD
       "dateCommande": "Sat, 27 Oct 2018 12:14:27 GMT",
       "listProduits": "{}",
       "prixTotal": 7.5,
@@ -148,6 +171,22 @@
       "listProduits": "{}",
       "prixTotal": 18,
       "id": 4
+=======
+      "dateCommande": "Mon, 29 Oct 2018 10:07:47 GMT",
+      "listProduits": {
+        "Moyenne": 3,
+        "pepsi": 4,
+        "steak": 3,
+        "fanta": 2,
+        "Petite": 1,
+        "Grande": 1,
+        "coca": 1,
+        "fricadelle": 2,
+        "merguez": 1
+      },
+      "prixTotal": 41.5,
+      "id": 7
+>>>>>>> cc6847291618cfc458774008ab2504d62d0d1632
     }
   ]
 }
