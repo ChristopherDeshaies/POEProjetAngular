@@ -1,58 +1,95 @@
 <h1>
-  Component Gestion Stocks
+  Gestion Stocks
 </h1>
 <div>
+  <h2>
+    Affichage des produits en stock
+  </h2>
   <ul>
     <li *ngFor=" let produit1 of listProduits  | async | unique:'libelle' ; let i = index">
-      {{produit1.libelle}}
-      <table class="text-right">
+      <div class="d-flex justify-content-between">
+          <label><strong class="text-uppercase">{{produit1.libelle}}</strong>  -  Quantité totale restante : <strong>{{getQuantiteRestant(produit1.libelle)}}</strong></label>
+          <button class="btn btn-outline-danger" (click)="changeHiddenCategorie(i)">
+            <span *ngIf="hiddenCategorie[i]">v</span>
+            <span *ngIf="!hiddenCategorie[i]">^</span>
+          </button>
+      </div>
+      <table class="table table-hover text-right" *ngIf="!hiddenCategorie[i]">
         <thead>
           <tr>
             <th>Produit</th>
             <th>Code Fournisseur</th>
             <th>Qte restant</th>
             <th>Date Limite de consommation</th>
-            <th></th><th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let produit of listProduits | async | orderBy:'dateLimite':true | produitsSearch:produit1.libelle; let j = index" >
+          <tr *ngFor="let produit of listProduits | async | orderBy:'dateLimite':true | produitsSearch:produit1.libelle" >
             <td>{{produit.libelle}}</td>
             <td>{{produit.codeFournisseur}}</td>
-            <td>{{produit.quantiteRestant}}</td>
+            <td>{{produit.quantiteRestante}}</td>
             <td>{{produit.dateLimite}}</td>
             <td><button class="btn-danger" (click)="supprimer(produit.id)">X</button></td>
-            <td><span> {{ addSumProduit(i,j, produit.quantiteRestant) }} </span></td>
           </tr>
         </tbody>
       </table>
-      <br>
-      <div>
-        <span>Quantité totale restante :</span>{{sumProduit[i]}}
-      </div>
-      <br>
     </li>
   </ul>
 </div>
 
-
-<br/>
 <div>
+  <h2>Ajouter un produit</h2>
   <form>
-    <div class="input-group col-6" *ngIf="!newNomProduit">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="produitSelected">Produit a ajouter</label>
+    <div class="row">
+      <div class="form-group col-6" *ngIf="!newNomProduit">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" for="produitSelected">Produit a ajouter</span>
+          </div>
+          <select class="custom-select" id="produitSelected" [(ngModel)]="produitSelected"  [ngModelOptions]="{standalone: true}">
+            <option [ngValue]=null selected>Produits ...</option>
+            <option *ngFor=" let produit of listProduits  | async | unique:'libelle' " [ngValue]="produit">
+              {{produit.libelle}}
+            </option>
+          </select>
+        </div>
       </div>
-      <select class="custom-select" id="produitSelected" [(ngModel)]="produitSelected"  [ngModelOptions]="{standalone: true}">
-        <option [ngValue]=null selected>Produits ...</option>
-        <option *ngFor="let produit of listProduits | async" [ngValue]="produit">
-          {{produit.libelle}} - Code Fournisseur : {{produit.codeFournisseur}}
-        </option>
-        </select>
+      <div class="form-group col-6" *ngIf="produitSelected">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" for="codeFournisseur" id="">Code du fournisseur</span>
+          </div>
+          <input type="text" class="form-control" id="codeFournisseur" [(ngModel)]="codeFournisseur" name="codeFournisseur" placeholder="Exemple : XCD216" required>
+        </div>
+      </div>
     </div>
-    <br/>
-    <div *ngIf="produitSelected">
+
+    <div class="form-group" *ngIf="!produitSelected">
       <div class="row">
+        <div class="form-group col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" *ngIf="!newNomProduit"><span style="color: red">&nbsp;Nouveau&nbsp;</span>produit a ajouter</span>
+              <span class="input-group-text" *ngIf="newNomProduit">Nom du produit à ajouter</span>
+            </div>
+            <input type="text" class="form-control" id="newNomProduit" [(ngModel)]="newNomProduit" name="newNomProduit" aria-describedby="ajoutProduitHelp" placeholder="Entrer le nom du produit" required>
+          </div>
+        </div>
+        <div class="form-group col-6" *ngIf="newNomProduit">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" for="codeFournisseur" id="">Code du fournisseur</span>
+            </div>
+            <input type="text" class="form-control" id="codeFournisseur" [(ngModel)]="codeFournisseur" name="codeFournisseur" placeholder="Exemple : XCD216" required>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <div class="form-group" *ngIf="produitSelected ||newNomProduit">
+    <div class="row">
         <div class="form-group col-6">
           <div class="input-group">
             <div class="input-group-prepend">
@@ -89,68 +126,6 @@
         </div>
       </div>
     </div>
-
-    <div class="form-group" *ngIf="!produitSelected">
-      <p *ngIf="!newNomProduit" >Ou</p>
-      <div>
-          <div class="row">
-              <div class="form-group col-6">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" *ngIf="!newNomProduit">Ajouter un <span style="color: red">&nbsp;nouveau&nbsp;</span> produit</span>
-                    <span class="input-group-text" *ngIf="newNomProduit">Nom du produit à ajouter</span>
-                  </div>
-                  <input type="text" class="form-control" id="newNomProduit" [(ngModel)]="newNomProduit" name="newNomProduit" aria-describedby="ajoutProduitHelp" placeholder="Entrer le nom du produit" required>
-                </div>
-              </div>
-              <div class="form-group col-6" *ngIf="newNomProduit">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" for="newCodeFournisseur" id="">Code du fournisseur</span>
-                  </div>
-                  <input type="text" class="form-control" id="newCodeFournisseur" [(ngModel)]="newCodeFournisseur" name="newCodeFournisseur" placeholder="Exemple : XCD216" required>
-                </div>
-              </div>
-          </div>
-          <div class="row" *ngIf="newNomProduit">
-            <div class="form-group col-6">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="">Quantité ajouté au stock</span>
-                </div>
-                <input type="number" class="form-control " id="quantiteAjoutProduit" [(ngModel)]="quantiteAjoutProduit" name="quantiteAjoutProduit" placeholder="Exemple : 200" required>
-              </div>
-            </div>
-            <div class="form-group col-6">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="">Date limite de consommation</span>
-                </div>
-                <input type="date" class="form-control" id="dateLimiteProduit" [(ngModel)]="dateLimiteProduit" name="dateLimiteProduit" required>
-              </div>
-            </div>
-          </div>
-          <div class="row" *ngIf="newNomProduit">
-            <div class="form-group col-6">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="">Date d'achat</span>
-                </div>
-                <input type="date" class="form-control" id="dateAchatProduit" [(ngModel)]="dateAchatProduit" name="dateAchatProduit" required>
-              </div>
-            </div>
-            <div class="form-group col-6">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="">Prix d'achat</span>
-              </div>
-              <input type="number" class="form-control" id="prixAchatProduit" [(ngModel)]="prixAchatProduit" name="prixAchatProduit" placeholder="Exemple : 100.50" required>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <input type="submit" class="btn btn-primary" value="Valider" (click)="ajouterProduitStock()"/>
   </form>
 </div>

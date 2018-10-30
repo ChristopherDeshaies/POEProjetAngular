@@ -10,7 +10,6 @@ export class ProduitsSearchPipe implements PipeTransform {
             return items.filter(item =>{
                 if (libelleSearch && item.libelle.toLowerCase().indexOf(libelleSearch.toLowerCase()) === -1 || item.quantiteRestante===0){
                     return false;
-                    
                 }
                 return true;
            })
