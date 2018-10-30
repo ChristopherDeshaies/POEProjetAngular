@@ -56,15 +56,27 @@ export class ProduitsService {
     );
   }
 
+  /**
+   * Modification du produit en base
+   * @param produit 
+   */
   putProduit(produit: Produits) {
     const url = `${urlProduit}/${produit.id}`;
     return this.httpClient.put(url, produit);
   }
 
+  /**
+   * Ajout du produit en base
+   * @param produit 
+   */
   postProduit(produit: Produits) {
     return this.httpClient.post(urlProduit, produit);
   }
 
+  /**
+   * Suppression du produit en base
+   * @param id 
+   */
   deleteProduit (id: number) {
     const url = `${urlProduit}/${id}`;
     return this.httpClient.delete(url);

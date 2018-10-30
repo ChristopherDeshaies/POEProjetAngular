@@ -12,6 +12,7 @@ import { OrderByPipe } from './shared/pipe/orderby';
 import { UniquePipe } from './shared/pipe/unique';
 import { ProduitsSearchPipe } from './shared/pipe/search';
 import { SumPipe } from './shared/pipe/sum';
+import { ComptabiliteComponent } from './comptabilite/components/comptabilite.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SumPipe } from './shared/pipe/sum';
     UniquePipe,
     ProduitsSearchPipe,
     SumPipe,
-    HeaderComponent
+    HeaderComponent,
+    ComptabiliteComponent
   ],
   imports: [
     CoreModule,
