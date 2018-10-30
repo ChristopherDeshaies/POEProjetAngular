@@ -22,45 +22,57 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_GestionstocksModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="97,-70 97,-195 399,-195 399,-70 97,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="32,-70 32,-195 464,-195 464,-70 32,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_GestionstocksModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="215,-78 215,-130 391,-130 391,-78 215,-78"/>
+<polygon fill="none" stroke="#000000" points="280,-78 280,-130 456,-130 456,-78 280,-78"/>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_GestionstocksModule_imports</title>
-<polygon fill="none" stroke="#000000" points="105,-78 105,-130 207,-130 207,-78 105,-78"/>
+<polygon fill="none" stroke="#000000" points="40,-78 40,-130 272,-130 272,-78 40,-78"/>
 </g>
 <!-- GestionstocksComponent -->
 <g id="node1" class="node">
 <title>GestionstocksComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="382.8738,-122 223.1262,-122 223.1262,-86 382.8738,-86 382.8738,-122"/>
-<text text-anchor="middle" x="303" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">GestionstocksComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="447.8738,-122 288.1262,-122 288.1262,-86 447.8738,-86 447.8738,-122"/>
+<text text-anchor="middle" x="368" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">GestionstocksComponent</text>
 </g>
 <!-- GestionstocksModule -->
 <g id="node2" class="node">
 <title>GestionstocksModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="307.0912,-187 304.0912,-191 283.0912,-191 280.0912,-187 168.9088,-187 168.9088,-151 307.0912,-151 307.0912,-187"/>
-<text text-anchor="middle" x="238" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">GestionstocksModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="277.0912,-187 274.0912,-191 253.0912,-191 250.0912,-187 138.9088,-187 138.9088,-151 277.0912,-151 277.0912,-187"/>
+<text text-anchor="middle" x="208" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">GestionstocksModule</text>
 </g>
 <!-- GestionstocksComponent&#45;&gt;GestionstocksModule -->
 <g id="edge1" class="edge">
 <title>GestionstocksComponent&#45;&gt;GestionstocksModule</title>
-<path fill="none" stroke="#000000" d="M265.0544,-122.1061C265.0544,-122.1061 265.0544,-140.991 265.0544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="261.5544,-140.9909 265.0544,-150.991 268.5544,-140.991 261.5544,-140.9909"/>
+<path fill="none" stroke="#000000" d="M287.8815,-104C277.5272,-104 270.4397,-104 270.4397,-104 270.4397,-104 270.4397,-140.8939 270.4397,-140.8939"/>
+<polygon fill="#000000" stroke="#000000" points="266.9398,-140.8938 270.4397,-150.8939 273.9398,-140.8939 266.9398,-140.8938"/>
+</g>
+<!-- CommonModule -->
+<g id="node3" class="node">
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="263.6681,-122 260.6681,-126 239.6681,-126 236.6681,-122 152.3319,-122 152.3319,-86 263.6681,-86 263.6681,-122"/>
+<text text-anchor="middle" x="208" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+</g>
+<!-- CommonModule&#45;&gt;GestionstocksModule -->
+<g id="edge2" class="edge">
+<title>CommonModule&#45;&gt;GestionstocksModule</title>
+<path fill="none" stroke="#000000" d="M208,-122.1061C208,-122.1061 208,-140.991 208,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="204.5001,-140.9909 208,-150.991 211.5001,-140.991 204.5001,-140.9909"/>
 </g>
 <!-- CoreModule -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>CoreModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="199.2619,-122 196.2619,-126 175.2619,-126 172.2619,-122 112.7381,-122 112.7381,-86 199.2619,-86 199.2619,-122"/>
-<text text-anchor="middle" x="156" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CoreModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="134.2619,-122 131.2619,-126 110.2619,-126 107.2619,-122 47.7381,-122 47.7381,-86 134.2619,-86 134.2619,-122"/>
+<text text-anchor="middle" x="91" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CoreModule</text>
 </g>
 <!-- CoreModule&#45;&gt;GestionstocksModule -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>CoreModule&#45;&gt;GestionstocksModule</title>
-<path fill="none" stroke="#000000" d="M184.1676,-122.1061C184.1676,-122.1061 184.1676,-140.991 184.1676,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="180.6677,-140.9909 184.1676,-150.991 187.6677,-140.991 180.6677,-140.9909"/>
+<path fill="none" stroke="#000000" d="M134.5192,-104C141.0014,-104 145.5603,-104 145.5603,-104 145.5603,-104 145.5603,-140.8939 145.5603,-140.8939"/>
+<polygon fill="#000000" stroke="#000000" points="142.0604,-140.8938 145.5603,-150.8939 149.0604,-140.8939 142.0604,-140.8938"/>
 </g>
 </g>
 </svg>
