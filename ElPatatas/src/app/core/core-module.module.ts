@@ -20,7 +20,6 @@ import { EmployesComponent } from '../core/users/components/employes/employes.co
     HttpClientModule,
     FormsModule,
     HttpModule,
-
   ],
   exports : [
     LoginComponent,

@@ -4,6 +4,9 @@ import { Commandes } from '../models/commandes';
 import { CommandesService } from '../services/commandes.service';
 import { ProduitsService } from '../../core/produits/services/produits.service';
 import { Produits } from '../../core/produits/models/produits';
+import { map, finalize, filter, reduce  } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { forEach } from '@angular/router/src/utils/collection';
 
 /**
  * gestion des commandes prises par l'employé
@@ -18,8 +21,9 @@ export class CommandesComponent implements OnInit {
   // selectedFritesIds = new Map();
   // selectedBoissonsIds = new Map();
   // selectedViandesIds = new Map();
-  produits : Produits[] = [];
- 
+  //produits : Produits[] = [];
+  produits : Observable<Produits[]>;
+  totalquantiteRestante : number = 0;
 
   /**
    * liste des produits frites à afficher sur la page commande
@@ -211,7 +215,7 @@ export class CommandesComponent implements OnInit {
       this.date = new Date().toUTCString();
       //this.commande = new Commandes(this.date,JSON.stringify(this.strMapToTab(this.listProduits)),this.prixTotal);
       //this.commande = new Commandes(this.date,[{boisson : "coca", frites : "grande"}],this.prixTotal);
-      this.commande = new Commandes(this.date,this.strMapToObj2(this.listProduits),this.prixTotal);
+      this.commande = new Commandes(this.date, this.strMapToObj2(this.listProduits), this.prixTotal);
       this.commandes.push(this.commande);
       this.commandesService.postCommande(this.commande);
 
@@ -233,5 +237,29 @@ export class CommandesComponent implements OnInit {
 
   return obj;
   }
+
+  rechercheTypeProduit(libelle : string){
+    this.produits=this.produitsService.rechercheProduitsByLibelle(libelle);
+    this.produits.subscribe((data)=>this.totalquantiteRestante=this.produitsService.rechercheQuantiteRestanteProduit(data));   
+  }
+ 
+  // rechercheTypeProduit(){
+  //    this.produits =this.produitsService.getListProduits()
+  //   .pipe(
+  //     map(
+  //       (produits: Produits[]) => produits.filter(
+  //         (produits: Produits) => produits.libelle === 'Frite')      
+  //     ),
+  //   );
+
+  //   this.produits.forEach( (produits:Produits[]) =>{
+  //     produits.forEach((produit:Produits)=>{
+  //       this.totalquantiteRestante += produit.quantiteRestante;
+  //       console.log("this.totalquantiteRestante : "+this.totalquantiteRestante)    
+  
+  //     })
+  //   }
+  //   )
+  // }
 
 }

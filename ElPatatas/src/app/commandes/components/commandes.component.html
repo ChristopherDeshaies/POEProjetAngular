@@ -61,6 +61,27 @@
     </div>
 </div>
 
+<button type="button" class="btn btn-danger mt-3 ml-3" (click)="rechercheTypeProduit('Merguez')">Lister produits</button>
+<label>Quantite restanbte frite : {{totalquantiteRestante}}</label>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">n°produits</th>
+            <th scope="col">Libelle</th>
+            <th scope="col">Quantité restante</th>
+        </tr>
+    </thead>
+    <tbody>
+        <li *ngFor="let produit of produits | async; index as i"> 
+            <tr>
+                <th scope="row">{{produit.id}}</th>
+                <td>{{produit.libelle}}</td>
+                <td>{{produit.quantiteRestante}}</td>
+            </tr>
+        </li>
+    </tbody>
+</table>
+
 <table class="table">
     <thead>
         <tr>
