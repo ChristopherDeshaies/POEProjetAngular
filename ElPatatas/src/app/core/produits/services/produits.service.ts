@@ -66,7 +66,9 @@ export class ProduitsService {
   }
   deleteProduit (id: number): void {
     const url = `${urlProduit}/${id}`;
-    this.httpClient.delete(url).subscribe( error => {
+    this.httpClient.delete(url).subscribe(data => {
+      alert('Suppression du produit terminer.');
+    },error => {
       alert('Echec de la suppression !!!');
     });
   }
