@@ -27,12 +27,12 @@ import { EmployesComponent } from '../core/users/components/employes/employes.co
     RouterModule,
     AdminComponent,
     EmployesComponent,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     LoginComponent,
     AdminComponent,
-    EmployesComponent
+    EmployesComponent,
   ],
   providers: [AuthenticationService],
 })

@@ -94,17 +94,6 @@
       "password": "Chris",
       "dateNaissance": "07/12/1991",
       "role": "employe"
-    },
-    {
-      "id": 4,
-      "nom": "DESHAIES",
-      "prenom": "Chris",
-      "adresse": "rue du vent",
-      "tel": "rue du vent",
-      "email": "chris@html.fr",
-      "password": "Chris",
-      "dateNaissance": "07/12/1991",
-      "role": "employe"
     }
   ],
   "stocks": [

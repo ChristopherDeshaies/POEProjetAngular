@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Commandes } from 'src/app/commandes/models/commandes';
@@ -24,7 +24,7 @@ export class ComptabiliteService {
   }
 
   getBilan(date: Date): Observable<Commandes[]> {
-    return this.httpClient.get<Commandes[]>(urlComptabilite);
+  return this.httpClient.get<Commandes[]>(urlComptabilite);
   }
   getAchat() {
 
@@ -36,7 +36,7 @@ export class ComptabiliteService {
   getHistoCommandes() {
 
   }
-  
+
 
 
 }
