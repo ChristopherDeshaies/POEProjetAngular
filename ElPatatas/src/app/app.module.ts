@@ -8,28 +8,27 @@ import { GestionstocksComponent } from './gestionstocks/components/gestionstocks
 
 import { HeaderComponent } from './core/header/components/header.component';
 
-import { OrderByPipe } from './shared/pipe/orderby';
-import { UniquePipe } from './shared/pipe/unique';
-import { ProduitsSearchPipe } from './shared/pipe/search';
-import { SumPipe } from './shared/pipe/sum';
-import { ComptabiliteComponent } from './comptabilite/components/comptabilite.component';
+// import { OrderByPipe } from './shared/pipe/orderby';
+// import { UniquePipe } from './shared/pipe/unique';
+// import { ProduitsSearchPipe } from './shared/pipe/search';
+// import { SumPipe } from './shared/pipe/sum';
+// import { ComptabiliteComponent } from './comptabilite/components/comptabilite.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanningComponent,
-    GestionstocksComponent,
-    OrderByPipe,
-    UniquePipe,
-    ProduitsSearchPipe,
-    SumPipe,
-    HeaderComponent,
-    ComptabiliteComponent
+    //GestionstocksComponent,
+    // OrderByPipe,
+    // UniquePipe,
+    // ProduitsSearchPipe,
+    // SumPipe,
+    HeaderComponent
   ],
   imports: [
     CoreModule,
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

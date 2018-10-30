@@ -79,6 +79,16 @@
       "dateAchat": "2018-10-01",
       "prixAchat": 2,
       "id": 8
+    },
+    {
+      "libelle": "Merguez",
+      "codeFournisseur": "rrrr",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-10-17",
+      "dateAchat": "2018-10-30",
+      "prixAchat": 150,
+      "id": 9
     }
   ],
   "users": [

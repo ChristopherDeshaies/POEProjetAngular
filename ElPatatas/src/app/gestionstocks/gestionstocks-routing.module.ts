@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
-import { ComptabiliteComponent } from './components/comptabilite.component';
+import { GestionstocksComponent } from './components/gestionstocks/gestionstocks.component';
 
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'comptabilite',
+        redirectTo: 'stocks',
         pathMatch: 'full'
     },
     {
-        path: 'comptabilite',
-        component: ComptabiliteComponent,
+        path: 'stocks',
+        component: GestionstocksComponent,
     }
 ];
 
@@ -19,4 +19,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class ComptabiliteRoutingModule { } 
+export class GestionStocksRoutingModule { } 

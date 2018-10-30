@@ -21,8 +21,11 @@ export class ComptabiliteComponent implements OnInit {
   private histoCommandes: Observable<Commandes[]>;
   private isLoaded: boolean;
 
-  constructor(private comptabiliteservice: ComptabiliteService, private commandesServices: CommandesService,
-     private commandes: Commandes) { }
+  constructor(
+    private comptabiliteservice: ComptabiliteService, 
+    private commandesServices: CommandesService,
+    // private commandes: Commandes
+    ) { }
   /**
    *
    */

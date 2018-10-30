@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './users/components/login/login.component';
 import { AdminComponent } from './users/components/admin/admin.component';
+import { EmployesComponent } from './users/components/employes/employes.component';
 import { RoleGuardService } from '../core/users/services/role-guard.service';
 import { AuthGuardService } from '../core/users/services/auth-guard.service';
 
@@ -28,8 +29,18 @@ const routes: Routes = [
   },
   {
     path: 'comptabilite',
-    //canActivate: [RoleGuardService],
+    canActivate: [RoleGuardService],
     loadChildren: '../comptabilite/comptabilite.module#ComptabiliteModule' 
+  },
+  {
+    path: 'stocks',
+    canActivate: [RoleGuardService],
+    loadChildren: '../gestionstocks/gestionstocks.module#GestionstocksModule'
+  },
+  {
+    path: 'employes',
+    canActivate: [RoleGuardService],
+    component: EmployesComponent
   },
   { path: '**', redirectTo: '' }
 ];

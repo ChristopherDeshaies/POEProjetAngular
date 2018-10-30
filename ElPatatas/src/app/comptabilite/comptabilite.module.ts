@@ -4,8 +4,10 @@ import { ComptabiliteComponent } from './components/comptabilite.component';
 import { ComptabiliteRoutingModule } from './comptabilite-routing.module';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
   imports: [
+    CommonModule,
     ComptabiliteRoutingModule
   ],
   declarations: [
