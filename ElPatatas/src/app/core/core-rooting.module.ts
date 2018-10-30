@@ -6,7 +6,7 @@ import { AdminComponent } from './users/components/admin/admin.component';
 import { RoleGuardService } from '../core/users/services/role-guard.service';
 import { AuthGuardService } from '../core/users/services/auth-guard.service';
 
-const routes :Routes = [
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
@@ -26,6 +26,11 @@ const routes :Routes = [
     canActivate: [RoleGuardService],
     component: AdminComponent
   },
+  {
+    path: 'comptabilite',
+    //canActivate: [RoleGuardService],
+    loadChildren: '../comptabilite/comptabilite.module#ComptabiliteModule' 
+  },
   { path: '**', redirectTo: '' }
 ];
 
@@ -34,7 +39,7 @@ const routes :Routes = [
     CommonModule,
     RouterModule.forRoot(routes),
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })

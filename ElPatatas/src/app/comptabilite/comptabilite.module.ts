@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComptabiliteComponent } from './components/comptabilite.component';
+import { ComptabiliteRoutingModule } from './comptabilite-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule
+    ComptabiliteRoutingModule
   ],
-  declarations: [ComptabiliteComponent]
+  declarations: [
+    ComptabiliteComponent
+  ],
+  exports: [
+    ComptabiliteComponent,
+    RouterModule
+  ]
 })
 export class ComptabiliteModule { }

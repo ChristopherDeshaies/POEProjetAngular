@@ -61,13 +61,6 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['admin']);
           } 
         }
-        // if  (JSON.parse(localStorage.getItem('user'))[0] != undefined) {  
-        //   if (JSON.parse(localStorage.getItem('user'))[0]['role'] == "employe"){
-        //     this.router.navigate(['commandes']);
-        //   }else{
-        //     this.router.navigate(['admin']);
-        //   } 
-        // }
       },
       error => console.log(error)
     )

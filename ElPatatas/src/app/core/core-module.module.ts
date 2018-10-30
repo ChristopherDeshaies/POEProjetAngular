@@ -19,19 +19,18 @@ import { EmployesComponent } from '../core/users/components/employes/employes.co
     HttpClientModule,
     FormsModule,
     HttpModule,
-
   ],
   exports : [
     LoginComponent,
     RouterModule,
     AdminComponent,
     EmployesComponent,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     LoginComponent,
     AdminComponent,
-    EmployesComponent
+    EmployesComponent,
   ],
   providers: [AuthenticationService],
 })

@@ -9,6 +9,10 @@ export class User {
     private password : string; 
     private role : string;
 
+    // static insertUser(user: Object) : User {
+    //     return new User(user["id"],user["nom"],user["prenom"],user['adresse'],user['tel'],user['email'],user['password'],user['dateNaissance'],user['role']);
+    // }
+
     constructor(
         id : number,
         nom: string,
@@ -30,7 +34,6 @@ export class User {
         this.password = password;
         this.dateNaissance = dateNaissance;
         this.role = role;
-
     }
 
     getId(){
