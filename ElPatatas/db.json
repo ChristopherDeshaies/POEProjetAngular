@@ -5,7 +5,7 @@
       "libelle": "Frite",
       "codeFournisseur": 1,
       "quantiteInitiale": 100,
-      "quantiteRestant": 100,
+      "quantiteRestante": 100,
       "dateLimite": "2018-11-21",
       "dateAchat": "2018-09-21",
       "prixAchat": 0.2
@@ -15,7 +15,7 @@
       "libelle": "Merguez",
       "codeFournisseur": 2,
       "quantiteInitiale": 200,
-      "quantiteRestant": 200,
+      "quantiteRestante": 200,
       "dateLimite": "2018-10-29",
       "dateAchat": "2018-10-21",
       "prixAchat": 0.4
@@ -25,7 +25,7 @@
       "libelle": "Saucisse",
       "codeFournisseur": 2,
       "quantiteInitiale": 300,
-      "quantiteRestant": 300,
+      "quantiteRestante": 300,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
       "prixAchat": 0.3
@@ -35,7 +35,7 @@
       "libelle": "Mexicanos",
       "codeFournisseur": 4,
       "quantiteInitiale": 100,
-      "quantiteRestant": 100,
+      "quantiteRestante": 100,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
       "prixAchat": 0.3
@@ -45,7 +45,7 @@
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 50,
-      "quantiteRestant": 50,
+      "quantiteRestante": 50,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
       "prixAchat": 0.5
@@ -55,7 +55,7 @@
       "libelle": "Fanta",
       "codeFournisseur": 3,
       "quantiteInitiale": 50,
-      "quantiteRestant": 0,
+      "quantiteRestante": 0,
       "dateLimite": "2019-09-21",
       "dateAchat": "2018-10-21",
       "prixAchat": 0.55
@@ -64,7 +64,7 @@
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 100,
-      "quantiteRestant": 100,
+      "quantiteRestante": 100,
       "dateLimite": "2019-07-12",
       "dateAchat": "2018-10-29",
       "prixAchat": 2,
@@ -74,7 +74,7 @@
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 200,
-      "quantiteRestant": 200,
+      "quantiteRestante": 200,
       "dateLimite": "2018-12-14",
       "dateAchat": "2018-10-01",
       "prixAchat": 2,

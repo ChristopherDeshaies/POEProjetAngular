@@ -51,29 +51,16 @@ export class ProduitsService {
 
   putProduit(produit: Produits) {
     const url = `${urlProduit}/${produit.id}`;
-    this.httpClient.put(url, produit).subscribe(data => {
-      alert('Mise à jour reussi.');
-    },
-    error => {
-      alert('Erreur lors de la mise à jour !!!');
-    });
+    return this.httpClient.put(url, produit);
   }
 
   postProduit(produit: Produits) {
-    this.httpClient.post(urlProduit, produit).subscribe(data => {
-      alert('Creation du produit terminer.');
-    },
-    error => {
-      alert('Echec de la création du produit !!!');
-    });
+    return this.httpClient.post(urlProduit, produit);
   }
-  deleteProduit (id: number): void {
+
+  deleteProduit (id: number) {
     const url = `${urlProduit}/${id}`;
-    this.httpClient.delete(url).subscribe(data => {
-      alert('Suppression du produit terminer.');
-    },error => {
-      alert('Echec de la suppression !!!');
-    });
+    return this.httpClient.delete(url);
   }
 
   miseAJourQuantiteProduit(libelle: string ): Observable<Produits[]> {
