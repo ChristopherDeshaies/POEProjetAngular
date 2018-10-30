@@ -5,7 +5,6 @@ export class Produits {
     quantiteInitiale: number;
     quantiteRestante: number;
     dateLimite: string;
-
     dateAchat: string;
     prixAchat: number;
 
