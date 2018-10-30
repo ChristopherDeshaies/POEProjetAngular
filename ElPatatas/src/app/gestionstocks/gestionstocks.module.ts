@@ -8,6 +8,8 @@ import { CoreModule } from '../core/core-module.module';
     CommonModule,
     CoreModule
   ],
-  declarations: [GestionstocksComponent]
+  declarations: [
+    GestionstocksComponent
+  ]
 })
 export class GestionstocksModule { }

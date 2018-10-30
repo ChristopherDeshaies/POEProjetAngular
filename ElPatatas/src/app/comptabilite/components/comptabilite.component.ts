@@ -34,6 +34,7 @@ export class ComptabiliteComponent implements OnInit {
    */
    /* getBilan() {
     this.isLoaded = false;
+<<<<<<< HEAD
     return this.bilan = this.commandes.getPrixTotal().pipe(finalize( () => this.isLoaded = true));
   } */
   /**
@@ -56,6 +57,21 @@ export class ComptabiliteComponent implements OnInit {
   getHistoriqueCommandes() {
     this.isLoaded = false;
     return this.histoCommandes = this.commandesServices.getListCommandes().pipe(finalize( () => this.isLoaded = true));
+=======
+  // this.bilan = this.comptabiliteservice.getPrixtotal().pipe(finalize( () => this.isLoaded = true));
+  }
+  getAchat() {
+    this.isLoaded = false;
+    //this.achat = this.comptabiliteservice.getAchat().pipe(finalize( () => this.isLoaded = true));
+  }
+  getVente() {
+    this.isLoaded = false;
+    //this.vente = this.comptabiliteservice.getVente().pipe(finalize( () => this.isLoaded = true));
+  }
+  getHistoriqueCommandes() {
+    this.isLoaded = false;
+    //this.histoCommandes = this.histoCommandes.getHistoCommandes().pipe(finalize( () => this.isLoaded = true));
+>>>>>>> 10e895e38d096dac89cd8912619001533525838f
   }
 
 }

@@ -17,21 +17,28 @@ export class GestionstocksComponent implements OnInit {
 
   private listStocks: Observable<Stocks[]>;
   private listProduits: Observable<Produits[]>;
+
   private produitSelected: Produits;
 
-  private selectedQuantiteAjoutProduit: number;
-  private selectedDateLimiteProduit: Date;
-  private selectedDateAchatProduit:Date;
-  private selectedprixAchatProduit:number;
+  private newNomProduit: string;
+  private newCodeFournisseur: string;
+  
+  private quantiteAjoutProduit: number;
+  private dateLimiteProduit: Date;
+  private dateAchatProduit:Date;
+  private prixAchatProduit:number;
 
-  private newAjouterProduit: string;
-
+  private sumProduit:number[];
+  private j:number;
+  
   /**
    * Call of services in the constructor
    * @param stocksservice :  stocksService
    * @param produitsservice : produitsService
    */
-  constructor(private stocksservice: StocksService, private produitsservice: ProduitsService) { }
+  constructor(private stocksservice: StocksService, private produitsservice: ProduitsService) {
+    this.sumProduit = new Array();
+  }
 
   /**
    * At init list the stocks
@@ -56,8 +63,47 @@ export class GestionstocksComponent implements OnInit {
    * Function which calls the function deleteStock in the service StocksService
    * @param libelleStocks : LibelleProduit has to delete of Stocks
    */
-  supprimer(libelleStocks): void {
-    this.stocksservice.deleteStock(libelleStocks);
+  supprimer(idProduit): void {
+    this.produitsservice.deleteProduit(idProduit);
+  }
+
+  ajouterProduitStock(): void{
+    if(this.produitSelected){
+      this.produitsservice.postProduit(
+        new Produits(
+          this.produitSelected.libelle, 
+          this.produitSelected.codeFournisseur, 
+          this.quantiteAjoutProduit,
+          this.dateLimiteProduit,
+          this.dateAchatProduit,
+          this.prixAchatProduit
+        ) 
+      );
+      return;
+    }
+
+    this.produitsservice.postProduit(
+      new Produits(
+        this.newNomProduit, 
+        this.newCodeFournisseur, 
+        this.quantiteAjoutProduit,
+        this.dateLimiteProduit,
+        this.dateAchatProduit,
+        this.prixAchatProduit
+      ) 
+    );
+
+  }
+
+  addSumProduit( i,j, quantiteRestant): void{
+    if(j===0){
+      this.j=0;
+    }
+    if(this.j!==j){
+      this.sumProduit[i]+=quantiteRestant;
+    }else{
+      this.sumProduit[i]=quantiteRestant;
+    }
   }
 
 }
