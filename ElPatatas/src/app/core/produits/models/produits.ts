@@ -13,7 +13,7 @@ export class Produits {
         this.libelle=libelle;
         this.codeFournisseur=codeFournisseur;
         this.quantiteInitiale=quantiteInitiale;
-        this.quantiteRestant=quantiteInitiale;
+        this.quantiteRestante=quantiteInitiale;
         this.dateLimite=dateLimite;
         this.dateAchat=dateAchat;
         this.prixAchat=prixAchat;

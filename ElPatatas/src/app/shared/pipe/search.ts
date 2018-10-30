@@ -8,7 +8,7 @@ export class ProduitsSearchPipe implements PipeTransform {
     transform(items: Array<Produits>, libelleSearch: string){
         if (items && items.length){
             return items.filter(item =>{
-                if (libelleSearch && item.libelle.toLowerCase().indexOf(libelleSearch.toLowerCase()) === -1 || item.quantiteRestant===0){
+                if (libelleSearch && item.libelle.toLowerCase().indexOf(libelleSearch.toLowerCase()) === -1 || item.quantiteRestante===0){
                     return false;
                     
                 }

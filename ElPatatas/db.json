@@ -106,12 +106,6 @@
     },
     {
       "id": 3,
-<<<<<<< HEAD
-      "nom": "DESHAIES",
-      "prenom": "Chris",
-      "adresse": "2 rue du vent",
-      "tel": "0606060606",
-=======
       "nom": "DESHAIES",
       "prenom": "Chris",
       "adresse": "rue du vent",
@@ -127,7 +121,6 @@
       "prenom": "Chris",
       "adresse": "rue du vent",
       "tel": "rue du vent",
->>>>>>> cc6847291618cfc458774008ab2504d62d0d1632
       "email": "chris@html.fr",
       "password": "Chris",
       "dateNaissance": "07/12/1991",
@@ -160,18 +153,6 @@
       "id": 6
     },
     {
-<<<<<<< HEAD
-      "dateCommande": "Sat, 27 Oct 2018 12:14:27 GMT",
-      "listProduits": "{}",
-      "prixTotal": 7.5,
-      "id": 3
-    },
-    {
-      "dateCommande": "Mon, 29 Oct 2018 07:50:07 GMT",
-      "listProduits": "{}",
-      "prixTotal": 18,
-      "id": 4
-=======
       "dateCommande": "Mon, 29 Oct 2018 10:07:47 GMT",
       "listProduits": {
         "Moyenne": 3,
@@ -186,7 +167,6 @@
       },
       "prixTotal": 41.5,
       "id": 7
->>>>>>> cc6847291618cfc458774008ab2504d62d0d1632
     }
   ]
 }
