@@ -11,7 +11,6 @@ import { LoginComponent } from '../core/users/components/login/login.component';
 import { AdminComponent } from '../core/users/components/admin/admin.component';
 import { EmployesComponent } from '../core/users/components/employes/employes.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -26,12 +25,12 @@ import { EmployesComponent } from '../core/users/components/employes/employes.co
     RouterModule,
     AdminComponent,
     EmployesComponent,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     LoginComponent,
     AdminComponent,
-    EmployesComponent
+    EmployesComponent,
   ],
   providers: [AuthenticationService],
 })

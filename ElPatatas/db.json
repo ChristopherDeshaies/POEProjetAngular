@@ -65,10 +65,30 @@
       "libelle": "Fanta",
       "codeFournisseur": 3,
       "quantiteInitiale": 50,
-      "quantiteRestant": 50,
-      "dateLimite": "21/09/2019",
-      "dateAchat": "21/10/2018",
+      "quantiteRestant": 0,
+      "dateLimite": "2019-09-21",
+      "dateAchat": "2018-10-21",
       "prixAchat": 0.55
+    },
+    {
+      "libelle": "Coca",
+      "codeFournisseur": 3,
+      "quantiteInitiale": 100,
+      "quantiteRestant": 100,
+      "dateLimite": "2019-07-12",
+      "dateAchat": "2018-10-29",
+      "prixAchat": 2,
+      "id": 7
+    },
+    {
+      "libelle": "Coca",
+      "codeFournisseur": 3,
+      "quantiteInitiale": 200,
+      "quantiteRestant": 200,
+      "dateLimite": "2018-12-14",
+      "dateAchat": "2018-10-01",
+      "prixAchat": 2,
+      "id": 8
     }
   ],
   "users": [
