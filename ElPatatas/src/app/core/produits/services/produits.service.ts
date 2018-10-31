@@ -102,7 +102,7 @@ export class ProduitsService {
 
   rechercheQuantiteRestanteProduit(produits: Produits[]): number {
     let that = this;
-
+    that.totalquantiteRestante =0;
     produits.forEach(
       (produit: Produits) => {
         that.totalquantiteRestante += produit.quantiteRestante;

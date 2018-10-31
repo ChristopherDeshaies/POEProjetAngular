@@ -15,11 +15,6 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     GestionStocksRoutingModule,
-    // OrderByPipe,
-    // UniquePipe,
-    // ProduitsSearchPipe,
-    // SumPipe,
-    //CoreModule
   ],
   declarations: [
     GestionstocksComponent, 

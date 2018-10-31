@@ -19,11 +19,7 @@ export class RoleGuardService implements CanActivate {
      */
     const token = JSON.parse(localStorage.getItem('user'))[0]['role'];
    
-    if (
-      !this.auth.isAuthenticated() || 
-      token !== "admin"
-      
-    ) {
+    if ( !this.auth.isAuthenticated() || token !== "admin") {
       this.router.navigate(['login']);
       return false;
     }

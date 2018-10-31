@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from "rxjs/operators";
+import { Observable,of } from 'rxjs';
+import { map, catchError } from "rxjs/operators";
 import { User } from '../models/user';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 /**
  * url d'accès aux utilisateurs sur le server json
@@ -25,6 +26,7 @@ export class AuthenticationService {
 
   constructor(
     private httpClient: HttpClient,
+    public router: Router,
   ) { }
 
   /**
@@ -44,26 +46,40 @@ export class AuthenticationService {
                         this.authenticatedUser.next(response);                       
                         return response;
                       }else{
+                        this.authenticatedUser.next(null);
                         throw new Error('Identifiants inconnus');
                       }                 
                     }
-           )
+           
+           ),catchError(() => { 
+             console.log("eeeee");    
+            this.authenticatedUser.next(null);
+            this.getAuthenticatedUser().subscribe((data) =>  this.router.navigate(['/login']));
+             return of(new User(0,'','','','','','','',''));
+           })
       );
   }
-
+ 
   /**
    * Déconnecte l'utilisateur logué
    */
-  // public logout(): Observable<Response> {
-  //   return service.httpclient.get(urlLogin)
-  //     .pipe(
-  //       map((response: Response) => {
-  //         this.authenticatedUser.next(ANONYMOUS_USER);
-  //         this.router.navigate(['/login']);
-  //         return response;
-  //       })
-  //     );
+  // public logout() {
+  //     this.authenticatedUser.next(null);
+  //     this.router.navigate(['/login']);
   // }
+
+  public logout(): Observable<Response> {
+    const service = this;
+    console.log("accés logout");
+    return service.httpClient.get(urlUser)
+      .pipe(
+        map((response: Response) => {
+          service.authenticatedUser.next(null);
+          this.router.navigate(['/login']);
+          return response;
+        })
+      );
+  }
 
   /**
    * Récupére l'utilsiteur connecté

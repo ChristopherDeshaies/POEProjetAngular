@@ -1,16 +1,3 @@
-<div *ngIf="isLogin">
-  <div class="header">
-    <div class="title"> 
-      <p>El Patatas</p> 
-      <img src="assets/img/fries.png">
-    </div>
-    <div class="row justify-content-between">
-        <p>{{prenomUtilisateur+" "}}{{nomUtilisateur+" "}} connecté</p> 
-        <p (click)="logout()">Logout</p> 
-    </div>
-  </div>
-</div>
-<div *ngIf="isAdmin">
 <ul class="nav nav-tabs justify-content-around">
     <li class="nav-item">
         <a class="nav-link text-center" (click)="navigateCompta()">Accès Comptabilité</a>
@@ -25,4 +12,3 @@
         <a class="nav-link text-center" (click)="navigateCommandes()">Accès Gestion Commandes Client</a>
     </li>
 </ul>
-</div>

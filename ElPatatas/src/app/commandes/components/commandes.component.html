@@ -63,6 +63,14 @@
 
 <button type="button" class="btn btn-danger mt-3 ml-3" (click)="rechercheTypeProduit('Merguez')">Lister produits</button>
 <label>Quantite restanbte frite : {{totalquantiteRestante}}</label>
+
+<button type="button" class="btn btn-danger mt-3 ml-3" (click)="recupAllProduits()">recupAllProduits</button>
+<div *ngFor="let produit of listeProduitsBase; index as i">
+    {{produit.id}}{{" "}}{{produit.libelle}}{{produit.quantiteRestante}}
+</div>
+
+<button type="button" class="btn btn-danger mt-3 ml-3" (click)="recupQuantiteProduit('Merguez')">recupQuantiteProduit</button>
+
 <table class="table">
     <thead>
         <tr>

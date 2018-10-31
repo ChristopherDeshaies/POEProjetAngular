@@ -4,6 +4,7 @@ import { ProduitsService } from 'src/app/core/produits/services/produits.service
 import { Produits } from 'src/app/core/produits/models/produits';
 import { map } from 'rxjs/operators';
 import { delay, reject } from 'q';
+import { Router } from '@angular/router';
 
 /**
  * @author Christopher Deshaies
@@ -51,9 +52,10 @@ export class GestionstocksComponent implements OnInit {
    * Constructeur de gestionstocks
    * @param produitsservice : appel du service Produits
    */
-  constructor(private produitsservice: ProduitsService) {
+  constructor(private produitsservice: ProduitsService,private router:Router) {
     this.hiddenCategorie = new Array<boolean>(); 
     this.mapQuantiteRestante = new Map<String,number>();
+    
   }
 
   /**
@@ -187,6 +189,22 @@ export class GestionstocksComponent implements OnInit {
   refresh(): void{
     this.listProduits=this.getListProduits();
     this.generateCompteurCategorie();
+  }
+
+  navigateCompta() {
+    this.router.navigate(['/comptabilite']);
+  }
+
+  navigateStocks() {
+    this.router.navigate(['/stocks']);
+  }
+
+  navigateEmployes() {
+    this.router.navigate(['/employes']);
+  }
+
+  navigateCommandes() {
+    this.router.navigate(['/commandes']);
   }
 
 }

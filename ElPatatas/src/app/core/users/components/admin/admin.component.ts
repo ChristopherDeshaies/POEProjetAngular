@@ -15,16 +15,4 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigateCompta() {
-    this.router.navigate(['/comptabilite']);
-  }
-
-  navigateStocks() {
-    this.router.navigate(['/stocks']);
-  }
-
-  navigateEmployes() {
-    this.router.navigate(['/employes']);
-  }
-
 }

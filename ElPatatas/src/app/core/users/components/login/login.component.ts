@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  isLogin : boolean=false;
+  
   /**
    * variables de control du formulaire de connexion
    */
@@ -33,6 +35,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isLogin = false;
     this.ldapLoginCtrl = this.fb.control('', Validators.required);
     this.ldapPasswordCtrl = this.fb.control('', Validators.required);
     this.loginForm = this.fb.group({
