@@ -4,37 +4,29 @@ import { GestionstocksComponent } from './components/gestionstocks/gestionstocks
 import { CoreModule } from '../core/core-module.module';
 import { GestionStocksRoutingModule } from './gestionstocks-routing.module';
 import { RouterModule } from '@angular/router';
-import { OrderByPipe } from '../shared/pipe/orderby';
-import { UniquePipe } from '../shared/pipe/unique';
-import { ProduitsSearchPipe } from '../shared/pipe/search';
-import { SumPipe } from '../shared/pipe/sum';
+import { OrderByPipe } from '../shared/pipe/pipe-orderby';
+import { UniquePipe } from '../shared/pipe/pipe-unique';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from '../shared/pipe/pipe-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     GestionStocksRoutingModule,
-    // OrderByPipe,
-    // UniquePipe,
-    // ProduitsSearchPipe,
-    // SumPipe,
-    //CoreModule
   ],
   declarations: [
     GestionstocksComponent, 
     OrderByPipe,
     UniquePipe,
-    ProduitsSearchPipe,
-    SumPipe,
+    FilterPipe
   ],
   exports: [
     GestionstocksComponent,
     RouterModule,
     OrderByPipe,
     UniquePipe,
-    ProduitsSearchPipe,
-    SumPipe,
+    FilterPipe
   ]
 })
 export class GestionstocksModule { }

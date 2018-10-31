@@ -8,8 +8,10 @@
   </h2>
   <ul>
     <li *ngFor=" let produit1 of listProduits  | async | unique:'libelle' ; let i = index">
-      <div class="d-flex justify-content-between">
-          <label><strong class="text-uppercase">{{produit1.libelle}}</strong>  -  Quantité totale restante : <strong>{{getQuantiteRestant(produit1.libelle)}}</strong></label>
+      <div class="d-flex justify-content-between"><img src="../../../../icon/icon-sup.png"/>
+          <label>
+            
+            <strong class="text-uppercase">{{produit1.libelle}}</strong>  -  Quantité totale restante : <strong>{{getQuantiteRestant(produit1.libelle)}}</strong></label>
           <button class="btn btn-outline-danger" (click)="changeHiddenCategorie(i)">
             
             <span *ngIf="hiddenCategorie[i]">v</span>
@@ -27,7 +29,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let produit of listProduits | async | orderBy:'dateLimite':true | produitsSearch:produit1.libelle" >
+          <tr *ngFor="let produit of listProduits | async | orderBy:'dateLimite':true | filter:'libelle':produit1.libelle" >
             <td>{{produit.libelle}}</td>
             <td>{{produit.codeFournisseur}}</td>
             <td>{{produit.quantiteRestante}}</td>
