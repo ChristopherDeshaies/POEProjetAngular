@@ -34,7 +34,7 @@ export class Produits {
             json['libelle'],
             json['codeFournisseur'],
             json['quantiteInitiale'],
-            //json['quantiteRestante'],
+            json['quantiteRestante'],
             json['dateLimite'],
             json['dateAchat'],
             json['prixAchat'],
