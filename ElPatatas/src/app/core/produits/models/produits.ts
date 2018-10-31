@@ -8,11 +8,11 @@ export class Produits {
     dateAchat: string;
     prixAchat: number;
 
-    constructor (libelle, codeFournisseur, quantiteInitiale, dateLimite, dateAchat, prixAchat){
+    constructor (libelle, codeFournisseur, quantiteInitiale, quantiteRestante, dateLimite, dateAchat, prixAchat){
         this.libelle=libelle;
         this.codeFournisseur=codeFournisseur;
         this.quantiteInitiale=quantiteInitiale;
-        this.quantiteRestante=quantiteInitiale;
+        this.quantiteRestante=quantiteRestante;
         this.dateLimite=dateLimite;
         this.dateAchat=dateAchat;
         this.prixAchat=prixAchat;

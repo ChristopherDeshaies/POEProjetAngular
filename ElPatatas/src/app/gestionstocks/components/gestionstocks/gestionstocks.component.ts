@@ -135,6 +135,7 @@ export class GestionstocksComponent implements OnInit {
           produitNom, 
           this.codeFournisseur,
           this.quantiteAjoutProduit,
+          this.quantiteAjoutProduit,
           this.dateLimiteProduit,
           this.dateAchatProduit,
           this.prixAchatProduit
