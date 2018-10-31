@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './models/user';
 import { Router } from '@angular/router';
+import { map } from "rxjs/operators";
 
 const urlUser = "http://127.0.0.1:3000/users";
 
@@ -18,6 +19,22 @@ export class UsersService {
 
   getListUsers(): Observable<User[]> {
     return this.httpclient.get<User[]>(urlUser);
+  }
+
+  getUser(email: string): Observable<User> {
+    let params = new HttpParams().set('email', email);
+    return this.httpclient.get<User>(`${urlUser}`, { params })
+    .pipe(
+        map(response => { 
+          console.log("RESPONSE : " +response)
+                      if (response[0] != null) { 
+                        return response;
+                      }else{
+                        return null;
+                      }               
+                    }
+           )
+      );
   }
 
   putUser(user: User) {

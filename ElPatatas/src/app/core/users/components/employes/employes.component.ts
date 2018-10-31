@@ -41,16 +41,28 @@ export class EmployesComponent implements OnInit {
   }
 
   ajout() {
-    const user = new User(0,'','','','','','','','');
-    user.setNom(this.nom);
-    user.setPrenom(this.prenom);
-    user.setAdresse(this.adresse);
-    user.setEmail(this.email);
-    user.setTel(this.tel);
-    user.setPassword(this.password);
-    user.setDateNaissance(this.dateNaissance);
-    user.setRole(this.role);
-    this.userservice.postUser(user); 
+    this.userservice.getUser(this.email)
+    .subscribe(  
+      data => {
+        console.log("DATA :" +data)
+        if  (data != null) {  
+          alert("email déjà en base")
+        }else{
+          const user = new User(0,'','','','','','','','');
+          user.setNom(this.nom);
+          user.setPrenom(this.prenom);
+          user.setAdresse(this.adresse);
+          user.setEmail(this.email);
+          user.setTel(this.tel);
+          user.setPassword(this.password);
+          user.setDateNaissance(this.dateNaissance);
+          user.setRole(this.role);
+          this.userservice.postUser(user); 
+        } 
+      },
+    error => console.log(error)
+  )
+     
   }
 
   modifier() {
