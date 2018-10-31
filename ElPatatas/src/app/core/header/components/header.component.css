@@ -1,0 +1,19 @@
+.header{
+    background-color: #dc3545;
+    padding:10px;
+}
+
+p{
+    color: white;
+    font-weight: bold;
+}
+
+.row{
+    margin:0;
+}
+
+.title{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}

@@ -3,6 +3,7 @@ import { UsersService } from '../../users.service';
 import { User } from '../../models/user';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employes',
@@ -26,7 +27,8 @@ export class EmployesComponent implements OnInit {
   private userselected: User;
 
   constructor(
-    private userservice: UsersService
+    private userservice: UsersService,
+    private router:Router
   ) { }
 
   ngOnInit() {

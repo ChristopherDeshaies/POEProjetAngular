@@ -29,16 +29,15 @@ export class Produits {
     //     prixAchat: number,
     // ){}
 
-    // public static fromJson(json: Object): Produits {
-    //     return new Produits(
-    //         json['id'],
-    //         json['libelle'],
-    //         json['codeFournisseur'],
-    //         json['quantiteInitiale'],
-    //         json['quantiteRestante'],
-    //         json['dateLimite'],
-    //         json['dateAchat'],
-    //         json['prixAchat'],
-    //     );
-    // }
+    public static fromJson(json: Object): Produits {
+        return new Produits(
+            json['libelle'],
+            json['codeFournisseur'],
+            json['quantiteInitiale'],
+            //json['quantiteRestante'],
+            json['dateLimite'],
+            json['dateAchat'],
+            json['prixAchat'],
+        );
+    }
 }

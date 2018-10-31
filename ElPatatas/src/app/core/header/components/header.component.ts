@@ -24,13 +24,16 @@ export class HeaderComponent implements OnInit {
       this.authentication.getAuthenticatedUser()
       .subscribe((data:User) => {this.user = data;
         try{
-          this.nomUtilisateur = this.user[0]['nom'];
-          this.prenomUtilisateur = this.user[0]['prenom'];
           if (this.user != null){
+            this.nomUtilisateur = this.user[0]['nom'];
+            this.prenomUtilisateur = this.user[0]['prenom'];
             this.isLogin = true;
+          }else{
+            this.isLogin = false;
           }
         }catch(e) {
           console.log(e);
+          this.router.navigate(['/login']) 
         }}
           );
     }
@@ -40,9 +43,31 @@ export class HeaderComponent implements OnInit {
    */
     logout() {    
       localStorage.removeItem('user');
-      //this.authentication.next(null);
       this.isLogin = false;
-      this.router.navigate(['/login']);
+      this.authentication.logout().subscribe();
+    }
+
+    // login() {    
+    //   localStorage.removeItem('user');
+    //   //this.authentication.next(null);
+    //   this.isLogin = false;
+    //   this.router.navigate(['/login']);
+    // }
+
+    navigateCompta() {
+      this.router.navigate(['/comptabilite']);
+    }
+  
+    navigateStocks() {
+      this.router.navigate(['/stocks']);
+    }
+  
+    navigateEmployes() {
+      this.router.navigate(['/employes']);
+    }
+  
+    navigateCommandes() {
+      this.router.navigate(['/commandes']);
     }
 
 }

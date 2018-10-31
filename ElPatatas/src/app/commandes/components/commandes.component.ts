@@ -4,7 +4,7 @@ import { Commandes } from '../models/commandes';
 import { CommandesService } from '../services/commandes.service';
 import { ProduitsService } from '../../core/produits/services/produits.service';
 import { Produits } from '../../core/produits/models/produits';
-import { map, finalize, filter, reduce  } from 'rxjs/operators';
+import { map, finalize, filter, reduce } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { forEach } from '@angular/router/src/utils/collection';
 
@@ -18,17 +18,25 @@ import { forEach } from '@angular/router/src/utils/collection';
 })
 export class CommandesComponent implements OnInit {
 
-  // selectedFritesIds = new Map();
-  // selectedBoissonsIds = new Map();
-  // selectedViandesIds = new Map();
-  //produits : Produits[] = [];
-  produits : Observable<Produits[]>;
-  totalquantiteRestante : number = 0;
+  /**
+   * liste temporaire de produits
+   */
+  produits: Observable<Produits[]>;
+
+  /**
+   * liste de tous les produits en base
+   */
+  listeProduitsBase: Produits[];
+
+  /**
+   * quantité restante d'un produit
+   */
+  totalquantiteRestante: number = 0;
 
   /**
    * liste des produits frites à afficher sur la page commande
    */
-  frites: ItemMenu[] ;
+  frites: ItemMenu[];
 
   /**
    * liste des boissons à afficher sur la page commande
@@ -38,7 +46,7 @@ export class CommandesComponent implements OnInit {
   /**
    * liste des viandes à afficher sur la page commande
    */
-  viandes: ItemMenu[] ;
+  viandes: ItemMenu[];
 
   /**
    * variable de la commande en cours
@@ -60,11 +68,6 @@ export class CommandesComponent implements OnInit {
    */
   date: string;
 
-  /* à implémenter plus tard */
-  // prixFrites :number =0;
-  // prixBoissons :number =0;
-  // prixViandes :number =0;
-
   /**
    * Prix total de la commande
    */
@@ -73,7 +76,7 @@ export class CommandesComponent implements OnInit {
   constructor(
     private commandesService: CommandesService,
     private produitsService: ProduitsService
-    ) {
+  ) {
 
   }
 
@@ -83,21 +86,6 @@ export class CommandesComponent implements OnInit {
     this.boissons = [];
     this.viandes = [];
     this.commandes = new Array<Commandes>();
-
-    // this.selectedFritesIds
-    // .set("Grande Frite", 0)
-    // .set("Moyenne Frite", 0)
-    // .set("Petite Frite", 0);
-
-    // this.selectedBoissonsIds
-    // .set("coca", 0)
-    // .set("pepsi", 0)
-    // .set("fanta", 0);
-
-    // this.selectedViandesIds
-    // .set("Steack", 0)
-    // .set("Fricadelle", 0)
-    // .set("Brochette", 0);
 
     /**
      * initialisation en dur des items frites à afficher sur la page de commande
@@ -135,6 +123,11 @@ export class CommandesComponent implements OnInit {
      * initialisation d'une commande
      */
     this.commande = new Commandes('', null, null);
+
+    /**
+     * initialisation de tous les produits en base
+     */
+    this.listeProduitsBase = [];
 
   }
 
@@ -213,8 +206,6 @@ export class CommandesComponent implements OnInit {
   encaisser() {
     if (this.prixTotal !== 0) {
       this.date = new Date().toUTCString();
-      //this.commande = new Commandes(this.date,JSON.stringify(this.strMapToTab(this.listProduits)),this.prixTotal);
-      //this.commande = new Commandes(this.date,[{boisson : "coca", frites : "grande"}],this.prixTotal);
       this.commande = new Commandes(this.date, this.strMapToObj2(this.listProduits), this.prixTotal);
       this.commandes.push(this.commande);
       this.commandesService.postCommande(this.commande);
@@ -224,25 +215,56 @@ export class CommandesComponent implements OnInit {
     }
   }
 
- /**
-  * Transforme la liste des produits commandés par le client en objet
-  * car on ne peut insérer directement une map sur le server json
-  * @param strMap
-  */
- strMapToObj2(strMap: Map<string, number>) {
-  const obj = Object.create(null);
-  for (const [k, v] of strMap) {
+  /**
+   * Transforme la liste des produits commandés par le client en objet
+   * car on ne peut insérer directement une map sur le server json
+   * @param strMap
+   */
+  strMapToObj2(strMap: Map<string, number>) {
+    const obj = Object.create(null);
+    for (const [k, v] of strMap) {
       obj[k] = v;
+    }
+
+    return obj;
   }
 
-  return obj;
+  rechercheTypeProduit(libelle: string) {
+    this.produits = this.produitsService.rechercheProduitsByLibelle(libelle);
+    this.produits.subscribe((data) => this.totalquantiteRestante = this.produitsService.rechercheQuantiteRestanteProduit(data));
   }
 
-  rechercheTypeProduit(libelle : string){
-    this.produits=this.produitsService.rechercheProduitsByLibelle(libelle);
-    this.produits.subscribe((data)=>this.totalquantiteRestante=this.produitsService.rechercheQuantiteRestanteProduit(data));   
+  recupAllProduits() {
+    this.produitsService.getListProduits().pipe(
+      map(
+        (jsonArray: Object[]) => jsonArray.map(jsonItem => Produits.fromJson(jsonItem))
+      )
+    ).subscribe(
+      produits => this.listeProduitsBase = produits
+    );
+    console.log("this.listeProduitsBase :" + this.listeProduitsBase)
   }
- 
+
+  recupQuantiteProduit(libelle : string){
+    let that = this;
+    that.totalquantiteRestante=0;
+    for (let i = 0; i < this.listeProduitsBase.length; i++){
+        if (this.listeProduitsBase[i]['libelle'] === libelle){
+          that.totalquantiteRestante += +JSON.stringify(this.listeProduitsBase[i]['quantiteRestante']);
+      }
+    }
+    console.log("that.totalquantiteRestante : "+that.totalquantiteRestante)
+  }
+
+  ArrayToMap(){
+    let map : Map<String, String>;
+    map = new Map<String, String>();
+    
+    for (let i = 0; i < this.listeProduitsBase.length; i++){
+      // map.put(keys[i], s[i]);
+      // map.put(key, fields[i++]);
+    }
+  }
   // rechercheTypeProduit(){
   //    this.produits =this.produitsService.getListProduits()
   //   .pipe(
@@ -256,7 +278,7 @@ export class CommandesComponent implements OnInit {
   //     produits.forEach((produit:Produits)=>{
   //       this.totalquantiteRestante += produit.quantiteRestante;
   //       console.log("this.totalquantiteRestante : "+this.totalquantiteRestante)    
-  
+
   //     })
   //   }
   //   )

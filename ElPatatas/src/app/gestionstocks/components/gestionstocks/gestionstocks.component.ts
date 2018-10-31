@@ -58,6 +58,7 @@ export class GestionstocksComponent implements OnInit {
   constructor(private produitsservice: ProduitsService, private produitenventeservice: ProduitsEnVenteService) {
     this.hiddenCategorie = new Array<boolean>(); 
     this.mapQuantiteRestante = new Map<String,number>();
+    
   }
 
   /**

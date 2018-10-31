@@ -6,6 +6,7 @@ import { Commandes } from '../../commandes/models/commandes';
 import { ComptabiliteService } from '../services/comptabilite.service';
 import { finalize } from 'rxjs/operators';
 import { CommandesService } from '../../commandes/services/commandes.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class ComptabiliteComponent implements OnInit {
   constructor(
     private comptabiliteservice: ComptabiliteService, 
     private commandesServices: CommandesService,
+    private router:Router
     // private commandes: Commandes
     ) { }
   /**
@@ -69,5 +71,4 @@ export class ComptabiliteComponent implements OnInit {
     // this.vente = this.comptabiliteservice.getVente().pipe(finalize( () => this.isLoaded = true));
   }
   
-
 }
