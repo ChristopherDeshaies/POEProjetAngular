@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
     nomUtilisateur : string;
     prenomUtilisateur : string;
     isLogin : boolean=false;
+    isAdmin : boolean= false;
 
     constructor(
       private authentication: AuthenticationService,
@@ -28,6 +29,11 @@ export class HeaderComponent implements OnInit {
             this.nomUtilisateur = this.user[0]['nom'];
             this.prenomUtilisateur = this.user[0]['prenom'];
             this.isLogin = true;
+            if (this.user[0]['role']=="admin"){
+              this.isAdmin=true;
+            }else{
+              this.isAdmin=false;
+            }
           }else{
             this.isLogin = false;
           }
@@ -44,6 +50,7 @@ export class HeaderComponent implements OnInit {
     logout() {    
       localStorage.removeItem('user');
       this.isLogin = false;
+      this.isAdmin=false;
       this.authentication.logout().subscribe();
     }
 

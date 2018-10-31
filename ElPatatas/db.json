@@ -89,16 +89,6 @@
       "dateAchat": "2018-10-31",
       "prixAchat": 1,
       "id": 9
-    },
-    {
-      "libelle": "Fricadelle",
-      "codeFournisseur": "8",
-      "quantiteInitiale": 50,
-      "quantiteRestante": 50,
-      "dateLimite": "2018-11-11",
-      "dateAchat": "2018-10-29",
-      "prixAchat": 1,
-      "id": 11
     }
   ],
   "produitsEnVente": [
