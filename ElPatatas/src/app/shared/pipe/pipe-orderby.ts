@@ -7,6 +7,10 @@ export class OrderByPipe implements PipeTransform {
 
     transform(array, orderBy, asc = true){
  
+        if(array===null){
+          return null;
+        }
+
         if (!orderBy || orderBy.trim() == ""){
           return array;
         } 
