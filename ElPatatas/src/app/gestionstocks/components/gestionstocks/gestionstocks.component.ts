@@ -4,6 +4,9 @@ import { ProduitsService } from 'src/app/core/produits/services/produits.service
 import { Produits } from 'src/app/core/produits/models/produits';
 import { map } from 'rxjs/operators';
 import { delay, reject } from 'q';
+import { ProduitsEnVenteService } from 'src/app/core/produitEnVente/services/produitsEnVente';
+import { ProduitsEnVente } from 'src/app/core/produitEnVente/model/produitsEnVente';
+import { forEach } from '@angular/router/src/utils/collection';
 
 /**
  * @author Christopher Deshaies
@@ -16,14 +19,15 @@ import { delay, reject } from 'q';
 export class GestionstocksComponent implements OnInit {
 
   /**
-   * Contient la listes des produits
+   * Contient la liste des produits et la liste des noms de produits en vente ou déjà vendu
    */
   private listProduits: Observable<Produits[]>;
+  private listProduitsEnVente: Observable<ProduitsEnVente[]>;
 
   /**
    * Différence entre un produit connu et un produit nouveau
    */
-  private produitSelected: Produits;
+  private produitSelected: string;
   private newNomProduit: string;
 
   /**
@@ -49,9 +53,9 @@ export class GestionstocksComponent implements OnInit {
   
   /**
    * Constructeur de gestionstocks
-   * @param produitsservice : appel du service Produits
+   * @param produitsservice : appel du service Produits et du ProduitEnVente
    */
-  constructor(private produitsservice: ProduitsService) {
+  constructor(private produitsservice: ProduitsService, private produitenventeservice: ProduitsEnVenteService) {
     this.hiddenCategorie = new Array<boolean>(); 
     this.mapQuantiteRestante = new Map<String,number>();
   }
@@ -65,17 +69,24 @@ export class GestionstocksComponent implements OnInit {
   }
 
   /**
-   * Fonction qui retoune un Observable<Produits[]>
+   * Fonction qui retoune un Observable<Produits[]> des produits en base de donnée
    */
   getListProduits(): Observable<Produits[]> {
     return this.produitsservice.getListProduits();
   }
 
   /**
+   * Fonction qui retoune un Observable<ProduitsEnProduit[]> des produits en vente ou déjà vendu en base de donnée
+   */
+  getListProduitsEnVente(): Observable<ProduitsEnVente[]>{
+    return this.produitenventeservice.getProduitEnVente();
+  }
+
+  /**
    * Fonction qui supprime un element en base en fonction de idProduit - utilisation de Promise avant d'effectuer un refresh
    * @param idProduit : Identifiant du Produit
    */
-  supprimer(idProduit): void {
+  supprimerProduit(idProduit): void {
     new Promise((resolve,reject) => {
       this.produitsservice.deleteProduit(idProduit).subscribe(resolve,reject);
     }).then(
@@ -83,6 +94,17 @@ export class GestionstocksComponent implements OnInit {
     );
   }
 
+  /**
+   * Fonction qui supprime un element dans la table ProduitEnVente en fonction de idProduitEnVente - utilisation de Promise avant d'effectuer un refresh
+   * @param idProduitEnVente : Identifiant du Produit en vente
+   */
+  supprimerProduitEnVente(idProduitEnVente): void{
+    new Promise((resolve,reject) => {
+     this.produitenventeservice.deleteProduitEnVente(idProduitEnVente).subscribe(resolve,reject);
+    }).then(
+      () =>  this.refresh()
+    );
+  }
   /**
    * Fonction qui ajoute un produit - Le produit peut avoir son libelle déjà renseigné en base ou être nouveau
    * - utilisation de Primise avant d'effectuer un refresh
@@ -92,13 +114,22 @@ export class GestionstocksComponent implements OnInit {
 
     // Verification si nouveau produit ou pas
     if(this.produitSelected){
-      produitNom=this.produitSelected.libelle
+      produitNom=this.produitSelected
     }else{
       produitNom=this.newNomProduit;
+      this.produitenventeservice.findProduitEnVente(produitNom).then( 
+        (produitFind) => {
+          if(!produitFind){
+            this.produitenventeservice.ajouterProduitEnVente(produitNom);
+          }
+        } 
+      ); 
     }
     
     // Ajout
-    new Promise((resolve,reject) => {
+    new Promise(
+      (resolve,reject) => {
+
       this.produitsservice.postProduit(
         new Produits(
           produitNom, 
@@ -151,6 +182,21 @@ export class GestionstocksComponent implements OnInit {
     this.mapQuantiteRestante = new Map<String,number>();
 
     let listproduit:Observable<Produits[]> = this.produitsservice.getListProduits();
+    let listproduitsenvente:Observable<ProduitsEnVente[]> = this.produitenventeservice.getProduitEnVente();
+    
+    //Init de la map à 0 pour chaques produits
+    listproduitsenvente.forEach(
+      (produitsEnVente:ProduitsEnVente[]) => {
+        produitsEnVente.forEach(
+          (produitEnVente:ProduitsEnVente) => {
+            this.mapQuantiteRestante.set(
+              produitEnVente.libelle,
+              0
+            );
+          }
+        );
+      }
+    );
 
     listproduit.forEach(
       (produits:Produits[]) => {
@@ -171,6 +217,10 @@ export class GestionstocksComponent implements OnInit {
         )
       }
     );
+
+    
+
+
   }
 
   /**
@@ -186,6 +236,7 @@ export class GestionstocksComponent implements OnInit {
    */
   refresh(): void{
     this.listProduits=this.getListProduits();
+    this.listProduitsEnVente=this.getListProduitsEnVente();
     this.generateCompteurCategorie();
   }
 

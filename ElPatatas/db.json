@@ -81,14 +81,54 @@
       "id": 8
     },
     {
-      "libelle": "Merguez",
-      "codeFournisseur": "rrrr",
-      "quantiteInitiale": 100,
-      "quantiteRestante": 100,
-      "dateLimite": "2018-10-17",
-      "dateAchat": "2018-10-30",
-      "prixAchat": 150,
+      "libelle": "Fricadelle",
+      "codeFournisseur": "4",
+      "quantiteInitiale": 200,
+      "quantiteRestante": 200,
+      "dateLimite": "2018-11-15",
+      "dateAchat": "2018-10-31",
+      "prixAchat": 1,
       "id": 9
+    },
+    {
+      "libelle": "Fricadelle",
+      "codeFournisseur": "8",
+      "quantiteInitiale": 50,
+      "quantiteRestante": 50,
+      "dateLimite": "2018-11-11",
+      "dateAchat": "2018-10-29",
+      "prixAchat": 1,
+      "id": 11
+    }
+  ],
+  "produitsEnVente": [
+    {
+      "id": 1,
+      "libelle": "Coca"
+    },
+    {
+      "id": 2,
+      "libelle": "Fanta"
+    },
+    {
+      "id": 3,
+      "libelle": "Mexicanos"
+    },
+    {
+      "id": 4,
+      "libelle": "Saucisse"
+    },
+    {
+      "id": 5,
+      "libelle": "Merguez"
+    },
+    {
+      "id": 6,
+      "libelle": "Frite"
+    },
+    {
+      "libelle": "Fricadelle",
+      "id": 8
     }
   ],
   "users": [
@@ -124,20 +164,6 @@
       "password": "Chris",
       "dateNaissance": "07/12/1991",
       "role": "employe"
-    }
-  ],
-  "stocks": [
-    {
-      "libelleProduit": "Mexicanos",
-      "quantiteRestant": 100
-    },
-    {
-      "libelleProduit": "Saucisse",
-      "quantiteRestant": 300
-    },
-    {
-      "libelleProduit": "Merguez",
-      "quantiteRestant": 200
     }
   ],
   "commandes": [

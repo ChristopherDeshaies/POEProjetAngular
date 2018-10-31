@@ -26,7 +26,7 @@ export class UsersService {
     return this.httpclient.get<User>(`${urlUser}`, { params })
     .pipe(
         map(response => { 
-          console.log("RESPONSE : " +response)
+          
                       if (response[0] != null) { 
                         return response;
                       }else{
