@@ -4,5 +4,43 @@
 }
 
 h2{
-    margin:5% 0;
+    margin:2% 5%;
+    
+}
+
+.categorie:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+ul {
+    list-style: none;
+}
+
+i:hover{
+    color: rgb(197, 0, 0);
+    font-size: 18px;
+}
+
+td{
+    min-width: 80px;
+}
+
+.fa-check-circle{
+    color: rgb(18, 187, 32);
+    font-size: 26px;
+}
+
+.fa-check-circle:hover{
+    color: rgb(23, 241, 41);
+    font-size: 28px;
+}
+
+.fa-times-circle{
+    color: rgb(197, 0, 0);
+    font-size: 26px;
+}
+
+.fa-times-circle:hover{
+    color: rgb(236, 0, 0);
+    font-size: 28px;
 }

@@ -1,29 +1,11 @@
 <!-- @author : Christopher Deshaies -->
-<!-- <app-onglet></app-onglet> -->
-<!-- <ul class="nav nav-tabs justify-content-around">
-    <li class="nav-item">
-        <a class="nav-link text-center" (click)="navigateCompta()">Accès Comptabilité</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-center" (click)="navigateStocks()">Accès Gestion Stocks</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-center" (click)="navigateEmployes()">Accès Gestion Employés</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-center" (click)="navigateCommandes()">Accès Gestion Commandes Client</a>
-    </li>
-</ul> -->
-<h1>
-  Gestion Stocks
-</h1>
 <div>
   <h2>
-    Affichage des produits en stock
+    Produits en stock
   </h2>
   <ul class="row justify-content-center">
-    <li class="col-12 col-lg-9" *ngFor=" let produitEnVente of listProduitsEnVente  | async | orderBy:'libelle':true ; let i = index">
-      <div class="d-flex justify-content-between" (click)="changeHiddenCategorie(i)">
+    <li class="col-12 col-lg-10" *ngFor=" let produitEnVente of listProduitsEnVente  | async | orderBy:'libelle':true ; let i = index">
+      <div class="d-flex justify-content-between categorie" (click)="changeHiddenCategorie(i)">
         <label>
           <strong class="text-uppercase">{{produitEnVente.libelle}}</strong>  -  Quantité totale restante : <strong>{{getQuantiteRestant(produitEnVente.libelle)}}</strong>&nbsp;  
           <i *ngIf="getQuantiteRestant(produitEnVente.libelle)===0" class="fas fa-exclamation-circle" style="color: red" title="ATTENTION il faut en recommander !"></i>
@@ -52,16 +34,58 @@
           </tr>
         </thead>
         <tbody>
+          <!-- ajout -->
+          <tr>
+            <td>
+              {{produitEnVente.libelle}}
+            </td>
+            <td>
+              <input type="text" class="form-control" id="codeFournisseur[i+1]" [(ngModel)]="codeFournisseur[i+1]" name="codeFournisseur[i+1]" placeholder="Exemple : XCD216" required>
+            </td>
+            <td>
+              <input type="number" class="form-control " id="quantiteAjoutProduit[i+1]" [(ngModel)]="quantiteAjoutProduit[i+1]" name="quantiteAjoutProduit[i+1]" placeholder="Exemple : 200" required>
+            </td>
+            <td>
+            </td>
+            <td>
+              <input type="date" class="form-control" id="dateLimiteProduit[i+1]" [(ngModel)]="dateLimiteProduit[i+1]" name="dateLimiteProduit[i+1]" required>
+            </td>
+            <td>
+              <input type="date" class="form-control" id="dateAchatProduit[i+1]" [(ngModel)]="dateAchatProduit[i+1]" name="dateAchatProduit[i+1]" required>
+            </td>
+            <td>
+              <input type="text" class="form-control" id="prixAchatProduit[i+1]" [(ngModel)]="prixAchatProduit[i+1]" name="prixAchatProduit[i+1]" placeholder="Exemple : 100.50" required>
+            </td>
+            <td>
+              <button class="btn btn-outline-success" (click)="ajouterProduitStock(i+1, produitEnVente.libelle)">
+                Ajouter
+              </button>
+            </td>
+          </tr>
           <tr *ngFor="let produit of listProduits | async | orderBy:'dateLimite':true | filter:'libelle':produitEnVente.libelle" >
             <td>{{produit.libelle}}</td>
-            <td>{{produit.codeFournisseur}}</td>
-            <td>{{produit.quantiteInitiale}}</td>
-            <td>{{produit.quantiteRestante}}</td>
-            <td>{{produit.dateLimite}}</td>
-            <td>{{produit.dateAchat}}</td>
-            <td>{{produit.prixAchat}}€/unité</td>
+            <td *ngIf="!tabModifierProduit[produit.id]">{{produit.codeFournisseur}}</td>
+            <td *ngIf="tabModifierProduit[produit.id]"><input type="text" [(ngModel)]="modifProduit[0]"/></td>
+
+            <td *ngIf="!tabModifierProduit[produit.id]">{{produit.quantiteInitiale}}</td>
+            <td *ngIf="tabModifierProduit[produit.id]"><input type="number" [(ngModel)]="modifProduit[1]"/></td>
+
+            <td *ngIf="!tabModifierProduit[produit.id]">{{produit.quantiteRestante}}</td>
+            <td *ngIf="tabModifierProduit[produit.id]"><input type="number" [(ngModel)]="modifProduit[2]"/></td>
+
+            <td *ngIf="!tabModifierProduit[produit.id]">{{produit.dateLimite}}</td>
+            <td *ngIf="tabModifierProduit[produit.id]"><input type="date" [(ngModel)]="modifProduit[3]"/></td>
+
+            <td *ngIf="!tabModifierProduit[produit.id]">{{produit.dateAchat}}</td>
+            <td *ngIf="tabModifierProduit[produit.id]"><input type="date" [(ngModel)]="modifProduit[4]"/></td>
+
+            <td *ngIf="!tabModifierProduit[produit.id]">{{produit.prixAchat}}€/unité</td>
+            <td *ngIf="tabModifierProduit[produit.id]"><input type="text" [(ngModel)]="modifProduit[5]"/></td>
             <td>
-              <i class="fas fa-trash-alt" (click)="supprimerProduit(produit.id)"></i>
+              <i class="fas fa-edit" *ngIf="!tabModifierProduit[produit.id]" (click)="changerModifierProduit(produit)"></i>&nbsp;
+              <i class="fas fa-trash-alt" *ngIf="!tabModifierProduit[produit.id]" (click)="supprimerProduit(produit.id)"></i>
+              <i class="fas fa-check-circle" *ngIf="tabModifierProduit[produit.id]" (click)="modifierProduit(produit.id, produit.libelle)"></i>&nbsp;
+              <i class="fas fa-times-circle" *ngIf="tabModifierProduit[produit.id]" (click)="changerModifierProduit(produit)"></i>
             </td>
           </tr>
         </tbody>
@@ -71,39 +95,15 @@
 </div>
 
 <div>
-  <h2>Ajouter un produit</h2>
+  <h2>Ajouter un <span style="color: red">nouveau</span> produit</h2>
   <form>
-    <div class="row">
-      <div class="form-group col-6" *ngIf="!newNomProduit">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" for="produitSelected">Produit a ajouter</span>
-          </div>
-          <select class="custom-select" id="produitSelected" [(ngModel)]="produitSelected"  [ngModelOptions]="{standalone: true}">
-            <option [ngValue]=null selected>Produits ...</option>
-            <option *ngFor=" let produit of listProduitsEnVente  | async | unique:'libelle' " [ngValue]="produit.libelle">
-              {{produit.libelle}}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group col-6" *ngIf="produitSelected">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" for="codeFournisseur" id="">Code du fournisseur</span>
-          </div>
-          <input type="text" class="form-control" id="codeFournisseur" [(ngModel)]="codeFournisseur" name="codeFournisseur" placeholder="Exemple : XCD216" required>
-        </div>
-      </div>
-    </div>
 
     <div class="form-group" *ngIf="!produitSelected">
       <div class="row">
         <div class="form-group col-6">
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" *ngIf="!newNomProduit"><span style="color: red">&nbsp;Nouveau&nbsp;</span>produit a ajouter</span>
-              <span class="input-group-text" *ngIf="newNomProduit">Nom du produit à ajouter</span>
+              <span class="input-group-text" >Produit a ajouter</span>
             </div>
             <input type="text" class="form-control" id="newNomProduit" [(ngModel)]="newNomProduit" name="newNomProduit" aria-describedby="ajoutProduitHelp" placeholder="Entrer le nom du produit" required>
           </div>
@@ -111,23 +111,23 @@
         <div class="form-group col-6" *ngIf="newNomProduit">
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" for="codeFournisseur" id="">Code du fournisseur</span>
+              <span class="input-group-text" for="codeFournisseur[0]" id="">Code du fournisseur</span>
             </div>
-            <input type="text" class="form-control" id="codeFournisseur" [(ngModel)]="codeFournisseur" name="codeFournisseur" placeholder="Exemple : XCD216" required>
+            <input type="text" class="form-control" id="codeFournisseur[0]" [(ngModel)]="codeFournisseur[0]" name="codeFournisseur[0]" placeholder="Exemple : XCD216" required>
           </div>
         </div>
       </div>
 
     </div>
 
-  <div class="form-group" *ngIf="produitSelected ||newNomProduit">
+  <div class="form-group" *ngIf="newNomProduit">
     <div class="row">
         <div class="form-group col-6">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="">Quantité ajouté au stock</span>
             </div>
-            <input type="number" class="form-control " id="quantiteAjoutProduit" [(ngModel)]="quantiteAjoutProduit" name="quantiteAjoutProduit" placeholder="Exemple : 200" required>
+            <input type="number" class="form-control " id="quantiteAjoutProduit[0]" [(ngModel)]="quantiteAjoutProduit[0]" name="quantiteAjoutProduit[0]" placeholder="Exemple : 200" required>
           </div>
         </div>
         <div class="form-group col-6">
@@ -135,7 +135,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="">Date limite de consommation</span>
             </div>
-            <input type="date" class="form-control" id="dateLimiteProduit" [(ngModel)]="dateLimiteProduit" name="dateLimiteProduit" required>
+            <input type="date" class="form-control" id="dateLimiteProduit[0]" [(ngModel)]="dateLimiteProduit[0]" name="dateLimiteProduit[0]" required>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="">Date d'achat</span>
             </div>
-            <input type="date" class="form-control" id="dateAchatProduit" [(ngModel)]="dateAchatProduit" name="dateAchatProduit" required>
+            <input type="date" class="form-control" id="dateAchatProduit[0]" [(ngModel)]="dateAchatProduit[0]" name="dateAchatProduit[0]" required>
           </div>
         </div>
         <div class="form-group col-6">
@@ -153,11 +153,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="">Prix d'achat</span>
             </div>
-            <input type="number" class="form-control" id="prixAchatProduit" [(ngModel)]="prixAchatProduit" name="prixAchatProduit" placeholder="Exemple : 100.50" required>
+            <input type="text" class="form-control" id="prixAchatProduit[0]" [(ngModel)]="prixAchatProduit[0]" name="prixAchatProduit[0]" placeholder="Exemple : 100.50" required>
           </div>
         </div>
       </div>
     </div>
-    <input type="submit" class="btn btn-primary" value="Valider" (click)="ajouterProduitStock()"/>
+    <div class="row justify-content-md-center">
+      <input type="submit" class="btn btn-primary col-2"  *ngIf="newNomProduit" value="Valider" (click)="ajouterProduitStock(0,null)"/>
+    </div>
   </form>
 </div>
