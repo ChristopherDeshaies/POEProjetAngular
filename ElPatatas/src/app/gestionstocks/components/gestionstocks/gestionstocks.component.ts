@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProduitsService } from 'src/app/core/produits/services/produits.service';
 import { Produits } from 'src/app/core/produits/models/produits';
-import { map } from 'rxjs/operators';
-import { delay, reject } from 'q';
 import { ProduitsEnVenteService } from 'src/app/core/produitEnVente/services/produitsEnVente';
 import { ProduitsEnVente } from 'src/app/core/produitEnVente/model/produitsEnVente';
-import { forEach } from '@angular/router/src/utils/collection';
 
 /**
  * @author Christopher Deshaies
@@ -104,54 +101,46 @@ export class GestionstocksComponent implements OnInit {
   }
 
   /**
-   * Fonction qui supprime un element en base en fonction de idProduit - utilisation de Promise avant d'effectuer un refresh
+   * Fonction qui supprime un element en base en fonction de idProduit
    * @param idProduit : Identifiant du Produit
    */
   supprimerProduit(idProduit): void {
     new Promise((resolve,reject) => {
-      this.produitsservice.deleteProduit(idProduit).subscribe(resolve,reject);
+      if(confirm("Voulez vous vraiment supprimer ce produit du stock ?")){
+        this.produitsservice.deleteProduit(idProduit).subscribe(resolve,reject);
+      }
     }).then(
       () =>  this.refresh()
     );
   }
 
   /**
-   * Fonction qui supprime un element dans la table ProduitEnVente en fonction de idProduitEnVente - utilisation de Promise avant d'effectuer un refresh
+   * Fonction qui supprime un element dans la table ProduitEnVente en fonction de idProduitEnVente
    * @param idProduitEnVente : Identifiant du Produit en vente
    */
   supprimerProduitEnVente(idProduitEnVente): void{
     new Promise((resolve,reject) => {
-     this.produitenventeservice.deleteProduitEnVente(idProduitEnVente).subscribe(resolve,reject);
+      if(confirm("Voulez vous vraiment supprimer ce produit du stock ?")){
+        this.produitenventeservice.deleteProduitEnVente(idProduitEnVente).subscribe(resolve,reject);
+      }
     }).then(
       () =>  this.refresh()
     );
   }
 
   /**
-   * Fonction qui ajoute un produit - Le produit peut avoir son libelle déjà renseigné en base ou être nouveau
-   * - utilisation de Primise avant d'effectuer un refresh
+   * Fonction qui ajoute un produit qui existe en stock
+   * - utilisation de Promise avant d'effectuer un refresh
+   * @param indiceCategorie L'index de la catégorie
+   * @param libelle Le nom du produit
    */
   ajouterProduitStock(indiceCategorie: number, libelle: String): void{
-    let produitNom:String;
-
-    // Verification si nouveau produit ou pas
-    if(libelle){
-      produitNom=libelle
-    }else{
-      produitNom=this.newNomProduit;
-      this.produitenventeservice.findProduitEnVente(produitNom).then( 
-        (produitFind) => {
-          if(!produitFind){
-            this.produitenventeservice.ajouterProduitEnVente(produitNom);
-          }
-        } 
-      ); 
-    }
     
     // Ajout
     new Promise(
       (resolve,reject) => {
       if(
+        libelle &&
         this.codeFournisseur[indiceCategorie] && 
         this.quantiteAjoutProduit[indiceCategorie] && 
         this.quantiteAjoutProduit[indiceCategorie] && 
@@ -161,7 +150,7 @@ export class GestionstocksComponent implements OnInit {
       ){
         this.produitsservice.postProduit(
           new Produits(
-            produitNom, 
+            libelle, 
             this.codeFournisseur[indiceCategorie],
             this.quantiteAjoutProduit[indiceCategorie],
             this.quantiteAjoutProduit[indiceCategorie],
@@ -171,7 +160,6 @@ export class GestionstocksComponent implements OnInit {
           ) 
         ).subscribe(resolve,reject);
       }else{
-        console.log(this.codeFournisseur[indiceCategorie]);
         alert("Tous les champs ne sont pas rempli ...");
       }
     }
@@ -185,21 +173,83 @@ export class GestionstocksComponent implements OnInit {
         this.dateLimiteProduit[indiceCategorie]=null;
         this.dateAchatProduit[indiceCategorie]=null;
         this.prixAchatProduit[indiceCategorie]=null;
-        this.newNomProduit=null;
       }
     );
     
   }
 
   /**
-   * TO DO
-   * @param id
-   * @param libelle
+   * Fonction qui ajoute un nouveau produit en stock
+   */
+  ajouterNouveauProduitStock(): void{
+    let produitNom:String;
+
+    produitNom=this.newNomProduit;
+      this.produitenventeservice.findProduitEnVente(produitNom).then( 
+        (produitFind) => {
+          if(!produitFind && 
+            this.newNomProduit &&
+            this.codeFournisseur[0] && 
+            this.quantiteAjoutProduit[0] && 
+            this.quantiteAjoutProduit[0] && 
+            this.dateLimiteProduit[0] &&
+            this.dateAchatProduit[0] &&
+            this.prixAchatProduit[0]){
+            this.produitenventeservice.ajouterProduitEnVente(produitNom);
+        }
+      } 
+    );
+
+    // Ajout
+    new Promise(
+      (resolve,reject) => {
+        if(
+          this.newNomProduit &&
+          this.codeFournisseur[0] && 
+          this.quantiteAjoutProduit[0] && 
+          this.quantiteAjoutProduit[0] && 
+          this.dateLimiteProduit[0] &&
+          this.dateAchatProduit[0] &&
+          this.prixAchatProduit[0]
+        ){
+          this.produitsservice.postProduit(
+            new Produits(
+              this.newNomProduit, 
+              this.codeFournisseur[0],
+              this.quantiteAjoutProduit[0],
+              this.quantiteAjoutProduit[0],
+              this.dateLimiteProduit[0],
+              this.dateAchatProduit[0],
+              this.prixAchatProduit[0]
+            ) 
+          ).subscribe(resolve,reject);
+        }else{
+          alert("Tous les champs ne sont pas rempli ...");
+        }
+      }
+    ).then(
+      // Refresh
+      () => {
+        this.refresh();
+        this.codeFournisseur[0]=null;
+        this.quantiteAjoutProduit[0]=null;
+        this.quantiteAjoutProduit[0]=null;
+        this.dateLimiteProduit[0]=null;
+        this.dateAchatProduit[0]=null;
+        this.prixAchatProduit[0]=null;
+        this.newNomProduit=null;
+      }
+    );
+  }
+
+  /**
+   * Fonction qui modifie un produits en stock
+   * @param id L'identifiant du produit
+   * @param libelle Le nom du produit
    */
   modifierProduit(id,libelle): void{
     new Promise(
       (resolve,reject) => {
-        console.log(id);
         this.produitsservice.putProduit(
           id,
           new Produits(
@@ -221,16 +271,30 @@ export class GestionstocksComponent implements OnInit {
   }
 
   /**
-   * Effectue le changement de hiddenCategorie en fonction de la catégorie numéro 'i'
+   * Fonction qui permet de déployer ou cacher les détails d'un produit
    * @param i : Numéro de la catégorie produit à replier ou déplier
    */
   changeHiddenCategorie(i): void{
+    if(i!==0){
+      this.hiddenCategorie[0]=true;
+      this.newNomProduit=null;
+      this.codeFournisseur[0]=null;
+      this.quantiteAjoutProduit[0]=null;
+      this.quantiteAjoutProduit[0]=null;
+      this.dateLimiteProduit[0]=null;
+      this.dateAchatProduit[0]=null;
+      this.prixAchatProduit[0]=null;
+    }
     if(this.hiddenCategorie[i])
       this.hiddenCategorie[i]=false;
     else
       this.hiddenCategorie[i]=true;
   }
 
+  /**
+   * Fonction qui permet d'accéder à la modification d'un produit
+   * @param produit 
+   */
   changerModifierProduit(produit: Produits): void{
     for(let i=0; i<this.tabModifierProduit.length; i++){
       if(i!==produit.id){
@@ -258,12 +322,14 @@ export class GestionstocksComponent implements OnInit {
    */
   initHiddenCategorie(): void{
     this.listProduits.forEach(
-      (produits:Produits[]) => { 
+      (produits:Produits[]) => {
+        //Onglet ajouter un nouveau produit
+        this.hiddenCategorie.push(true); 
         produits.forEach(
           () => {
             this.hiddenCategorie.push(true)
           }
-        )
+        );
       }
     );
   }
@@ -343,9 +409,17 @@ export class GestionstocksComponent implements OnInit {
    * Fonction pour rafraichir l'affichage
    */
   refresh(): void{
-    this.listProduits=this.getListProduits();
-    this.listProduitsEnVente=this.getListProduitsEnVente();
-    this.generateCompteurCategorie();
+    new Promise(
+      (resolve,reject) => { 
+        this.listProduits=this.getListProduits();
+        this.listProduitsEnVente=this.getListProduitsEnVente();
+        this.listProduits.subscribe(resolve,reject);
+        this.listProduitsEnVente.subscribe(resolve,reject);
+      }
+    ).then(
+      () => this.generateCompteurCategorie()
+    );
+    
     for(let i = 0; i < this.tabModifierProduit.length; i++)
       this.tabModifierProduit[i]=false;
   }

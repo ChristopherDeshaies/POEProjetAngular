@@ -119,6 +119,26 @@
       "dateAchat": "2018-11-01",
       "prixAchat": "2",
       "id": 12
+    },
+    {
+      "libelle": "Oignon",
+      "codeFournisseur": "1",
+      "quantiteInitiale": 2000,
+      "quantiteRestante": 2000,
+      "dateLimite": "2018-11-23",
+      "dateAchat": "2018-11-02",
+      "prixAchat": "1",
+      "id": 14
+    },
+    {
+      "libelle": "Tomate",
+      "codeFournisseur": "1",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-11-16",
+      "dateAchat": "2018-11-02",
+      "prixAchat": "0.5",
+      "id": 15
     }
   ],
   "produitsEnVente": [
@@ -149,6 +169,14 @@
     {
       "libelle": "Fricadelle",
       "id": 8
+    },
+    {
+      "libelle": "Oignon",
+      "id": 10
+    },
+    {
+      "libelle": "Tomate",
+      "id": 11
     }
   ],
   "users": [
