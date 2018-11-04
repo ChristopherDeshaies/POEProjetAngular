@@ -31,24 +31,24 @@
       "prixAchat": 0.3
     },
     {
-      "id": 4,
       "libelle": "Mexicanos",
       "codeFournisseur": 4,
       "quantiteInitiale": 100,
       "quantiteRestante": 28,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
-      "prixAchat": 0.3
+      "prixAchat": 0.3,
+      "id": 4
     },
     {
-      "id": 5,
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 50,
       "quantiteRestante": 2,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
-      "prixAchat": 0.5
+      "prixAchat": "4.5",
+      "id": 5
     },
     {
       "id": 6,

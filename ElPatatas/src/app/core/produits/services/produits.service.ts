@@ -55,7 +55,7 @@ export class ProduitsService {
    * Modification du produit en base
    * @param produit 
    */
-  putProduit(produit: Produits) {
+  putProduit2(produit: Produits) {
     const url = `${urlProduit}/${produit.id}`;
     this.httpClient.put(url, produit)
     .subscribe(
@@ -66,6 +66,12 @@ export class ProduitsService {
         console.log("Modification de l'utilisateur", error);
       }
     );
+  }
+  
+  putProduit(id: number, produit: Produits) {
+    const url = `${urlProduit}/${id}`;
+    console.log(id);
+    return this.httpClient.put(url, produit);
   }
 
   /**
