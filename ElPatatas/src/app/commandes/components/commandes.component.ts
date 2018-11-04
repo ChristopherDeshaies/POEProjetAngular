@@ -231,14 +231,14 @@ export class CommandesComponent implements OnInit {
       this.commandesService.postCommande(this.commande);
 
       this.miseAjourStocks();
-      this.miseAjourStocks();
+      this.reinitialiser();
 
       // new Promise(
       //     (resolve,reject) => {
       //       this.miseAjourStocks()
       //     }
       // ).then(
-      //     () => this.miseAjourStocks();
+      //     () => this.reinitialiser();
       //   );
 
        
@@ -365,7 +365,11 @@ export class CommandesComponent implements OnInit {
   }
 
   miseajour(itemmenu : ItemMenu){
-    let listproduit: Observable<Produits[]> =this.sortProduitsLibelleBydate(itemmenu.getLibelle());
+    let libelle : string =itemmenu.getLibelle()
+    if ((itemmenu.getLibelle() === "Grande") || (itemmenu.getLibelle() === "Moyenne") || (itemmenu.getLibelle() === "Petite")){
+        libelle = "Frite"
+    }
+    let listproduit: Observable<Produits[]> =this.sortProduitsLibelleBydate(libelle);
 
     listproduit.forEach(
       (produits: Produits[]) => {

@@ -5,7 +5,7 @@
       "libelle": "Frite",
       "codeFournisseur": 1,
       "quantiteInitiale": 100,
-      "quantiteRestante": 50,
+      "quantiteRestante": 49,
       "dateLimite": "2018-11-21",
       "dateAchat": "2018-09-21",
       "prixAchat": 0.2
@@ -44,7 +44,7 @@
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 50,
-      "quantiteRestante": 2,
+      "quantiteRestante": 0,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
       "prixAchat": "4.5",
@@ -184,134 +184,69 @@
   ],
   "commandes": [
     {
-      "dateCommande": "Sun, 04 Nov 2018 17:26:55 GMT",
+      "dateCommande": "Sun, 04 Nov 2018 18:08:43 GMT",
       "listProduits": [
         {
           "libelle": "Coca",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 6
+          "quantiterestante": 3
         }
       ],
       "prixTotal": 4,
       "id": 1
     },
     {
-      "dateCommande": "Sun, 04 Nov 2018 17:27:56 GMT",
+      "dateCommande": "Sun, 04 Nov 2018 18:09:55 GMT",
       "listProduits": [
         {
-          "libelle": "Coca",
-          "quantite": 2,
+          "libelle": "Grande",
+          "quantite": 1,
           "prix": 4,
-          "quantiterestante": 5
+          "quantiterestante": 50
         }
       ],
-      "prixTotal": 8,
+      "prixTotal": 4,
       "id": 2
     },
     {
-      "dateCommande": "Sun, 04 Nov 2018 17:29:12 GMT",
+      "dateCommande": "Sun, 04 Nov 2018 18:19:15 GMT",
       "listProduits": [
         {
-          "libelle": "Coca",
+          "libelle": "Grande",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 6
+          "quantiterestante": 50
         }
       ],
       "prixTotal": 4,
       "id": 3
     },
     {
-      "dateCommande": "Sun, 04 Nov 2018 17:38:38 GMT",
+      "dateCommande": "Sun, 04 Nov 2018 18:20:16 GMT",
       "listProduits": [
         {
           "libelle": "Coca",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 5
+          "quantiterestante": 3
         }
       ],
       "prixTotal": 4,
       "id": 4
     },
     {
-      "dateCommande": "Sun, 04 Nov 2018 17:39:12 GMT",
+      "dateCommande": "Sun, 04 Nov 2018 18:20:39 GMT",
       "listProduits": [
         {
           "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 5
-        }
-      ],
-      "prixTotal": 4,
-      "id": 5
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 17:40:00 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 4
-        }
-      ],
-      "prixTotal": 4,
-      "id": 6
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 17:42:45 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 3
-        }
-      ],
-      "prixTotal": 4,
-      "id": 7
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 17:43:20 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 3
-        }
-      ],
-      "prixTotal": 4,
-      "id": 8
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 17:43:44 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 3
-        }
-      ],
-      "prixTotal": 4,
-      "id": 9
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 17:46:17 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
+          "quantite": 2,
           "prix": 4,
           "quantiterestante": 2
         }
       ],
-      "prixTotal": 4,
-      "id": 10
+      "prixTotal": 8,
+      "id": 5
     }
   ]
 }
