@@ -4,9 +4,11 @@ import { Commandes } from '../models/commandes';
 import { CommandesService } from '../services/commandes.service';
 import { ProduitsService } from '../../core/produits/services/produits.service';
 import { Produits } from '../../core/produits/models/produits';
-import { map, finalize, filter, reduce } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { forEach } from '@angular/router/src/utils/collection';
+import { ProduitsEnVenteService } from 'src/app/core/produitEnVente/services/produitsEnVente';
+import { ProduitsEnVente } from 'src/app/core/produitEnVente/model/produitsEnVente';
+
 
 /**
  * gestion des commandes prises par l'employé
@@ -26,7 +28,7 @@ export class CommandesComponent implements OnInit {
   /**
    * liste de tous les produits en base
    */
-  listeProduitsBase: Produits[];
+  listeProduitsBase: Observable<Produits[]>;
 
   /**
    * quantité restante d'un produit
@@ -56,7 +58,7 @@ export class CommandesComponent implements OnInit {
   /**
    * liste des produits commandés par le client
    */
-  listProduits: Map<string, number>;
+  listProduits: ItemMenu[];
 
   /**
    * liste des commandes prises par l'employées , à intégrer dans un composent liste des commandes
@@ -73,51 +75,45 @@ export class CommandesComponent implements OnInit {
    */
   prixTotal: number = 0;
 
+  /**
+   * liste de tous les libelles produits à vendre en base
+   */
+  listLibellesProduitsEnVente: Observable<ProduitsEnVente[]>;
+
   constructor(
     private commandesService: CommandesService,
-    private produitsService: ProduitsService
+    private produitsService: ProduitsService,
+    private produitenventeservice: ProduitsEnVenteService
   ) {
 
   }
 
   ngOnInit() {
 
-    this.frites = [];
-    this.boissons = [];
-    this.viandes = [];
+    /**
+     * initialisation des commandes prises par le client
+     */
     this.commandes = new Array<Commandes>();
 
     /**
-     * initialisation en dur des items frites à afficher sur la page de commande
+     * initialisation des items frites à afficher sur la page de commande
      */
-    this.frites = [
-      new ItemMenu(1, 'Frite', 'Grande', 0, 4),
-      new ItemMenu(2, 'Frite', 'Moyenne', 0, 2.5),
-      new ItemMenu(3, 'Frite', 'Petite', 0, 1.5)
-    ];
+    this.frites = [];
 
     /*
-    * initialisation en dur des items boissons à afficher sur la page de commande
+    * initialisation des items boissons à afficher sur la page de commande
     */
-    this.boissons = [
-      new ItemMenu(1, 'coca', 'coca', 0, 1),
-      new ItemMenu(2, 'coca', 'pepsi', 0, 1),
-      new ItemMenu(3, 'coca', 'fanta', 0, 1)
-    ];
+    this.boissons = [];
 
     /*
-    * initialisation en dur des items viandes à afficher sur la page de commande
+    * initialisation des items viandes à afficher sur la page de commande
     */
-    this.viandes = [
-      new ItemMenu(1, 'steak', 'steak', 0, 4),
-      new ItemMenu(1, 'fricadelle', 'fricadelle', 0, 3),
-      new ItemMenu(1, 'merguez', 'merguez', 0, 3.5)
-    ];
+    this.viandes = [];
 
     /**
      * initialisation de la liste des produits commandés par le client
      */
-    this.listProduits = new Map<string, number>();
+    this.listProduits = [];
 
     /**
      * initialisation d'une commande
@@ -125,9 +121,9 @@ export class CommandesComponent implements OnInit {
     this.commande = new Commandes('', null, null);
 
     /**
-     * initialisation de tous les produits en base
+     * initialisation des informations produits à afficher sur la page
      */
-    this.listeProduitsBase = [];
+    this.initialisationVentes();
 
   }
 
@@ -135,51 +131,74 @@ export class CommandesComponent implements OnInit {
    * réinitialise les variables en cas d'annulation de la commande
    */
   reinitialiser() {
-
+    
     this.prixTotal = 0;
 
-    this.frites = [
-      new ItemMenu(1, 'Frite', 'Grande', 0, 4),
-      new ItemMenu(2, 'Frite', 'Moyenne', 0, 2.5),
-      new ItemMenu(3, 'Frite', 'Petite', 0, 1.5)
-    ];
+    this.frites = [];
 
-    this.boissons = [
-      new ItemMenu(1, 'coca', 'coca', 0, 1),
-      new ItemMenu(2, 'coca', 'pepsi', 0, 1),
-      new ItemMenu(3, 'coca', 'fanta', 0, 1)
-    ];
+    this.boissons = [];
 
-    this.viandes = [
-      new ItemMenu(1, 'steak', 'steak', 0, 4),
-      new ItemMenu(1, 'fricadelle', 'fricadelle', 0, 3),
-      new ItemMenu(1, 'merguez', 'merguez', 0, 3.5)
-    ];
+    this.viandes = [];
 
-    this.listProduits = new Map<string, number>();
+    this.listProduits = [];
+
     this.commande = new Commandes('', null, null);
+
+    this.initialisationVentes();
 
   }
 
   /**
-   * ajoute un produit dans la liste des produits commandés par le client
+   * ajoute un produit dans la liste des produits commandés par le client et à l'affichage en dessous de l'item
    * @param produit
    */
   ajout(produit: ItemMenu) {
-    produit.setQuantite(produit.getQuantite() + 1);
-    this.ajouterPrix(produit);
-    this.listProduits.set(produit.getNom(), produit.getQuantite());
+    if ((produit.getQuantiterestante() > 0) && ((produit.getQuantite()) < produit.getQuantiterestante())) {
+      produit.setQuantite(produit.getQuantite() + 1);
+      this.ajouterPrix(produit);
+      if (this.listProduits.length > 0) {
+        let i;
+        let trouve: boolean = false;
+
+        for (i = 0; (i < this.listProduits.length); i++) {
+          if (this.listProduits[i].getLibelle() === produit.getLibelle()) {
+            this.listProduits[i].setQuantite(this.listProduits[i].getQuantite());
+            trouve = true;
+            break;
+          }
+        }
+        if (!trouve) {
+          this.listProduits[this.listProduits.length] = produit;
+
+        }
+      } else {
+        this.listProduits[0] = produit;
+      }
+    } else {
+      alert("Le stock de "+ produit.getLibelle() + " est épuisé")
+    }
   }
 
   /**
-   * retire un produit dans la liste des produits commandés par le client
+   * retire un produit dans la liste des produits commandés par le client et à l'affichage en dessous de l'item
    * @param produit
    */
   retirer(produit: ItemMenu) {
     if (produit.getQuantite() > 0) {
       produit.setQuantite(produit.getQuantite() - 1);
       this.retirerPrix(produit);
-      this.listProduits.set(produit.getNom(), produit.getQuantite());
+      let i;
+      for (i = 0; (i < this.listProduits.length); i++) {
+        if (this.listProduits[i].getLibelle() === produit.getLibelle()) {
+          if (this.listProduits[i].getQuantite()==0){
+            this.listProduits.splice(i, 1);
+          }else{  
+            this.listProduits[i].setQuantite(this.listProduits[i].getQuantite())
+          }
+        }
+      }
+    }else {
+      alert("Vous n'en avez pas encore commandé")
     }
   }
 
@@ -206,11 +225,24 @@ export class CommandesComponent implements OnInit {
   encaisser() {
     if (this.prixTotal !== 0) {
       this.date = new Date().toUTCString();
-      this.commande = new Commandes(this.date, this.strMapToObj2(this.listProduits), this.prixTotal);
+      //this.commande = new Commandes(this.date, this.strMapToObj2(this.listProduits), this.prixTotal);
+      this.commande = new Commandes(this.date, this.listProduits, this.prixTotal);
       this.commandes.push(this.commande);
       this.commandesService.postCommande(this.commande);
 
-      this.reinitialiser();
+      this.miseAjourStocks();
+      this.miseAjourStocks();
+
+      // new Promise(
+      //     (resolve,reject) => {
+      //       this.miseAjourStocks()
+      //     }
+      // ).then(
+      //     () => this.miseAjourStocks();
+      //   );
+
+       
+      
 
     }
   }
@@ -220,68 +252,151 @@ export class CommandesComponent implements OnInit {
    * car on ne peut insérer directement une map sur le server json
    * @param strMap
    */
-  strMapToObj2(strMap: Map<string, number>) {
-    const obj = Object.create(null);
-    for (const [k, v] of strMap) {
-      obj[k] = v;
-    }
+  // strMapToObj2(strMap: Map<string, number>) {
+  //   const obj = Object.create(null);
+  //   for (const [k, v] of strMap) {
+  //     obj[k] = v;
+  //   }
 
-    return obj;
-  }
+  //   return obj;
+  // }
 
-  rechercheTypeProduit(libelle: string) {
-    this.produits = this.produitsService.rechercheProduitsByLibelle(libelle);
-    this.produits.subscribe((data) => this.totalquantiteRestante = this.produitsService.rechercheQuantiteRestanteProduit(data));
-  }
-
-  recupAllProduits() {
-    this.produitsService.getListProduits().pipe(
-      map(
-        (jsonArray: Object[]) => jsonArray.map(jsonItem => Produits.fromJson(jsonItem))
+  /**
+   * Fonction qui retoune une liste de ProduitsEnVente en base de donnée
+   */
+  getListProduitsEnVente(): Observable<ProduitsEnVente[]> {
+    return this.produitenventeservice.getProduitEnVente()
+      .pipe(
+        map(
+          (produitsEnVente: ProduitsEnVente[]) => produitsEnVente
+        )
       )
-    ).subscribe(
-      produits => this.listeProduitsBase = produits
-    );
-    console.log("this.listeProduitsBase :" + this.listeProduitsBase)
   }
 
-  recupQuantiteProduit(libelle : string){
-    let that = this;
-    that.totalquantiteRestante=0;
-    for (let i = 0; i < this.listeProduitsBase.length; i++){
-        if (this.listeProduitsBase[i]['libelle'] === libelle){
-          that.totalquantiteRestante += +JSON.stringify(this.listeProduitsBase[i]['quantiteRestante']);
+  initialisationVentes() {
+    this.listLibellesProduitsEnVente = this.getListProduitsEnVente();
+    this.listLibellesProduitsEnVente.subscribe(
+      (data) => {
+        data.forEach(
+          (produitsEnVente: ProduitsEnVente) => {
+            this.initItem(produitsEnVente);
+          });
+      }
+    )
+    this.recupQuantiterestante()
+  }
+
+  initItem(produitsEnVente: ProduitsEnVente) {
+    switch (produitsEnVente.categorie) {
+      case "frite": {
+        this.frites[this.frites.length] = new ItemMenu(produitsEnVente.libelle, 0, produitsEnVente.prixvente, 0);
+        break;
+      }
+      case "viande": {
+        this.viandes[this.viandes.length] = new ItemMenu(produitsEnVente.libelle, 0, produitsEnVente.prixvente, 0);
+        break;
+      }
+      case "boisson": {
+        this.boissons[this.boissons.length] = new ItemMenu(produitsEnVente.libelle, 0, produitsEnVente.prixvente, 0);
+        break;
+      }
+      default: {
+        break;
       }
     }
-    console.log("that.totalquantiteRestante : "+that.totalquantiteRestante)
   }
 
-  ArrayToMap(){
-    let map : Map<String, String>;
-    map = new Map<String, String>();
-    
-    for (let i = 0; i < this.listeProduitsBase.length; i++){
-      // map.put(keys[i], s[i]);
-      // map.put(key, fields[i++]);
+  recupQuantiterestante(): void {
+
+    let listproduit: Observable<Produits[]> = this.produitsService.getListProduits()
+
+    listproduit.forEach(
+      (produits: Produits[]) => {
+        let that = this;
+        produits.forEach(
+          (produit: Produits) => {
+            that.totalquantiteRestante = 0;
+            that.totalquantiteRestante += +JSON.stringify(produit.quantiteRestante);
+            this.initQuantiteRestanteItem(produit.libelle, that.totalquantiteRestante);
+          }
+        )
+      }
+    );
+  }
+
+  initQuantiteRestanteItem(libelle: string, totalquantiteRestante: number) {
+
+    for (let i = 0; i < this.frites.length; i++) {
+      if ("Frite" === libelle) {
+        let totalquantiteRestanteAvant = this.frites[i].getQuantiterestante();
+        totalquantiteRestante += totalquantiteRestanteAvant;
+        this.frites[i].setQuantiterestante(totalquantiteRestante);
+      }
     }
+
+    for (let i = 0; i < this.viandes.length; i++) {
+      if (this.viandes[i].getLibelle() === libelle) {
+        let totalquantiteRestanteAvant = this.viandes[i].getQuantiterestante();
+        totalquantiteRestante += totalquantiteRestanteAvant;
+        this.viandes[i].setQuantiterestante(totalquantiteRestante);
+      }
+    }
+
+    for (let i = 0; i < this.boissons.length; i++) {
+      if (this.boissons[i].getLibelle() === libelle) {
+        let totalquantiteRestanteAvant = this.boissons[i].getQuantiterestante();
+        totalquantiteRestante += totalquantiteRestanteAvant;
+        this.boissons[i].setQuantiterestante(totalquantiteRestante);
+      }
+    }
+
   }
-  // rechercheTypeProduit(){
-  //    this.produits =this.produitsService.getListProduits()
-  //   .pipe(
-  //     map(
-  //       (produits: Produits[]) => produits.filter(
-  //         (produits: Produits) => produits.libelle === 'Frite')      
-  //     ),
-  //   );
 
-  //   this.produits.forEach( (produits:Produits[]) =>{
-  //     produits.forEach((produit:Produits)=>{
-  //       this.totalquantiteRestante += produit.quantiteRestante;
-  //       console.log("this.totalquantiteRestante : "+this.totalquantiteRestante)    
+  miseAjourStocks() {
+    for (let i = 0; i < this.listProduits.length; i++) {
+      this.miseajour(this.listProduits[i])
+    }         
+  }
 
-  //     })
-  //   }
-  //   )
-  // }
+  sortProduitsLibelleBydate(libelle : string) :Observable<Produits[]>{
+    let listproduit: Observable<Produits[]> = this.produitsService.produitsByLibelle(libelle)
+    .pipe(map(items => items.sort(this.comparer)));
+    return listproduit
+  }
+
+  miseajour(itemmenu : ItemMenu){
+    let listproduit: Observable<Produits[]> =this.sortProduitsLibelleBydate(itemmenu.getLibelle());
+
+    listproduit.forEach(
+      (produits: Produits[]) => {
+        let that = this;
+        produits.forEach(
+          (produit: Produits) => {
+           if(produit.quantiteRestante >= itemmenu.getQuantite()){
+             produit.quantiteRestante = produit.quantiteRestante - itemmenu.getQuantite()
+              this. miseajourproduit(produit);
+              itemmenu.setQuantite(0);
+           }else{
+            produit.quantiteRestante = 0;
+            itemmenu.setQuantite(itemmenu.getQuantite()-produit.quantiteRestante);
+            this. miseajourproduit(produit);
+           }
+          }
+        )
+      }
+    );
+  }
+
+  miseajourproduit(produit : Produits){
+    this.produitsService.putProduit(produit)
+  }
+
+  comparer(produit1: Produits , produit2: Produits) {
+    if (produit1.dateLimite < produit2.dateLimite)
+      return -1;
+    if (produit1.dateLimite > produit2.dateLimite)
+      return 1;
+    return 0;
+  }
 
 }

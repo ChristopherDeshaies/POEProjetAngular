@@ -1,3 +1,5 @@
+import { ItemMenu } from "./itemmenu";
+
 export class Commandes {
     
     private id: number;
@@ -7,7 +9,7 @@ export class Commandes {
     private listProduits: any[];
     private prixTotal: number;
 
-    constructor(dateCommande: string, listProduits: any[], prixTotal: number) {
+    constructor(dateCommande: string, listProduits: ItemMenu[], prixTotal: number) {
         this.dateCommande = dateCommande;
         this.listProduits = listProduits;
         this.prixTotal = prixTotal;

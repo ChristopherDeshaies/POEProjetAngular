@@ -5,6 +5,7 @@ import { CommandesRoutingModule } from './commandes-routing.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core-module.module';
+import { DetailscommandeComponent } from './components/details/detailscommande.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { CoreModule } from '../core/core-module.module';
     FormsModule
   ],
   declarations: [
-    CommandesComponent
+    CommandesComponent,
+    DetailscommandeComponent
   ],
   exports: [
     CommandesComponent,

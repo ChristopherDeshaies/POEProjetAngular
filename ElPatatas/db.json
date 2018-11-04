@@ -5,7 +5,7 @@
       "libelle": "Frite",
       "codeFournisseur": 1,
       "quantiteInitiale": 100,
-      "quantiteRestante": 100,
+      "quantiteRestante": 50,
       "dateLimite": "2018-11-21",
       "dateAchat": "2018-09-21",
       "prixAchat": 0.2
@@ -35,7 +35,7 @@
       "libelle": "Mexicanos",
       "codeFournisseur": 4,
       "quantiteInitiale": 100,
-      "quantiteRestante": 100,
+      "quantiteRestante": 28,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
       "prixAchat": 0.3
@@ -45,7 +45,7 @@
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 50,
-      "quantiteRestante": 50,
+      "quantiteRestante": 2,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
       "prixAchat": 0.5
@@ -61,64 +61,90 @@
       "prixAchat": 0.55
     },
     {
+      "id": 7,
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 100,
-      "quantiteRestante": 100,
+      "quantiteRestante": 0,
       "dateLimite": "2019-07-12",
       "dateAchat": "2018-10-29",
-      "prixAchat": 2,
-      "id": 7
+      "prixAchat": 2
     },
     {
+      "id": 8,
       "libelle": "Coca",
       "codeFournisseur": 3,
       "quantiteInitiale": 200,
-      "quantiteRestante": 200,
+      "quantiteRestante": 0,
       "dateLimite": "2018-12-14",
       "dateAchat": "2018-10-01",
-      "prixAchat": 2,
-      "id": 8
+      "prixAchat": 2
     },
     {
+      "id": 9,
       "libelle": "Fricadelle",
-      "codeFournisseur": "4",
+      "codeFournisseur": 4,
       "quantiteInitiale": 200,
       "quantiteRestante": 200,
       "dateLimite": "2018-11-15",
       "dateAchat": "2018-10-31",
-      "prixAchat": 1,
-      "id": 9
+      "prixAchat": 1
     }
   ],
   "produitsEnVente": [
     {
       "id": 1,
-      "libelle": "Coca"
+      "libelle": "Coca",
+      "categorie": "boisson",
+      "prixvente": 4
     },
     {
       "id": 2,
-      "libelle": "Fanta"
+      "libelle": "Fanta",
+      "categorie": "boisson",
+      "prixvente": 4
     },
     {
       "id": 3,
-      "libelle": "Mexicanos"
+      "libelle": "Mexicanos",
+      "categorie": "viande",
+      "prixvente": 4
     },
     {
       "id": 4,
-      "libelle": "Saucisse"
+      "libelle": "Saucisse",
+      "categorie": "viande",
+      "prixvente": 4
     },
     {
       "id": 5,
-      "libelle": "Merguez"
+      "libelle": "Merguez",
+      "categorie": "viande",
+      "prixvente": 4
     },
     {
       "id": 6,
-      "libelle": "Frite"
+      "libelle": "Grande",
+      "categorie": "frite",
+      "prixvente": 4
     },
     {
+      "id": 7,
       "libelle": "Fricadelle",
-      "id": 8
+      "categorie": "viande",
+      "prixvente": 4
+    },
+    {
+      "id": 6,
+      "libelle": "Moyenne",
+      "categorie": "frite",
+      "prixvente": 4
+    },
+    {
+      "id": 6,
+      "libelle": "Petite",
+      "categorie": "frite",
+      "prixvente": 4
     }
   ],
   "users": [
@@ -158,30 +184,134 @@
   ],
   "commandes": [
     {
-      "dateCommande": "Mon, 29 Oct 2018 10:03:49 GMT",
-      "listProduits": {
-        "Moyenne": 1,
-        "pepsi": 1,
-        "steak": 1
-      },
-      "prixTotal": 7.5,
+      "dateCommande": "Sun, 04 Nov 2018 17:26:55 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 6
+        }
+      ],
+      "prixTotal": 4,
+      "id": 1
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:27:56 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4,
+          "quantiterestante": 5
+        }
+      ],
+      "prixTotal": 8,
+      "id": 2
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:29:12 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 6
+        }
+      ],
+      "prixTotal": 4,
+      "id": 3
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:38:38 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 5
+        }
+      ],
+      "prixTotal": 4,
+      "id": 4
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:39:12 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 5
+        }
+      ],
+      "prixTotal": 4,
+      "id": 5
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:40:00 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 4
+        }
+      ],
+      "prixTotal": 4,
       "id": 6
     },
     {
-      "dateCommande": "Mon, 29 Oct 2018 10:07:47 GMT",
-      "listProduits": {
-        "Moyenne": 3,
-        "pepsi": 4,
-        "steak": 3,
-        "fanta": 2,
-        "Petite": 1,
-        "Grande": 1,
-        "coca": 1,
-        "fricadelle": 2,
-        "merguez": 1
-      },
-      "prixTotal": 41.5,
+      "dateCommande": "Sun, 04 Nov 2018 17:42:45 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 3
+        }
+      ],
+      "prixTotal": 4,
       "id": 7
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:43:20 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 3
+        }
+      ],
+      "prixTotal": 4,
+      "id": 8
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:43:44 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 3
+        }
+      ],
+      "prixTotal": 4,
+      "id": 9
+    },
+    {
+      "dateCommande": "Sun, 04 Nov 2018 17:46:17 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 2
+        }
+      ],
+      "prixTotal": 4,
+      "id": 10
     }
   ]
 }

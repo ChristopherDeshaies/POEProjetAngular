@@ -1,6 +1,7 @@
 .header{
     background-color: #dc3545;
     padding:10px;
+    text-align: center;
 }
 
 p{
@@ -16,4 +17,14 @@ p{
     text-align: center;
     color: white;
     font-weight: bold;
+    /* position: relative;
+    height: 100px; */
+}
+
+h2{
+    margin:auto;
+}
+
+img{
+    /* position: absolute; */
 }

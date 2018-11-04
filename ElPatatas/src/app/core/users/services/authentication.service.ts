@@ -51,8 +51,8 @@ export class AuthenticationService {
                       }                 
                     }
            
-           ),catchError(() => { 
-             console.log("eeeee");    
+           ),catchError((error) => { 
+            alert(error.message);    
             this.authenticatedUser.next(null);
             this.getAuthenticatedUser().subscribe((data) =>  this.router.navigate(['/login']));
              return of(new User(0,'','','','','','','',''));

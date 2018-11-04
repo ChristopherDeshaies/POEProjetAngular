@@ -1,0 +1,20 @@
+<div> Commande en cours</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Libelle</th>
+            <th>Quantité</th>
+            <th>Prix unitaire en euros</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produit of produitsCommandes; index as i">
+            <td>{{produit.getLibelle()}}</td>
+            <td>{{produit.getQuantite()}}</td>
+            <td>{{produit.getPrix()}}</td>
+        </tr>
+        <tr>Total : {{prixTotal}} euros TTC</tr>
+    </tbody>
+</table>
+
+

@@ -1,10 +1,10 @@
 <div *ngIf="isLogin">
   <div class="header">
-    <div class="title"> 
-      <p>El Patatas</p> 
-      <img src="assets/img/fries.png">
+    <div class="title row"> 
+        <!-- <img src="assets/img/fries.png"> -->
+        <h2>El Patatas</h2> 
     </div>
-    <div class="row justify-content-between">
+    <div class="connection row justify-content-between">
         <p>{{prenomUtilisateur+" "}}{{nomUtilisateur+" "}} connecté</p> 
         <p (click)="logout()">Logout</p> 
     </div>

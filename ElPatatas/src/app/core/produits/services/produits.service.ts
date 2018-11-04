@@ -27,18 +27,13 @@ export class ProduitsService {
    * Récuperation de la liste des produits
    */
   getListProduits(): Observable<Produits[]> {
-    /*return this.httpClient.get<Produits[]>(urlProduit).pipe(
-      map(
-        (jsonArray: Object[]) => jsonArray.map(jsonItem => Produits.fromJson(jsonItem))
-      )
-    )*/
     return this.httpClient.get<Produits[]>(urlProduit);
   }
+
   /**
    * Recherche d'un produit par le libellé
    *
    */
-
   searchProduit(libelle: string): void {
     const service = this;
     const param = libelle ?
@@ -62,7 +57,15 @@ export class ProduitsService {
    */
   putProduit(produit: Produits) {
     const url = `${urlProduit}/${produit.id}`;
-    return this.httpClient.put(url, produit);
+    this.httpClient.put(url, produit)
+    .subscribe(
+      data => {
+        console.log("PUT Request is successful ", data);
+      },
+      error => {
+        console.log("Modification de l'utilisateur", error);
+      }
+    );
   }
 
   /**
@@ -106,12 +109,17 @@ export class ProduitsService {
     produits.forEach(
       (produit: Produits) => {
         that.totalquantiteRestante += produit.quantiteRestante;
-      })
-      ;
+      });
     return that.totalquantiteRestante;
   }
 
   // canActivate(): boolean {
   //   return this.isIdentifier;
   // }
+
+  produitsByLibelle(libelle : string) : Observable<Produits[]>{
+    let params = new HttpParams().set('libelle', libelle);
+      return this.httpClient.get<Produits[]>(`${urlProduit}`, { params })  
+  }
+
 }
