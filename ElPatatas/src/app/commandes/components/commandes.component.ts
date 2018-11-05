@@ -392,7 +392,7 @@ export class CommandesComponent implements OnInit {
   }
 
   miseajourproduit(produit : Produits){
-    this.produitsService.putProduit2(produit)
+    this.produitsService.putProduit(produit)
   }
 
   comparer(produit1: Produits , produit2: Produits) {
