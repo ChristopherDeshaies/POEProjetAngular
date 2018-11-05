@@ -4,7 +4,7 @@
     Produits en stock
   </h2>
   <ul class="row justify-content-center">
-    <li class="col-12 col-lg-10" *ngFor=" let produitEnVente of listProduitsEnVente  | async | orderBy:'libelle':true ; let i = index">
+    <li class="col-12 col-lg-10" *ngFor=" let produitEnVente of listProduitsEnVente  | async | orderBy:'categorie':true ; let i = index"><!---->
       <div class="d-flex justify-content-between categorie" (click)="changeHiddenCategorie(i+1)">
         <label>
           <strong class="text-uppercase">{{produitEnVente.libelle}}</strong>  -  Quantité totale restante : <strong>{{getQuantiteRestant(produitEnVente.libelle)}}</strong>&nbsp;  
@@ -107,11 +107,13 @@
         <thead>
           <tr>
             <th>Produit</th>
+            <th>Categorie du Produit</th>
             <th>Code Fournisseur</th>
             <th>Qte initiale</th>
             <th>Date Limite de consommation</th>
             <th>Date D'Achat</th>
             <th>Prix D'Achat</th>
+            <th>Prix de Vente</th>
             <th></th>
           </tr>
         </thead>
@@ -119,6 +121,16 @@
           <tr>
             <td>
               <input type="text" class="form-control" id="newNomProduit" [(ngModel)]="newNomProduit" name="newNomProduit" placeholder="Entrer le nom du produit" required>
+            </td>
+            <td>
+              <div class="form-group">
+                    <select class="form-control" [(ngModel)]="categorieProduit">
+                      <option selected></option>
+                      <option>boisson</option>
+                      <option>viande</option>
+                      <option>frite</option>
+                    </select>
+                  </div>
             </td>
             <td>
               <input type="text" class="form-control" id="codeFournisseur[0]" [(ngModel)]="codeFournisseur[0]" name="codeFournisseur[0]" placeholder="Exemple : XCD216" required>
@@ -134,6 +146,9 @@
             </td>
             <td>
               <input type="text" class="form-control" id="prixAchatProduit[0]" [(ngModel)]="prixAchatProduit[0]" name="prixAchatProduit[0]" placeholder="Exemple : 100.50" required>
+            </td>
+            <td>
+              <input type="text" class="form-control" id="prixVenteProduit" [(ngModel)]="prixVenteProduit" name="prixVenteProduit" placeholder="Exemple : 100.50" required>
             </td>
             <td>
               <button class="btn btn-outline-primary" (click)="ajouterNouveauProduitStock()">

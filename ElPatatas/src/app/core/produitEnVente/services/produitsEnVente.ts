@@ -19,18 +19,19 @@ export class ProduitsEnVenteService {
   deleteProduitEnVente(id): Observable<ProduitsEnVente[]> {
     this.httpclient.delete(`${urlProduitsEnVente}/${id}`).subscribe(
       error => {
-        console.log('Delete du stock du produit ' + id, error);
+        console.log('Delete du stock du nouveau produit ' + id, error);
       }
     );
     return this.httpclient.get<ProduitsEnVente[]>(urlProduitsEnVente);
   }
 
-  ajouterProduitEnVente(libelle): Observable<ProduitsEnVente[]> {
-    this.httpclient.post(`${urlProduitsEnVente}`, {libelle}).subscribe(
+  ajouterProduitEnVente(produitEnVente: ProduitsEnVente): Observable<ProduitsEnVente[]> {
+    this.httpclient.post(urlProduitsEnVente, produitEnVente).subscribe(
       error => {
-        console.log('Ajouter au stock du produit ' + libelle, error);
+        console.log('Ajout en stock du nouveau produit ', error);
       }
     );
+
     return this.httpclient.get<ProduitsEnVente[]>(urlProduitsEnVente);
   }
 
