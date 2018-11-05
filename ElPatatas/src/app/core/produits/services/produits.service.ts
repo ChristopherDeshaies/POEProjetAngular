@@ -63,7 +63,7 @@ export class ProduitsService {
         console.log("PUT Request is successful ", data);
       },
       error => {
-        console.log("Modification de l'utilisateur", error);
+        console.log("Echec modification du produit ", error);
       }
     );
   }

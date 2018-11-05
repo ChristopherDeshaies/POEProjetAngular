@@ -4,8 +4,8 @@ import { Commandes } from '../models/commandes';
 import { CommandesService } from '../services/commandes.service';
 import { ProduitsService } from '../../core/produits/services/produits.service';
 import { Produits } from '../../core/produits/models/produits';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { map, finalize, filter } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 import { ProduitsEnVenteService } from 'src/app/core/produitEnVente/services/produitsEnVente';
 import { ProduitsEnVente } from 'src/app/core/produitEnVente/model/produitsEnVente';
 
@@ -80,6 +80,8 @@ export class CommandesComponent implements OnInit {
    */
   listLibellesProduitsEnVente: Observable<ProduitsEnVente[]>;
 
+  commandefiltrees : Observable<Commandes[]>;
+
   constructor(
     private commandesService: CommandesService,
     private produitsService: ProduitsService,
@@ -118,7 +120,7 @@ export class CommandesComponent implements OnInit {
     /**
      * initialisation d'une commande
      */
-    this.commande = new Commandes('', null, null);
+    this.commande = new Commandes(0,'', null, null);
 
     /**
      * initialisation des informations produits à afficher sur la page
@@ -131,7 +133,7 @@ export class CommandesComponent implements OnInit {
    * réinitialise les variables en cas d'annulation de la commande
    */
   reinitialiser() {
-    
+    console.log("reinitialiser");
     this.prixTotal = 0;
 
     this.frites = [];
@@ -142,7 +144,7 @@ export class CommandesComponent implements OnInit {
 
     this.listProduits = [];
 
-    this.commande = new Commandes('', null, null);
+    this.commande = new Commandes(0,'', null, null);
 
     this.initialisationVentes();
 
@@ -226,24 +228,17 @@ export class CommandesComponent implements OnInit {
     if (this.prixTotal !== 0) {
       this.date = new Date().toUTCString();
       //this.commande = new Commandes(this.date, this.strMapToObj2(this.listProduits), this.prixTotal);
-      this.commande = new Commandes(this.date, this.listProduits, this.prixTotal);
+      this.commande = new Commandes(null,this.date, this.listProduits, this.prixTotal);
       this.commandes.push(this.commande);
       this.commandesService.postCommande(this.commande);
 
-      this.miseAjourStocks();
-      this.reinitialiser();
-
-      // new Promise(
-      //     (resolve,reject) => {
-      //       this.miseAjourStocks()
-      //     }
-      // ).then(
-      //     () => this.reinitialiser();
-      //   );
-
-       
-      
-
+      console.log("test 1 ")
+      this.miseAjourStocks()
+      .pipe(finalize( () =>  {
+        console.log("reinit");
+        this.reinitialiser();
+      }))
+      console.log("test 2 ")     
     }
   }
 
@@ -352,10 +347,11 @@ export class CommandesComponent implements OnInit {
 
   }
 
-  miseAjourStocks() {
+  miseAjourStocks() : Observable<any>{
     for (let i = 0; i < this.listProduits.length; i++) {
       this.miseajour(this.listProduits[i])
-    }         
+    }
+    return of(1);       
   }
 
   sortProduitsLibelleBydate(libelle : string) :Observable<Produits[]>{
@@ -365,6 +361,7 @@ export class CommandesComponent implements OnInit {
   }
 
   miseajour(itemmenu : ItemMenu){
+    console.log("miseajour 1 ")
     let libelle : string =itemmenu.getLibelle()
     if ((itemmenu.getLibelle() === "Grande") || (itemmenu.getLibelle() === "Moyenne") || (itemmenu.getLibelle() === "Petite")){
         libelle = "Frite"
@@ -389,10 +386,14 @@ export class CommandesComponent implements OnInit {
         )
       }
     );
+    console.log("miseajour 2 ")
   }
 
   miseajourproduit(produit : Produits){
+    console.log("miseajourproduit 1 ")
     this.produitsService.putProduit2(produit)
+    console.log("miseajourproduit 2 ")
+    
   }
 
   comparer(produit1: Produits , produit2: Produits) {

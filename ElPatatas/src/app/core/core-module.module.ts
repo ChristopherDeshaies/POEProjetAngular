@@ -10,7 +10,6 @@ import { HttpModule } from '@angular/http';
 import { LoginComponent } from '../core/users/components/login/login.component';
 import { AdminComponent } from '../core/users/components/admin/admin.component';
 import { EmployesComponent } from '../core/users/components/employes/employes.component';
-import { OngletComponent } from '../core/users/components/onglet/onglet.component';
 
 @NgModule({
   imports: [

@@ -71,7 +71,8 @@ export class CommandesService {
    * @param commande 
    */
   postCommande(commande: Commandes) {
-    this.httpClient.post(urlCommandes, commande).subscribe(data => {
+    this.httpClient.post(urlCommandes, commande)
+    .subscribe(data => {
       alert('enregistrement de la commande terminé.');
     },
     error => {

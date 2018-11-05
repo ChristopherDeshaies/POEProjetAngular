@@ -150,6 +150,7 @@ export class GestionstocksComponent implements OnInit {
       ){
         this.produitsservice.postProduit(
           new Produits(
+            0,
             libelle, 
             this.codeFournisseur[indiceCategorie],
             this.quantiteAjoutProduit[indiceCategorie],
@@ -214,6 +215,7 @@ export class GestionstocksComponent implements OnInit {
         ){
           this.produitsservice.postProduit(
             new Produits(
+              0,
               this.newNomProduit, 
               this.codeFournisseur[0],
               this.quantiteAjoutProduit[0],
@@ -253,6 +255,7 @@ export class GestionstocksComponent implements OnInit {
         this.produitsservice.putProduit(
           id,
           new Produits(
+            id,
             libelle,
             this.modifProduit[0],
             this.modifProduit[1],

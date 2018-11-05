@@ -9,7 +9,8 @@ export class Commandes {
     private listProduits: any[];
     private prixTotal: number;
 
-    constructor(dateCommande: string, listProduits: ItemMenu[], prixTotal: number) {
+    constructor(id,dateCommande: string, listProduits: ItemMenu[], prixTotal: number) {
+        this.id=id;
         this.dateCommande = dateCommande;
         this.listProduits = listProduits;
         this.prixTotal = prixTotal;
