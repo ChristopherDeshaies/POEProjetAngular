@@ -1,60 +1,20 @@
+
 <div class="row">
     <div class="commandes">
         <div class="row">
-            <!-- <div><label>Frites : </label></div> -->
             <div class="row">
-                <li *ngFor="let frite of frites">
-                    <!-- <img src="assets/img/frites/frites.jpeg"> -->
+                <li *ngFor="let produit of produitsEnVente | async">
                     <div class="item">
-                        <span>{{frite.libelle}}</span>
+                        <span>{{produit.libelle}}</span>
                     </div>
                     <div>
-                        <div class="row justify-content-between"><span>Quantité : </span><span>{{frite.quantite}}</span></div>
-                        <div class="row justify-content-between"><span>Stocks(kg) :</span> <span>{{frite.quantiterestante}}</span></div>
+                        <div class="row justify-content-between"><span>Prix Unitaire : </span><span>{{produit.prixvente}}</span></div>
+                        <div class="row justify-content-between"><span>Quantité : </span><span>{{getQuantiteCommandee(produit.libelle)}}</span></div>
+                        <div class="row justify-content-between"><span>Stocks(kg) :</span> <span>{{getQuantiteRestante(produit.libelle)}}</span></div>
                     </div>
                     <div class="row justify-content-between">
-                        <i class="fas fa-plus" (click)="ajout(frite)"></i>
-                        <i class="fas fa-minus" (click)="retirer(frite)"></i>
-                    </div>
-                </li>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- <div><label>Boissons : </label></div> -->
-            <div class="row">
-                <li *ngFor="let boisson of boissons">
-                    <!-- <img src="assets/img/boissons/{{boisson.nom}}.png"> -->
-                    <div class="item">
-                        <span>{{boisson.libelle}}</span>
-                    </div>
-                    <div>
-                        <div class="row justify-content-between"><span>Quantité : </span><span>{{boisson.quantite}}</span></div>
-                        <div class="row justify-content-between"><span>Stocks : </span><span>{{boisson.quantiterestante}}</span></div>
-                    </div>
-                    <div class="row justify-content-between">
-                        <i class="fas fa-plus" (click)="ajout(boisson)"></i>
-                        <i class="fas fa-minus" (click)="retirer(boisson)"></i>
-                    </div>
-                </li>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- <div><label>Viandes : </label></div> -->
-            <div class="row">
-                <li *ngFor="let viande of viandes">
-                    <!-- <img src="assets/img/viandes/{{viande.nom}}.png"> -->
-                    <div class="item">
-                        <span>{{viande.libelle}}</span>
-                    </div>
-                    <div>
-                        <div class="row justify-content-between"><span>Quantité : </span><span>{{viande.quantite}}</span></div>
-                        <div class="row justify-content-between"><span>Stocks : </span><span>{{viande.quantiterestante}}</span></div>
-                    </div>
-                    <div class="row justify-content-between">
-                        <i class="fas fa-plus" (click)="ajout(viande)"></i>
-                        <i class="fas fa-minus" (click)="retirer(viande)"></i>
+                        <i class="fas fa-plus" (click)="ajout(produit)"></i>
+                        <i class="fas fa-minus" (click)="retirer(produit)"></i>
                     </div>
                 </li>
             </div>
@@ -70,6 +30,4 @@
         <app-detailscommande class="commandes" [produitsCommandes]="listProduits" [prixTotal]="prixTotal"></app-detailscommande>
     </div>
 </div>
-
-
 

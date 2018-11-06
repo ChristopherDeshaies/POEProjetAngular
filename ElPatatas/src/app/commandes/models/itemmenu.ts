@@ -5,14 +5,15 @@ export class ItemMenu {
    //private nom: string;
     private quantite: number;
     private prix: number;
-    private quantiterestante: number;
+    //private quantiterestante: number;
 
-    constructor(libelle: string, quantite: number, prix : number, quantiterestante: number) {
+    // constructor(libelle: string, quantite: number, prix : number, quantiterestante: number) {
+    constructor(libelle: string, quantite: number, prix : number) {
         //this.nom= nom;
         this.libelle = libelle;
         this.quantite = quantite;
         this.prix = prix;
-        this.quantiterestante = quantiterestante;
+        //this.quantiterestante = quantiterestante;
     }
 
     // getNom(){
@@ -47,11 +48,11 @@ export class ItemMenu {
         this.prix= prix;
     }
 
-    getQuantiterestante(){
-        return this.quantiterestante;
-    }
+    // getQuantiterestante(){
+    //     return this.quantiterestante;
+    // }
 
-    setQuantiterestante(quantiterestante : number){
-        this.quantiterestante= quantiterestante;
-    }
+    // setQuantiterestante(quantiterestante : number){
+    //     this.quantiterestante= quantiterestante;
+    // }
 }
