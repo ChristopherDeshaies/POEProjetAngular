@@ -4,7 +4,8 @@ export class ProduitsEnVente {
     categorie: string;
     prixvente: number;
 
-    constructor (libelle, categorie, prixvente){
+    constructor (id, libelle, categorie, prixvente){
+        this.id=id;
         this.libelle=libelle;
         this.categorie=categorie;
         this.prixvente=prixvente;
@@ -12,6 +13,7 @@ export class ProduitsEnVente {
 
     public static fromJson(json: Object): ProduitsEnVente {
         return new ProduitsEnVente(
+            json['id'],
             json['libelle'],
             json['categorie'],
             json['prixvente']

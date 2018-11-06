@@ -19,8 +19,8 @@ export class GestionstocksComponent implements OnInit {
   /**
    * Contient la liste des produits et la liste des noms de produits en vente ou déjà vendu
    */
-  private listProduits: Observable<Produits[]>;
-  private listProduitsEnVente: Observable<ProduitsEnVente[]>;
+  listProduits: Observable<Produits[]>;
+  listProduitsEnVente: Observable<ProduitsEnVente[]>;
 
   /**
    * Différence entre un produit connu et un produit nouveau
@@ -92,7 +92,17 @@ export class GestionstocksComponent implements OnInit {
    * Fonction qui retoune un Observable<Produits[]> des produits en base de donnée
    */
   getListProduits(): Observable<Produits[]> {
-    return this.produitsservice.getListProduits();
+    return this.produitsservice.getListProduits().pipe(
+      map(
+        (produits: Produits[]) => {
+          let lproduits: Produits[];
+          lproduits = produits.filter(
+            (produit:Produits) => new Date(produit.dateLimite) >= new Date()
+          );
+          return lproduits;
+        }
+      )
+    );
   }
 
   /**
@@ -106,7 +116,7 @@ export class GestionstocksComponent implements OnInit {
         lproduitsEnVente = produitsEnVente.filter(
           (produitEnV:ProduitsEnVente) => produitEnV.categorie !== 'frite'
         );
-        lproduitsEnVente.push( new ProduitsEnVente('Frite','frite',1));
+        lproduitsEnVente.push( new ProduitsEnVente(0,'Frite','frite',1));
         return lproduitsEnVente;
       })
     );
@@ -211,6 +221,7 @@ export class GestionstocksComponent implements OnInit {
           this.prixAchatProduit[0]){
           this.produitenventeservice.ajouterProduitEnVente(
             new ProduitsEnVente(
+            0,
             this.newNomProduit,
             this.categorieProduit,
             this.prixVenteProduit)
@@ -381,6 +392,7 @@ export class GestionstocksComponent implements OnInit {
       (produitsEnVente:ProduitsEnVente[]) => {
         produitsEnVente.forEach(
           (produitEnVente:ProduitsEnVente) => {
+            //On ne prends pas dans produit en vente les libelles Petite / Moyenne et Grande
             if(produitEnVente.libelle!=='Moyenne' && produitEnVente.libelle!=='Petite' && produitEnVente.libelle!=='Grande')
             this.mapQuantiteRestante.set(
               produitEnVente.libelle,
@@ -388,6 +400,7 @@ export class GestionstocksComponent implements OnInit {
             );
           }
         );
+        //On ajoute le libelle Frite
         this.mapQuantiteRestante.set(
           'Frite',
           0
@@ -399,16 +412,18 @@ export class GestionstocksComponent implements OnInit {
       (produits:Produits[]) => {
         produits.forEach(
           (produit:Produits) => {
-            if(this.mapQuantiteRestante.get(produit.libelle)===undefined){
+            if(this.mapQuantiteRestante.get(produit.libelle)===undefined && new Date(produit.dateLimite) >= new Date()){
               this.mapQuantiteRestante.set(
                 produit.libelle,
                 produit.quantiteRestante
               );
             }else{
-              this.mapQuantiteRestante.set(
-                produit.libelle, 
-                produit.quantiteRestante + this.mapQuantiteRestante.get(produit.libelle)
-              );
+              if(new Date(produit.dateLimite) >= new Date()){
+                this.mapQuantiteRestante.set(
+                  produit.libelle, 
+                  produit.quantiteRestante + this.mapQuantiteRestante.get(produit.libelle)
+                );
+              }
             }
           }
         )

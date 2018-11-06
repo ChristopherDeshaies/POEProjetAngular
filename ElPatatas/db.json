@@ -84,23 +84,14 @@
       "id": 9,
       "libelle": "Fricadelle",
       "codeFournisseur": "4",
-      "quantiteInitiale": 200,
-      "quantiteRestante": 150,
-      "dateLimite": "2018-11-15",
+      "quantiteInitiale": 300,
+      "quantiteRestante": 250,
+      "dateLimite": "2018-11-07",
       "dateAchat": "2018-10-31",
       "prixAchat": 1
     },
     {
       "id": 10,
-<<<<<<< HEAD
-      "libelle": "Coca",
-      "codeFournisseur": "4",
-      "quantiteInitiale": 2,
-      "quantiteRestante": 5,
-      "dateLimite": "2018-11-16",
-      "dateAchat": "2018-11-05",
-      "prixAchat": "2"
-=======
       "libelle": "Merguez",
       "codeFournisseur": "100",
       "quantiteInitiale": 100,
@@ -212,13 +203,12 @@
     {
       "id": 32,
       "libelle": "Frite",
-      "codeFournisseur": "2",
-      "quantiteInitiale": 10000,
-      "quantiteRestante": 10000,
-      "dateLimite": "2018-12-30",
-      "dateAchat": "2018-11-05",
-      "prixAchat": "0.01"
->>>>>>> 02a55b642119101e070770f2c2bb85937b17cd80
+      "codeFournisseur": "1",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-11-30",
+      "dateAchat": "2018-11-06",
+      "prixAchat": "0.3"
     }
   ],
   "produitsEnVente": [
@@ -295,6 +285,29 @@
       "id": 12
     }
   ],
+  "planning": [
+    {
+      "id": 1,
+      "employe": 3,
+      "date": "2018-11-06T12:26:49.772Z",
+      "midi": false,
+      "soir": true
+    },
+    {
+      "id": 2,
+      "employe": 3,
+      "date": "2018-11-07T12:26:49.772Z",
+      "midi": false,
+      "soir": true
+    },
+    {
+      "id": 3,
+      "employe": 3,
+      "date": "2018-11-07T12:26:49.772Z",
+      "midi": true,
+      "soir": false
+    }
+  ],
   "users": [
     {
       "id": 1,
@@ -328,17 +341,6 @@
       "password": "Chris",
       "dateNaissance": "07/12/1991",
       "role": "employe"
-    },
-    {
-      "id": 4,
-      "nom": "YOU",
-      "prenom": "Van",
-      "adresse": "rue blabla",
-      "tel": "0102030405",
-      "email": "fzferzf@gthg",
-      "password": "van",
-      "dateNaissance": "12/02/1982",
-      "role": "admin"
     }
   ],
   "commandes": [

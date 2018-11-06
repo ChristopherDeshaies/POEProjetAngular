@@ -77,4 +77,7 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/commandes']);
     }
 
+    navigatePlanning() {
+      this.router.navigate(['/planning']);
+    }
 }
