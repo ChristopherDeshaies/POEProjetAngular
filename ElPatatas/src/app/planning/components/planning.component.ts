@@ -36,32 +36,7 @@ export class PlanningComponent implements OnInit {
       this.addJour(debutSemaine,5),
       this.addJour(debutSemaine,6)
     ];
-
-    this.listPlanning=this.getPlanning(this.semaine[0],this.semaine[6]);
-    this.listPlanning.subscribe(
-      /* (users: User[]) => {
-        users.forEach(
-          () => {}
-        );
-      } */
-    );
-    this.fPlanning=new Array<boolean[]>();
-   
-  }
-
-  compareDate(date1 : Date, date2 : Date): boolean{
-    let month1 = String(date1.getMonth() + 1);
-    let day1 = String(date1.getDate());
-    const year1 = String(date1.getFullYear());
-
-    let month2 = String(date2.getMonth() + 1);
-    let day2 = String(date2.getDate());
-    const year2 = String(date2.getFullYear());
-
-    if(month1===month2 && day1===day2 && year1===year2)
-      return true;
-    else
-      return false;
+    this.listPlanning=this.getPlanning(this.semaine[0],this.semaine[6]); 
   }
 
   initDebutSemaine(i: number): Date{
@@ -155,18 +130,5 @@ export class PlanningComponent implements OnInit {
   addPlanning(employe: number, date: Date, midi:boolean, soir:boolean): void{
     this.planningservice.ajouterPlanning(new Planning(0,employe,date,midi,soir));
   }
-
-  /* findPlanning(employe: number, date: Date, midi:boolean, soir:boolean): boolean{
-    this.planningservice.findPlanning(employe,date,midi,soir).then(
-      (planningFind) => {
-        if(planningFind){
-          return true;
-        }else{
-          return false;
-        }
-      }
-    );
-    return false;
-  } */
 
 }
