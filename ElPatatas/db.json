@@ -3,9 +3,9 @@
     {
       "id": 1,
       "libelle": "Frite",
-      "codeFournisseur": 1,
+      "codeFournisseur": "1",
       "quantiteInitiale": 100,
-      "quantiteRestante": 49,
+      "quantiteRestante": 47,
       "dateLimite": "2018-11-21",
       "dateAchat": "2018-09-21",
       "prixAchat": 0.2
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "libelle": "Merguez",
-      "codeFournisseur": 2,
+      "codeFournisseur": "2",
       "quantiteInitiale": 200,
       "quantiteRestante": 200,
       "dateLimite": "2018-10-29",
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "libelle": "Saucisse",
-      "codeFournisseur": 2,
+      "codeFournisseur": "2",
       "quantiteInitiale": 300,
       "quantiteRestante": 300,
       "dateLimite": "2018-10-31",
@@ -31,29 +31,29 @@
       "prixAchat": 0.3
     },
     {
+      "id": 4,
       "libelle": "Mexicanos",
-      "codeFournisseur": 4,
+      "codeFournisseur": "4",
       "quantiteInitiale": 100,
-      "quantiteRestante": 28,
+      "quantiteRestante": 27,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
-      "prixAchat": 0.3,
-      "id": 4
+      "prixAchat": 0.3
     },
     {
+      "id": 5,
       "libelle": "Coca",
-      "codeFournisseur": 3,
+      "codeFournisseur": "3",
       "quantiteInitiale": 50,
-      "quantiteRestante": 0,
+      "quantiteRestante": 10,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
-      "prixAchat": "4.5",
-      "id": 5
+      "prixAchat": "4.5"
     },
     {
       "id": 6,
       "libelle": "Fanta",
-      "codeFournisseur": 3,
+      "codeFournisseur": "3",
       "quantiteInitiale": 50,
       "quantiteRestante": 0,
       "dateLimite": "2019-09-21",
@@ -63,9 +63,9 @@
     {
       "id": 7,
       "libelle": "Coca",
-      "codeFournisseur": 3,
+      "codeFournisseur": "3",
       "quantiteInitiale": 100,
-      "quantiteRestante": 0,
+      "quantiteRestante": 10,
       "dateLimite": "2019-07-12",
       "dateAchat": "2018-10-29",
       "prixAchat": 2
@@ -73,9 +73,9 @@
     {
       "id": 8,
       "libelle": "Coca",
-      "codeFournisseur": 3,
+      "codeFournisseur": "3",
       "quantiteInitiale": 200,
-      "quantiteRestante": 0,
+      "quantiteRestante": 10,
       "dateLimite": "2018-12-14",
       "dateAchat": "2018-10-01",
       "prixAchat": 2
@@ -83,12 +83,142 @@
     {
       "id": 9,
       "libelle": "Fricadelle",
-      "codeFournisseur": 4,
+      "codeFournisseur": "4",
       "quantiteInitiale": 200,
-      "quantiteRestante": 200,
+      "quantiteRestante": 150,
       "dateLimite": "2018-11-15",
       "dateAchat": "2018-10-31",
       "prixAchat": 1
+    },
+    {
+      "id": 10,
+<<<<<<< HEAD
+      "libelle": "Coca",
+      "codeFournisseur": "4",
+      "quantiteInitiale": 2,
+      "quantiteRestante": 5,
+      "dateLimite": "2018-11-16",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "2"
+=======
+      "libelle": "Merguez",
+      "codeFournisseur": "100",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-11-15",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "0.5"
+    },
+    {
+      "id": 11,
+      "libelle": "Coca",
+      "codeFournisseur": "1",
+      "quantiteInitiale": 200,
+      "quantiteRestante": 200,
+      "dateLimite": "2018-11-30",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "0.2"
+    },
+    {
+      "id": 16,
+      "libelle": "Jus de citron",
+      "codeFournisseur": "2",
+      "quantiteInitiale": 50,
+      "quantiteRestante": 50,
+      "dateLimite": "2018-11-11",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "1"
+    },
+    {
+      "id": 17,
+      "libelle": "Poulet",
+      "codeFournisseur": "5",
+      "quantiteInitiale": 10,
+      "quantiteRestante": 10,
+      "dateLimite": "2018-11-11",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "3"
+    },
+    {
+      "id": 18,
+      "libelle": "Merguez",
+      "codeFournisseur": "1",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-11-30",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "0.3"
+    },
+    {
+      "id": 21,
+      "libelle": "Poulet",
+      "codeFournisseur": "8",
+      "quantiteInitiale": 8,
+      "quantiteRestante": 8,
+      "dateLimite": "2018-11-11",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "3"
+    },
+    {
+      "id": 25,
+      "libelle": "Coca",
+      "codeFournisseur": "100",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-12-01",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "0.4"
+    },
+    {
+      "id": 26,
+      "libelle": "Pâté",
+      "codeFournisseur": "1",
+      "quantiteInitiale": 10,
+      "quantiteRestante": 10,
+      "dateLimite": "2018-11-10",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "5"
+    },
+    {
+      "id": 27,
+      "libelle": "Poulet",
+      "codeFournisseur": "10",
+      "quantiteInitiale": 2,
+      "quantiteRestante": 2,
+      "dateLimite": "2018-11-11",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "10"
+    },
+    {
+      "id": 28,
+      "libelle": "Saucisse",
+      "codeFournisseur": "2",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-11-18",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "0.8"
+    },
+    {
+      "id": 31,
+      "libelle": "Mexicanos",
+      "codeFournisseur": "2",
+      "quantiteInitiale": 20,
+      "quantiteRestante": 20,
+      "dateLimite": "2018-11-23",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "0.5"
+    },
+    {
+      "id": 32,
+      "libelle": "Frite",
+      "codeFournisseur": "2",
+      "quantiteInitiale": 10000,
+      "quantiteRestante": 10000,
+      "dateLimite": "2018-12-30",
+      "dateAchat": "2018-11-05",
+      "prixAchat": "0.01"
+>>>>>>> 02a55b642119101e070770f2c2bb85937b17cd80
     }
   ],
   "produitsEnVente": [
@@ -135,16 +265,34 @@
       "prixvente": 4
     },
     {
-      "id": 6,
+      "id": 8,
       "libelle": "Moyenne",
       "categorie": "frite",
       "prixvente": 4
     },
     {
-      "id": 6,
+      "id": 9,
       "libelle": "Petite",
       "categorie": "frite",
       "prixvente": 4
+    },
+    {
+      "libelle": "Jus de citron",
+      "categorie": "boisson",
+      "prixvente": "3",
+      "id": 10
+    },
+    {
+      "libelle": "Poulet",
+      "categorie": "viande",
+      "prixvente": "6",
+      "id": 11
+    },
+    {
+      "libelle": "Pâté",
+      "categorie": "viande",
+      "prixvente": "10",
+      "id": 12
     }
   ],
   "users": [
@@ -180,73 +328,122 @@
       "password": "Chris",
       "dateNaissance": "07/12/1991",
       "role": "employe"
+    },
+    {
+      "id": 4,
+      "nom": "YOU",
+      "prenom": "Van",
+      "adresse": "rue blabla",
+      "tel": "0102030405",
+      "email": "fzferzf@gthg",
+      "password": "van",
+      "dateNaissance": "12/02/1982",
+      "role": "admin"
     }
   ],
   "commandes": [
     {
-      "dateCommande": "Sun, 04 Nov 2018 18:08:43 GMT",
+      "id": 1,
+      "dateCommande": "Mon, 05 Nov 2018 10:33:28 GMT",
       "listProduits": [
         {
           "libelle": "Coca",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 3
+          "quantiterestante": 5
         }
       ],
-      "prixTotal": 4,
-      "id": 1
+      "prixTotal": 4
     },
     {
-      "dateCommande": "Sun, 04 Nov 2018 18:09:55 GMT",
-      "listProduits": [
-        {
-          "libelle": "Grande",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 50
-        }
-      ],
-      "prixTotal": 4,
-      "id": 2
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 18:19:15 GMT",
-      "listProduits": [
-        {
-          "libelle": "Grande",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 50
-        }
-      ],
-      "prixTotal": 4,
-      "id": 3
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 18:20:16 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 3
-        }
-      ],
-      "prixTotal": 4,
-      "id": 4
-    },
-    {
-      "dateCommande": "Sun, 04 Nov 2018 18:20:39 GMT",
+      "id": 2,
+      "dateCommande": "Mon, 05 Nov 2018 10:34:45 GMT",
       "listProduits": [
         {
           "libelle": "Coca",
           "quantite": 2,
           "prix": 4,
-          "quantiterestante": 2
+          "quantiterestante": 5
         }
       ],
-      "prixTotal": 8,
-      "id": 5
+      "prixTotal": 12
+    },
+    {
+      "id": 3,
+      "dateCommande": "Mon, 05 Nov 2018 10:41:37 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 40
+        }
+      ],
+      "prixTotal": 4
+    },
+    {
+      "id": 4,
+      "dateCommande": "Mon, 05 Nov 2018 10:41:47 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 40
+        }
+      ],
+      "prixTotal": 8
+    },
+    {
+      "id": 5,
+      "dateCommande": "Mon, 05 Nov 2018 10:44:35 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 38
+        }
+      ],
+      "prixTotal": 4
+    },
+    {
+      "id": 6,
+      "dateCommande": "Mon, 05 Nov 2018 13:27:56 GMT",
+      "listProduits": [
+        {
+          "libelle": "Grande",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 48
+        },
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 37
+        },
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 28
+        }
+      ],
+      "prixTotal": 12
+    },
+    {
+      "id": 7,
+      "dateCommande": "Mon, 05 Nov 2018 14:14:29 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 36
+        }
+      ],
+      "prixTotal": 4
     }
   ]
 }

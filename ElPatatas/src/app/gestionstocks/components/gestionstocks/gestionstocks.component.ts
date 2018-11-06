@@ -4,6 +4,7 @@ import { ProduitsService } from 'src/app/core/produits/services/produits.service
 import { Produits } from 'src/app/core/produits/models/produits';
 import { ProduitsEnVenteService } from 'src/app/core/produitEnVente/services/produitsEnVente';
 import { ProduitsEnVente } from 'src/app/core/produitEnVente/model/produitsEnVente';
+import { map } from 'rxjs/operators';
 
 /**
  * @author Christopher Deshaies
@@ -25,7 +26,8 @@ export class GestionstocksComponent implements OnInit {
    * Différence entre un produit connu et un produit nouveau
    */
   private newNomProduit: string;
-
+  private categorieProduit: string;
+  private prixVenteProduit: number;
   /**
    * Données par défaut dans un produit
    */
@@ -50,7 +52,7 @@ export class GestionstocksComponent implements OnInit {
    * K : Libelle du produit
    * V : SUM des quantitées restantes de produit
    */
-  private mapQuantiteRestante:Map<String,number>;
+  private mapQuantiteRestante:Map<String,number> = new Map<String,number>();
   
   /**
    * Tableau qui va contenir les modifications à effectuer sur le produit
@@ -97,7 +99,18 @@ export class GestionstocksComponent implements OnInit {
    * Fonction qui retoune un Observable<ProduitsEnProduit[]> des produits en vente ou déjà vendu en base de donnée
    */
   getListProduitsEnVente(): Observable<ProduitsEnVente[]>{
-    return this.produitenventeservice.getProduitEnVente();
+    return this.produitenventeservice.getProduitEnVente().pipe(
+      map(
+        (produitsEnVente: ProduitsEnVente[]) => {
+        let lproduitsEnVente : ProduitsEnVente[];
+        lproduitsEnVente = produitsEnVente.filter(
+          (produitEnV:ProduitsEnVente) => produitEnV.categorie !== 'frite'
+        );
+        lproduitsEnVente.push( new ProduitsEnVente('Frite','frite',1));
+        return lproduitsEnVente;
+      })
+    );
+     
   }
 
   /**
@@ -150,6 +163,7 @@ export class GestionstocksComponent implements OnInit {
       ){
         this.produitsservice.postProduit(
           new Produits(
+            0,
             libelle, 
             this.codeFournisseur[indiceCategorie],
             this.quantiteAjoutProduit[indiceCategorie],
@@ -182,20 +196,25 @@ export class GestionstocksComponent implements OnInit {
    * Fonction qui ajoute un nouveau produit en stock
    */
   ajouterNouveauProduitStock(): void{
-    let produitNom:String;
 
-    produitNom=this.newNomProduit;
-      this.produitenventeservice.findProduitEnVente(produitNom).then( 
-        (produitFind) => {
-          if(!produitFind && 
-            this.newNomProduit &&
-            this.codeFournisseur[0] && 
-            this.quantiteAjoutProduit[0] && 
-            this.quantiteAjoutProduit[0] && 
-            this.dateLimiteProduit[0] &&
-            this.dateAchatProduit[0] &&
-            this.prixAchatProduit[0]){
-            this.produitenventeservice.ajouterProduitEnVente(produitNom);
+    this.produitenventeservice.findProduitEnVente(this.newNomProduit).then( 
+      (produitFind) => {
+        if(!produitFind && 
+          this.newNomProduit &&
+          this.categorieProduit &&
+          this.prixVenteProduit &&
+          this.codeFournisseur[0] && 
+          this.quantiteAjoutProduit[0] && 
+          this.quantiteAjoutProduit[0] && 
+          this.dateLimiteProduit[0] &&
+          this.dateAchatProduit[0] &&
+          this.prixAchatProduit[0]){
+          this.produitenventeservice.ajouterProduitEnVente(
+            new ProduitsEnVente(
+            this.newNomProduit,
+            this.categorieProduit,
+            this.prixVenteProduit)
+          );
         }
       } 
     );
@@ -205,6 +224,8 @@ export class GestionstocksComponent implements OnInit {
       (resolve,reject) => {
         if(
           this.newNomProduit &&
+          this.categorieProduit &&
+          this.prixVenteProduit &&
           this.codeFournisseur[0] && 
           this.quantiteAjoutProduit[0] && 
           this.quantiteAjoutProduit[0] && 
@@ -214,6 +235,7 @@ export class GestionstocksComponent implements OnInit {
         ){
           this.produitsservice.postProduit(
             new Produits(
+              0,
               this.newNomProduit, 
               this.codeFournisseur[0],
               this.quantiteAjoutProduit[0],
@@ -251,8 +273,8 @@ export class GestionstocksComponent implements OnInit {
     new Promise(
       (resolve,reject) => {
         this.produitsservice.putProduit(
-          id,
           new Produits(
+            id,
             libelle,
             this.modifProduit[0],
             this.modifProduit[1],
@@ -353,26 +375,27 @@ export class GestionstocksComponent implements OnInit {
    * Initialise la map mapQuantiteRestante avec en clé les libelles des produits et en value la somme des quantités restantes pour le produit
    */
   generateCompteurCategorie(): void{
-    this.mapQuantiteRestante = new Map<String,number>();
-
-    let listproduit:Observable<Produits[]> = this.produitsservice.getListProduits();
-    let listproduitsenvente:Observable<ProduitsEnVente[]> = this.produitenventeservice.getProduitEnVente();
     
     //Init de la map à 0 pour chaques produits
-    listproduitsenvente.forEach(
+    this.produitenventeservice.getProduitEnVente().forEach(
       (produitsEnVente:ProduitsEnVente[]) => {
         produitsEnVente.forEach(
           (produitEnVente:ProduitsEnVente) => {
+            if(produitEnVente.libelle!=='Moyenne' && produitEnVente.libelle!=='Petite' && produitEnVente.libelle!=='Grande')
             this.mapQuantiteRestante.set(
               produitEnVente.libelle,
               0
             );
           }
         );
+        this.mapQuantiteRestante.set(
+          'Frite',
+          0
+        );
       }
     );
 
-    listproduit.forEach(
+    this.produitsservice.getListProduits().forEach(
       (produits:Produits[]) => {
         produits.forEach(
           (produit:Produits) => {
@@ -409,17 +432,10 @@ export class GestionstocksComponent implements OnInit {
    * Fonction pour rafraichir l'affichage
    */
   refresh(): void{
-    new Promise(
-      (resolve,reject) => { 
-        this.listProduits=this.getListProduits();
-        this.listProduitsEnVente=this.getListProduitsEnVente();
-        this.listProduits.subscribe(resolve,reject);
-        this.listProduitsEnVente.subscribe(resolve,reject);
-      }
-    ).then(
-      () => this.generateCompteurCategorie()
-    );
-    
+    this.listProduits=this.getListProduits();
+    this.listProduitsEnVente=this.getListProduitsEnVente();
+    this.generateCompteurCategorie();
+  
     for(let i = 0; i < this.tabModifierProduit.length; i++)
       this.tabModifierProduit[i]=false;
   }
