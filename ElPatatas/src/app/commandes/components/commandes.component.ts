@@ -144,7 +144,6 @@ export class CommandesComponent implements OnInit {
           }
         )
       })
-      console.log(this.mapQuantiteRestante)
   }
 
   /**
@@ -218,8 +217,6 @@ export class CommandesComponent implements OnInit {
 
   miseAjourStocks() {
     for (let i = 0; i < this.listProduits.length; i++) {
-      console.log("lengh : "+this.listProduits.length)
-      console.log("this.listProduits[i] : "+this.listProduits[i])
       this.miseajour(this.listProduits[i])
     }     
   }
@@ -231,9 +228,8 @@ export class CommandesComponent implements OnInit {
   }
 
   miseajour(itemmenu : ItemMenu){
-    console.log("mise à jour")
+
     let libelle : string =itemmenu.getLibelle()
-    console.log("itemmenu.getLibelle(): "+itemmenu.getLibelle())
     if ((itemmenu.getLibelle() === "Grande") || (itemmenu.getLibelle() === "Moyenne") || (itemmenu.getLibelle() === "Petite")){
         libelle = "Frite"
     }
@@ -244,9 +240,6 @@ export class CommandesComponent implements OnInit {
         let that = this;
         produits.forEach(
           (produit: Produits) => {
-            console.log(produit.libelle)
-              console.log("this.getQuantiteRestante(produit.libelle) "+this.getQuantiteRestante(produit.libelle))
-              console.log("this.getQuantiteCommandee(produit.libelle) "+this.getQuantiteCommandee(produit.libelle))
            if(produit.quantiteRestante >= this.getQuantiteCommandee(produit.libelle)){
               produit.quantiteRestante = produit.quantiteRestante - this.getQuantiteCommandee(produit.libelle)
               this.miseajourproduit(produit);
@@ -256,8 +249,6 @@ export class CommandesComponent implements OnInit {
               produit.quantiteRestante = 0;
               this.miseajourproduit(produit);
            }
-           console.log(this.mapProduitsCommandes)
-           console.log(this.mapProduitsCommandes)
           }
         )
       }
@@ -284,9 +275,8 @@ export class CommandesComponent implements OnInit {
       let prenom : string = JSON.parse(localStorage.getItem('user'))[0]['prenom'];
       let commande = new Commandes(null, date, this.listProduits, this.prixTotal, id, nom, prenom);
       this.commandesService.postCommande(commande)
-      this.miseAjourStocks();
+      this.miseAjourStocks()
       this.reinitialiser();
-   
     }
   }
 

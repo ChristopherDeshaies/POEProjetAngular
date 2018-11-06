@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ComptabiliteComponent } from './components/comptabilite.component';
 import { ComptabiliteRoutingModule } from './comptabilite-routing.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    ComptabiliteRoutingModule
+    ComptabiliteRoutingModule,
+    FormsModule
   ],
   declarations: [
     ComptabiliteComponent
