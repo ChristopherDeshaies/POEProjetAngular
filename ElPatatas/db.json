@@ -55,7 +55,7 @@
       "libelle": "Fanta",
       "codeFournisseur": "3",
       "quantiteInitiale": 50,
-      "quantiteRestante": 0,
+      "quantiteRestante": 1,
       "dateLimite": "2019-09-21",
       "dateAchat": "2018-10-21",
       "prixAchat": 0.55
@@ -75,7 +75,7 @@
       "libelle": "Coca",
       "codeFournisseur": "3",
       "quantiteInitiale": 200,
-      "quantiteRestante": 1,
+      "quantiteRestante": 0,
       "dateLimite": "2018-12-14",
       "dateAchat": "2018-10-01",
       "prixAchat": 2
@@ -105,7 +105,7 @@
       "libelle": "Coca",
       "codeFournisseur": "1",
       "quantiteInitiale": 200,
-      "quantiteRestante": 1,
+      "quantiteRestante": 0,
       "dateLimite": "2018-11-30",
       "dateAchat": "2018-11-05",
       "prixAchat": 0.2
@@ -214,6 +214,95 @@
     }
   ],
   "commandes": [
-
+    {
+      "id": 1,
+      "dateCommande": "Tue, 06 Nov 2018 14:47:53 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 2,
+      "dateCommande": "Tue, 06 Nov 2018 14:50:59 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 3,
+      "dateCommande": "Tue, 06 Nov 2018 14:52:27 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 4,
+      "dateCommande": "Tue, 06 Nov 2018 14:56:36 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 5,
+      "dateCommande": "Tue, 06 Nov 2018 14:58:10 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 6,
+      "dateCommande": "Tue, 06 Nov 2018 15:00:54 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    }
   ]
 }

@@ -30,9 +30,6 @@ export class CommandesComponent implements OnInit {
 
   produitsEnVente : Observable<ProduitsEnVente[]>;
 
-  commandefiltrees : Observable<Commandes[]>;
-
-
   mapQuantiteRestante: Map<String,number>;
 
   listProduits : ItemMenu[];
@@ -60,6 +57,7 @@ export class CommandesComponent implements OnInit {
     this.initialisation();
     this.recupPrixProduit();
     this.listProduits=[];
+
   }
 
   recupAllProduits() {
@@ -146,6 +144,7 @@ export class CommandesComponent implements OnInit {
           }
         )
       })
+      console.log(this.mapQuantiteRestante)
   }
 
   /**
@@ -219,6 +218,8 @@ export class CommandesComponent implements OnInit {
 
   miseAjourStocks() {
     for (let i = 0; i < this.listProduits.length; i++) {
+      console.log("lengh : "+this.listProduits.length)
+      console.log("this.listProduits[i] : "+this.listProduits[i])
       this.miseajour(this.listProduits[i])
     }     
   }
@@ -230,7 +231,9 @@ export class CommandesComponent implements OnInit {
   }
 
   miseajour(itemmenu : ItemMenu){
+    console.log("mise à jour")
     let libelle : string =itemmenu.getLibelle()
+    console.log("itemmenu.getLibelle(): "+itemmenu.getLibelle())
     if ((itemmenu.getLibelle() === "Grande") || (itemmenu.getLibelle() === "Moyenne") || (itemmenu.getLibelle() === "Petite")){
         libelle = "Frite"
     }
@@ -241,15 +244,20 @@ export class CommandesComponent implements OnInit {
         let that = this;
         produits.forEach(
           (produit: Produits) => {
-           if(produit.quantiteRestante >= itemmenu.getQuantite()){
-             produit.quantiteRestante = produit.quantiteRestante - itemmenu.getQuantite()
-              this. miseajourproduit(produit);
-              itemmenu.setQuantite(0);
+            console.log(produit.libelle)
+              console.log("this.getQuantiteRestante(produit.libelle) "+this.getQuantiteRestante(produit.libelle))
+              console.log("this.getQuantiteCommandee(produit.libelle) "+this.getQuantiteCommandee(produit.libelle))
+           if(produit.quantiteRestante >= this.getQuantiteCommandee(produit.libelle)){
+              produit.quantiteRestante = produit.quantiteRestante - this.getQuantiteCommandee(produit.libelle)
+              this.miseajourproduit(produit);
+              this.setQuantiteCommandee(produit.libelle, 0);
            }else{
-            produit.quantiteRestante = 0;
-            itemmenu.setQuantite(itemmenu.getQuantite()-produit.quantiteRestante);
-            this. miseajourproduit(produit);
+              this.setQuantiteCommandee(produit.libelle,this.getQuantiteCommandee(produit.libelle)-produit.quantiteRestante);
+              produit.quantiteRestante = 0;
+              this.miseajourproduit(produit);
            }
+           console.log(this.mapProduitsCommandes)
+           console.log(this.mapProduitsCommandes)
           }
         )
       }
