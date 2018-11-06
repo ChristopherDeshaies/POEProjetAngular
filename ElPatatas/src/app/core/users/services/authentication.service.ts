@@ -22,7 +22,7 @@ export class AuthenticationService {
   /**
  * Gestion de l'authentification
  */
-  protected authenticatedUser: BehaviorSubject<User> = new BehaviorSubject<User>(new User(0,'','','','','','','',''));
+  public authenticatedUser: BehaviorSubject<User> = new BehaviorSubject<User>(new User(0,'','','','','','','',''));
 
   constructor(
     private httpClient: HttpClient,

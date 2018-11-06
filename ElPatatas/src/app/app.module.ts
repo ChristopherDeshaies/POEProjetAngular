@@ -6,6 +6,7 @@ import { CoreModule } from './core/core-module.module';
 import { PlanningComponent } from './planning/components/planning.component';
 import { GestionstocksComponent } from './gestionstocks/components/gestionstocks/gestionstocks.component';
 import { HeaderComponent } from './core/header/components/header.component';
+import { PipeFiltreDatesPipe } from './pipe-filtre-dates.pipe';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { HeaderComponent } from './core/header/components/header.component';
     AppComponent,
     PlanningComponent,
     HeaderComponent,
+    PipeFiltreDatesPipe,
   ],
   imports: [
     CoreModule,

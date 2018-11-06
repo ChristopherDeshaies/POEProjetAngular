@@ -3,7 +3,7 @@
         <div class="row">
             <!-- <div><label>Frites : </label></div> -->
             <div class="row">
-                <li *ngFor="let frite of frites">
+                <li *ngFor="let frite of getListProduitsEnVente | async">
                     <!-- <img src="assets/img/frites/frites.jpeg"> -->
                     <div class="item">
                         <span>{{frite.libelle}}</span>

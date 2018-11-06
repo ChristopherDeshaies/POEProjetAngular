@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CommandesComponent } from '../../commandes/components/commandes.component';
 import { Observable } from 'rxjs';
 import { Produits } from '../../core/produits/models/produits';
@@ -7,6 +7,7 @@ import { ComptabiliteService } from '../services/comptabilite.service';
 import { finalize } from 'rxjs/operators';
 import { CommandesService } from '../../commandes/services/commandes.service';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class ComptabiliteComponent implements OnInit {
   private vente: Observable<Produits[]>;
   private histoCommandes: Observable<Commandes[]>;
   private isLoaded: boolean;
+  private resultRecherche: any;
 
   constructor(
     private comptabiliteservice: ComptabiliteService, 
@@ -28,11 +30,20 @@ export class ComptabiliteComponent implements OnInit {
     private router:Router
     // private commandes: Commandes
     ) { }
+    @Input() dateDebut: Date;
+    @Input() dateFin: Date;
   /**
    *
    */
   ngOnInit() {
 
+  }
+
+  
+  rechercheCA(dateDebut: Date, dateFin: Date) {
+    
+    console.log(this.dateDebut);
+    console.log(this.dateFin);
   }
   /**
    *

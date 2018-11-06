@@ -1,3 +1,18 @@
-<p>
-    <button>ici</button>
-</p>
+<div>
+    <button type="submit" >CA-journalier</button>
+    <button type="submit">CA-hebdomadaire</button>
+    <button type="submit">CA-mensuel</button>
+    <button type="submit">CA-annuel</button>
+    <label>Résultat de votre requête</label>
+    <input>
+</div>
+<br>
+<div>
+    <label>Recherche par dates entre le :</label>
+    <input type="date" [(ngModel)]="dateDebut">  
+    <label>et le :</label>
+    <input type="date" [(ngModel)]="dateFin">
+    <button type="submit" (click)="[rechercheCA()]">Executer le requête</button>
+    <label>Résultat de votre recherche</label>   
+    <input type="text">
+</div>

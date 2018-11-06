@@ -266,11 +266,6 @@ export class CommandesComponent implements OnInit {
    */
   getListProduitsEnVente(): Observable<ProduitsEnVente[]> {
     return this.produitenventeservice.getProduitEnVente()
-      .pipe(
-        map(
-          (produitsEnVente: ProduitsEnVente[]) => produitsEnVente
-        )
-      )
   }
 
   initialisationVentes() {
