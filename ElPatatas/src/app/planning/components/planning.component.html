@@ -43,8 +43,37 @@
       </thead>
       <tbody>
         <tr *ngFor='let user of listUser | async ; let i = index'>
-          <td>{{user.nom}}</td>
-          <td *ngFor="let planning of listPlanning | async">TRUE</td>
+          <td>{{user.nom}} </td>
+          <td *ngIf='!fPlanning[i][0]'>0</td>
+          <td *ngIf='fPlanning[i][0]' style='background-color: blue'>0</td>
+          <td *ngIf='!fPlanning[i][1]'>1</td>
+          <td *ngIf='fPlanning[i][1]' style='background-color: blue'>1</td>
+          <td *ngIf='!fPlanning[i][2]'>2</td>
+          <td *ngIf='fPlanning[i][2]' style='background-color: blue'>2</td>
+          <td *ngIf='!fPlanning[i][3]'>3</td>
+          <td *ngIf='fPlanning[i][3]' style='background-color: blue'>3</td>
+          <td *ngIf='!fPlanning[i][4]'>4</td>
+          <td *ngIf='fPlanning[i][4]' style='background-color: blue'>4</td>
+          <td *ngIf='!fPlanning[i][5]'>5</td>
+          <td *ngIf='fPlanning[i][5]' style='background-color: blue'>5</td>
+          <td *ngIf='!fPlanning[i][6]'>6</td>
+          <td *ngIf='fPlanning[i][6]' style='background-color: blue'>6</td>
+          <td *ngIf='!fPlanning[i][7]'>7</td>
+          <td *ngIf='fPlanning[i][7]' style='background-color: blue'>7</td>
+          <td *ngIf='!fPlanning[i][8]'>8</td>
+          <td *ngIf='fPlanning[i][8]' style='background-color: blue'>8</td>
+          <td *ngIf='!fPlanning[i][9]'>9</td>
+          <td *ngIf='fPlanning[i][9]' style='background-color: blue'>9</td>
+          <td *ngIf='!fPlanning[i][10]'>10</td>
+          <td *ngIf='fPlanning[i][10]' style='background-color: blue'>10</td>
+          <td *ngIf='!fPlanning[i][11]'>11</td>
+          <td *ngIf='fPlanning[i][11]' style='background-color: blue'>11</td>
+          <td *ngIf='!fPlanning[i][12]'>12</td>
+          <td *ngIf='fPlanning[i][12]' style='background-color: blue'>12</td>
+          <td *ngIf='!fPlanning[i][13]'>13</td>
+          <td *ngIf='fPlanning[i][13]' style='background-color: blue'>13</td>
+          
+          <!-- <td *ngFor="let planning of listPlanning | async">TRUE</td> -->
             
           <!-- <td *ngIf='formattedDateDDMM(semaine[0])!==formattedDateDDMM(planning.date)'></td>
             

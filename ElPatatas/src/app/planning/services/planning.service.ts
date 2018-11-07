@@ -43,15 +43,15 @@ export class PlanningService {
     );
     return this.httpclient.get<Planning[]>(urlPlanning);
   }
-/* 
-  findPlanning(employe, date, midi, soir): Promise<boolean>{
+
+  findPlanning(employe: number, date: Date): Promise<boolean>{
     return new Promise(
       (resolve, reject) => {
         this.httpclient.get<Planning[]>(urlPlanning).subscribe(
           (plannings : Planning[]) => {
             let planningR = plannings.find(
               (planning: Planning) => {
-                return (planning.employe===employe && this.compareDate(date, new Date(planning.date)) && planning.midi===midi && planning.soir===soir);
+                return (planning.employe===employe && this.compareDate(date, new Date(planning.date)) );
               }
             );
             if(planningR!==undefined){
@@ -63,7 +63,7 @@ export class PlanningService {
         )
       }
     );
-  } */
+  }
 
   compareDate(date1 : Date, date2 : Date): boolean{
     let month1 = String(date1.getMonth() + 1);

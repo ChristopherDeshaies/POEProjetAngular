@@ -37,6 +37,46 @@ export class PlanningComponent implements OnInit {
       this.addJour(debutSemaine,6)
     ];
     this.listPlanning=this.getPlanning(this.semaine[0],this.semaine[6]); 
+    
+    this.fPlanning=new Array<boolean[]>();
+
+    this.listUser.subscribe(
+      (users: User[]) => {
+        for(let i=0; i<users.length; i++){
+          this.fPlanning[i]=new Array<boolean>();
+          for(let j=0; j<this.semaine.length; j++){
+            this.listPlanning.subscribe(
+              (plannings: Planning[]) => {
+     
+                for(let k=0; k<plannings.length; k++){
+                  if(
+                    plannings[k].employe===users[i].id && 
+                    this.formattedDateDDMMYY(new Date(plannings[k].date))===this.formattedDateDDMMYY(new Date(this.semaine[j]))
+                  ){
+                    if(plannings[k].midi===true){
+                      this.fPlanning[i][j*2]=true;
+                   
+                    }else{
+                      this.fPlanning[i][j*2]=false;
+                    }
+                    if(plannings[k].soir===true){
+                      this.fPlanning[i][j*2+1]=true;
+                    
+                    }else{
+                      this.fPlanning[i][j*2+1]=false;
+                    }
+                    k=10000000000000000000000000000000;
+                  }else if(k===plannings.length-1){
+                    this.fPlanning[i][j*2]=false;
+                    this.fPlanning[i][j*2+1]=false;
+                  }
+                }
+              }
+            )
+          }
+        }
+      }
+    )
   }
 
   initDebutSemaine(i: number): Date{

@@ -109,6 +109,36 @@
       "dateLimite": "2018-11-30",
       "dateAchat": "2018-11-05",
       "prixAchat": 0.2
+    },
+    {
+      "id": 12,
+      "libelle": "Mexicanos",
+      "codeFournisseur": "10",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-11-11",
+      "dateAchat": "2018-11-07",
+      "prixAchat": "1"
+    },
+    {
+      "id": 13,
+      "libelle": "Saucisse",
+      "codeFournisseur": "200",
+      "quantiteInitiale": 200,
+      "quantiteRestante": 200,
+      "dateLimite": "2018-11-30",
+      "dateAchat": "2018-11-07",
+      "prixAchat": "0.5"
+    },
+    {
+      "id": 14,
+      "libelle": "Fricadelle",
+      "codeFournisseur": "75",
+      "quantiteInitiale": 75,
+      "quantiteRestante": 75,
+      "dateLimite": "2018-11-25",
+      "dateAchat": "2018-11-07",
+      "prixAchat": "0.8"
     }
   ],
   "produitsEnVente": [
@@ -179,15 +209,8 @@
       "id": 2,
       "employe": 3,
       "date": "2018-11-07T12:26:49.772Z",
-      "midi": false,
-      "soir": true
-    },
-    {
-      "id": 3,
-      "employe": 3,
-      "date": "2018-11-07T12:26:49.772Z",
       "midi": true,
-      "soir": false
+      "soir": true
     }
   ],
   "users": [
