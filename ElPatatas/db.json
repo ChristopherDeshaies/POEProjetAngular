@@ -223,6 +223,17 @@
       "password": "Chris",
       "dateNaissance": "07/12/1991",
       "role": "employe"
+    },
+    {
+      "id": 4,
+      "nom": "YOU",
+      "prenom": "Van",
+      "adresse": "rue blabla",
+      "tel": "0102030405",
+      "email": "van@htm.frfrfrfr",
+      "password": "van",
+      "dateNaissance": "12/02/1982",
+      "role": "admin"
     }
   ],
   "commandes": [
