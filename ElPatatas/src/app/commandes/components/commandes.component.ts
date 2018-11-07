@@ -256,7 +256,12 @@ export class CommandesComponent implements OnInit {
   }
 
   miseajourproduit(produit : Produits){
-    this.produitsService.putProduit2(produit)
+    return this.produitsService.putProduit2(produit)
+    .subscribe(
+      (data) => {
+        this.initialisation();
+      }
+    );
   }
 
   comparer(produit1: Produits , produit2: Produits) {

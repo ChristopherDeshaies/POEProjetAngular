@@ -15,7 +15,7 @@
       "libelle": "Merguez",
       "codeFournisseur": "2",
       "quantiteInitiale": 200,
-      "quantiteRestante": 200,
+      "quantiteRestante": 199,
       "dateLimite": "2018-10-29",
       "dateAchat": "2018-10-21",
       "prixAchat": 0.4
@@ -55,7 +55,7 @@
       "libelle": "Fanta",
       "codeFournisseur": "3",
       "quantiteInitiale": 50,
-      "quantiteRestante": 1,
+      "quantiteRestante": 0,
       "dateLimite": "2019-09-21",
       "dateAchat": "2018-10-21",
       "prixAchat": 0.55
@@ -267,6 +267,96 @@
         }
       ],
       "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 4,
+      "dateCommande": "Wed, 07 Nov 2018 17:36:53 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 5,
+      "dateCommande": "Wed, 07 Nov 2018 17:37:16 GMT",
+      "listProduits": [
+        {
+          "libelle": "Fanta",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 6,
+      "dateCommande": "Wed, 07 Nov 2018 17:37:23 GMT",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 7,
+      "dateCommande": "Wed, 07 Nov 2018 17:37:37 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 8,
+      "dateCommande": "Wed, 07 Nov 2018 17:41:05 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 9,
+      "dateCommande": "Wed, 07 Nov 2018 17:41:13 GMT",
+      "listProduits": [
+        {
+          "libelle": "Merguez",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
       "userid": 1,
       "usernom": "YOU",
       "userprenom": "Van"

@@ -57,15 +57,7 @@ export class ProduitsService {
    */
   putProduit2(produit: Produits) {
     const url = `${urlProduit}/${produit.id}`;
-    this.httpClient.put(url, produit)
-    .subscribe(
-      data => {
-        console.log("PUT Request is successful ", data);
-      },
-      error => {
-        console.log("Modification de l'utilisateur", error);
-      }
-    );
+    return this.httpClient.put(url, produit)
   }
   
   /**
