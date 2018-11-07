@@ -44,62 +44,65 @@
       <tbody>
         <tr *ngFor='let user of listUser | async ; let i = index'>
           <td>{{user.nom}}</td>
-<!--           <td *ngIf='fPlanning[i][0]' style='background-color: blue'>{{fPlanning[i][0]}}</td>
-          <td *ngIf='!fPlanning[i][0]' (click)='addPlanning(user.id,semaine[0],true,false)'>{{fPlanning[i][0]}}</td>
-
-          <td *ngIf='fPlanning[i][1]' style='background-color: blue'>{{fPlanning[i][1]}}</td>
-          <td *ngIf='!fPlanning[i][1]' (click)='addPlanning(user.id,semaine[0],false,true)'>{{fPlanning[i][1]}}</td>
-
-          <td *ngIf='fPlanning[i][2]' style='background-color: blue'>{{fPlanning[i][2]}}</td>
-          <td *ngIf='!fPlanning[i][2]' (click)='addPlanning(user.id,semaine[1],true,false)'>{{fPlanning[i][2]}}</td>
-
-          <td *ngIf='fPlanning[i][3]' style='background-color: blue'>{{fPlanning[i][3]}}</td>
-          <td *ngIf='!fPlanning[i][3]' (click)='addPlanning(user.id,semaine[1],false,true)'>{{fPlanning[i][3]}}</td>
-
-          <td *ngIf='fPlanning[i][4]' style='background-color: blue'>{{fPlanning[i][4]}}</td>
-          <td *ngIf='!fPlanning[i][4]' (click)='addPlanning(user.id,semaine[2],true,false)'>{{fPlanning[i][4]}}</td>
-
-          <td *ngIf='fPlanning[i][5]' style='background-color: blue'>{{fPlanning[i][5]}}</td>
-          <td *ngIf='!fPlanning[i][5]' (click)='addPlanning(user.id,semaine[2],false,true)'>{{fPlanning[i][5]}}</td>
-
-          <td *ngIf='fPlanning[i][6]' style='background-color: blue'>{{fPlanning[i][6]}}</td>
-          <td *ngIf='!fPlanning[i][6]' (click)='addPlanning(user.id,semaine[3],true,false)'>{{fPlanning[i][6]}}</td>
-
-          <td *ngIf='fPlanning[i][7]' style='background-color: blue'>{{fPlanning[i][7]}}</td>
-          <td *ngIf='!fPlanning[i][7]' (click)='addPlanning(user.id,semaine[3],false,true)'>{{fPlanning[i][7]}}</td>
-
-          <td *ngIf='fPlanning[i][8]' style='background-color: blue'>{{fPlanning[i][8]}}</td>
-          <td *ngIf='!fPlanning[i][8]' (click)='addPlanning(user.id,semaine[4],true,false)'>{{fPlanning[i][8]}}</td>
-
-          <td *ngIf='fPlanning[i][9]' style='background-color: blue'>{{fPlanning[i][9]}}</td>
-          <td *ngIf='!fPlanning[i][9]' (click)='addPlanning(user.id,semaine[4],false,true)'>{{fPlanning[i][9]}}</td>
-
-          <td *ngIf='fPlanning[i][10]' style='background-color: blue'>{{fPlanning[i][10]}}</td>
-          <td *ngIf='!fPlanning[i][10]' (click)='addPlanning(user.id,semaine[5],true,false)'>{{fPlanning[i][10]}}</td>
-
-          <td *ngIf='fPlanning[i][11]' style='background-color: blue'>{{fPlanning[i][11]}}</td>
-          <td *ngIf='!fPlanning[i][11]' (click)='addPlanning(user.id,semaine[5],false,true)'>{{fPlanning[i][11]}}</td>
-
-          <td *ngIf='fPlanning[i][12]' style='background-color: blue'>{{fPlanning[i][12]}}</td>
-          <td *ngIf='!fPlanning[i][12]' (click)='addPlanning(user.id,semaine[6],true,false)'>{{fPlanning[i][12]}}</td>
-
-          <td *ngIf='fPlanning[i][13]' style='background-color: blue'>{{fPlanning[i][13]}}</td>
-          <td *ngIf='!fPlanning[i][13]' (click)='addPlanning(user.id,semaine[6],false,true)'>{{fPlanning[i][13]}}</td>  -->
-
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td *ngFor="let planning of listPlanning | async">TRUE</td>
+            
+          <!-- <td *ngIf='formattedDateDDMM(semaine[0])!==formattedDateDDMM(planning.date)'></td>
+            
+          <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[0])===formattedDateDDMM(planning.date) && planning.midi' style='background-color: blue'></td> -->
+          
+        
+          <!-- <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[0])===formattedDateDDMM(planning.date) && planning.soir' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[0])!==formattedDateDDMM(planning.date) || !planning.soir'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[1])===formattedDateDDMM(planning.date) && planning.midi' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[1])!==formattedDateDDMM(planning.date) || !planning.midi'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[1])===formattedDateDDMM(planning.date) && planning.soir' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[1])!==formattedDateDDMM(planning.date) || !planning.soir'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[2])===formattedDateDDMM(planning.date) && planning.midi' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[2])!==formattedDateDDMM(planning.date) || !planning.midi'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[2])===formattedDateDDMM(planning.date) && planning.soir' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[2])!==formattedDateDDMM(planning.date) || !planning.soir'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[3])===formattedDateDDMM(planning.date) && planning.midi' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[3])!==formattedDateDDMM(planning.date) || !planning.midi'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[3])===formattedDateDDMM(planning.date) && planning.soir' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[3])!==formattedDateDDMM(planning.date) || !planning.soir'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[4])===formattedDateDDMM(planning.date) && planning.midi' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[4])!==formattedDateDDMM(planning.date) || !planning.midi'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[4])===formattedDateDDMM(planning.date) && planning.soir' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[4])!==formattedDateDDMM(planning.date) || !planning.soir'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[5])===formattedDateDDMM(planning.date) && planning.midi' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[5])!==formattedDateDDMM(planning.date) || !planning.midi'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[5])===formattedDateDDMM(planning.date) && planning.soir' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[5])!==formattedDateDDMM(planning.date) || !planning.soir'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[6])===formattedDateDDMM(planning.date) && planning.midi' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[6])!==formattedDateDDMM(planning.date) || !planning.midi'></td>
+          </div>
+          <div *ngFor='let planning of listPlanning | async'>
+            <td *ngIf='user.id === planning.employe && formattedDateDDMM(semaine[6])===formattedDateDDMM(planning.date) && planning.soir' style='background-color: blue'></td>
+            <td *ngIf='user.id !== planning.employe || formattedDateDDMM(semaine[6])!==formattedDateDDMM(planning.date) || !planning.soir'></td>
+          </div> -->
         </tr>
       </tbody>
     </table>

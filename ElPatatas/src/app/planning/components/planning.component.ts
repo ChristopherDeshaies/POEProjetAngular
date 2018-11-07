@@ -110,18 +110,18 @@ export class PlanningComponent implements OnInit {
   }
 
   entreDate(date: Date, dateD: Date, dateF: Date): boolean{
-    let month = String(date.getMonth() + 1);
-    let day = String(date.getDate());
-    const year = String(date.getFullYear());
+    let month = date.getMonth();
+    let day = date.getDate();
+    const year = date.getFullYear();
 
-    let monthD = String(dateD.getMonth() + 1);
-    let dayD = String(dateD.getDate());
-    const yearD = String(dateD.getFullYear());
+    let monthD = dateD.getMonth();
+    let dayD = dateD.getDate();
+    const yearD = dateD.getFullYear();
 
-    let monthF = String(dateF.getMonth() + 1);
-    let dayF = String(dateF.getDate());
-    const yearF = String(dateF.getFullYear());
-    if(month>=monthD && month<=monthF && day>=dayD && day<=dayF && year>=yearD && year<=yearF)
+    let monthF = dateF.getMonth();
+    let dayF = dateF.getDate();
+    const yearF = dateF.getFullYear();
+    if((month>=monthD && month<=monthF) && (day>=dayD && day<=dayF) && (year>=yearD && year<=yearF))
       return true;
     else
       return false;

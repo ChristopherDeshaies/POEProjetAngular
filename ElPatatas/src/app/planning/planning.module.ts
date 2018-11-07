@@ -5,7 +5,6 @@ import { PlanningComponent } from './components/planning.component';
 import { FormsModule } from '@angular/forms';
 import { PlanningRoutingModule } from './planning-routing.module';
 
-
 @NgModule({
   imports: [
     CommonModule,
