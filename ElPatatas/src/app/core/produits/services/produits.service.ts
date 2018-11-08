@@ -55,6 +55,15 @@ export class ProduitsService {
    * Modification du produit en base
    * @param produit 
    */
+  putProduit2(produit: Produits) {
+    const url = `${urlProduit}/${produit.id}`;
+    return this.httpClient.put(url, produit)
+  }
+  
+  /**
+   * Modification du produit en base
+   * @param produit 
+   */
   putProduit(produit: Produits) {
     const url = `${urlProduit}/${produit.id}`;
     return this.httpClient.put(url, produit);

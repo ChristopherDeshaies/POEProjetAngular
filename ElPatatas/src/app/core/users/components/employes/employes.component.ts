@@ -46,7 +46,6 @@ export class EmployesComponent implements OnInit {
     this.userservice.getUser(this.email)
     .subscribe(  
       data => {
-        console.log("DATA :" +data)
         if  (data != null) {  
           alert("email déjà en base")
         }else{
@@ -59,7 +58,15 @@ export class EmployesComponent implements OnInit {
           user.setPassword(this.password);
           user.setDateNaissance(this.dateNaissance);
           user.setRole(this.role);
-          this.userservice.postUser(user); 
+          this.userservice.postUser(user)
+          .subscribe(
+            (data) => {
+              this.getListUsers();
+            },
+            error => {
+              console.log("Erreur lors de l'ajout de l'utilisateur", error);
+            }
+          ); 
         } 
       },
     error => console.log(error)
@@ -78,11 +85,19 @@ export class EmployesComponent implements OnInit {
     user.setPassword(this.password);
     user.setDateNaissance(this.dateNaissance);
     user.setRole(this.role);
-    this.userservice.putUser(user); 
+    this.userservice.putUser(user);
   }
 
   supprimer() {
-    this.userservice.deleteUser(this.idsupp);
+    this.userservice.deleteUser(this.idsupp)
+    .subscribe(
+      (data) => {
+        this.getListUsers();
+      },
+      error => {
+        console.log("Erreur lors de la suppression de l'utilisateur", error);
+      }
+    );
   }
 
   select(userselected: User){

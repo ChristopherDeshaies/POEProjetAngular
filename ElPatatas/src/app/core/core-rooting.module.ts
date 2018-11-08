@@ -38,6 +38,11 @@ const routes: Routes = [
     loadChildren: '../gestionstocks/gestionstocks.module#GestionstocksModule'
   },
   {
+    path: 'planning',
+    canActivate: [RoleGuardService],
+    loadChildren: '../planning/planning.module#PlanningModule'
+  },
+  {
     path: 'employes',
     canActivate: [RoleGuardService],
     component: EmployesComponent

@@ -2,19 +2,30 @@ import { ItemMenu } from "./itemmenu";
 
 export class Commandes {
     
-    public id: number;
-    public dateCommande: Date;
-    //private listProduits: Map<string, number>;
-    //private listProduits: string;
-    public listProduits: any[];
-    public prixTotal: number;
-  static dateCommande: Date;
+    private id: number;
+    private dateCommande: string;
+    private listProduits: any[];
+    private prixTotal: number;
+    private userid: number;
+    private usernom: string;
+    private userprenom : string;
 
-    constructor(id,dateCommande: Date, listProduits: ItemMenu[], prixTotal: number) {
-        this.id=id;
-        this.dateCommande = dateCommande;
-        this.listProduits = listProduits;
-        this.prixTotal = prixTotal;
+    constructor(
+        id : number ,
+        dateCommande: string, 
+        listProduits: ItemMenu[], 
+        prixTotal: number, 
+        userid: number, 
+        usernom: string, 
+        userprenom : string) 
+        {
+            this.id=id;
+            this.dateCommande = dateCommande;
+            this.listProduits = listProduits;
+            this.prixTotal = prixTotal;
+            this.userid = userid;
+            this.usernom = usernom;
+            this.userprenom = userprenom;
     }
 
     getId() {
@@ -44,4 +55,32 @@ export class Commandes {
     setPrixTotal(prixTotal: number) {
         this.prixTotal = prixTotal;
     }
+
+    getUserId() {
+        return this.userid;
+    }
+
+    setUserId(userid: number) {
+        this.userid = userid;
+    }
+
+    getUsernom() {
+        return this.usernom;
+    }
+
+    setUsernom(usernom: string) {
+        this.usernom = usernom;
+    }
+
+    getUserprenom() {
+        return this.usernom;
+    }
+
+    setUserprenom(userprenom: string) {
+        this.userprenom = userprenom;
+    }
+
+
+
+    
 }

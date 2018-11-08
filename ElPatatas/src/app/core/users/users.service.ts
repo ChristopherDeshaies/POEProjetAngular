@@ -53,25 +53,12 @@ export class UsersService {
 
 
   postUser(user: User) {
-    this.httpclient.post(urlUser,
-      user)
-      .subscribe(
-        data => {
-          console.log("POST Request is successful ", data);
-        },
-        error => {
-          console.log("Ajout de l'utilisateur", error);
-        }
-      );
+    return this.httpclient.post(urlUser,user)
   }
 
-  deleteUser(id: number): void {
+  deleteUser(id: number) {
     const url = `${urlUser}/${id}`;
-    this.httpclient.delete(url)
-      .subscribe(error => {
-                            console.log("Suppression de l'utilisateur", error);
-                          }
-      );
+    return this.httpclient.delete(url)
   }
 
   
