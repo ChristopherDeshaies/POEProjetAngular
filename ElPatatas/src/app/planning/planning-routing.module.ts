@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 import { PlanningComponent } from './components/planning.component';
 
-
+/**
+ * @author Christopher Deshaies
+ */
 const routes: Routes = [
     {
         path: '',

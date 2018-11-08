@@ -5,17 +5,31 @@ import { Planning } from '../models/planning';
 
 const urlPlanning = 'http://127.0.0.1:3000/planning';
 
+/**
+ * @author Christopher Deshaies
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class PlanningService {
 
+  /**
+   * Constructor dans lequel on récupère HttpClient
+   * @param httpclient 
+   */
   constructor(private httpclient: HttpClient) { }
 
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données
+   */
   getPlanning(): Observable<Planning[]> {
     return this.httpclient.get<Planning[]>(urlPlanning);
   }
 
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données après delete du planning avec l'identifiant id
+   * @param id Identifant du Planning à delete
+   */
   deletePlanning(id): Observable<Planning[]> {
     this.httpclient.delete(`${urlPlanning}/${id}`).subscribe(
       error => {
@@ -25,6 +39,10 @@ export class PlanningService {
     return this.httpclient.get<Planning[]>(urlPlanning);
   }
 
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données après l'ajout du planning en paramètre
+   * @param planning Planning à ajouter 
+   */
   ajouterPlanning(planning: Planning): Observable<Planning[]> {
     this.httpclient.post(urlPlanning, planning).subscribe(
       error => {
@@ -35,6 +53,10 @@ export class PlanningService {
     return this.httpclient.get<Planning[]>(urlPlanning);
   }
 
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données après modification du planning indiqué en paramètre
+   * @param planning Planning à modifier
+   */
   modificationPlanning(planning: Planning): Observable<Planning[]> {
     this.httpclient.put(`${urlPlanning}/${planning.id}`, planning ).subscribe(
       
@@ -45,6 +67,11 @@ export class PlanningService {
     return this.httpclient.get<Planning[]>(urlPlanning);
   }
 
+  /**
+   * Fonction qui recherche un planning en fonction d'un identifiant d'employé et d'une date demandée et tourne une promise booléen
+   * @param employe Identifiant de l'employé à rechercher
+   * @param date Date à rechercher
+   */
   findPlanning(employe: number, date: Date): Promise<boolean>{
     return new Promise(
       (resolve, reject) => {
@@ -66,6 +93,11 @@ export class PlanningService {
     );
   }
 
+  /**
+   * Fonction qui compare 2 dates
+   * @param date1 Première date à comparer
+   * @param date2 Deuxième date à comparer
+   */
   compareDate(date1 : Date, date2 : Date): boolean{
     let month1 = String(date1.getMonth() + 1);
     let day1 = String(date1.getDate());

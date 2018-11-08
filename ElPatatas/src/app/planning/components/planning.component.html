@@ -1,7 +1,7 @@
 <!-- @author : Christopher Deshaies -->
 <div>
   <h2>Planning</h2>
-  <div class="d-flex justify-content-around">
+  <div class="d-flex justify-content-around" style="background-color: black; color:white">
     <div style="width:100%; text-align: center;" (click)='previusSemaine()' class="bouton-changement-planning">
       <i class="fas fa-arrow-left" ></i>&nbsp;Précédent
     </div>
@@ -44,7 +44,7 @@
       <tbody *ngIf="fPlanning">
 
         <tr *ngFor='let user of listUser | async ; let i = index'>
-          <td>{{user.nom}} </td>
+          <td style="background-color: rgb(158, 158, 158);">{{user.nom}} </td>
             <td *ngFor='let indice of taille;let j=index'>
             <div *ngIf='!fPlanning[i][j] && verificationMidi(j)' (click)='addPlanning(user.id, semaine[getSemaine(j)], true, false)' style="width: 100%; height: 40px;">&nbsp;</div>
             <div *ngIf='fPlanning[i][j] &&  verificationMidi(j)' (click)='deletePlanning(user.id, semaine[getSemaine(j)], true, false) ' style='width: 100%; height: 40px; background-color:#DC3545'>&nbsp;</div>

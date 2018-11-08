@@ -1,3 +1,7 @@
+/**
+ * @author Christopher Deshaies
+ * Le model du Planning
+ */
 export class Planning {
     id: number;
     employe: number;
