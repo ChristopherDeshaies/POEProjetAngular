@@ -92,15 +92,6 @@
     },
     {
       "id": 10,
-<<<<<<< HEAD
-      "libelle": "Coca",
-      "codeFournisseur": "4",
-      "quantiteInitiale": 2,
-      "quantiteRestante": 5,
-      "dateLimite": "2018-11-16",
-      "dateAchat": "2018-11-05",
-      "prixAchat": "2"
-=======
       "libelle": "Merguez",
       "codeFournisseur": "100",
       "quantiteInitiale": 100,
@@ -218,7 +209,6 @@
       "dateLimite": "2018-12-30",
       "dateAchat": "2018-11-05",
       "prixAchat": "0.01"
->>>>>>> 02a55b642119101e070770f2c2bb85937b17cd80
     }
   ],
   "produitsEnVente": [
@@ -343,104 +333,129 @@
   ],
   "commandes": [
     {
-      "id": 1,
-      "dateCommande": "Mon, 05 Nov 2018 10:33:28 GMT",
+      "id": 10,
+      "dateCommande": "2018-11-03T10:51:05.810Z",
       "listProduits": [
         {
           "libelle": "Coca",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 5
+          "quantiterestante": 330
         }
       ],
       "prixTotal": 4
     },
     {
-      "id": 2,
-      "dateCommande": "Mon, 05 Nov 2018 10:34:45 GMT",
+      "id": 11,
+      "dateCommande": "2018-11-03T10:51:09.533Z",
       "listProduits": [
         {
           "libelle": "Coca",
-          "quantite": 2,
+          "quantite": 0,
           "prix": 4,
-          "quantiterestante": 5
-        }
-      ],
-      "prixTotal": 12
-    },
-    {
-      "id": 3,
-      "dateCommande": "Mon, 05 Nov 2018 10:41:37 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 40
-        }
-      ],
-      "prixTotal": 4
-    },
-    {
-      "id": 4,
-      "dateCommande": "Mon, 05 Nov 2018 10:41:47 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 40
-        }
-      ],
-      "prixTotal": 8
-    },
-    {
-      "id": 5,
-      "dateCommande": "Mon, 05 Nov 2018 10:44:35 GMT",
-      "listProduits": [
-        {
-          "libelle": "Coca",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 38
-        }
-      ],
-      "prixTotal": 4
-    },
-    {
-      "id": 6,
-      "dateCommande": "Mon, 05 Nov 2018 13:27:56 GMT",
-      "listProduits": [
-        {
-          "libelle": "Grande",
-          "quantite": 1,
-          "prix": 4,
-          "quantiterestante": 48
+          "quantiterestante": 330
         },
         {
+          "libelle": "Pâté",
+          "quantite": 1,
+          "prix": "10",
+          "quantiterestante": 10
+        }
+      ],
+      "prixTotal": "410"
+    },
+    {
+      "id": 12,
+      "dateCommande": "2018-11-05T10:51:15.364Z",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 0,
+          "prix": 4,
+          "quantiterestante": 330
+        },
+        {
+          "libelle": "Pâté",
+          "quantite": 0,
+          "prix": "10",
+          "quantiterestante": 10
+        }
+      ],
+      "prixTotal": "410"
+    },
+    {
+      "id": 13,
+      "dateCommande": "2018-11-05T12:30:28.146Z",
+      "listProduits": [
+        {
           "libelle": "Coca",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 37
+          "quantiterestante": 330
         },
         {
           "libelle": "Mexicanos",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 28
+          "quantiterestante": 47
         }
       ],
-      "prixTotal": 12
+      "prixTotal": 8
     },
     {
-      "id": 7,
-      "dateCommande": "Mon, 05 Nov 2018 14:14:29 GMT",
+      "id": 14,
+      "dateCommande": "2018-11-05T12:31:10.129Z",
       "listProduits": [
         {
           "libelle": "Coca",
           "quantite": 1,
           "prix": 4,
-          "quantiterestante": 36
+          "quantiterestante": 330
+        }
+      ],
+      "prixTotal": 4
+    },
+    {
+      "id": 15,
+      "dateCommande": "2018-11-06T12:31:18.237Z",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 330
+        }
+      ],
+      "prixTotal": 8
+    },
+    {
+      "id": 16,
+      "dateCommande": "2018-11-06T12:31:28.935Z",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 330
+        },
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 47
+        }
+      ],
+      "prixTotal": 8
+    },
+    {
+      "id": 17,
+      "dateCommande": "2018-11-06T12:32:19.635Z",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4,
+          "quantiterestante": 47
         }
       ],
       "prixTotal": 4

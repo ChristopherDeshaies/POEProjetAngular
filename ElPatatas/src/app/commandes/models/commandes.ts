@@ -2,14 +2,15 @@ import { ItemMenu } from "./itemmenu";
 
 export class Commandes {
     
-    private id: number;
-    private dateCommande: string;
+    public id: number;
+    public dateCommande: Date;
     //private listProduits: Map<string, number>;
     //private listProduits: string;
-    private listProduits: any[];
-    private prixTotal: number;
+    public listProduits: any[];
+    public prixTotal: number;
+  static dateCommande: Date;
 
-    constructor(id,dateCommande: string, listProduits: ItemMenu[], prixTotal: number) {
+    constructor(id,dateCommande: Date, listProduits: ItemMenu[], prixTotal: number) {
         this.id=id;
         this.dateCommande = dateCommande;
         this.listProduits = listProduits;
@@ -24,7 +25,7 @@ export class Commandes {
         return this.dateCommande;
     }
 
-    setDateCommande(dateCommande: string) {
+    setDateCommande(dateCommande: Date) {
         this.dateCommande = dateCommande;
     }
 

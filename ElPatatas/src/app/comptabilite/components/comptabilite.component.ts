@@ -4,10 +4,13 @@ import { Observable } from 'rxjs';
 import { Produits } from '../../core/produits/models/produits';
 import { Commandes } from '../../commandes/models/commandes';
 import { ComptabiliteService } from '../services/comptabilite.service';
-import { finalize } from 'rxjs/operators';
+import { finalize, map } from 'rxjs/operators';
 import { CommandesService } from '../../commandes/services/commandes.service';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { CanDeactivate } from '@angular/router/src/utils/preactivation';
+import { PipeFiltreDatesPipe } from 'src/app/shared/pipe/filtre-dates.pipe';
+import { LocaleDataIndex } from '@angular/common/src/i18n/locale_data';
 
 
 @Component({
@@ -17,21 +20,22 @@ import { DatePipe } from '@angular/common';
 })
 export class ComptabiliteComponent implements OnInit {
   /* TODO tableau des gains et pertes */
-  private bilan: Observable<Commandes[]>;
+  bilan: Observable<Commandes[]>;
   private achat: Observable<Produits[]>;
   private vente: Observable<Produits[]>;
-  private histoCommandes: Observable<Commandes[]>;
+  histoCommandes: Observable<Commandes[]>;
   private isLoaded: boolean;
-  private resultRecherche: any;
+  resultRecherche: number;
+  
 
   constructor(
     private comptabiliteservice: ComptabiliteService, 
     private commandesServices: CommandesService,
     private router:Router
     // private commandes: Commandes
-    ) { }
-    @Input() dateDebut: Date;
-    @Input() dateFin: Date;
+    ) { this.resultRecherche=0 }
+    @Input() dateDebut;
+    @Input() dateFin;
   /**
    *
    */
@@ -39,12 +43,40 @@ export class ComptabiliteComponent implements OnInit {
 
   }
 
+    calcul(prixtotal :number) : number {
+    if(prixtotal == undefined) return 0;
+    if(prixtotal == null) return 0;
+    //this.resultRecherche += parseInt(prixtotal.toString()); 
+    return this.resultRecherche;
+  }   
   
   rechercheCA(dateDebut: Date, dateFin: Date) {
-    
     console.log(this.dateDebut);
-    console.log(this.dateFin);
-  }
+    console.log(this.dateFin); 
+    this.resultRecherche= 0; 
+    this.histoCommandes= this.commandesServices.getListCommandes();
+    this.histoCommandes.subscribe(
+      (data) => {
+            console.log(data.length);           
+            data.forEach((cde: Commandes) => { console.log(cde.prixTotal)
+              console.log(cde.dateCommande);
+           
+              if (cde.dateCommande >= this.dateDebut && cde.dateCommande <= this.dateFin){              
+                parseInt(cde.prixTotal.toString());
+                this.resultRecherche +=  parseInt(cde.prixTotal.toString());
+                console.log("dans le if"); 
+              }          
+            })          
+      }
+    );
+    return this.resultRecherche;
+   /*  .pipe(
+      map(
+        (commandes: Commandes[]) => commandes
+      )
+    ) */
+}     
+  
   /**
    *
    */
@@ -69,17 +101,6 @@ export class ComptabiliteComponent implements OnInit {
   /**
    *
    */
-  getHistoriqueCommandes() {
-    this.isLoaded = false;
-    // this.bilan = this.comptabiliteservice.getPrixtotal().pipe(finalize( () => this.isLoaded = true));
-  }
-  getAchat() {
-    this.isLoaded = false;
-    // this.achat = this.comptabiliteservice.getAchat().pipe(finalize( () => this.isLoaded = true));
-  }
-  getVente() {
-    this.isLoaded = false;
-    // this.vente = this.comptabiliteservice.getVente().pipe(finalize( () => this.isLoaded = true));
-  }
+  
   
 }

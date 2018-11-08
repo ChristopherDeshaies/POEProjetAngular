@@ -68,7 +68,7 @@ export class CommandesComponent implements OnInit {
   /**
    * date de prise de la commande du client au format UTC
    */
-  date: string;
+  date: Date;
 
   /**
    * Prix total de la commande
@@ -120,7 +120,7 @@ export class CommandesComponent implements OnInit {
     /**
      * initialisation d'une commande
      */
-    this.commande = new Commandes(0,'', null, null);
+    this.commande = new Commandes(0,this.date, null, null);
 
     /**
      * initialisation des informations produits à afficher sur la page
@@ -144,7 +144,7 @@ export class CommandesComponent implements OnInit {
 
     this.listProduits = [];
 
-    this.commande = new Commandes(0,'', null, null);
+    this.commande = new Commandes(0, this.date, null, null);
 
     this.initialisationVentes();
 
@@ -226,7 +226,7 @@ export class CommandesComponent implements OnInit {
    */
   encaisser() {
     if (this.prixTotal !== 0) {
-      this.date = new Date().toUTCString();
+      this.date = new Date();
       //this.commande = new Commandes(this.date, this.strMapToObj2(this.listProduits), this.prixTotal);
       this.commande = new Commandes(null,this.date, this.listProduits, this.prixTotal);
       this.commandes.push(this.commande);
