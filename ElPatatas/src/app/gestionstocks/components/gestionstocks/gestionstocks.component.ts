@@ -120,7 +120,6 @@ export class GestionstocksComponent implements OnInit {
         return lproduitsEnVente;
       })
     );
-     
   }
 
   /**

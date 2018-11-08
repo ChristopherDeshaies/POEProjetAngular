@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/core/users/users.service';
-import { Observable } from 'rxjs';
+import { Observable,of } from 'rxjs';
 import { User } from 'src/app/core/users/models/user';
 import { PlanningService } from '../services/planning.service';
 import { Planning } from '../models/planning';
-import { map } from 'rxjs/operators';
+import { map, finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-planning',
@@ -13,18 +13,25 @@ import { map } from 'rxjs/operators';
 })
 export class PlanningComponent implements OnInit {
 
+  public taille = new Array<number>();
   public listUser: Observable<User[]>;
   public listPlanning: Observable<Planning[]>;
 
   public semaine: Date[];
-  public fPlanning: boolean[][];
+  public fPlanning: boolean[][]=undefined;
 
-  constructor(private usersservice: UsersService, private planningservice: PlanningService) { }
+  constructor(private usersservice: UsersService, private planningservice: PlanningService) {
+    for(let i=0;i<14;i++)
+    {
+      this.taille.push(i);
+    }    
+   }
 
   ngOnInit() {
     this.listUser=this.getUsers();
     let date = new Date();
     let journeeDate = date.getDay();
+  
   
     let debutSemaine=this.initDebutSemaine(journeeDate);
     this.semaine=[
@@ -36,48 +43,65 @@ export class PlanningComponent implements OnInit {
       this.addJour(debutSemaine,5),
       this.addJour(debutSemaine,6)
     ];
-    this.listPlanning=this.getPlanning(this.semaine[0],this.semaine[6]); 
-    
-    this.fPlanning=new Array<boolean[]>();
+    this.refreshPlanning();
+  }
 
-    this.listUser.subscribe(
-      (users: User[]) => {
-        for(let i=0; i<users.length; i++){
-          this.fPlanning[i]=new Array<boolean>();
-          for(let j=0; j<this.semaine.length; j++){
-            this.listPlanning.subscribe(
-              (plannings: Planning[]) => {
-     
-                for(let k=0; k<plannings.length; k++){
-                  if(
-                    plannings[k].employe===users[i].id && 
-                    this.formattedDateDDMMYY(new Date(plannings[k].date))===this.formattedDateDDMMYY(new Date(this.semaine[j]))
-                  ){
-                    if(plannings[k].midi===true){
-                      this.fPlanning[i][j*2]=true;
-                   
-                    }else{
-                      this.fPlanning[i][j*2]=false;
+  ngOnChange(){
+    this.refreshPlanning();
+  }
+
+  refreshPlanning(){
+    this.listPlanning = this.getPlanning(); 
+    let LfPlanning=new Array<boolean[]>();
+    this.listPlanning.pipe(
+      map((plannings: Planning[]) => {
+        this.listUser.pipe(
+          map((users: User[]) => {
+            for(let i=0; i<users.length; i++){
+              LfPlanning[i]=new Array<boolean>();
+              for(let j=0; j<this.semaine.length; j++){
+                if(plannings.length>0){
+                  for(let k=0; k<plannings.length; k++){
+                    if(
+                      plannings[k].employe===users[i].id && 
+                      this.formattedDateDDMMYY(new Date(plannings[k].date))===this.formattedDateDDMMYY(new Date(this.semaine[j]))
+                    ){
+                      if(plannings[k].midi===true){
+                        LfPlanning[i][j*2]=true;
+                      }else{
+                        LfPlanning[i][j*2]=false;
+                      }
+                      if(plannings[k].soir===true){
+                        LfPlanning[i][j*2+1]=true;
+                      }else{
+                        LfPlanning[i][j*2+1]=false;
+                      }
+                      k=10000000000000000000000000000000;
+                    }else if(k===plannings.length-1){
+                      LfPlanning[i][j*2]=false;
+                      LfPlanning[i][j*2+1]=false;
                     }
-                    if(plannings[k].soir===true){
-                      this.fPlanning[i][j*2+1]=true;
-                    
-                    }else{
-                      this.fPlanning[i][j*2+1]=false;
-                    }
-                    k=10000000000000000000000000000000;
-                  }else if(k===plannings.length-1){
-                    this.fPlanning[i][j*2]=false;
-                    this.fPlanning[i][j*2+1]=false;
+                  }
+                }else{
+                  for(let k=0; k<14; k ++){
+                    LfPlanning[i][k]=false;
                   }
                 }
               }
-            )
+            } 
           }
-        }
+        ),
+        finalize( ()=> {
+          this.fPlanning = LfPlanning;
+        })
+        ).subscribe();
       }
-    )
+      ),
+      finalize( ()=> {}
+      ) 
+    ).subscribe();
   }
+
 
   initDebutSemaine(i: number): Date{
     var dateTime = new Date().getTime();
@@ -101,12 +125,14 @@ export class PlanningComponent implements OnInit {
     for(let jour = 0; jour <=6; jour++){
       this.semaine[jour]=this.removeJour(this.semaine[jour],7);
     }
+    this.refreshPlanning();
   }
 
   nextSemaine(): void {
     for(let jour = 0; jour <=6; jour++){
       this.semaine[jour]=this.addJour(this.semaine[jour],7);
     }
+    this.refreshPlanning();
   }
 
   formattedDateDDMMYY(date: Date) {
@@ -135,40 +161,88 @@ export class PlanningComponent implements OnInit {
     return this.usersservice.getListUsers();
   }
 
-  getPlanning(dateDebutSemaine: Date, dateFinSemaine: Date): Observable<Planning[]>{
-    return this.planningservice.getPlanning().pipe(
+  getPlanning(): Observable<Planning[]>{
+    return this.planningservice.getPlanning();
+  }
+
+  addPlanning(employe: number, date: Date, midi:boolean, soir:boolean){
+    this.listPlanning.pipe(
       map(
         (plannings: Planning[]) => {
-          let lplanning : Planning[];
-          lplanning = plannings.filter(
-            (planning:Planning) => this.entreDate(new Date(planning.date),dateDebutSemaine,dateFinSemaine)
+          console.log(plannings);
+          return plannings.filter(
+             (planning:Planning) => {
+                if(planning.employe===employe && this.formattedDateDDMMYY(new Date(planning.date))===this.formattedDateDDMMYY(date)){
+                  return true;
+                }else{
+                  return false;
+                }
+              }
           );
-          return lplanning;
         }
       )
+    ).subscribe(
+      (plannings: Planning[]) => {
+        if(plannings.length>0){
+          if(midi){
+            this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,midi,plannings[0].soir)).toPromise().then(() => this.refreshPlanning());
+          }else if(soir){
+            this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,plannings[0].midi,soir)).toPromise().then(() => this.refreshPlanning());
+          }
+        }else{
+          this.planningservice.ajouterPlanning(new Planning(0,employe,date,midi,soir)).toPromise().then(() => this.refreshPlanning());
+        }
+      }
     );
+    
   }
 
-  entreDate(date: Date, dateD: Date, dateF: Date): boolean{
-    let month = date.getMonth();
-    let day = date.getDate();
-    const year = date.getFullYear();
+  deletePlanning(employe: number, date: Date, midi:boolean, soir:boolean){
+    this.listPlanning.pipe(
+      map(
+        (plannings: Planning[]) => {
+          return plannings.filter(
+             (planning:Planning) => planning.employe===employe && this.formattedDateDDMMYY(new Date(planning.date))===this.formattedDateDDMMYY(date)
+          );
+        }
+      ) 
+    ).subscribe(
+      (plannings: Planning[]) => {
+          if(midi){
+            if(!plannings[0].soir){
+              this.planningservice.deletePlanning(plannings[0].id).toPromise().then(
+                () => this.refreshPlanning()
+              );;
+            }else{
+              this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,false,plannings[0].soir)).toPromise().then(
+                () => this.refreshPlanning()
+              );;
+            }
+          }else if(soir){
+            if(!plannings[0].midi){
+              this.planningservice.deletePlanning(plannings[0].id).toPromise().then(
+                () => this.refreshPlanning()
+              );;
+            }else{
+              this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,plannings[0].midi,false)).toPromise().then(
+                () => this.refreshPlanning()
+              );;
+            }
+          }
+      }
+    );
 
-    let monthD = dateD.getMonth();
-    let dayD = dateD.getDate();
-    const yearD = dateD.getFullYear();
+  }
 
-    let monthF = dateF.getMonth();
-    let dayF = dateF.getDate();
-    const yearF = dateF.getFullYear();
-    if((month>=monthD && month<=monthF) && (day>=dayD && day<=dayF) && (year>=yearD && year<=yearF))
-      return true;
+  getSemaine(j : number):number {
+    return Math.round((j/2));
+  }
+
+  verificationMidi(j : number): boolean{
+    if(j/2 === Math.round(j/2))
+      return true; 
     else
       return false;
-  }
-
-  addPlanning(employe: number, date: Date, midi:boolean, soir:boolean): void{
-    this.planningservice.ajouterPlanning(new Planning(0,employe,date,midi,soir));
   }
 
 }

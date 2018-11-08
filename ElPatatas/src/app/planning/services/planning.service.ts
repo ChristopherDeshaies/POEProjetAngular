@@ -36,7 +36,8 @@ export class PlanningService {
   }
 
   modificationPlanning(planning: Planning): Observable<Planning[]> {
-    this.httpclient.put(`${urlPlanning}?id=${planning.id}`, {planning} ).subscribe(
+    this.httpclient.put(`${urlPlanning}/${planning.id}`, planning ).subscribe(
+      
       error => {
         console.log('Modifier le planning ' + planning.id + ' en ' + planning, error);
       }
