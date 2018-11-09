@@ -144,13 +144,16 @@ export class CommandesComponent implements OnInit {
           }
         )
       })
+      console.log("initialisation")
+      console.log(this.mapQuantiteRestante)
+      console.log(this.mapProduitsCommandes)
   }
 
   /**
    * ajoute un produit dans la liste des produits commandés par le client et à l'affichage en dessous de l'item
    * @param produit
    */
-  ajout(produit: Produits) {
+  ajout(produit: ProduitsEnVente) {
     if ((this.getQuantiteRestante(produit.libelle) > 0) && ( this.getQuantiteCommandee(produit.libelle) < this.getQuantiteRestante(produit.libelle) ) ) {
       this.setQuantiteCommandee(produit.libelle, this.getQuantiteCommandee(produit.libelle) + 1);
       this.ajouterPrix(this.getPrixProduit(produit.libelle));
@@ -240,12 +243,12 @@ export class CommandesComponent implements OnInit {
         let that = this;
         produits.forEach(
           (produit: Produits) => {
-           if(produit.quantiteRestante >= this.getQuantiteCommandee(produit.libelle)){
-              produit.quantiteRestante = produit.quantiteRestante - this.getQuantiteCommandee(produit.libelle)
+           if(produit.quantiteRestante >= this.getQuantiteCommandee(itemmenu.getLibelle())){
+              produit.quantiteRestante = produit.quantiteRestante - this.getQuantiteCommandee(itemmenu.getLibelle())
               this.miseajourproduit(produit);
-              this.setQuantiteCommandee(produit.libelle, 0);
+              this.setQuantiteCommandee(itemmenu.getLibelle(), 0);
            }else{
-              this.setQuantiteCommandee(produit.libelle,this.getQuantiteCommandee(produit.libelle)-produit.quantiteRestante);
+              this.setQuantiteCommandee(itemmenu.getLibelle(),this.getQuantiteCommandee(itemmenu.getLibelle())-produit.quantiteRestante);
               produit.quantiteRestante = 0;
               this.miseajourproduit(produit);
            }
