@@ -148,7 +148,7 @@
       "quantiteRestante": 1000,
       "dateLimite": "2018-11-30",
       "dateAchat": "2018-11-09",
-      "prixAchat": 0.1
+      "prixAchat": 0.05
     },
     {
       "id": 16,
@@ -227,14 +227,14 @@
     {
       "id": 1,
       "employe": 3,
-      "date": "2018-11-05T10:49:58.194Z",
+      "date": "2018-11-05T13:09:46.994Z",
       "midi": false,
       "soir": true
     },
     {
       "id": 2,
       "employe": 3,
-      "date": "2018-11-06T10:49:58.194Z",
+      "date": "2018-11-06T13:09:46.994Z",
       "midi": false,
       "soir": true
     },
@@ -263,13 +263,6 @@
       "id": 6,
       "employe": 2,
       "date": "2018-11-04T13:17:45.881Z",
-      "midi": true,
-      "soir": true
-    },
-    {
-      "id": 7,
-      "employe": 2,
-      "date": "2018-11-10T13:17:45.881Z",
       "midi": true,
       "soir": true
     },
@@ -426,6 +419,13 @@
       "date": "2018-11-16T13:18:26.051Z",
       "midi": true,
       "soir": true
+    },
+    {
+      "id": 30,
+      "employe": 3,
+      "date": "2018-11-10T13:09:46.994Z",
+      "midi": true,
+      "soir": false
     }
   ],
   "users": [
