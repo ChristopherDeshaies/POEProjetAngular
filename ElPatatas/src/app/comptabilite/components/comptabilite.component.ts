@@ -71,14 +71,14 @@ export class ComptabiliteComponent implements OnInit {
               }          
             })          
       }
-    );
+    )
     return this.resultRecherche;
    /*  .pipe(
       map(
         (commandes: Commandes[]) => commandes
       )
     ) */
-}     
+  }     
   
   /**
    *
