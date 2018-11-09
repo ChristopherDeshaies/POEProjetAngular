@@ -5,7 +5,7 @@
       "libelle": "Frite",
       "codeFournisseur": "1",
       "quantiteInitiale": 100,
-      "quantiteRestante": 0,
+      "quantiteRestante": 42,
       "dateLimite": "2018-11-21",
       "dateAchat": "2018-09-21",
       "prixAchat": 0.2
@@ -35,7 +35,7 @@
       "libelle": "Mexicanos",
       "codeFournisseur": "4",
       "quantiteInitiale": 100,
-      "quantiteRestante": 25,
+      "quantiteRestante": 22,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
       "prixAchat": 0.3
@@ -45,7 +45,7 @@
       "libelle": "Coca",
       "codeFournisseur": "3",
       "quantiteInitiale": 50,
-      "quantiteRestante": 0,
+      "quantiteRestante": 1,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
       "prixAchat": 1.5
@@ -65,7 +65,7 @@
       "libelle": "Coca",
       "codeFournisseur": "3",
       "quantiteInitiale": 100,
-      "quantiteRestante": 0,
+      "quantiteRestante": 1,
       "dateLimite": "2019-07-12",
       "dateAchat": "2018-10-29",
       "prixAchat": 2
@@ -75,7 +75,7 @@
       "libelle": "Coca",
       "codeFournisseur": "3",
       "quantiteInitiale": 200,
-      "quantiteRestante": 0,
+      "quantiteRestante": 1,
       "dateLimite": "2018-12-14",
       "dateAchat": "2018-10-01",
       "prixAchat": 2
@@ -85,7 +85,7 @@
       "libelle": "Fricadelle",
       "codeFournisseur": "4",
       "quantiteInitiale": 300,
-      "quantiteRestante": 250,
+      "quantiteRestante": 249,
       "dateLimite": "2018-11-07",
       "dateAchat": "2018-10-31",
       "prixAchat": 1
@@ -145,7 +145,7 @@
       "libelle": "Frite",
       "codeFournisseur": "10",
       "quantiteInitiale": 1000,
-      "quantiteRestante": 1000,
+      "quantiteRestante": 0,
       "dateLimite": "2018-11-30",
       "dateAchat": "2018-11-09",
       "prixAchat": 0.05
@@ -155,7 +155,7 @@
       "libelle": "Jus de Tomate",
       "codeFournisseur": "1",
       "quantiteInitiale": 100,
-      "quantiteRestante": 100,
+      "quantiteRestante": 99,
       "dateLimite": "2018-11-30",
       "dateAchat": "2018-11-09",
       "prixAchat": 1
@@ -615,6 +615,156 @@
         }
       ],
       "prixTotal": 16,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 11,
+      "dateCommande": "2018-11-09T13:29:11.373Z",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 12,
+      "dateCommande": "2018-11-09T13:29:21.908Z",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 8,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 13,
+      "dateCommande": "2018-11-09T13:29:30.789Z",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 14,
+      "dateCommande": "2018-11-09T13:29:49.172Z",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 15,
+      "dateCommande": "2018-11-09T13:30:04.412Z",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 16,
+      "dateCommande": "2018-11-09T13:30:12.164Z",
+      "listProduits": [
+        {
+          "libelle": "Moyenne",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 17,
+      "dateCommande": "2018-11-09T13:30:17.340Z",
+      "listProduits": [
+        {
+          "libelle": "Jus de Tomate",
+          "quantite": 1,
+          "prix": 3
+        }
+      ],
+      "prixTotal": 3,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 18,
+      "dateCommande": "2018-11-09T13:37:53.019Z",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 19,
+      "dateCommande": "2018-11-09T13:38:00.147Z",
+      "listProduits": [
+        {
+          "libelle": "Moyenne",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 20,
+      "dateCommande": "2018-11-09T13:38:07.858Z",
+      "listProduits": [
+        {
+          "libelle": "Fricadelle",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
       "userid": 1,
       "usernom": "YOU",
       "userprenom": "Van"
