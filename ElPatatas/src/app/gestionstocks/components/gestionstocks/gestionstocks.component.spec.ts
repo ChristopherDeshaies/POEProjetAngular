@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GestionstocksComponent } from './gestionstocks.component';
 
 describe('GestionstocksComponent', () => {
@@ -19,7 +18,12 @@ describe('GestionstocksComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  /* it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); */
+
+  it('Verification existance balise h2 contenant Produits en stock', () => {
+    const app = fixture.debugElement.nativeElement;
+    expect(app.querySelector('h2').textContent).toContain('Produits en stock');
+  })
 });
