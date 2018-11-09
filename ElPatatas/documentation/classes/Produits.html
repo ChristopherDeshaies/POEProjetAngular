@@ -115,6 +115,9 @@
                                     <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                 </li>
                                 <li class="link">
@@ -160,7 +163,7 @@
                                     <a href="../classes/Produits.html"  class="active" >Produits</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                    <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -199,19 +202,16 @@
                                     <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/StocksService.html" >StocksService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/UsersService.html" >UsersService</a>
@@ -232,13 +232,13 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
+                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                    <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -366,6 +366,9 @@
                                            <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                        </li>
                                        <li class="link">
@@ -411,7 +414,7 @@
                                            <a href="../classes/Produits.html"  class="active" >Produits</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                           <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -450,19 +453,16 @@
                                            <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/StocksService.html" >StocksService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/UsersService.html" >UsersService</a>
@@ -483,13 +483,13 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
+                                           <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                           <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -554,7 +554,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(libelle: any, codeFournisseur: any, quantiteInitiale: any, dateLimite: any, dateAchat: any, prixAchat: any)</code>
+                                    <code>constructor(id: any, libelle: any, codeFournisseur: any, quantiteInitiale: any, quantiteRestante: any, dateLimite: any, dateAchat: any, prixAchat: any)</code>
                                 </td>
                             </tr>
             
@@ -575,8 +575,14 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>codeFournisseur:     <code>number</code>
+                                    <code>codeFournisseur:     <code>string</code>
             </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Code du fournisseur associé au produit</p>
+            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -594,6 +600,12 @@
             </bcode>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Date d&#39;achat du produit</p>
+            </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -607,6 +619,12 @@
                                 <td class="col-md-4">
                                     <code>dateLimite:     <code>string</code>
             </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Date limite de consommation du produit</p>
+            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -624,6 +642,12 @@
             </bcode>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Identifiant du produit</p>
+            </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -637,6 +661,12 @@
                                 <td class="col-md-4">
                                     <code>libelle:     <code>string</code>
             </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Nom du produit</p>
+            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -654,6 +684,12 @@
             </bcode>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Prix d&#39;achat du produit</p>
+            </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -667,6 +703,12 @@
                                 <td class="col-md-4">
                                     <code>quantiteInitiale:     <code>number</code>
             </bcode>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Quantitée initiale du produit acheté  </p>
+            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -684,54 +726,69 @@
             </bcode>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Quantitée restante du produit acheté</p>
+            </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre><code class="hljs javascript">export class Produits {
+
+    /**
+     * Identifiant du produit
+     */
     id: number;
+
+    /**
+     * Nom du produit
+     */
     libelle: string;
-    codeFournisseur: number;
+
+    /**
+     * Code du fournisseur associé au produit
+     */
+    codeFournisseur: string;
+
+    /**
+     * Quantitée initiale du produit acheté  
+     */
     quantiteInitiale: number;
+
+    /**
+     * Quantitée restante du produit acheté
+     */
     quantiteRestante: number;
+
+    /**
+     * Date limite de consommation du produit
+     */
     dateLimite: string;
+
+    /**
+     * Date d&#x27;achat du produit
+     */
     dateAchat: string;
+
+    /**
+     * Prix d&#x27;achat du produit
+     */
     prixAchat: number;
 
-    constructor (libelle, codeFournisseur, quantiteInitiale, dateLimite, dateAchat, prixAchat){
+    constructor (id, libelle, codeFournisseur, quantiteInitiale, quantiteRestante, dateLimite, dateAchat, prixAchat){
+        this.id&#x3D;id;
         this.libelle&#x3D;libelle;
         this.codeFournisseur&#x3D;codeFournisseur;
         this.quantiteInitiale&#x3D;quantiteInitiale;
-        this.quantiteRestante&#x3D;quantiteInitiale;
+        this.quantiteRestante&#x3D;quantiteRestante;
         this.dateLimite&#x3D;dateLimite;
         this.dateAchat&#x3D;dateAchat;
         this.prixAchat&#x3D;prixAchat;
     }
-    
-    // constructor(
-    //     id: number,
-    //     libelle: string,
-    //     codeFournisseur: number,
-    //     quantiteInitiale: number,
-    //     quantiteRestante: number,
-    //     dateLimite: string,
-    //     dateAchat: string,
-    //     prixAchat: number,
-    // ){}
-
-    // public static fromJson(json: Object): Produits {
-    //     return new Produits(
-    //         json[&#x27;id&#x27;],
-    //         json[&#x27;libelle&#x27;],
-    //         json[&#x27;codeFournisseur&#x27;],
-    //         json[&#x27;quantiteInitiale&#x27;],
-    //         json[&#x27;quantiteRestante&#x27;],
-    //         json[&#x27;dateLimite&#x27;],
-    //         json[&#x27;dateAchat&#x27;],
-    //         json[&#x27;prixAchat&#x27;],
-    //     );
-    // }
 }
 </code></pre>
     </div>

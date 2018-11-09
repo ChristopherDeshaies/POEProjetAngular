@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import * as _ from 'lodash'; 
 
+/**
+ * @author Christopher Deshaies
+ */
 @Pipe({
   name: 'unique',
   pure: false

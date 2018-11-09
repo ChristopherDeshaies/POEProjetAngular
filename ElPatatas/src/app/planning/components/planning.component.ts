@@ -17,9 +17,13 @@ import { map, finalize } from 'rxjs/operators';
 export class PlanningComponent implements OnInit {
 
   /**
-   * Variables dans lesquels seront stockés mes observables des users et des plannings
+   * Variable dans laquelle est stocké un observable des users
    */
   public listUser: Observable<User[]>;
+
+  /**
+   * Variable dans laquelle est stocké un observable des plannings
+   */
   public listPlanning: Observable<Planning[]>;
 
   /**

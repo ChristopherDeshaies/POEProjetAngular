@@ -115,6 +115,9 @@
                                     <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                 </li>
                                 <li class="link">
@@ -160,7 +163,7 @@
                                     <a href="../classes/Produits.html" >Produits</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                    <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -199,19 +202,16 @@
                                     <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/StocksService.html" >StocksService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/UsersService.html" >UsersService</a>
@@ -232,13 +232,13 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
+                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                    <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -366,6 +366,9 @@
                                            <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                        </li>
                                        <li class="link">
@@ -411,7 +414,7 @@
                                            <a href="../classes/Produits.html" >Produits</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                           <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -450,19 +453,16 @@
                                            <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/StocksService.html" >StocksService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/UsersService.html" >UsersService</a>
@@ -483,13 +483,13 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
+                                           <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                           <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -544,6 +544,11 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+    </div>
 
 <section>
     <h3>Metadata</h3>
@@ -591,19 +596,803 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(usersservice: any, planningservice: <a href="../injectables/PlanningService.html" >PlanningService</a>)</code>
                         </td>
                     </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Constructeur du component PlanningComponent</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>usersservice</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Service des Users</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>planningservice</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Service des Plannings</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
 
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ngOnChange</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnChange()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> refreshPlanning</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>refreshPlanning()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui rafraichit le tableau fPlanning[][] en fonction des affectations de la semaine </p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> initDebutSemaine</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>initDebutSemaine(i: number)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Initialisation une date en fonction du numéro i d&#39;une journée </p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>i</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Le nombre de jours à retirer sur la date courante</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>Date</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        <p>La date de début de la semaine</p>
+    
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> addJour</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>addJour(date: Date, nb: number)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Ajoute à la date &quot;date&quot; un nombre de jours &quot;nb&quot; indiqués</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>date</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Une date à modifier</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>nb</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Le nombre de jours à ajouter à la date </p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>Date</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        <p>Retourne la nouvelle date générée</p>
+    
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> removeJour</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>removeJour(date: Date, nb: number)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Retire à la date &quot;date&quot; un nombre de jours &quot;nb&quot; indiqués</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>date</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>une date à modifier</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>nb</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>le nombre de jours à retirer à la date </p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>Date</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        <p>Retourne la nouvelle date générée</p>
+    
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> previusSemaine</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>previusSemaine()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui passe le planning à la semaine précédente</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> nextSemaine</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>nextSemaine()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui passe le planning à la semaine suivante</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> formattedDateDDMMYY</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>formattedDateDDMMYY(date: Date)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui formate une date passée en paramètre en format ddMMyyyy</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>date</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>La date à retourner au format ddMMyyyy</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        <p>Retourne un string de la date au format souhaité</p>
+    
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> formattedDateDDMM</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>formattedDateDDMM(date: Date)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui formate une date passée en paramètre en format ddMM</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>date</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>La date à retourner en format ddMM</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        <p>Retourne un string de la date au format souhaité</p>
+    
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> getUsers</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>getUsers()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui retourne un observable&lt;User[]&gt; des Users en base</p>
+    </div>
+                                <div class="io-description">
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>Observable&lt;any[]&gt;</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        <p>Retourne le résultat de la fonction getListUsers() qui est dans le service Users</p>
+    
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> getPlanning</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>getPlanning()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui retourne un observable&lt;Planning[]&gt; des Planning en base</p>
+    </div>
+                                <div class="io-description">
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code><a href="../classes/Planning.html" target="_self" >Observable&lt;Planning[]&gt;</a></code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        <p>Retourne le résultat de la fonction getPlanning() qui est dans le service Planning</p>
+    
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> addPlanning</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>addPlanning(employe: number, date: Date, midi: boolean, soir: boolean)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui associe un employé à une demi-journée</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>employe</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>L&#39;identifiant de l&#39;employé</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>date</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>La date de la journée</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>midi</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Boolean indiquant s&#39;il s&#39;agit du midi</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>soir</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Boolean indiquant s&#39;il s&#39;agit du soir</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> deletePlanning</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>deletePlanning(employe: number, date: Date, midi: boolean, soir: boolean)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui retire un employé d&#39;une demi-journée</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>employe</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>L&#39;identifiant de l&#39;employé</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>date</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>La date de la journée</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>midi</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Boolean indiquant s&#39;il s&#39;agit du midi</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>soir</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Boolean indiquant s&#39;il s&#39;agit du soir</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> getSemaine</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>getSemaine(j: number)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui le numéro du jour de la semaine</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>j</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Numéro de la journée de la semaine</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>number</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> verificationMidi</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>verificationMidi(j: number)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui vérifie si on est dans le td matin ou le td soir</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>j</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Numéro de la journée de la semaine</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>boolean</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> fPlanning</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>fPlanning:     <code>boolean[][]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>undefined</code>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Tableau contenant l&#39;affectation des users par demi-journée</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> listPlanning</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>listPlanning:     <code><a href="../classes/Planning.html" target="_self" >Observable&lt;Planning[]&gt;</a></code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Variable dans laquelle est stocké un observable des plannings</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> listUser</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>listUser:     <code>Observable&lt;any[]&gt;</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Variable dans laquelle est stocké un observable des users</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> semaine</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>semaine:     <code>Date[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Tableau contenant les dates du planning de la semaine affiché</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> taille</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>taille:     <code>number[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Liste contenant une suite de nombres entre 0 et 13 inclus</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
             <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { UsersService } from &#x27;src/app/core/users/users.service&#x27;;
+import { Observable,of } from &#x27;rxjs&#x27;;
+import { User } from &#x27;src/app/core/users/models/user&#x27;;
+import { PlanningService } from &#x27;../services/planning.service&#x27;;
+import { Planning } from &#x27;../models/planning&#x27;;
+import { map, finalize } from &#x27;rxjs/operators&#x27;;
 
+/**
+ * @author Christopher Deshaies
+ */
 @Component({
   selector: &#x27;app-planning&#x27;,
   templateUrl: &#x27;./planning.component.html&#x27;,
@@ -611,9 +1400,324 @@
 })
 export class PlanningComponent implements OnInit {
 
-  constructor() { }
+  /**
+   * Variable dans laquelle est stocké un observable des users
+   */
+  public listUser: Observable&lt;User[]&gt;;
 
+  /**
+   * Variable dans laquelle est stocké un observable des plannings
+   */
+  public listPlanning: Observable&lt;Planning[]&gt;;
+
+  /**
+   * Tableau contenant les dates du planning de la semaine affiché
+   */
+  public semaine: Date[];
+
+  /**
+   * Tableau contenant l&#x27;affectation des users par demi-journée
+   */
+  public fPlanning: boolean[][]&#x3D;undefined;
+
+  /**
+   * Liste contenant une suite de nombres entre 0 et 13 inclus
+   */
+  public taille &#x3D; new Array&lt;number&gt;();
+
+  /**
+   * Constructeur du component PlanningComponent
+   * @param usersservice Service des Users
+   * @param planningservice Service des Plannings
+   */
+  constructor(private usersservice: UsersService, private planningservice: PlanningService) {
+    for(let i&#x3D;0;i&lt;14;i++){
+      this.taille.push(i);
+    }    
+  }
+
+  /**
+   * Init au démarrage de la feature Planning
+   */
   ngOnInit() {
+    this.listUser&#x3D;this.getUsers();
+    let date &#x3D; new Date();
+    let journeeDate &#x3D; date.getDay();
+  
+  
+    let debutSemaine&#x3D;this.initDebutSemaine(journeeDate);
+    this.semaine&#x3D;[
+      debutSemaine,
+      this.addJour(debutSemaine,1),
+      this.addJour(debutSemaine,2),
+      this.addJour(debutSemaine,3),
+      this.addJour(debutSemaine,4),
+      this.addJour(debutSemaine,5),
+      this.addJour(debutSemaine,6)
+    ];
+    this.refreshPlanning();
+  }
+
+  ngOnChange(){
+    this.refreshPlanning();
+  }
+
+  /**
+   * Fonction qui rafraichit le tableau fPlanning[][] en fonction des affectations de la semaine 
+   */
+  refreshPlanning(){
+    this.listPlanning &#x3D; this.getPlanning(); 
+    let LfPlanning&#x3D;new Array&lt;boolean[]&gt;();
+    this.listPlanning.pipe(
+      map((plannings: Planning[]) &#x3D;&gt; {
+        this.listUser.pipe(
+          map((users: User[]) &#x3D;&gt; {
+            for(let i&#x3D;0; i&lt;users.length; i++){
+              LfPlanning[i]&#x3D;new Array&lt;boolean&gt;();
+              for(let j&#x3D;0; j&lt;this.semaine.length; j++){
+                if(plannings.length&gt;0){
+                  for(let k&#x3D;0; k&lt;plannings.length; k++){
+                    if(
+                      plannings[k].employe&#x3D;&#x3D;&#x3D;users[i].id &amp;&amp; 
+                      this.formattedDateDDMMYY(new Date(plannings[k].date))&#x3D;&#x3D;&#x3D;this.formattedDateDDMMYY(new Date(this.semaine[j]))
+                    ){
+                      if(plannings[k].midi&#x3D;&#x3D;&#x3D;true){
+                        LfPlanning[i][j*2]&#x3D;true;
+                      }else{
+                        LfPlanning[i][j*2]&#x3D;false;
+                      }
+                      if(plannings[k].soir&#x3D;&#x3D;&#x3D;true){
+                        LfPlanning[i][j*2+1]&#x3D;true;
+                      }else{
+                        LfPlanning[i][j*2+1]&#x3D;false;
+                      }
+                      k&#x3D;10000000000000000000000000000000;
+                    }else if(k&#x3D;&#x3D;&#x3D;plannings.length-1){
+                      LfPlanning[i][j*2]&#x3D;false;
+                      LfPlanning[i][j*2+1]&#x3D;false;
+                    }
+                  }
+                }else{
+                  for(let k&#x3D;0; k&lt;14; k ++){
+                    LfPlanning[i][k]&#x3D;false;
+                  }
+                }
+              }
+            } 
+          }
+        ),
+        finalize( ()&#x3D;&gt; {
+          this.fPlanning &#x3D; LfPlanning;
+        })
+        ).subscribe();
+      }
+      ),
+      finalize( ()&#x3D;&gt; {}
+      ) 
+    ).subscribe();
+  }
+
+  /**
+   * Initialisation une date en fonction du numéro i d&#x27;une journée 
+   * @param i Le nombre de jours à retirer sur la date courante
+   * @returns La date de début de la semaine
+   */
+  initDebutSemaine(i: number): Date{
+    var dateTime &#x3D; new Date().getTime();
+    var endTime &#x3D; dateTime - ( i * (60*60*24) * 1000)
+    return new Date(endTime);
+  }
+
+  /**
+   * Ajoute à la date &quot;date&quot; un nombre de jours &quot;nb&quot; indiqués
+   * @param date Une date à modifier
+   * @param nb Le nombre de jours à ajouter à la date 
+   * @returns Retourne la nouvelle date générée
+   */
+  addJour(date: Date, nb: number): Date{
+    var dateTime &#x3D; date.getTime();
+    var endTime &#x3D; dateTime + ( nb * (60*60*24) * 1000)
+    return new Date(endTime);
+  }
+
+  /**
+   * Retire à la date &quot;date&quot; un nombre de jours &quot;nb&quot; indiqués
+   * @param date une date à modifier
+   * @param nb le nombre de jours à retirer à la date 
+   * @returns Retourne la nouvelle date générée
+   */
+  removeJour(date:Date, nb: number): Date{
+    var dateTime &#x3D; date.getTime();
+    var endTime &#x3D; dateTime - ( nb * (60*60*24) * 1000)
+    return new Date(endTime);
+  }
+
+  /**
+   * Fonction qui passe le planning à la semaine précédente
+   */
+  previusSemaine(): void{
+    for(let jour &#x3D; 0; jour &lt;&#x3D;6; jour++){
+      this.semaine[jour]&#x3D;this.removeJour(this.semaine[jour],7);
+    }
+    this.refreshPlanning();
+  }
+
+  /**
+   * Fonction qui passe le planning à la semaine suivante
+   */
+  nextSemaine(): void {
+    for(let jour &#x3D; 0; jour &lt;&#x3D;6; jour++){
+      this.semaine[jour]&#x3D;this.addJour(this.semaine[jour],7);
+    }
+    this.refreshPlanning();
+  }
+
+  /**
+   * Fonction qui formate une date passée en paramètre en format ddMMyyyy
+   * @param date La date à retourner au format ddMMyyyy
+   * @returns Retourne un string de la date au format souhaité
+   */
+  formattedDateDDMMYY(date: Date) {
+    let month &#x3D; String(date.getMonth() + 1);
+    let day &#x3D; String(date.getDate());
+    const year &#x3D; String(date.getFullYear());
+  
+    if (month.length &lt; 2) month &#x3D; &#x27;0&#x27; + month;
+    if (day.length &lt; 2) day &#x3D; &#x27;0&#x27; + day;
+  
+    return &#x60;${day}/${month}/${year}&#x60;;
+  }
+
+  /**
+   * Fonction qui formate une date passée en paramètre en format ddMM
+   * @param date La date à retourner en format ddMM
+   * @returns Retourne un string de la date au format souhaité
+   */
+  formattedDateDDMM(date:Date){
+    let month &#x3D; String(date.getMonth() + 1);
+    let day &#x3D; String(date.getDate());
+  
+    if (month.length &lt; 2) month &#x3D; &#x27;0&#x27; + month;
+    if (day.length &lt; 2) day &#x3D; &#x27;0&#x27; + day;
+  
+    return &#x60;${day}/${month}&#x60;;
+  }
+
+  /**
+   * Fonction qui retourne un observable&lt;User[]&gt; des Users en base
+   * @returns Retourne le résultat de la fonction getListUsers() qui est dans le service Users
+   */
+  getUsers(): Observable&lt;User[]&gt;{
+    return this.usersservice.getListUsers();
+  }
+
+  /**
+   * Fonction qui retourne un observable&lt;Planning[]&gt; des Planning en base
+   * @returns Retourne le résultat de la fonction getPlanning() qui est dans le service Planning
+   */
+  getPlanning(): Observable&lt;Planning[]&gt;{
+    return this.planningservice.getPlanning();
+  }
+
+  /**
+   * Fonction qui associe un employé à une demi-journée
+   * @param employe L&#x27;identifiant de l&#x27;employé
+   * @param date La date de la journée
+   * @param midi Boolean indiquant s&#x27;il s&#x27;agit du midi
+   * @param soir Boolean indiquant s&#x27;il s&#x27;agit du soir
+   */
+  addPlanning(employe: number, date: Date, midi:boolean, soir:boolean){
+    this.listPlanning.pipe(
+      map(
+        (plannings: Planning[]) &#x3D;&gt; {
+          console.log(plannings);
+          return plannings.filter(
+             (planning:Planning) &#x3D;&gt; {
+                if(planning.employe&#x3D;&#x3D;&#x3D;employe &amp;&amp; this.formattedDateDDMMYY(new Date(planning.date))&#x3D;&#x3D;&#x3D;this.formattedDateDDMMYY(date)){
+                  return true;
+                }else{
+                  return false;
+                }
+              }
+          );
+        }
+      )
+    ).subscribe(
+      (plannings: Planning[]) &#x3D;&gt; {
+        if(plannings.length&gt;0){
+          if(midi){
+            this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,midi,plannings[0].soir)).toPromise().then(() &#x3D;&gt; this.refreshPlanning());
+          }else if(soir){
+            this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,plannings[0].midi,soir)).toPromise().then(() &#x3D;&gt; this.refreshPlanning());
+          }
+        }else{
+          this.planningservice.ajouterPlanning(new Planning(0,employe,date,midi,soir)).toPromise().then(() &#x3D;&gt; this.refreshPlanning());
+        }
+      }
+    );
+    
+  }
+
+  /**
+   * Fonction qui retire un employé d&#x27;une demi-journée
+   * @param employe L&#x27;identifiant de l&#x27;employé
+   * @param date La date de la journée
+   * @param midi Boolean indiquant s&#x27;il s&#x27;agit du midi
+   * @param soir Boolean indiquant s&#x27;il s&#x27;agit du soir
+   */
+  deletePlanning(employe: number, date: Date, midi:boolean, soir:boolean){
+    this.listPlanning.pipe(
+      map(
+        (plannings: Planning[]) &#x3D;&gt; {
+          return plannings.filter(
+             (planning:Planning) &#x3D;&gt; planning.employe&#x3D;&#x3D;&#x3D;employe &amp;&amp; this.formattedDateDDMMYY(new Date(planning.date))&#x3D;&#x3D;&#x3D;this.formattedDateDDMMYY(date)
+          );
+        }
+      ) 
+    ).subscribe(
+      (plannings: Planning[]) &#x3D;&gt; {
+          if(midi){
+            if(!plannings[0].soir){
+              this.planningservice.deletePlanning(plannings[0].id).toPromise().then(
+                () &#x3D;&gt; this.refreshPlanning()
+              );;
+            }else{
+              this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,false,plannings[0].soir)).toPromise().then(
+                () &#x3D;&gt; this.refreshPlanning()
+              );;
+            }
+          }else if(soir){
+            if(!plannings[0].midi){
+              this.planningservice.deletePlanning(plannings[0].id).toPromise().then(
+                () &#x3D;&gt; this.refreshPlanning()
+              );;
+            }else{
+              this.planningservice.modificationPlanning(new Planning(plannings[0].id,employe,date,plannings[0].midi,false)).toPromise().then(
+                () &#x3D;&gt; this.refreshPlanning()
+              );;
+            }
+          }
+      }
+    );
+  }
+
+  /**
+   * Fonction qui le numéro du jour de la semaine
+   * @param j Numéro de la journée de la semaine
+   */
+  getSemaine(j : number):number {
+    return Math.round((j/2));
+  }
+
+  /**
+   * Fonction qui vérifie si on est dans le td matin ou le td soir
+   * @param j Numéro de la journée de la semaine
+   */
+  verificationMidi(j : number): boolean{
+    if(j/2 &#x3D;&#x3D;&#x3D; Math.round(j/2))
+      return true; 
+    else
+      return false;
   }
 
 }

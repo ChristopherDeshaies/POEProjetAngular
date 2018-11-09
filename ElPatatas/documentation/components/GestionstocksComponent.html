@@ -115,6 +115,9 @@
                                     <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                 </li>
                                 <li class="link">
@@ -160,7 +163,7 @@
                                     <a href="../classes/Produits.html" >Produits</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                    <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -199,19 +202,16 @@
                                     <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/StocksService.html" >StocksService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/UsersService.html" >UsersService</a>
@@ -232,13 +232,13 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
+                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                    <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -366,6 +366,9 @@
                                            <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                        </li>
                                        <li class="link">
@@ -411,7 +414,7 @@
                                            <a href="../classes/Produits.html" >Produits</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                           <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -450,19 +453,16 @@
                                            <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/StocksService.html" >StocksService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/UsersService.html" >UsersService</a>
@@ -483,13 +483,13 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
+                                           <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                           <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -596,7 +596,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(produitsservice: any)</code>
+                            <code>constructor(produitsservice: any, produitenventeservice: any)</code>
                         </td>
                     </tr>
     
@@ -613,6 +613,15 @@
                                                     </div>
                                                     <div>
                                                         <p>: appel du service Produits</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>produitenventeservice</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>: appel du service ProduitsEnVente</p>
     
                                                     </div>
                                                 </li>
@@ -642,7 +651,7 @@
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Fonction qui retoune un Observable&lt;Produits[]&gt;</p>
+                                <div class="io-description"><p>Fonction qui retoune un Observable&lt;Produits[]&gt; des produits en base de donnée</p>
     </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>Observable&lt;any[]&gt;</code>
@@ -656,19 +665,45 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> supprimer</b>
+                            <b> getListProduitsEnVente</b>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-    <code>supprimer(idProduit: any)</code>
+    <code>getListProduitsEnVente()</code>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Fonction qui supprime un element en base en fonction de idProduit - utilisation de Promise avant d&#39;effectuer un refresh</p>
+                                <div class="io-description"><p>Fonction qui retoune un Observable&lt;ProduitsEnProduit[]&gt; des produits en vente ou déjà vendu en base de donnée</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>Observable&lt;any[]&gt;</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> supprimerProduit</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>supprimerProduit(idProduit: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui supprime un element en base en fonction de idProduit</p>
     </div>
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -699,27 +734,174 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> supprimerProduitEnVente</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>supprimerProduitEnVente(idProduitEnVente: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui supprime un element dans la table ProduitEnVente en fonction de idProduitEnVente</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>idProduitEnVente</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>: Identifiant du Produit en vente</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> ajouterProduitStock</b>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-    <code>ajouterProduitStock()</code>
+    <code>ajouterProduitStock(indiceCategorie: number, libelle: String)</code>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Fonction qui ajoute un produit - Le produit peut avoir son libelle déjà renseigné en base ou être nouveau</p>
+                                <div class="io-description"><p>Fonction qui ajoute un produit qui existe en stock</p>
     <ul>
-    <li>utilisation de Primise avant d&#39;effectuer un refresh</li>
+    <li>utilisation de Promise avant d&#39;effectuer un refresh</li>
     </ul>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>indiceCategorie</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>L&#39;index de la catégorie</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>libelle</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Le nom du produit</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ajouterNouveauProduitStock</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>ajouterNouveauProduitStock()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui ajoute un nouveau produit en stock</p>
     </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
     
                                 </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> modifierProduit</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>modifierProduit(id: any, libelle: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui modifie un produits en stock</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>id</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>L&#39;identifiant du produit</p>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>libelle</b>
+                                                    </div>
+                                                    <div>
+                                                        <p>Le nom du produit</p>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -740,7 +922,7 @@
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>Effectue le changement de hiddenCategorie en fonction de la catégorie numéro &#39;i&#39;</p>
+                                <div class="io-description"><p>Fonction qui permet de déployer ou cacher les détails d&#39;un produit</p>
     </div>
                                 <div class="io-description">
                                         <b>Parameters :</b>
@@ -752,6 +934,48 @@
                                                     <div>
                                                         <p>: Numéro de la catégorie produit à replier ou déplier</p>
     
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> changerModifierProduit</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>changerModifierProduit(produit: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Fonction qui permet d&#39;accéder à la modification d&#39;un produit</p>
+    </div>
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>produit</b>
+                                                    </div>
+                                                    <div>
+                                                        
                                                     </div>
                                                 </li>
                                         </ul>
@@ -784,6 +1008,32 @@
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-description"><p>Initialise toutes les catégories pour que les détails soient cachés</p>
+    </div>
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> initModifierProduits</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>initModifierProduits()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Initialise la liste modifierProduit à false pour chaques données</p>
     </div>
                                 <div class="io-description">
                                     <b>Returns: </b>    <code>void</code>
@@ -896,12 +1146,27 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b><span class="modifier">Private</span> categorieProduit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>categorieProduit:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b><span class="modifier">Private</span> codeFournisseur</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>codeFournisseur:     <code>string</code>
+                            <span class="modifier-icon fa fa-lock"></span><code>codeFournisseur:     <code>string[]</code>
     </bcode>
                         </td>
                     </tr>
@@ -922,7 +1187,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>dateAchatProduit:     <code>Date</code>
+                            <span class="modifier-icon fa fa-lock"></span><code>dateAchatProduit:     <code>Date[]</code>
     </bcode>
                         </td>
                     </tr>
@@ -937,7 +1202,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>dateLimiteProduit:     <code>Date</code>
+                            <span class="modifier-icon fa fa-lock"></span><code>dateLimiteProduit:     <code>Date[]</code>
     </bcode>
                         </td>
                     </tr>
@@ -968,19 +1233,34 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b><span class="modifier">Private</span> listProduits</b>
+                            <b> listProduits</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>listProduits:     <code>Observable&lt;any[]&gt;</code>
+                            <code>listProduits:     <code>Observable&lt;any[]&gt;</code>
     </bcode>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-description"><p>Contient la listes des produits</p>
+                            <div class="io-description"><p>Contient la liste des produits et la liste des noms de produits en vente ou déjà vendu</p>
     </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> listProduitsEnVente</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>listProduitsEnVente:     <code>Observable&lt;any[]&gt;</code>
+    </bcode>
                         </td>
                     </tr>
                 </tbody>
@@ -1010,42 +1290,33 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b><span class="modifier">Private</span> modifProduit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>modifProduit:     <code>any[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Tableau qui va contenir les modifications à effectuer sur le produit</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b><span class="modifier">Private</span> newNomProduit</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
                             <span class="modifier-icon fa fa-lock"></span><code>newNomProduit:     <code>string</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b><span class="modifier">Private</span> prixAchatProduit</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>prixAchatProduit:     <code>number</code>
-    </bcode>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b><span class="modifier">Private</span> produitSelected</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>produitSelected:     <code>any</code>
     </bcode>
                         </td>
                     </tr>
@@ -1061,13 +1332,64 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b><span class="modifier">Private</span> prixAchatProduit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>prixAchatProduit:     <code>number[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Private</span> prixVenteProduit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>prixVenteProduit:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b><span class="modifier">Private</span> quantiteAjoutProduit</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>quantiteAjoutProduit:     <code>number</code>
+                            <span class="modifier-icon fa fa-lock"></span><code>quantiteAjoutProduit:     <code>number[]</code>
     </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Private</span> tabModifierProduit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-lock"></span><code>tabModifierProduit:     <code>boolean[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Tableau de boolean pour indiquer si une donnée doit être modifié</p>
+    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1079,8 +1401,9 @@
 import { Observable } from &#x27;rxjs&#x27;;
 import { ProduitsService } from &#x27;src/app/core/produits/services/produits.service&#x27;;
 import { Produits } from &#x27;src/app/core/produits/models/produits&#x27;;
+import { ProduitsEnVenteService } from &#x27;src/app/core/produitEnVente/services/produitsEnVente&#x27;;
+import { ProduitsEnVente } from &#x27;src/app/core/produitEnVente/model/produitsEnVente&#x27;;
 import { map } from &#x27;rxjs/operators&#x27;;
-import { delay, reject } from &#x27;q&#x27;;
 
 /**
  * @author Christopher Deshaies
@@ -1093,24 +1416,25 @@ import { delay, reject } from &#x27;q&#x27;;
 export class GestionstocksComponent implements OnInit {
 
   /**
-   * Contient la listes des produits
+   * Contient la liste des produits et la liste des noms de produits en vente ou déjà vendu
    */
-  private listProduits: Observable&lt;Produits[]&gt;;
+  listProduits: Observable&lt;Produits[]&gt;;
+  listProduitsEnVente: Observable&lt;ProduitsEnVente[]&gt;;
 
   /**
    * Différence entre un produit connu et un produit nouveau
    */
-  private produitSelected: Produits;
   private newNomProduit: string;
-
+  private categorieProduit: string;
+  private prixVenteProduit: number;
   /**
    * Données par défaut dans un produit
    */
-  private codeFournisseur: string;
-  private quantiteAjoutProduit: number;
-  private dateLimiteProduit: Date;
-  private dateAchatProduit:Date;
-  private prixAchatProduit:number;
+  private codeFournisseur: string[];
+  private quantiteAjoutProduit: number[];
+  private dateLimiteProduit: Date[];
+  private dateAchatProduit:Date[];
+  private prixAchatProduit:number[];
 
   /**
    * Tableau de boolean qui indique si les données de la catégorie sont dépliés
@@ -1118,19 +1442,38 @@ export class GestionstocksComponent implements OnInit {
   private hiddenCategorie: boolean[];
 
   /**
+   * Tableau de boolean pour indiquer si une donnée doit être modifié
+   */
+  private tabModifierProduit: boolean[];
+
+  /**
    * Map de quantitée restante des produits
    * K : Libelle du produit
    * V : SUM des quantitées restantes de produit
    */
-  private mapQuantiteRestante:Map&lt;String,number&gt;;
+  private mapQuantiteRestante:Map&lt;String,number&gt; &#x3D; new Map&lt;String,number&gt;();
   
+  /**
+   * Tableau qui va contenir les modifications à effectuer sur le produit
+   */
+  private modifProduit: any[];
+
   /**
    * Constructeur de gestionstocks
    * @param produitsservice : appel du service Produits
+   * @param produitenventeservice : appel du service ProduitsEnVente
    */
-  constructor(private produitsservice: ProduitsService) {
+  constructor(private produitsservice: ProduitsService, private produitenventeservice: ProduitsEnVenteService) {
     this.hiddenCategorie &#x3D; new Array&lt;boolean&gt;(); 
     this.mapQuantiteRestante &#x3D; new Map&lt;String,number&gt;();
+    this.tabModifierProduit &#x3D; new Array&lt;boolean&gt;();
+    this.modifProduit &#x3D; new Array&lt;any&gt;();
+
+    this.codeFournisseur &#x3D; new Array&lt;string&gt;();
+    this.quantiteAjoutProduit &#x3D; new Array&lt;number&gt;();
+    this.dateLimiteProduit &#x3D; new Array&lt;Date&gt;();
+    this.dateAchatProduit &#x3D; new Array&lt;Date&gt;();
+    this.prixAchatProduit &#x3D; new Array&lt;number&gt;();
   }
 
   /**
@@ -1139,67 +1482,248 @@ export class GestionstocksComponent implements OnInit {
   ngOnInit() {
     this.refresh();
     this.initHiddenCategorie();
+    this.initModifierProduits();
+    for(let i &#x3D; 0; i&lt;6; i++)
+      this.modifProduit.push(0);
   }
 
   /**
-   * Fonction qui retoune un Observable&lt;Produits[]&gt;
+   * Fonction qui retoune un Observable&lt;Produits[]&gt; des produits en base de donnée
    */
   getListProduits(): Observable&lt;Produits[]&gt; {
-    return this.produitsservice.getListProduits();
+    return this.produitsservice.getListProduits().pipe(
+      map(
+        (produits: Produits[]) &#x3D;&gt; {
+          let lproduits: Produits[];
+          lproduits &#x3D; produits.filter(
+            (produit:Produits) &#x3D;&gt; new Date(produit.dateLimite) &gt;&#x3D; new Date()
+          );
+          return lproduits;
+        }
+      )
+    );
   }
 
   /**
-   * Fonction qui supprime un element en base en fonction de idProduit - utilisation de Promise avant d&#x27;effectuer un refresh
+   * Fonction qui retoune un Observable&lt;ProduitsEnProduit[]&gt; des produits en vente ou déjà vendu en base de donnée
+   */
+  getListProduitsEnVente(): Observable&lt;ProduitsEnVente[]&gt;{
+    return this.produitenventeservice.getProduitEnVente().pipe(
+      map(
+        (produitsEnVente: ProduitsEnVente[]) &#x3D;&gt; {
+        let lproduitsEnVente : ProduitsEnVente[];
+        lproduitsEnVente &#x3D; produitsEnVente.filter(
+          (produitEnV:ProduitsEnVente) &#x3D;&gt; produitEnV.categorie !&#x3D;&#x3D; &#x27;frite&#x27;
+        );
+        lproduitsEnVente.push( new ProduitsEnVente(0,&#x27;Frite&#x27;,&#x27;frite&#x27;,1));
+        return lproduitsEnVente;
+      })
+    );
+  }
+
+  /**
+   * Fonction qui supprime un element en base en fonction de idProduit
    * @param idProduit : Identifiant du Produit
    */
-  supprimer(idProduit): void {
+  supprimerProduit(idProduit): void {
     new Promise((resolve,reject) &#x3D;&gt; {
-      this.produitsservice.deleteProduit(idProduit).subscribe(resolve,reject);
+      if(confirm(&quot;Voulez vous vraiment supprimer ce produit du stock ?&quot;)){
+        this.produitsservice.deleteProduit(idProduit).subscribe(resolve,reject);
+      }
     }).then(
       () &#x3D;&gt;  this.refresh()
     );
   }
 
   /**
-   * Fonction qui ajoute un produit - Le produit peut avoir son libelle déjà renseigné en base ou être nouveau
-   * - utilisation de Primise avant d&#x27;effectuer un refresh
+   * Fonction qui supprime un element dans la table ProduitEnVente en fonction de idProduitEnVente
+   * @param idProduitEnVente : Identifiant du Produit en vente
    */
-  ajouterProduitStock(): void{
-    let produitNom:String;
+  supprimerProduitEnVente(idProduitEnVente): void{
+    new Promise((resolve,reject) &#x3D;&gt; {
+      if(confirm(&quot;Voulez vous vraiment supprimer ce produit du stock ?&quot;)){
+        this.produitenventeservice.deleteProduitEnVente(idProduitEnVente).subscribe(resolve,reject);
+      }
+    }).then(
+      () &#x3D;&gt;  this.refresh()
+    );
+  }
 
-    // Verification si nouveau produit ou pas
-    if(this.produitSelected){
-      produitNom&#x3D;this.produitSelected.libelle
-    }else{
-      produitNom&#x3D;this.newNomProduit;
-    }
+  /**
+   * Fonction qui ajoute un produit qui existe en stock
+   * - utilisation de Promise avant d&#x27;effectuer un refresh
+   * @param indiceCategorie L&#x27;index de la catégorie
+   * @param libelle Le nom du produit
+   */
+  ajouterProduitStock(indiceCategorie: number, libelle: String): void{
     
     // Ajout
-    new Promise((resolve,reject) &#x3D;&gt; {
-      this.produitsservice.postProduit(
-        new Produits(
-          produitNom, 
-          this.codeFournisseur,
-          this.quantiteAjoutProduit,
-          this.dateLimiteProduit,
-          this.dateAchatProduit,
-          this.prixAchatProduit
-        )
-      ).subscribe(resolve,reject);
-      
+    new Promise(
+      (resolve,reject) &#x3D;&gt; {
+      if(
+        libelle &amp;&amp;
+        this.codeFournisseur[indiceCategorie] &amp;&amp; 
+        this.quantiteAjoutProduit[indiceCategorie] &amp;&amp; 
+        this.quantiteAjoutProduit[indiceCategorie] &amp;&amp; 
+        this.dateLimiteProduit[indiceCategorie] &amp;&amp;
+        this.dateAchatProduit[indiceCategorie] &amp;&amp;
+        this.prixAchatProduit[indiceCategorie]
+      ){
+        console.log(&quot;Avant postProduit : &quot;+typeof(this.prixAchatProduit[indiceCategorie]));
+        let prixAchatProduitAjout &#x3D; +this.prixAchatProduit[indiceCategorie];
+        this.produitsservice.postProduit(
+          
+          new Produits(
+            0,
+            libelle, 
+            this.codeFournisseur[indiceCategorie],
+            this.quantiteAjoutProduit[indiceCategorie],
+            this.quantiteAjoutProduit[indiceCategorie],
+            this.dateLimiteProduit[indiceCategorie],
+            this.dateAchatProduit[indiceCategorie],
+            prixAchatProduitAjout
+          ) 
+        ).subscribe(resolve,reject);
+      }else{
+        alert(&quot;Tous les champs ne sont pas rempli ...&quot;);
+      }
     }
     ).then(
       // Refresh
-      () &#x3D;&gt; this.refresh()
+      () &#x3D;&gt; {
+        this.refresh();
+        this.codeFournisseur[indiceCategorie]&#x3D;null;
+        this.quantiteAjoutProduit[indiceCategorie]&#x3D;null;
+        this.quantiteAjoutProduit[indiceCategorie]&#x3D;null;
+        this.dateLimiteProduit[indiceCategorie]&#x3D;null;
+        this.dateAchatProduit[indiceCategorie]&#x3D;null;
+        this.prixAchatProduit[indiceCategorie]&#x3D;null;
+      }
     );
     
   }
 
   /**
-   * Effectue le changement de hiddenCategorie en fonction de la catégorie numéro &#x27;i&#x27;
+   * Fonction qui ajoute un nouveau produit en stock
+   */
+  ajouterNouveauProduitStock(): void{
+
+    this.produitenventeservice.findProduitEnVente(this.newNomProduit).then( 
+      (produitFind) &#x3D;&gt; {
+        if(!produitFind &amp;&amp; 
+          this.newNomProduit &amp;&amp;
+          this.categorieProduit &amp;&amp;
+          this.prixVenteProduit &amp;&amp;
+          this.codeFournisseur[0] &amp;&amp; 
+          this.quantiteAjoutProduit[0] &amp;&amp; 
+          this.quantiteAjoutProduit[0] &amp;&amp; 
+          this.dateLimiteProduit[0] &amp;&amp;
+          this.dateAchatProduit[0] &amp;&amp;
+          this.prixAchatProduit[0]){
+            let prixVenteProduitAjout &#x3D; +this.prixVenteProduit;
+            this.produitenventeservice.ajouterProduitEnVente(
+              new ProduitsEnVente(
+                0,
+                this.newNomProduit,
+                this.categorieProduit,
+                prixVenteProduitAjout
+              )
+            );
+        }
+      } 
+    );
+
+    // Ajout
+    new Promise(
+      (resolve,reject) &#x3D;&gt; {
+        if(
+          this.newNomProduit &amp;&amp;
+          this.categorieProduit &amp;&amp;
+          this.prixVenteProduit &amp;&amp;
+          this.codeFournisseur[0] &amp;&amp; 
+          this.quantiteAjoutProduit[0] &amp;&amp; 
+          this.quantiteAjoutProduit[0] &amp;&amp; 
+          this.dateLimiteProduit[0] &amp;&amp;
+          this.dateAchatProduit[0] &amp;&amp;
+          this.prixAchatProduit[0]
+        ){
+          let prixAcahtProduitAjout: number &#x3D; +this.prixAchatProduit[0]
+          this.produitsservice.postProduit(
+            new Produits(
+              0,
+              this.newNomProduit, 
+              this.codeFournisseur[0],
+              this.quantiteAjoutProduit[0],
+              this.quantiteAjoutProduit[0],
+              this.dateLimiteProduit[0],
+              this.dateAchatProduit[0],
+              prixAcahtProduitAjout
+            ) 
+          ).subscribe(resolve,reject);
+        }else{
+          alert(&quot;Tous les champs ne sont pas rempli ...&quot;);
+        }
+      }
+    ).then(
+      // Refresh
+      () &#x3D;&gt; {
+        this.refresh();
+        this.codeFournisseur[0]&#x3D;null;
+        this.quantiteAjoutProduit[0]&#x3D;null;
+        this.quantiteAjoutProduit[0]&#x3D;null;
+        this.dateLimiteProduit[0]&#x3D;null;
+        this.dateAchatProduit[0]&#x3D;null;
+        this.prixAchatProduit[0]&#x3D;null;
+        this.newNomProduit&#x3D;null;
+      }
+    );
+  }
+
+  /**
+   * Fonction qui modifie un produits en stock
+   * @param id L&#x27;identifiant du produit
+   * @param libelle Le nom du produit
+   */
+  modifierProduit(id,libelle): void{
+    new Promise(
+      (resolve,reject) &#x3D;&gt; {
+        let prixAchatProduitModif: number &#x3D; +this.modifProduit[5];
+        console.log(typeof(prixAchatProduitModif));
+        this.produitsservice.putProduit(
+          new Produits(
+            id,
+            libelle,
+            this.modifProduit[0],
+            this.modifProduit[1],
+            this.modifProduit[2],
+            this.modifProduit[3],
+            this.modifProduit[4],
+            prixAchatProduitModif
+          )
+        ).subscribe(resolve,reject);
+      }
+    ).then(
+      // Refresh
+      () &#x3D;&gt; this.refresh()
+    );
+
+  }
+
+  /**
+   * Fonction qui permet de déployer ou cacher les détails d&#x27;un produit
    * @param i : Numéro de la catégorie produit à replier ou déplier
    */
   changeHiddenCategorie(i): void{
+    if(i!&#x3D;&#x3D;0){
+      this.hiddenCategorie[0]&#x3D;true;
+      this.newNomProduit&#x3D;null;
+      this.codeFournisseur[0]&#x3D;null;
+      this.quantiteAjoutProduit[0]&#x3D;null;
+      this.quantiteAjoutProduit[0]&#x3D;null;
+      this.dateLimiteProduit[0]&#x3D;null;
+      this.dateAchatProduit[0]&#x3D;null;
+      this.prixAchatProduit[0]&#x3D;null;
+    }
     if(this.hiddenCategorie[i])
       this.hiddenCategorie[i]&#x3D;false;
     else
@@ -1207,14 +1731,57 @@ export class GestionstocksComponent implements OnInit {
   }
 
   /**
+   * Fonction qui permet d&#x27;accéder à la modification d&#x27;un produit
+   * @param produit 
+   */
+  changerModifierProduit(produit: Produits): void{
+    for(let i&#x3D;0; i&lt;this.tabModifierProduit.length; i++){
+      if(i!&#x3D;&#x3D;produit.id){
+        this.tabModifierProduit[i]&#x3D;false;
+      }
+    }
+      
+    if(this.tabModifierProduit[produit.id])
+      this.tabModifierProduit[produit.id]&#x3D;false;
+    else{
+      this.tabModifierProduit[produit.id]&#x3D;true;
+      this.modifProduit[0]&#x3D;produit.codeFournisseur;
+      this.modifProduit[1]&#x3D;produit.quantiteInitiale;
+      this.modifProduit[2]&#x3D;produit.quantiteRestante;
+      this.modifProduit[3]&#x3D;produit.dateLimite;
+      this.modifProduit[4]&#x3D;produit.dateAchat;
+      this.modifProduit[5]&#x3D;produit.prixAchat;
+    }
+    
+    
+  }
+
+  /**
    * Initialise toutes les catégories pour que les détails soient cachés
    */
   initHiddenCategorie(): void{
     this.listProduits.forEach(
-      (produits:Produits[]) &#x3D;&gt; { 
+      (produits:Produits[]) &#x3D;&gt; {
+        //Onglet ajouter un nouveau produit
+        this.hiddenCategorie.push(true); 
         produits.forEach(
           () &#x3D;&gt; {
             this.hiddenCategorie.push(true)
+          }
+        );
+      }
+    );
+  }
+
+  /**
+   * Initialise la liste modifierProduit à false pour chaques données
+   */
+  initModifierProduits(): void{
+    this.listProduits.forEach(
+      (produits:Produits[]) &#x3D;&gt; { 
+        produits.forEach(
+          () &#x3D;&gt; {
+            this.tabModifierProduit.push(false)
           }
         )
       }
@@ -1225,29 +1792,53 @@ export class GestionstocksComponent implements OnInit {
    * Initialise la map mapQuantiteRestante avec en clé les libelles des produits et en value la somme des quantités restantes pour le produit
    */
   generateCompteurCategorie(): void{
-    this.mapQuantiteRestante &#x3D; new Map&lt;String,number&gt;();
+    
+    //Init de la map à 0 pour chaques produits
+    this.produitenventeservice.getProduitEnVente().forEach(
+      (produitsEnVente:ProduitsEnVente[]) &#x3D;&gt; {
+        produitsEnVente.forEach(
+          (produitEnVente:ProduitsEnVente) &#x3D;&gt; {
+            //On ne prends pas dans produit en vente les libelles Petite / Moyenne et Grande
+            if(produitEnVente.libelle!&#x3D;&#x3D;&#x27;Moyenne&#x27; &amp;&amp; produitEnVente.libelle!&#x3D;&#x3D;&#x27;Petite&#x27; &amp;&amp; produitEnVente.libelle!&#x3D;&#x3D;&#x27;Grande&#x27;)
+            this.mapQuantiteRestante.set(
+              produitEnVente.libelle,
+              0
+            );
+          }
+        );
+        //On ajoute le libelle Frite
+        this.mapQuantiteRestante.set(
+          &#x27;Frite&#x27;,
+          0
+        );
+      }
+    );
 
-    let listproduit:Observable&lt;Produits[]&gt; &#x3D; this.produitsservice.getListProduits();
-
-    listproduit.forEach(
+    this.produitsservice.getListProduits().forEach(
       (produits:Produits[]) &#x3D;&gt; {
         produits.forEach(
           (produit:Produits) &#x3D;&gt; {
-            if(this.mapQuantiteRestante.get(produit.libelle)&#x3D;&#x3D;&#x3D;undefined){
+            if(this.mapQuantiteRestante.get(produit.libelle)&#x3D;&#x3D;&#x3D;undefined &amp;&amp; new Date(produit.dateLimite) &gt;&#x3D; new Date()){
               this.mapQuantiteRestante.set(
                 produit.libelle,
                 produit.quantiteRestante
               );
             }else{
-              this.mapQuantiteRestante.set(
-                produit.libelle, 
-                produit.quantiteRestante + this.mapQuantiteRestante.get(produit.libelle)
-              );
+              if(new Date(produit.dateLimite) &gt;&#x3D; new Date()){
+                this.mapQuantiteRestante.set(
+                  produit.libelle, 
+                  produit.quantiteRestante + this.mapQuantiteRestante.get(produit.libelle)
+                );
+              }
             }
           }
         )
       }
     );
+
+    
+
+
   }
 
   /**
@@ -1263,7 +1854,11 @@ export class GestionstocksComponent implements OnInit {
    */
   refresh(): void{
     this.listProduits&#x3D;this.getListProduits();
+    this.listProduitsEnVente&#x3D;this.getListProduitsEnVente();
     this.generateCompteurCategorie();
+  
+    for(let i &#x3D; 0; i &lt; this.tabModifierProduit.length; i++)
+      this.tabModifierProduit[i]&#x3D;false;
   }
 
 }

@@ -115,6 +115,9 @@
                                     <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                 </li>
                                 <li class="link">
@@ -160,7 +163,7 @@
                                     <a href="../classes/Produits.html" >Produits</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                    <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -199,19 +202,16 @@
                                     <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/StocksService.html" >StocksService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/UsersService.html"  class="active" >UsersService</a>
@@ -232,13 +232,13 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
+                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                    <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -366,6 +366,9 @@
                                            <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                        </li>
                                        <li class="link">
@@ -411,7 +414,7 @@
                                            <a href="../classes/Produits.html" >Produits</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                           <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -450,19 +453,16 @@
                                            <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/StocksService.html" >StocksService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/UsersService.html"  class="active" >UsersService</a>
@@ -483,13 +483,13 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
+                                           <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                           <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -590,6 +590,30 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <b> getUser</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>getUser(email: string)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <b> putUser</b>
                                 </td>
                             </tr>
@@ -663,10 +687,11 @@
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre><code class="hljs javascript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { HttpClient, HttpParams } from &#x27;@angular/common/http&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { User } from &#x27;./models/user&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { map } from &quot;rxjs/operators&quot;;
 
 const urlUser &#x3D; &quot;http://127.0.0.1:3000/users&quot;;
 
@@ -682,6 +707,22 @@ export class UsersService {
 
   getListUsers(): Observable&lt;User[]&gt; {
     return this.httpclient.get&lt;User[]&gt;(urlUser);
+  }
+
+  getUser(email: string): Observable&lt;User&gt; {
+    let params &#x3D; new HttpParams().set(&#x27;email&#x27;, email);
+    return this.httpclient.get&lt;User&gt;(&#x60;${urlUser}&#x60;, { params })
+    .pipe(
+        map(response &#x3D;&gt; { 
+          
+                      if (response[0] !&#x3D; null) { 
+                        return response;
+                      }else{
+                        return null;
+                      }               
+                    }
+           )
+      );
   }
 
   putUser(user: User) {
@@ -700,25 +741,12 @@ export class UsersService {
 
 
   postUser(user: User) {
-    this.httpclient.post(urlUser,
-      user)
-      .subscribe(
-        data &#x3D;&gt; {
-          console.log(&quot;POST Request is successful &quot;, data);
-        },
-        error &#x3D;&gt; {
-          console.log(&quot;Ajout de l&#x27;utilisateur&quot;, error);
-        }
-      );
+    return this.httpclient.post(urlUser,user)
   }
 
-  deleteUser(id: number): void {
+  deleteUser(id: number) {
     const url &#x3D; &#x60;${urlUser}/${id}&#x60;;
-    this.httpclient.delete(url)
-      .subscribe(error &#x3D;&gt; {
-                            console.log(&quot;Suppression de l&#x27;utilisateur&quot;, error);
-                          }
-      );
+    return this.httpclient.delete(url)
   }
 
   

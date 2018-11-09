@@ -1,5 +1,8 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
+/**
+ * @author Christopher Deshaies
+ */
 @Pipe({
     name: 'filter'
 })

@@ -115,6 +115,9 @@
                                     <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/EmployesComponent.html"  class="active" >EmployesComponent</a>
                                 </li>
                                 <li class="link">
@@ -160,7 +163,7 @@
                                     <a href="../classes/Produits.html" >Produits</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                    <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -199,19 +202,16 @@
                                     <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/StocksService.html" >StocksService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/UsersService.html" >UsersService</a>
@@ -232,13 +232,13 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
+                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                    <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -366,6 +366,9 @@
                                            <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/EmployesComponent.html"  class="active" >EmployesComponent</a>
                                        </li>
                                        <li class="link">
@@ -411,7 +414,7 @@
                                            <a href="../classes/Produits.html" >Produits</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                           <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -450,19 +453,16 @@
                                            <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/StocksService.html" >StocksService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/UsersService.html" >UsersService</a>
@@ -483,13 +483,13 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
+                                           <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                           <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -591,7 +591,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(userservice: <a href="../injectables/UsersService.html" >UsersService</a>)</code>
+                            <code>constructor(userservice: <a href="../injectables/UsersService.html" >UsersService</a>, router: <a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a>)</code>
                         </td>
                     </tr>
     
@@ -928,6 +928,7 @@ import { UsersService } from &#x27;../../users.service&#x27;;
 import { User } from &#x27;../../models/user&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { finalize } from &#x27;rxjs/operators&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-employes&#x27;,
@@ -951,7 +952,8 @@ export class EmployesComponent implements OnInit {
   private userselected: User;
 
   constructor(
-    private userservice: UsersService
+    private userservice: UsersService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -966,16 +968,35 @@ export class EmployesComponent implements OnInit {
   }
 
   ajout() {
-    const user &#x3D; new User(0,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;);
-    user.setNom(this.nom);
-    user.setPrenom(this.prenom);
-    user.setAdresse(this.adresse);
-    user.setEmail(this.email);
-    user.setTel(this.tel);
-    user.setPassword(this.password);
-    user.setDateNaissance(this.dateNaissance);
-    user.setRole(this.role);
-    this.userservice.postUser(user); 
+    this.userservice.getUser(this.email)
+    .subscribe(  
+      data &#x3D;&gt; {
+        if  (data !&#x3D; null) {  
+          alert(&quot;email déjà en base&quot;)
+        }else{
+          const user &#x3D; new User(0,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;);
+          user.setNom(this.nom);
+          user.setPrenom(this.prenom);
+          user.setAdresse(this.adresse);
+          user.setEmail(this.email);
+          user.setTel(this.tel);
+          user.setPassword(this.password);
+          user.setDateNaissance(this.dateNaissance);
+          user.setRole(this.role);
+          this.userservice.postUser(user)
+          .subscribe(
+            (data) &#x3D;&gt; {
+              this.getListUsers();
+            },
+            error &#x3D;&gt; {
+              console.log(&quot;Erreur lors de l&#x27;ajout de l&#x27;utilisateur&quot;, error);
+            }
+          ); 
+        } 
+      },
+    error &#x3D;&gt; console.log(error)
+  )
+     
   }
 
   modifier() {
@@ -989,11 +1010,19 @@ export class EmployesComponent implements OnInit {
     user.setPassword(this.password);
     user.setDateNaissance(this.dateNaissance);
     user.setRole(this.role);
-    this.userservice.putUser(user); 
+    this.userservice.putUser(user);
   }
 
   supprimer() {
-    this.userservice.deleteUser(this.idsupp);
+    this.userservice.deleteUser(this.idsupp)
+    .subscribe(
+      (data) &#x3D;&gt; {
+        this.getListUsers();
+      },
+      error &#x3D;&gt; {
+        console.log(&quot;Erreur lors de la suppression de l&#x27;utilisateur&quot;, error);
+      }
+    );
   }
 
   select(userselected: User){

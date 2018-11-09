@@ -115,6 +115,9 @@
                                     <a href="../components/ComptabiliteComponent.html"  class="active" >ComptabiliteComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                 </li>
                                 <li class="link">
@@ -160,7 +163,7 @@
                                     <a href="../classes/Produits.html" >Produits</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                    <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -199,19 +202,16 @@
                                     <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/StocksService.html" >StocksService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/UsersService.html" >UsersService</a>
@@ -232,13 +232,13 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
+                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                    <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -366,6 +366,9 @@
                                            <a href="../components/ComptabiliteComponent.html"  class="active" >ComptabiliteComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                        </li>
                                        <li class="link">
@@ -411,7 +414,7 @@
                                            <a href="../classes/Produits.html" >Produits</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                           <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -450,19 +453,16 @@
                                            <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlanningService.html" >PlanningService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/StocksService.html" >StocksService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/UsersService.html" >UsersService</a>
@@ -483,13 +483,13 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
+                                           <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                           <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -583,6 +583,39 @@
     </table>
 </section>
 
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>dateDebut</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>Date</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>dateFin</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>Date</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
 
     <section>
@@ -591,7 +624,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(comptabiliteservice: <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>, commandesServices: <a href="../injectables/CommandesService.html" >CommandesService</a>, commandes: <a href="../classes/Commandes.html" >Commandes</a>)</code>
+                            <code>constructor(comptabiliteservice: <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>, commandesServices: <a href="../injectables/CommandesService.html" >CommandesService</a>, router: <a href="https://angular.io/docs/ts/latest/api/router/index/Router-class.html" target="_blank" >Router</a>)</code>
                         </td>
                     </tr>
     
@@ -605,20 +638,20 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> getHistoriqueCommandes</b>
+                            <b> calcul</b>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-    <code>getHistoriqueCommandes()</code>
+    <code>calcul(prixtotal: number)</code>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
+                                    <b>Returns: </b>    <code>number</code>
     
                                 </div>
                         </td>
@@ -629,37 +662,13 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> getAchat</b>
+                            <b> rechercheCA</b>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-    <code>getAchat()</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> getVente</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>getVente()</code>
+    <code>rechercheCA(dateDebut: Date, dateFin: Date)</code>
                         </td>
                     </tr>
     
@@ -696,12 +705,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b><span class="modifier">Private</span> bilan</b>
+                            <b> bilan</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>bilan:     <code><a href="../classes/Commandes.html" target="_self" >Observable&lt;Commandes[]&gt;</a></code>
+                            <code>bilan:     <code><a href="../classes/Commandes.html" target="_self" >Observable&lt;Commandes[]&gt;</a></code>
     </bcode>
                         </td>
                     </tr>
@@ -711,12 +720,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b><span class="modifier">Private</span> histoCommandes</b>
+                            <b> histoCommandes</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>histoCommandes:     <code><a href="../classes/Commandes.html" target="_self" >Observable&lt;Commandes[]&gt;</a></code>
+                            <code>histoCommandes:     <code><a href="../classes/Commandes.html" target="_self" >Observable&lt;Commandes[]&gt;</a></code>
     </bcode>
                         </td>
                     </tr>
@@ -741,6 +750,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> resultRecherche</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>resultRecherche:     <code>number</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b><span class="modifier">Private</span> vente</b>
                         </td>
                     </tr>
@@ -755,37 +779,88 @@
     </section>
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
 import { CommandesComponent } from &#x27;../../commandes/components/commandes.component&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { Produits } from &#x27;../../core/produits/models/produits&#x27;;
 import { Commandes } from &#x27;../../commandes/models/commandes&#x27;;
 import { ComptabiliteService } from &#x27;../services/comptabilite.service&#x27;;
-import { finalize } from &#x27;rxjs/operators&#x27;;
+import { finalize, map } from &#x27;rxjs/operators&#x27;;
 import { CommandesService } from &#x27;../../commandes/services/commandes.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
+import { CanDeactivate } from &#x27;@angular/router/src/utils/preactivation&#x27;;
 
 
 @Component({
-  selector: &#x27;app-comptabilite&#x27;,
-  templateUrl: &#x27;./comptabilite.component.html&#x27;,
-  styleUrls: [&#x27;./comptabilite.component.css&#x27;]
+ selector: &#x27;app-comptabilite&#x27;,
+ templateUrl: &#x27;./comptabilite.component.html&#x27;,
+ styleUrls: [&#x27;./comptabilite.component.css&#x27;]
 })
 export class ComptabiliteComponent implements OnInit {
   /* TODO tableau des gains et pertes */
-  private bilan: Observable&lt;Commandes[]&gt;;
+  bilan: Observable&lt;Commandes[]&gt;;
   private achat: Observable&lt;Produits[]&gt;;
   private vente: Observable&lt;Produits[]&gt;;
-  private histoCommandes: Observable&lt;Commandes[]&gt;;
+  histoCommandes: Observable&lt;Commandes[]&gt;;
   private isLoaded: boolean;
+  resultRecherche: number;
+  
 
-  constructor(private comptabiliteservice: ComptabiliteService, private commandesServices: CommandesService,
-     private commandes: Commandes) { }
+  constructor(
+    private comptabiliteservice: ComptabiliteService, 
+    private commandesServices: CommandesService,
+    private router:Router
+    // private commandes: Commandes
+    ) { this.resultRecherche&#x3D;0 }
+    @Input() dateDebut: Date;
+    @Input() dateFin: Date;
   /**
    *
    */
   ngOnInit() {
 
   }
+
+    calcul(prixtotal :number) : number {
+    if(prixtotal &#x3D;&#x3D; undefined) return 0;
+    if(prixtotal &#x3D;&#x3D; null) return 0;
+    //this.resultRecherche +&#x3D; parseInt(prixtotal.toString()); 
+    return this.resultRecherche;
+  }   
+  
+  rechercheCA(dateDebut: Date, dateFin: Date) {
+    console.log(this.dateDebut);
+    console.log(this.dateFin); 
+    this.resultRecherche&#x3D; 0; 
+    this.histoCommandes&#x3D; this.commandesServices.getListCommandes();
+    this.histoCommandes.subscribe(
+      (data) &#x3D;&gt; {
+            let dcde :Date;
+            let ddeb :Date;
+            let dfin :Date;
+            ddeb &#x3D; new Date(this.dateDebut);
+            dfin &#x3D; new Date(this.dateFin);
+
+            console.log(data.length);           
+            data.forEach((cde: Commandes) &#x3D;&gt; { console.log(cde.prixTotal)
+               dcde &#x3D; new Date(cde.dateCommande);
+              if ((dcde.getTime() &gt;&#x3D; ddeb.getTime()) &amp;&amp; (dcde.getTime() &lt;&#x3D; dfin.getTime())){              
+                parseInt(cde.prixTotal.toString());
+                this.resultRecherche +&#x3D;  parseInt(cde.prixTotal.toString());
+                console.log(&quot;dans le if&quot;); 
+              }          
+            })          
+      }
+    )
+    return this.resultRecherche;
+   /*  .pipe(
+      map(
+        (commandes: Commandes[]) &#x3D;&gt; commandes
+      )
+    ) */
+  }     
+  
   /**
    *
    */
@@ -810,22 +885,7 @@ export class ComptabiliteComponent implements OnInit {
   /**
    *
    */
-  getHistoriqueCommandes() {
-    this.isLoaded &#x3D; false;
-    // this.bilan &#x3D; this.comptabiliteservice.getPrixtotal().pipe(finalize( () &#x3D;&gt; this.isLoaded &#x3D; true));
-  }
-  getAchat() {
-    this.isLoaded &#x3D; false;
-    // this.achat &#x3D; this.comptabiliteservice.getAchat().pipe(finalize( () &#x3D;&gt; this.isLoaded &#x3D; true));
-  }
-  getVente() {
-    this.isLoaded &#x3D; false;
-    // this.vente &#x3D; this.comptabiliteservice.getVente().pipe(finalize( () &#x3D;&gt; this.isLoaded &#x3D; true));
-  }
-  
-
-}
-</code></pre>
+}</code></pre>
         </div>
     </div>
 

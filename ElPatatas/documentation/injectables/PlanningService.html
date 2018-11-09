@@ -115,6 +115,9 @@
                                     <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                 </li>
                                 <li class="link">
@@ -160,7 +163,7 @@
                                     <a href="../classes/Produits.html" >Produits</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Stocks.html" >Stocks</a>
+                                    <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -199,19 +202,16 @@
                                     <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                    <a href="../injectables/PlanningService.html"  class="active" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/PlanningService.html"  class="active" >PlanningService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/StocksService.html" >StocksService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/UsersService.html" >UsersService</a>
@@ -232,13 +232,13 @@
                                 id="xs-pipes-links"
                             >
                                 <li class="link">
+                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                    <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -366,6 +366,9 @@
                                            <a href="../components/ComptabiliteComponent.html" >ComptabiliteComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/DetailscommandeComponent.html" >DetailscommandeComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/EmployesComponent.html" >EmployesComponent</a>
                                        </li>
                                        <li class="link">
@@ -411,7 +414,7 @@
                                            <a href="../classes/Produits.html" >Produits</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Stocks.html" >Stocks</a>
+                                           <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -450,19 +453,16 @@
                                            <a href="../injectables/ComptabiliteService.html" >ComptabiliteService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GestionstocksService.html" >GestionstocksService</a>
+                                           <a href="../injectables/PlanningService.html"  class="active" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/PlanningService.html"  class="active" >PlanningService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RoleGuardService.html" >RoleGuardService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/StocksService.html" >StocksService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/UsersService.html" >UsersService</a>
@@ -483,13 +483,13 @@
                                        id="pipes-links"
                    >
                                        <li class="link">
+                                           <a href="../pipes/FilterPipe.html" >FilterPipe</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../pipes/ProduitsSearchPipe.html" >ProduitsSearchPipe</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../pipes/SumPipe.html" >SumPipe</a>
+                                           <a href="../pipes/PipeFiltreDatesPipe.html" >PipeFiltreDatesPipe</a>
                                        </li>
                                        <li class="link">
                                            <a href="../pipes/UniquePipe.html" >UniquePipe</a>
@@ -552,25 +552,412 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor()</code>
+                                    <code>constructor(httpclient: HttpClient)</code>
                                 </td>
                             </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Constructor dans lequel on récupère HttpClient</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>httpclient</b>
+                                                            </div>
+                                                            <div>
+                                                                
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
 
+            <section>
+                <h3 id="methods">Methods</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> getPlanning</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>getPlanning()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Fonction qui récupère un Observable de la liste des plannings en base de données</p>
+            </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/Planning.html" target="_self" >Observable&lt;Planning[]&gt;</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> deletePlanning</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>deletePlanning(id: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Fonction qui récupère un Observable de la liste des plannings en base de données après delete du planning avec l&#39;identifiant id</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>id</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Identifant du Planning à delete</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/Planning.html" target="_self" >Observable&lt;Planning[]&gt;</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> ajouterPlanning</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>ajouterPlanning(planning: <a href="../classes/Planning.html" >Planning</a>)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Fonction qui récupère un Observable de la liste des plannings en base de données après l&#39;ajout du planning en paramètre</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>planning</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Planning à ajouter </p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/Planning.html" target="_self" >Observable&lt;Planning[]&gt;</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> modificationPlanning</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>modificationPlanning(planning: <a href="../classes/Planning.html" >Planning</a>)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Fonction qui récupère un Observable de la liste des plannings en base de données après modification du planning indiqué en paramètre</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>planning</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Planning à modifier</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/Planning.html" target="_self" >Observable&lt;Planning[]&gt;</a></code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> findPlanning</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>findPlanning(employe: number, date: Date)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Fonction qui recherche un planning en fonction d&#39;un identifiant d&#39;employé et d&#39;une date demandée et tourne une promise booléen</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>employe</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Identifiant de l&#39;employé à rechercher</p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>date</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Date à rechercher</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>any</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> compareDate</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>compareDate(date1: Date, date2: Date)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Fonction qui compare 2 dates</p>
+            </div>
+                                        <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>date1</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Première date à comparer</p>
+            
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div>
+                                                                <b>date2</b>
+                                                            </div>
+                                                            <div>
+                                                                <p>Deuxième date à comparer</p>
+            
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>boolean</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre><code class="hljs javascript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Planning } from &#x27;../models/planning&#x27;;
 
+const urlPlanning &#x3D; &#x27;http://127.0.0.1:3000/planning&#x27;;
+
+/**
+ * @author Christopher Deshaies
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class PlanningService {
 
-  constructor() { }
+  /**
+   * Constructor dans lequel on récupère HttpClient
+   * @param httpclient 
+   */
+  constructor(private httpclient: HttpClient) { }
+
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données
+   */
+  getPlanning(): Observable&lt;Planning[]&gt; {
+    return this.httpclient.get&lt;Planning[]&gt;(urlPlanning);
+  }
+
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données après delete du planning avec l&#x27;identifiant id
+   * @param id Identifant du Planning à delete
+   */
+  deletePlanning(id): Observable&lt;Planning[]&gt; {
+    this.httpclient.delete(&#x60;${urlPlanning}/${id}&#x60;).subscribe(
+      error &#x3D;&gt; {
+        console.log(&#x27;Delete du planning &#x27; + id, error);
+      }
+    );
+    return this.httpclient.get&lt;Planning[]&gt;(urlPlanning);
+  }
+
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données après l&#x27;ajout du planning en paramètre
+   * @param planning Planning à ajouter 
+   */
+  ajouterPlanning(planning: Planning): Observable&lt;Planning[]&gt; {
+    this.httpclient.post(urlPlanning, planning).subscribe(
+      error &#x3D;&gt; {
+        console.log(&#x27;Ajout au planning &#x27;, error);
+      }
+    );
+
+    return this.httpclient.get&lt;Planning[]&gt;(urlPlanning);
+  }
+
+  /**
+   * Fonction qui récupère un Observable de la liste des plannings en base de données après modification du planning indiqué en paramètre
+   * @param planning Planning à modifier
+   */
+  modificationPlanning(planning: Planning): Observable&lt;Planning[]&gt; {
+    this.httpclient.put(&#x60;${urlPlanning}/${planning.id}&#x60;, planning ).subscribe(
+      
+      error &#x3D;&gt; {
+        console.log(&#x27;Modifier le planning &#x27; + planning.id + &#x27; en &#x27; + planning, error);
+      }
+    );
+    return this.httpclient.get&lt;Planning[]&gt;(urlPlanning);
+  }
+
+  /**
+   * Fonction qui recherche un planning en fonction d&#x27;un identifiant d&#x27;employé et d&#x27;une date demandée et tourne une promise booléen
+   * @param employe Identifiant de l&#x27;employé à rechercher
+   * @param date Date à rechercher
+   */
+  findPlanning(employe: number, date: Date): Promise&lt;boolean&gt;{
+    return new Promise(
+      (resolve, reject) &#x3D;&gt; {
+        this.httpclient.get&lt;Planning[]&gt;(urlPlanning).subscribe(
+          (plannings : Planning[]) &#x3D;&gt; {
+            let planningR &#x3D; plannings.find(
+              (planning: Planning) &#x3D;&gt; {
+                return (planning.employe&#x3D;&#x3D;&#x3D;employe &amp;&amp; this.compareDate(date, new Date(planning.date)) );
+              }
+            );
+            if(planningR!&#x3D;&#x3D;undefined){
+              resolve(true);
+            }else{
+              resolve(false);
+            }
+          }
+        )
+      }
+    );
+  }
+
+  /**
+   * Fonction qui compare 2 dates
+   * @param date1 Première date à comparer
+   * @param date2 Deuxième date à comparer
+   */
+  compareDate(date1 : Date, date2 : Date): boolean{
+    let month1 &#x3D; String(date1.getMonth() + 1);
+    let day1 &#x3D; String(date1.getDate());
+    const year1 &#x3D; String(date1.getFullYear());
+
+    let month2 &#x3D; String(date2.getMonth() + 1);
+    let day2 &#x3D; String(date2.getDate());
+    const year2 &#x3D; String(date2.getFullYear());
+
+    if(month1&#x3D;&#x3D;&#x3D;month2 &amp;&amp; day1&#x3D;&#x3D;&#x3D;day2 &amp;&amp; year1&#x3D;&#x3D;&#x3D;year2)
+      return true;
+    else
+      return false;
+  }
 }
 </code></pre>
     </div>

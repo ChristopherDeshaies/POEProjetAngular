@@ -77,7 +77,7 @@
                                     <a href="../modules/CoreRootingModule.html" >CoreRootingModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/GestionstocksModule.html"  class="active" >GestionstocksModule</a>
+                                    <a href="../modules/GestionstocksModule.html" >GestionstocksModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/PlanningModule.html" >PlanningModule</a>
@@ -205,7 +205,7 @@
                                     <a href="../injectables/PlanningService.html" >PlanningService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
+                                    <a href="../injectables/ProduitsEnVenteService.html"  class="active" >ProduitsEnVenteService</a>
                                 </li>
                                 <li class="link">
                                     <a href="../injectables/ProduitsService.html" >ProduitsService</a>
@@ -328,7 +328,7 @@
                                            <a href="../modules/CoreRootingModule.html" >CoreRootingModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/GestionstocksModule.html"  class="active" >GestionstocksModule</a>
+                                           <a href="../modules/GestionstocksModule.html" >GestionstocksModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/PlanningModule.html" >PlanningModule</a>
@@ -456,7 +456,7 @@
                                            <a href="../injectables/PlanningService.html" >PlanningService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/ProduitsEnVenteService.html" >ProduitsEnVenteService</a>
+                                           <a href="../injectables/ProduitsEnVenteService.html"  class="active" >ProduitsEnVenteService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/ProduitsService.html" >ProduitsService</a>
@@ -516,26 +516,16 @@
                    
                    </nav>
                </div>
-               <div class="content module">
+               <div class="content injectable">
                    <div class="content-data">
 
-<ol class="breadcrumb">
-  <li>Modules</li>
-  <li>GestionstocksModule</li>
-</ol>
 
-<div class="text-center">
-    <object id="demo-svg" type="image/svg+xml" data="../modules/GestionstocksModule/dependencies.svg" style="width: 100%; height: 250px;">
-            Your browser does not support SVG
-    </object>
-    <div class="btn-group">
-        <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
-        <button id="reset" class="btn btn-default btn-sm">Reset</button>
-        <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
-    </div>
-</div>
-<script src="../js/libs/svg-pan-zoom.min.js"></script>
-<script src="../js/svg-pan-zoom.controls.js"></script>
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>ProduitsEnVenteService</li>
+</ol>
 
 <ul class="nav nav-tabs" role="tablist">
     <li class="active">
@@ -552,87 +542,223 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/gestionstocks/gestionstocks.module.ts</code>
+            <code>src/app/core/produitEnVente/services/produitsEnVente.ts</code>
         </p>
 
 
-        <div class="container-fluid module">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
-                    <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../components/GestionstocksComponent.html">GestionstocksComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../pipes/OrderByPipe.html">OrderByPipe</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../pipes/UniquePipe.html">UniquePipe</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../pipes/FilterPipe.html">FilterPipe</a>
-                            </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Exports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#exports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
-                    <ul class="list-group">
-                            <li class="list-group-item">
-                                    <a href="../components/GestionstocksComponent.html" >GestionstocksComponent</a>
-                            </li>
-                            <li class="list-group-item">
-                                    <a href="../pipes/OrderByPipe.html" >OrderByPipe</a>
-                            </li>
-                            <li class="list-group-item">
-                                    <a href="../pipes/UniquePipe.html" >UniquePipe</a>
-                            </li>
-                            <li class="list-group-item">
-                                    <a href="../pipes/FilterPipe.html" >FilterPipe</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+            <section>
+                <h3 id="constructor">Constructor</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>constructor(httpclient: HttpClient)</code>
+                                </td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
+
+            <section>
+                <h3 id="methods">Methods</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> getProduitEnVente</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>getProduitEnVente()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/ProduitsEnVente.html" target="_self" >Observable&lt;ProduitsEnVente[]&gt;</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> deleteProduitEnVente</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>deleteProduitEnVente(id: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/ProduitsEnVente.html" target="_self" >Observable&lt;ProduitsEnVente[]&gt;</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> ajouterProduitEnVente</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>ajouterProduitEnVente(produitEnVente: <a href="../classes/ProduitsEnVente.html" >ProduitsEnVente</a>)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/ProduitsEnVente.html" target="_self" >Observable&lt;ProduitsEnVente[]&gt;</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> modificationProduitEnVente</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>modificationProduitEnVente(libelle: any, newlibelle: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code><a href="../classes/ProduitsEnVente.html" target="_self" >Observable&lt;ProduitsEnVente[]&gt;</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> findProduitEnVente</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>findProduitEnVente(libelle: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>any</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { CommonModule } from &#x27;@angular/common&#x27;;
-import { GestionstocksComponent } from &#x27;./components/gestionstocks/gestionstocks.component&#x27;;
-import { GestionStocksRoutingModule } from &#x27;./gestionstocks-routing.module&#x27;;
-import { RouterModule } from &#x27;@angular/router&#x27;;
-import { OrderByPipe } from &#x27;../shared/pipe/pipe-orderby&#x27;;
-import { UniquePipe } from &#x27;../shared/pipe/pipe-unique&#x27;;
-import { FormsModule } from &#x27;@angular/forms&#x27;;
-import { FilterPipe } from &#x27;../shared/pipe/pipe-filter&#x27;;
+        <pre><code class="hljs javascript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { ProduitsEnVente } from &#x27;../model/produitsEnVente&#x27;;
 
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    GestionStocksRoutingModule,
-  ],
-  declarations: [
-    GestionstocksComponent, 
-    OrderByPipe,
-    UniquePipe,
-    FilterPipe
-  ],
-  exports: [
-    GestionstocksComponent,
-    RouterModule,
-    OrderByPipe,
-    UniquePipe,
-    FilterPipe
-  ]
+const urlProduitsEnVente &#x3D; &#x27;http://127.0.0.1:3000/produitsEnVente&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class GestionstocksModule { }
+export class ProduitsEnVenteService {
+
+  constructor(private httpclient: HttpClient) { }
+
+  getProduitEnVente(): Observable&lt;ProduitsEnVente[]&gt; {
+    return this.httpclient.get&lt;ProduitsEnVente[]&gt;(urlProduitsEnVente);
+  }
+
+  deleteProduitEnVente(id): Observable&lt;ProduitsEnVente[]&gt; {
+    this.httpclient.delete(&#x60;${urlProduitsEnVente}/${id}&#x60;).subscribe(
+      error &#x3D;&gt; {
+        console.log(&#x27;Delete du stock du nouveau produit &#x27; + id, error);
+      }
+    );
+    return this.httpclient.get&lt;ProduitsEnVente[]&gt;(urlProduitsEnVente);
+  }
+
+  ajouterProduitEnVente(produitEnVente: ProduitsEnVente): Observable&lt;ProduitsEnVente[]&gt; {
+    this.httpclient.post(urlProduitsEnVente, produitEnVente).subscribe(
+      error &#x3D;&gt; {
+        console.log(&#x27;Ajout en stock du nouveau produit &#x27;, error);
+      }
+    );
+
+    return this.httpclient.get&lt;ProduitsEnVente[]&gt;(urlProduitsEnVente);
+  }
+
+  modificationProduitEnVente(libelle, newlibelle): Observable&lt;ProduitsEnVente[]&gt; {
+    this.httpclient.put(&#x60;${urlProduitsEnVente}?libelle&#x3D;${libelle}&#x60;, {newlibelle} ).subscribe(
+      error &#x3D;&gt; {
+        console.log(&#x27;Modifier le stock du produit &#x27; + libelle + &#x27; en &#x27; + newlibelle, error);
+      }
+    );
+    return this.httpclient.get&lt;ProduitsEnVente[]&gt;(urlProduitsEnVente);
+  }
+
+  findProduitEnVente(libelle): Promise&lt;boolean&gt; {
+    return new Promise(
+      (resolve, reject) &#x3D;&gt; {
+        this.httpclient.get&lt;ProduitsEnVente[]&gt;(urlProduitsEnVente).subscribe(
+          (produitsEnVente: ProduitsEnVente[]) &#x3D;&gt; {
+            let produit &#x3D; produitsEnVente.find(
+              (produitEnVente: ProduitsEnVente) &#x3D;&gt; {
+                return (produitEnVente.libelle&#x3D;&#x3D;&#x3D;libelle);
+              }
+            );
+            if(produit!&#x3D;&#x3D;undefined){
+              resolve(true);
+            }else{
+              resolve(false);
+            }
+          }
+        );
+      }
+    );
+  }
+
+
+
+}
 </code></pre>
     </div>
 </div>
-
-
-
 
 
 
