@@ -2,17 +2,17 @@ import { ItemMenu } from "./itemmenu";
 
 export class Commandes {
     
-    private id: number;
-    private dateCommande: string;
-    private listProduits: any[];
-    private prixTotal: number;
+     id: number;
+     dateCommande: Date;
+     listProduits: any[];
+     prixTotal: number;
     private userid: number;
     private usernom: string;
     private userprenom : string;
 
     constructor(
         id : number ,
-        dateCommande: string, 
+        dateCommande: Date, 
         listProduits: ItemMenu[], 
         prixTotal: number, 
         userid: number, 

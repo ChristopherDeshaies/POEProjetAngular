@@ -25,7 +25,7 @@
       "libelle": "Saucisse",
       "codeFournisseur": "2",
       "quantiteInitiale": 300,
-      "quantiteRestante": 300,
+      "quantiteRestante": 298,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
       "prixAchat": 0.3
@@ -45,7 +45,7 @@
       "libelle": "Coca",
       "codeFournisseur": "3",
       "quantiteInitiale": 50,
-      "quantiteRestante": 1,
+      "quantiteRestante": 0,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
       "prixAchat": 4.5
@@ -65,7 +65,7 @@
       "libelle": "Coca",
       "codeFournisseur": "3",
       "quantiteInitiale": 100,
-      "quantiteRestante": 1,
+      "quantiteRestante": 0,
       "dateLimite": "2019-07-12",
       "dateAchat": "2018-10-29",
       "prixAchat": 2
@@ -569,6 +569,26 @@
         }
       ],
       "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 10,
+      "dateCommande": "Fri, 09 Nov 2018 12:07:33 GMT",
+      "listProduits": [
+        {
+          "libelle": "Coca",
+          "quantite": 2,
+          "prix": 4
+        },
+        {
+          "libelle": "Saucisse",
+          "quantite": 2,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 16,
       "userid": 1,
       "usernom": "YOU",
       "userprenom": "Van"

@@ -274,7 +274,7 @@ export class CommandesComponent implements OnInit {
 
   encaisser() {
     if (this.prixTotal !== 0) {
-      let date = new Date().toUTCString();
+      let date = new Date();
       let id : number = JSON.parse(localStorage.getItem('user'))[0]['id'];
       let nom : string = JSON.parse(localStorage.getItem('user'))[0]['nom'];
       let prenom : string = JSON.parse(localStorage.getItem('user'))[0]['prenom'];
