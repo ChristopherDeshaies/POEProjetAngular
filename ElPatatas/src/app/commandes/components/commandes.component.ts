@@ -104,7 +104,18 @@ export class CommandesComponent implements OnInit {
   initialisation(): void{
     this.mapQuantiteRestante = new Map<String,number>();
 
-    let listproduit:Observable<Produits[]> = this.produitsService.getListProduits();
+    let listproduit:Observable<Produits[]>= this.produitsService.getListProduits().pipe(
+      map(
+        (produits: Produits[]) => {
+          let lproduits: Produits[];
+          lproduits = produits.filter(
+            (produit:Produits) => new Date(produit.dateLimite) >= new Date()
+          );
+          return lproduits;
+        }
+      )
+    );
+          
     let listproduitsenvente:Observable<ProduitsEnVente[]> = this.produitenventeservice.getProduitEnVente();
     
     listproduitsenvente.forEach(
@@ -117,6 +128,7 @@ export class CommandesComponent implements OnInit {
         );
       }
     );
+
 
     listproduit.forEach(
       (produits:Produits[]) => {
@@ -144,9 +156,6 @@ export class CommandesComponent implements OnInit {
           }
         )
       })
-      console.log("initialisation")
-      console.log(this.mapQuantiteRestante)
-      console.log(this.mapProduitsCommandes)
   }
 
   /**
@@ -225,8 +234,20 @@ export class CommandesComponent implements OnInit {
   }
 
   sortProduitsLibelleBydate(libelle : string) :Observable<Produits[]>{
+    
     let listproduit: Observable<Produits[]> = this.produitsService.produitsByLibelle(libelle)
-    .pipe(map(items => items.sort(this.comparer)));
+    .pipe(
+      map(
+        (produits: Produits[]) => {
+          let lproduits: Produits[];
+          lproduits = produits.filter(
+            (produit:Produits) => new Date(produit.dateLimite) >= new Date()
+          );
+          return lproduits.sort(this.comparer);
+        }
+      )
+    );
+    
     return listproduit
   }
 
