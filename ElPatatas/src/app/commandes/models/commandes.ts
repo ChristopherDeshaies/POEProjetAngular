@@ -2,10 +2,10 @@ import { ItemMenu } from "./itemmenu";
 
 export class Commandes {
     
-    private id: number;
-    private dateCommande: string;
-    private listProduits: any[];
-    private prixTotal: number;
+    id: number;
+    dateCommande: string;
+    listProduits: any[];
+    prixTotal: number;
     private userid: number;
     private usernom: string;
     private userprenom : string;
@@ -36,7 +36,7 @@ export class Commandes {
         return this.dateCommande;
     }
 
-    setDateCommande(dateCommande: Date) {
+    setDateCommande(dateCommande: string) {
         this.dateCommande = dateCommande;
     }
 

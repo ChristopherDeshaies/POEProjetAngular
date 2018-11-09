@@ -5,7 +5,7 @@
       "libelle": "Frite",
       "codeFournisseur": "1",
       "quantiteInitiale": 100,
-      "quantiteRestante": 43,
+      "quantiteRestante": 0,
       "dateLimite": "2018-11-21",
       "dateAchat": "2018-09-21",
       "prixAchat": 0.2
@@ -35,7 +35,7 @@
       "libelle": "Mexicanos",
       "codeFournisseur": "4",
       "quantiteInitiale": 100,
-      "quantiteRestante": 27,
+      "quantiteRestante": 25,
       "dateLimite": "2018-10-31",
       "dateAchat": "2018-09-24",
       "prixAchat": 0.3
@@ -48,7 +48,7 @@
       "quantiteRestante": 1,
       "dateLimite": "2019-09-25",
       "dateAchat": "2018-10-21",
-      "prixAchat": 4.5
+      "prixAchat": 1.5
     },
     {
       "id": 6,
@@ -118,7 +118,7 @@
       "quantiteRestante": 100,
       "dateLimite": "2018-11-11",
       "dateAchat": "2018-11-07",
-      "prixAchat": "1"
+      "prixAchat": 1
     },
     {
       "id": 13,
@@ -128,7 +128,7 @@
       "quantiteRestante": 200,
       "dateLimite": "2018-11-30",
       "dateAchat": "2018-11-07",
-      "prixAchat": "0.5"
+      "prixAchat": 0.5
     },
     {
       "id": 14,
@@ -138,7 +138,27 @@
       "quantiteRestante": 75,
       "dateLimite": "2018-11-25",
       "dateAchat": "2018-11-07",
-      "prixAchat": "0.8"
+      "prixAchat": 0.8
+    },
+    {
+      "id": 15,
+      "libelle": "Frite",
+      "codeFournisseur": "10",
+      "quantiteInitiale": 1000,
+      "quantiteRestante": 1000,
+      "dateLimite": "2018-11-30",
+      "dateAchat": "2018-11-09",
+      "prixAchat": 0.1
+    },
+    {
+      "id": 16,
+      "libelle": "Jus de Tomate",
+      "codeFournisseur": "1",
+      "quantiteInitiale": 100,
+      "quantiteRestante": 100,
+      "dateLimite": "2018-11-30",
+      "dateAchat": "2018-11-09",
+      "prixAchat": 1
     }
   ],
   "produitsEnVente": [
@@ -195,35 +215,41 @@
       "libelle": "Petite",
       "categorie": "frite",
       "prixvente": 4
+    },
+    {
+      "id": 10,
+      "libelle": "Jus de Tomate",
+      "categorie": "boisson",
+      "prixvente": 3
     }
   ],
   "planning": [
     {
       "id": 1,
       "employe": 3,
-      "date": "2018-11-05T13:17:45.881Z",
-      "midi": true,
+      "date": "2018-11-05T10:49:58.194Z",
+      "midi": false,
       "soir": true
     },
     {
       "id": 2,
       "employe": 3,
-      "date": "2018-11-06T13:17:45.881Z",
-      "midi": true,
+      "date": "2018-11-06T10:49:58.194Z",
+      "midi": false,
       "soir": true
     },
     {
       "id": 3,
       "employe": 3,
-      "date": "2018-11-07T13:17:45.881Z",
-      "midi": true,
+      "date": "2018-11-07T10:49:58.194Z",
+      "midi": false,
       "soir": true
     },
     {
       "id": 4,
       "employe": 3,
-      "date": "2018-11-08T13:17:45.881Z",
-      "midi": true,
+      "date": "2018-11-08T10:49:58.194Z",
+      "midi": false,
       "soir": true
     },
     {
@@ -564,6 +590,66 @@
       "listProduits": [
         {
           "libelle": "Merguez",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 10,
+      "dateCommande": "Fri, 09 Nov 2018 12:09:07 GMT",
+      "listProduits": [
+        {
+          "libelle": "Petite",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 11,
+      "dateCommande": "Fri, 09 Nov 2018 12:09:31 GMT",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 12,
+      "dateCommande": "Fri, 09 Nov 2018 12:09:58 GMT",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
+          "quantite": 1,
+          "prix": 4
+        }
+      ],
+      "prixTotal": 4,
+      "userid": 1,
+      "usernom": "YOU",
+      "userprenom": "Van"
+    },
+    {
+      "id": 13,
+      "dateCommande": "Fri, 09 Nov 2018 12:10:06 GMT",
+      "listProduits": [
+        {
+          "libelle": "Mexicanos",
           "quantite": 1,
           "prix": 4
         }

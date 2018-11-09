@@ -170,7 +170,10 @@ export class GestionstocksComponent implements OnInit {
         this.dateAchatProduit[indiceCategorie] &&
         this.prixAchatProduit[indiceCategorie]
       ){
+        console.log("Avant postProduit : "+typeof(this.prixAchatProduit[indiceCategorie]));
+        let prixAchatProduitAjout = +this.prixAchatProduit[indiceCategorie];
         this.produitsservice.postProduit(
+          
           new Produits(
             0,
             libelle, 
@@ -179,7 +182,7 @@ export class GestionstocksComponent implements OnInit {
             this.quantiteAjoutProduit[indiceCategorie],
             this.dateLimiteProduit[indiceCategorie],
             this.dateAchatProduit[indiceCategorie],
-            this.prixAchatProduit[indiceCategorie]
+            prixAchatProduitAjout
           ) 
         ).subscribe(resolve,reject);
       }else{
@@ -218,13 +221,15 @@ export class GestionstocksComponent implements OnInit {
           this.dateLimiteProduit[0] &&
           this.dateAchatProduit[0] &&
           this.prixAchatProduit[0]){
-          this.produitenventeservice.ajouterProduitEnVente(
-            new ProduitsEnVente(
-            0,
-            this.newNomProduit,
-            this.categorieProduit,
-            this.prixVenteProduit)
-          );
+            let prixVenteProduitAjout = +this.prixVenteProduit;
+            this.produitenventeservice.ajouterProduitEnVente(
+              new ProduitsEnVente(
+                0,
+                this.newNomProduit,
+                this.categorieProduit,
+                prixVenteProduitAjout
+              )
+            );
         }
       } 
     );
@@ -243,6 +248,7 @@ export class GestionstocksComponent implements OnInit {
           this.dateAchatProduit[0] &&
           this.prixAchatProduit[0]
         ){
+          let prixAcahtProduitAjout: number = +this.prixAchatProduit[0]
           this.produitsservice.postProduit(
             new Produits(
               0,
@@ -252,7 +258,7 @@ export class GestionstocksComponent implements OnInit {
               this.quantiteAjoutProduit[0],
               this.dateLimiteProduit[0],
               this.dateAchatProduit[0],
-              this.prixAchatProduit[0]
+              prixAcahtProduitAjout
             ) 
           ).subscribe(resolve,reject);
         }else{
@@ -282,6 +288,8 @@ export class GestionstocksComponent implements OnInit {
   modifierProduit(id,libelle): void{
     new Promise(
       (resolve,reject) => {
+        let prixAchatProduitModif: number = +this.modifProduit[5];
+        console.log(typeof(prixAchatProduitModif));
         this.produitsservice.putProduit(
           new Produits(
             id,
@@ -291,7 +299,7 @@ export class GestionstocksComponent implements OnInit {
             this.modifProduit[2],
             this.modifProduit[3],
             this.modifProduit[4],
-            this.modifProduit[5]
+            prixAchatProduitModif
           )
         ).subscribe(resolve,reject);
       }
